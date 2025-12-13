@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SecretSage - Privacy-first credential wizard for agent-driven development. Store secrets securely, grant them on demand, revoke when done.">
+  <meta name="keywords" content="credentials, secrets management, AI agents, privacy, developer tools, SecretSage">
+
+  <title>SecretSage - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css">
+  <link rel="stylesheet" href="/css/cyclecore-base.css">
+  <link rel="stylesheet" href="/css/cyclecore-components.css">
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="navbar-links">
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/terminal.html" class="navbar-link">Terminal</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/research.html" class="navbar-link">Research</a>
+        <a href="/#products" class="navbar-link">Products</a>
+        <a href="#contact" class="navbar-link">Contact</a>
+        <a href="/work.html" class="navbar-link navbar-link-subtle">Work</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-hero">
+    <div class="container text-center">
+      <div class="product-icon" style="font-size: 5rem; margin-bottom: var(--cc-space-md);">🗝️</div>
+      <h1 class="text-6xl font-black mb-md fade-in">
+        <span class="gradient-text">SecretSage</span>
+      </h1>
+      <p class="text-3xl font-bold text-primary mb-sm fade-in-up">
+        Privacy-First Agent Credentials
+      </p>
+      <p class="text-2xl text-secondary fade-in-up max-w-lg" style="margin: 0 auto var(--cc-space-xl);">
+        Terminal-based credential wizard for agent-driven development. Store secrets securely, grant them to agents on demand, revoke when done.
+      </p>
+      <div class="hero-cta fade-in-up">
+        <a href="#installation" class="btn btn-primary btn-large">Install SecretSage</a>
+        <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Features</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg); max-width: 1200px; margin: 0 auto;">
+
+        <!-- Age Encryption -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🔐</div>
+            <h3 class="card-title">Age Encryption</h3>
+          </div>
+          <div class="card-body">
+            <p>Military-grade encryption using the modern Age encryption standard. Your secrets are protected at rest with industry best practices.</p>
+          </div>
+        </div>
+
+        <!-- Grant & Revoke -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">⏱️</div>
+            <h3 class="card-title">Grant & Revoke Flow</h3>
+          </div>
+          <div class="card-body">
+            <p>Grant credentials to agents only when needed. Revoke them immediately when done. Full control over your sensitive data.</p>
+          </div>
+        </div>
+
+        <!-- Agent-Friendly -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🤖</div>
+            <h3 class="card-title">Agent-Friendly API</h3>
+          </div>
+          <div class="card-body">
+            <p>Designed for Claude Code, Cursor, Windsurf, and other AI coding assistants. Simple commands that agents understand.</p>
+          </div>
+        </div>
+
+        <!-- Terminal-Based -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">⌨️</div>
+            <h3 class="card-title">Terminal-Native</h3>
+          </div>
+          <div class="card-body">
+            <p>Lightweight CLI tool that lives in your terminal. No GUIs. No browser extensions. Just fast, secure credential management.</p>
+          </div>
+        </div>
+
+        <!-- Privacy-First -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🛡️</div>
+            <h3 class="card-title">Zero Data Collection</h3>
+          </div>
+          <div class="card-body">
+            <p>Everything stays on your machine. No analytics. No telemetry. No cloud sync. Complete local control of your credentials.</p>
+          </div>
+        </div>
+
+        <!-- Cross-Platform -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">💻</div>
+            <h3 class="card-title">Cross-Platform</h3>
+          </div>
+          <div class="card-body">
+            <p>Works on macOS, Linux, and Windows. Consistent experience across all development environments.</p>
+          </div>
+        </div>
+
+        <!-- Wizard Handoff -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🧙</div>
+            <h3 class="card-title">Wizard Handoff</h3>
+          </div>
+          <div class="card-body">
+            <p>Agents request credentials, you enter them securely in a separate terminal. True human-in-the-loop for sensitive operations.</p>
+          </div>
+        </div>
+
+        <!-- Audit Trail -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">📋</div>
+            <h3 class="card-title">Audit Trail</h3>
+          </div>
+          <div class="card-body">
+            <p>Track rotation history with timestamps and reasons. Know when credentials were changed and why.</p>
+          </div>
+        </div>
+
+        <!-- Backup Codes -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🔑</div>
+            <h3 class="card-title">Backup Codes Storage</h3>
+          </div>
+          <div class="card-body">
+            <p>Securely store 2FA recovery codes, emergency access tokens, and other multi-value secrets with usage tracking.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Works Great With -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Works Great With</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--cc-space-md); max-width: 900px; margin: 0 auto;">
+
+        <div class="card reveal text-center">
+          <h3 class="text-2xl font-bold mb-sm">🤖 Claude Code</h3>
+          <p class="text-secondary">
+            Seamlessly grant credentials to Claude during development sessions.
+          </p>
+        </div>
+
+        <div class="card reveal text-center">
+          <h3 class="text-2xl font-bold mb-sm">🖱️ Cursor</h3>
+          <p class="text-secondary">
+            Secure credential access for Cursor's AI-powered code editor.
+          </p>
+        </div>
+
+        <div class="card reveal text-center">
+          <h3 class="text-2xl font-bold mb-sm">🌊 Windsurf</h3>
+          <p class="text-secondary">
+            Privacy-respecting secrets for Windsurf development workflows.
+          </p>
+        </div>
+
+        <div class="card reveal text-center">
+          <h3 class="text-2xl font-bold mb-sm">⚡ Any AI Agent</h3>
+          <p class="text-secondary">
+            Simple API works with any agent-driven development tool.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="section" id="installation">
+    <div class="container max-w-lg">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Installation</h2>
+
+      <div class="card reveal">
+        <h3 class="text-2xl font-bold mb-md">Install via npm</h3>
+        <div class="terminal mb-lg">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span class="terminal-title">terminal</span>
+          </div>
+          <div class="terminal-body">
+            <code>npm install -g @cyclecore/secretsage</code>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-md">Quick Start</h3>
+        <div class="terminal mb-lg">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span class="terminal-title">terminal</span>
+          </div>
+          <div class="terminal-body" style="white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.6;"><span style="color: var(--cc-terminal-green);"># Initialize SecretSage</span>
+secretsage init
+
+<span style="color: var(--cc-terminal-green);"># Add a secret</span>
+secretsage add API_KEY
+
+<span style="color: var(--cc-terminal-green);"># Grant secret to an agent</span>
+secretsage grant API_KEY
+
+<span style="color: var(--cc-terminal-green);"># Revoke when done</span>
+secretsage revoke API_KEY</div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-md">Advanced Features <span class="text-accent">(v0.4)</span></h3>
+        <div class="terminal mb-lg">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span class="terminal-title">terminal</span>
+          </div>
+          <div class="terminal-body" style="white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.6;"><span style="color: var(--cc-terminal-green);"># Agent-human handoff wizard</span>
+secretsage wizard --keys STRIPE_KEY,DB_PASS
+
+<span style="color: var(--cc-terminal-green);"># Auto-generate encryption keys</span>
+secretsage rotate SESSION_KEY --generate 32
+
+<span style="color: var(--cc-terminal-green);"># View rotation audit trail</span>
+secretsage audit STRIPE_KEY
+
+<span style="color: var(--cc-terminal-green);"># Store 2FA backup codes securely</span>
+secretsage backup-codes add npm
+
+<span style="color: var(--cc-terminal-green);"># Deploy secrets to remote server</span>
+secretsage deploy myapp --remote user@host:/path</div>
+        </div>
+
+        <p class="text-secondary text-center">
+          Full documentation available on <a href="https://github.com/CycleCore-Technologies/secretsage" class="text-accent" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Perfect For</h2>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap: var(--cc-space-md);">
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">👨‍💻 AI-Assisted Development</h3>
+          <p class="text-secondary">
+            Grant API keys and credentials to Claude, Cursor, or other AI coding assistants without exposing them permanently.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🔐 DevOps & Infrastructure</h3>
+          <p class="text-secondary">
+            Manage cloud provider credentials, database passwords, and deployment secrets with fine-grained control.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🚀 Deployment Automation</h3>
+          <p class="text-secondary">
+            Temporarily grant deployment credentials to CI/CD agents, then revoke them automatically when jobs complete.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🧪 Testing & Development</h3>
+          <p class="text-secondary">
+            Safely manage test API keys, staging credentials, and development secrets across multiple projects.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing/Availability -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Get Started</h2>
+
+      <div class="product-card card text-center reveal" style="max-width: 500px; margin: 0 auto;">
+        <h3 class="text-4xl font-black mb-sm">SecretSage</h3>
+        <div class="mb-lg">
+          <p class="text-6xl font-black gradient-text mb-xs">Free</p>
+          <p class="text-lg text-secondary">Open Source · Apache 2.0 License</p>
+        </div>
+
+        <div class="text-left mb-lg">
+          <ul style="list-style: none; padding: 0;">
+            <li class="mb-sm text-secondary">✓ Age encryption at rest</li>
+            <li class="mb-sm text-secondary">✓ Grant & revoke credentials</li>
+            <li class="mb-sm text-secondary">✓ Agent-human handoff wizard</li>
+            <li class="mb-sm text-secondary">✓ Rotation audit trail</li>
+            <li class="mb-sm text-secondary">✓ 2FA backup codes storage</li>
+            <li class="mb-sm text-secondary">✓ Remote deployment via rsync</li>
+            <li class="mb-sm text-secondary">✓ Auto-generate secrets</li>
+            <li class="mb-sm text-secondary">✓ Works with all AI agents</li>
+            <li class="mb-sm text-secondary">✓ Terminal-native interface</li>
+            <li class="mb-sm text-secondary">✓ Cross-platform support</li>
+            <li class="text-secondary">✓ Zero data collection</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-md">
+          <a href="https://www.npmjs.com/package/@cyclecore/secretsage" class="btn btn-primary w-full btn-large" target="_blank" rel="noopener noreferrer">Install from npm →</a>
+          <a href="https://github.com/CycleCore-Technologies/secretsage" class="btn btn-secondary w-full btn-large" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Guarantee -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <div class="card reveal" style="background: var(--cc-black); border-color: var(--cc-terminal-green); text-align: center;">
+        <h3 class="text-3xl font-bold mb-md gradient-text">Privacy Guarantee</h3>
+        <p class="text-xl text-secondary leading-relaxed mb-md">
+          SecretSage runs entirely on your machine. Your credentials <strong class="text-primary">never leave your computer</strong>.
+        </p>
+        <p class="text-lg text-secondary">
+          No cloud sync. No analytics. No tracking. Your secrets stay with you. Always.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container text-center">
+      <h2 class="text-4xl font-black mb-md reveal">Questions?</h2>
+      <p class="text-xl text-secondary mb-lg max-w-lg" style="margin-left: auto; margin-right: auto;">
+        Need help with SecretSage? Have feature requests? Get in touch.
+      </p>
+      <div class="flex justify-center gap-md flex-wrap">
+        <a href="mailto:hi@cyclecore.ai" class="btn btn-primary btn-large">Email Us</a>
+        <a href="https://github.com/CycleCore-Technologies/secretsage/issues" class="btn btn-secondary btn-large" target="_blank" rel="noopener noreferrer">Report an Issue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Privacy-first AI tools you can trust.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="https://slmbench.com" class="footer-link">SLM-Bench</a>
+            <a href="https://mcpbodega.com" class="footer-link">MCPBodega</a>
+            <a href="/cyclesum" class="footer-link">CycleSum Lite</a>
+            <a href="/secretsage" class="footer-link">SecretSage</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/terminal.html" class="footer-link">Terminal</a>
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CycleCore Technologies LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

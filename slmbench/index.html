@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SLM-Bench - Professional edge AI benchmarks for Small Language Models. Evaluate function calling, JSON extraction, and intent classification.">
+  <meta name="keywords" content="SLM benchmarks, edge AI, Small Language Models, function calling, JSON extraction, intent classification">
+
+  <title>SLM-Bench - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css">
+  <link rel="stylesheet" href="/css/cyclecore-base.css">
+  <link rel="stylesheet" href="/css/cyclecore-components.css">
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="navbar-links">
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/terminal.html" class="navbar-link">Terminal</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/research.html" class="navbar-link">Research</a>
+        <a href="/#products" class="navbar-link">Products</a>
+        <a href="#contact" class="navbar-link">Contact</a>
+        <a href="/work.html" class="navbar-link navbar-link-subtle">Work</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-hero">
+    <div class="container text-center">
+      <div class="product-icon" style="font-size: 5rem; margin-bottom: var(--cc-space-md);">📊</div>
+      <h1 class="text-6xl font-black mb-md fade-in">
+        <span class="gradient-text">SLM-Bench</span>
+      </h1>
+      <p class="text-3xl font-bold text-primary mb-sm fade-in-up">
+        Professional Edge AI Benchmarks
+      </p>
+      <p class="text-2xl text-secondary fade-in-up max-w-lg" style="margin: 0 auto var(--cc-space-xl);">
+        Practical benchmarks for production SLM deployment. Evaluate what matters: function calling, JSON extraction, and intent classification across edge platforms.
+      </p>
+      <div class="hero-cta fade-in-up">
+        <a href="https://slmbench.com" class="btn btn-primary btn-large">Visit SLM-Bench.com →</a>
+        <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is SLM-Bench -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">What is SLM-Bench?</h2>
+
+      <div class="card reveal">
+        <p class="text-xl text-secondary leading-relaxed mb-md">
+          SLM-Bench is CycleCore's edge AI evaluation initiative that provides rigorous, transparent benchmarks for Small Language Models.
+        </p>
+        <p class="text-xl text-secondary leading-relaxed">
+          While academic benchmarks focus on general capabilities, SLM-Bench evaluates what matters for production deployment: function calling, JSON extraction, and intent classification across Raspberry Pi, laptops, and browsers.
+        </p>
+      </div>
+
+      <div class="text-lg text-secondary leading-relaxed mt-lg">
+        <p class="mb-md reveal">
+          <strong class="text-primary">The Problem:</strong> Existing benchmarks don't reflect real-world edge AI challenges. Academic tasks like MMLU and HellaSwag don't test function calling. No standardized energy measurement. No cross-platform validation.
+        </p>
+        <p class="reveal">
+          <strong class="text-primary">Our Solution:</strong> Practical benchmarks that measure what matters for production. Independent evaluation service. Transparent methodology. Public leaderboard.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">What We Offer</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg); max-width: 1200px; margin: 0 auto;">
+
+        <!-- Benchmark Suite -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">📊</div>
+            <h3 class="card-title">Edge Pack Benchmarks</h3>
+          </div>
+          <div class="card-body">
+            <p>Practical tasks for production deployment: EdgeJSON (extraction), EdgeIntent (classification), EdgeFuncCall (tool use). Open-source, reproducible.</p>
+          </div>
+        </div>
+
+        <!-- Public Leaderboard -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🏆</div>
+            <h3 class="card-title">Public Leaderboard</h3>
+          </div>
+          <div class="card-body">
+            <p>Compare 10+ SLMs across benchmark tasks. Free access. Transparent methodology. No pay-to-play rankings.</p>
+          </div>
+        </div>
+
+        <!-- Evaluation Service -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🔬</div>
+            <h3 class="card-title">Professional Evaluation</h3>
+          </div>
+          <div class="card-body">
+            <p>Get your SLM independently evaluated. Detailed reports, energy measurement, cross-platform testing. $2.5K-$7.5K per model.</p>
+          </div>
+        </div>
+
+        <!-- Energy Measurement -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">⚡</div>
+            <h3 class="card-title">Energy Measurement</h3>
+          </div>
+          <div class="card-body">
+            <p>Standardized power consumption testing with Joulescope hardware. Joules per task, tokens per joule, cost per 1M tokens.</p>
+          </div>
+        </div>
+
+        <!-- Cross-Platform Testing -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">💻</div>
+            <h3 class="card-title">Cross-Platform Testing</h3>
+          </div>
+          <div class="card-body">
+            <p>Evaluate on Raspberry Pi 5, mid-range laptops, and browser (WebGPU). Real-world deployment scenarios.</p>
+          </div>
+        </div>
+
+        <!-- Baseline Models -->
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="product-icon">🎯</div>
+            <h3 class="card-title">Baseline Models</h3>
+          </div>
+          <div class="card-body">
+            <p>CycleCore-certified fine-tuned SLMs. SmolLM2, Qwen2.5, Llama 3.2. Compare against production-ready baselines.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CycleCore Lab - Models & Research -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">CycleCore Lab</h2>
+      <p class="text-xl text-secondary text-center mb-xl reveal">Open-source models and research</p>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--cc-space-lg); max-width: 1000px; margin: 0 auto;">
+
+        <!-- MLM-135M Model -->
+        <div class="card reveal">
+          <div style="margin-bottom: var(--cc-space-md);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--cc-space-sm);">🧠</div>
+            <h3 class="text-2xl font-bold mb-sm">Maaza MLM-135M-JSON</h3>
+            <p class="text-sm text-tertiary mb-md">CycleCore Maaza Series</p>
+          </div>
+          <p class="text-secondary mb-sm">
+            135M parameter micro language model for edge JSON extraction. Perfect on simple schemas (2-4 fields), deployable on Raspberry Pi and browsers.
+          </p>
+          <div class="flex gap-sm mb-md" style="flex-wrap: wrap; align-items: center;">
+            <span class="text-sm font-semibold text-accent">24.7% JSONExact</span>
+            <span class="text-sm text-tertiary">•</span>
+            <span class="text-sm text-tertiary">44.7% on simple schemas</span>
+          </div>
+          <p class="text-sm text-tertiary mb-sm">
+            <strong>Intended Hardware:</strong> Raspberry Pi, browsers (WebGPU), mobile devices
+          </p>
+          <div class="flex gap-sm" style="flex-wrap: wrap;">
+            <a href="https://huggingface.co/CycleCoreTechnologies/Maaza-MLM-135M-JSON-v1" class="text-sm text-accent">HuggingFace →</a>
+            <span class="text-sm text-tertiary">•</span>
+            <span class="text-sm text-tertiary">Apache 2.0</span>
+          </div>
+        </div>
+
+        <!-- SLM-360M Model -->
+        <div class="card reveal">
+          <div style="margin-bottom: var(--cc-space-md);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--cc-space-sm);">🚀</div>
+            <h3 class="text-2xl font-bold mb-sm">Maaza SLM-360M-JSON</h3>
+            <p class="text-sm text-tertiary mb-md">CycleCore Maaza Series</p>
+          </div>
+          <p class="text-secondary mb-sm">
+            360M parameter small language model for high-accuracy JSON extraction. Handles complex nested structures (8+ fields), production-ready for most use cases.
+          </p>
+          <div class="flex gap-sm mb-md" style="flex-wrap: wrap; align-items: center;">
+            <span class="text-sm font-semibold text-accent">55.1% JSONExact</span>
+            <span class="text-sm text-tertiary">•</span>
+            <span class="text-sm text-tertiary">~75% on simple schemas</span>
+          </div>
+          <p class="text-sm text-tertiary mb-sm">
+            <strong>Intended Hardware:</strong> Laptops, edge servers, mid-range devices
+          </p>
+          <div class="flex gap-sm" style="flex-wrap: wrap;">
+            <a href="https://huggingface.co/CycleCoreTechnologies/Maaza-SLM-360M-JSON-v1" class="text-sm text-accent">HuggingFace →</a>
+            <span class="text-sm text-tertiary">•</span>
+            <span class="text-sm text-tertiary">Apache 2.0</span>
+          </div>
+        </div>
+
+        <!-- Qwen 2.5-0.5B Baseline -->
+        <div class="card reveal">
+          <div style="margin-bottom: var(--cc-space-md);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--cc-space-sm);">⚡</div>
+            <h3 class="text-2xl font-bold mb-sm">Qwen 2.5-0.5B</h3>
+            <p class="text-sm text-tertiary mb-md">Baseline Model</p>
+          </div>
+          <p class="text-secondary mb-sm">
+            500M parameter general-purpose language model from Alibaba Cloud. Tested on EdgeJSON to establish baseline performance for community models.
+          </p>
+          <div class="flex gap-sm mb-md" style="flex-wrap: wrap; align-items: center;">
+            <span class="text-sm font-semibold text-accent">14.6% JSONExact</span>
+            <span class="text-sm text-tertiary">•</span>
+            <span class="text-sm text-tertiary">29.0% on simple schemas</span>
+          </div>
+          <p class="text-sm text-tertiary mb-sm">
+            <strong>Intended Hardware:</strong> General-purpose CPU/GPU (flexible deployment)
+          </p>
+          <div class="flex gap-sm" style="flex-wrap: wrap;">
+            <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B" class="text-sm text-accent">HuggingFace →</a>
+            <span class="text-sm text-tertiary">•</span>
+            <span class="text-sm text-tertiary">Apache 2.0</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-secondary mt-lg reveal">
+        <small>Models available on HuggingFace. See <a href="https://slmbench.com" class="text-accent">SLM-Bench.com</a> leaderboard for benchmarks and comparisons.<br>
+        <em>Note: All benchmark results reflect testing on the same hardware for fair comparison. "Intended Hardware" indicates each model's target deployment environment.</em></small>
+      </p>
+    </div>
+  </section>
+
+  <!-- Edge Pack Tasks -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Edge Pack Tasks</h2>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap: var(--cc-space-md);">
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">📋 EdgeJSON: Structured Extraction</h3>
+          <p class="text-secondary mb-sm">
+            1,000+ real-world JSON schemas of diverse complexity. Test schema compliance, field accuracy, and error handling.
+          </p>
+          <p class="text-sm text-tertiary">
+            Baselines: Qwen2.5-0.5B (evaluated), SmolLM2-1.7B, Qwen2.5-1.5B
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🎯 EdgeIntent: Classification</h3>
+          <p class="text-secondary mb-sm">
+            50-200 class taxonomy at enterprise scale. Few-shot and zero-shot variants. Measures accuracy, latency, and energy per inference.
+          </p>
+          <p class="text-sm text-tertiary">
+            Baseline: SmolLM2-360M, Qwen2.5-0.5B
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">⚙️ EdgeFuncCall: Tool Use</h3>
+          <p class="text-secondary mb-sm">
+            Multi-turn tool use scenarios. Tests parameter extraction accuracy and error recovery with realistic APIs.
+          </p>
+          <p class="text-sm text-tertiary">
+            Baseline: Llama 3.2 3B, custom distilled models
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Evaluation Service Pricing -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Evaluation Service</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-xl); max-width: 1000px; margin: 0 auto;">
+
+        <!-- Single Verification -->
+        <div class="product-card card text-center reveal">
+          <h3 class="text-3xl font-bold mb-sm">Single Verification</h3>
+          <div class="mb-lg">
+            <p class="text-5xl font-black gradient-text mb-xs">$20</p>
+            <p class="text-lg text-secondary">per model</p>
+          </div>
+          <div class="text-left mb-lg">
+            <ul style="list-style: none; padding: 0;">
+              <li class="mb-xs text-secondary">✓ <span style="display: inline-block; background: var(--cc-accent-cyan); color: var(--cc-black); padding: 2px 6px; border-radius: 4px; font-weight: var(--cc-weight-bold); font-size: var(--cc-text-sm);">CCT✓</span> Verified badge on leaderboard</li>
+              <li class="mb-xs text-secondary">✓ Official certificate (PDF)</li>
+              <li class="mb-xs text-secondary">✓ Detailed evaluation report</li>
+              <li class="mb-xs text-secondary">✓ 48-hour turnaround</li>
+            </ul>
+          </div>
+          <a href="https://slmbench.com" class="btn btn-secondary w-full">Learn More</a>
+        </div>
+
+        <!-- Verification Pack -->
+        <div class="product-card card text-center reveal" style="border-color: var(--cc-accent-cyan); box-shadow: var(--cc-glow-md);">
+          <div class="mb-sm" style="background: var(--cc-accent-cyan); color: var(--cc-black); display: inline-block; padding: 0.25rem 1rem; border-radius: var(--cc-radius-sm); font-weight: var(--cc-weight-bold);">
+            BEST VALUE
+          </div>
+          <h3 class="text-3xl font-bold mb-sm">Verification Pack</h3>
+          <div class="mb-lg">
+            <p class="text-5xl font-black gradient-text mb-xs">$79</p>
+            <p class="text-lg text-secondary">5 models (21% savings)</p>
+          </div>
+          <div class="text-left mb-lg">
+            <ul style="list-style: none; padding: 0;">
+              <li class="mb-xs text-secondary">✓ Everything in Single × 5</li>
+              <li class="mb-xs text-secondary">✓ Multi-model comparison report</li>
+              <li class="mb-xs text-secondary">✓ Priority queue</li>
+              <li class="mb-xs text-secondary">✓ Bulk certificate download</li>
+              <li class="text-secondary">✓ Only $15.80/model</li>
+            </ul>
+          </div>
+          <a href="https://slmbench.com" class="btn btn-primary w-full">Get Started</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="product-card card text-center reveal">
+          <h3 class="text-3xl font-bold mb-sm">Enterprise</h3>
+          <div class="mb-lg">
+            <p class="text-5xl font-black gradient-text mb-xs">$499</p>
+            <p class="text-lg text-secondary">per month</p>
+          </div>
+          <div class="text-left mb-lg">
+            <ul style="list-style: none; padding: 0;">
+              <li class="mb-xs text-secondary">✓ Unlimited verifications</li>
+              <li class="mb-xs text-secondary">✓ API access (automated evaluation)</li>
+              <li class="mb-xs text-secondary">✓ Private leaderboard</li>
+              <li class="mb-xs text-secondary">✓ Priority support (24hr response)</li>
+              <li class="text-secondary">✓ Custom benchmarks (1/quarter)</li>
+            </ul>
+          </div>
+          <a href="mailto:hi@cyclecore.ai?subject=SLM-Bench%20Enterprise%20Inquiry" class="btn btn-secondary w-full">Contact Sales</a>
+        </div>
+
+      </div>
+
+      <p class="text-center text-secondary mt-xl reveal">
+        <small>Independent evaluation. Transparent methodology. No pay-to-play rankings.</small>
+      </p>
+    </div>
+  </section>
+
+  <!-- Who Should Use SLM-Bench -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Who Uses SLM-Bench?</h2>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap: var(--cc-space-md);">
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🔬 SLM Developers</h3>
+          <p class="text-secondary">
+            Validate your model's production readiness. Get independent evaluation on practical tasks. Benchmark against leading SLMs.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🏢 Enterprises</h3>
+          <p class="text-secondary">
+            Make informed SLM procurement decisions. Compare models on tasks that matter for your deployment. Verify vendor claims.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🔧 Hardware Vendors</h3>
+          <p class="text-secondary">
+            Showcase your platform's AI capabilities. Get independent validation of performance and energy efficiency.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="text-2xl font-bold mb-sm">🎓 Researchers</h3>
+          <p class="text-secondary">
+            Access open-source benchmark suite. Reproduce results. Contribute to edge AI evaluation methodology.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency Commitment -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <div class="card reveal" style="background: var(--cc-black); border-color: var(--cc-terminal-green); text-align: center;">
+        <h3 class="text-3xl font-bold mb-md gradient-text">Independent. Rigorous. Transparent.</h3>
+        <p class="text-xl text-secondary leading-relaxed mb-md">
+          We publish our methodology. We don't accept payment for rankings. We open-source our benchmark suite.
+        </p>
+        <p class="text-lg text-secondary">
+          Evaluation-as-a-Service, not pay-to-play.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container max-w-lg">
+      <div class="card reveal" style="background: var(--cc-black); border-color: var(--cc-accent-cyan); text-align: center;">
+        <h3 class="text-4xl font-bold mb-md gradient-text">Ready to Benchmark Your SLM?</h3>
+        <p class="text-xl text-secondary mb-lg">
+          Visit SLM-Bench.com to view the leaderboard, explore benchmarks, and request professional evaluation.
+        </p>
+        <a href="https://slmbench.com" class="btn btn-primary btn-large">Visit SLM-Bench.com →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container text-center">
+      <h2 class="text-4xl font-black mb-md reveal">Questions About SLM-Bench?</h2>
+      <p class="text-xl text-secondary mb-lg max-w-lg" style="margin-left: auto; margin-right: auto;">
+        Want to learn more about our evaluation service or benchmark methodology? Get in touch.
+      </p>
+      <div class="flex justify-center gap-md flex-wrap">
+        <a href="mailto:hi@cyclecore.ai?subject=SLM-Bench Inquiry" class="btn btn-primary btn-large">Email Us</a>
+        <a href="https://slmbench.com" class="btn btn-secondary btn-large">Visit SLM-Bench.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Privacy-first AI tools you can trust.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="https://slmbench.com" class="footer-link">SLM-Bench</a>
+            <a href="https://mcpbodega.com" class="footer-link">MCPBodega</a>
+            <a href="/cyclesum" class="footer-link">CycleSum Lite</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/terminal.html" class="footer-link">Terminal</a>
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CycleCore Technologies LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -304,17 +304,18 @@ Centralized MCP server management for dev teams
 Pricing: Free tier available
 Visit: mcpbodega.com`,
 
-    secretsage: `<span class="text-primary font-bold">SecretSage - Privacy-First Credential Management</span>
+    secretsage: `<span class="text-primary font-bold">SecretSage v0.4.6 - Privacy-First Credential Management</span>
 
 Terminal-based credential wizard for AI agents
   • Age encryption at rest
   • Grant & revoke credentials on demand
   • Zero data collection (100% local)
   • Works with Claude Code, Cursor, Windsurf
+  • New: get --raw for scripting
+  • New: Access audit logging
 
 Install: npm install -g @cyclecore/secretsage
-License: Apache 2.0
-GitHub: github.com/CycleCore-Technologies/secretsage`,
+License: Apache 2.0`,
 
     slmbench: `<span class="text-primary font-bold">SLMBench - Edge AI Benchmarking</span>
 

@@ -192,6 +192,7 @@
             <li><a href="#quickstart">Quick Start</a></li>
             <li><a href="#authentication">Authentication</a></li>
             <li><a href="#endpoints">Endpoints</a></li>
+            <li><a href="#strictness">Strictness</a></li>
             <li><a href="#errors">Errors</a></li>
             <li><a href="#rate-limits">Rate Limits</a></li>
             <li><a href="#sdks">SDKs</a></li>
@@ -285,6 +286,11 @@ print(result['safe'])  # True</code></pre>
                   <td>string</td>
                   <td>Text to classify</td>
                 </tr>
+                <tr>
+                  <td><code>strictness</code> <span class="badge badge-optional">optional</span></td>
+                  <td>string</td>
+                  <td><code>strict</code>, <code>balanced</code> (default), or <code>permissive</code>. Paid tiers only.</td>
+                </tr>
               </table>
 
               <h3>Response</h3>
@@ -293,6 +299,8 @@ print(result['safe'])  # True</code></pre>
                 <tr><td><code>safe</code></td><td>boolean</td><td><code>true</code> if content is safe</td></tr>
                 <tr><td><code>confidence</code></td><td>float</td><td>Confidence score (0-1)</td></tr>
                 <tr><td><code>categories</code></td><td>object</td><td>Scores for each category</td></tr>
+                <tr><td><code>lang</code></td><td>string</td><td>Detected language (ISO 639-1 code)</td></tr>
+                <tr><td><code>strictness</code></td><td>string</td><td>Strictness level used</td></tr>
                 <tr><td><code>latency_us</code></td><td>float</td><td>Processing time in microseconds</td></tr>
               </table>
 
@@ -307,6 +315,8 @@ print(result['safe'])  # True</code></pre>
     "nsfw": 0.12,
     "harassment": 0.65
   },
+  "lang": "en",
+  "strictness": "balanced",
   "latency_us": 1456.7
 }</code></pre>
             </div>
@@ -329,13 +339,18 @@ print(result['safe'])  # True</code></pre>
                   <td>array</td>
                   <td>Array of texts to classify</td>
                 </tr>
+                <tr>
+                  <td><code>strictness</code> <span class="badge badge-optional">optional</span></td>
+                  <td>string</td>
+                  <td><code>strict</code>, <code>balanced</code> (default), or <code>permissive</code>. Paid tiers only.</td>
+                </tr>
               </table>
 
               <h3>Response</h3>
               <pre><code>{
   "results": [
-    { "toxic": 0.08, "spam": 0.02, "hate": 0.04, "nsfw": 0.01, "harassment": 0.09 },
-    { "toxic": 0.91, "spam": 0.05, "hate": 0.34, "nsfw": 0.15, "harassment": 0.78 }
+    { "safe": true, "categories": { "toxic": 0.08, "spam": 0.02 }, "lang": "en" },
+    { "safe": false, "categories": { "toxic": 0.91, "hate": 0.34 }, "lang": "en" }
   ],
   "total_latency_us": 2345.6,
   "items_per_second": 852.4
@@ -351,7 +366,7 @@ print(result['safe'])  # True</code></pre>
             </div>
             <div class="endpoint-body">
               <p>Health check endpoint. No authentication required.</p>
-              <pre><code>{ "status": "ok", "gates_loaded": 10 }</code></pre>
+              <pre><code>{ "status": "ok", "gates_loaded": 25 }</code></pre>
             </div>
           </div>
         </section>
@@ -385,6 +400,25 @@ print(result['safe'])  # True</code></pre>
             <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
           </table>
           <p>Batch requests count as 1 request regardless of batch size.</p>
+        </section>
+
+        <!-- Strictness -->
+        <section id="strictness" class="docs-section">
+          <h2>Strictness Presets</h2>
+          <p>Paid tiers can adjust moderation sensitivity using the <code>strictness</code> parameter.</p>
+          <table>
+            <tr><th>Preset</th><th>Behavior</th><th>Use Case</th></tr>
+            <tr><td><code>strict</code></td><td>Lower threshold, more flags</td><td>Child safety, regulated industries</td></tr>
+            <tr><td><code>balanced</code></td><td>Default behavior</td><td>General use</td></tr>
+            <tr><td><code>permissive</code></td><td>Higher threshold, fewer flags</td><td>Creative writing, adult platforms</td></tr>
+          </table>
+          <p>Free tier always uses <code>balanced</code>. Requests with other values will fallback to <code>balanced</code>.</p>
+
+          <h3>Example</h3>
+          <pre><code>curl -X POST https://sg-api.cyclecore.ai/v1/classify \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Your content here", "strictness": "strict"}'</code></pre>
         </section>
 
         <!-- SDKs -->

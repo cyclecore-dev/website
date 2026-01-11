@@ -150,10 +150,10 @@
         <div class="card reveal">
           <div class="card-header">
             <div class="product-icon">🚦</div>
-            <h3 class="card-title">5 Detection Categories</h3>
+            <h3 class="card-title">10 Gates · 4 Languages</h3>
           </div>
           <div class="card-body">
-            <p>Toxic, spam, NSFW, hate speech, and harassment. Run one category or all five—you choose.</p>
+            <p>Toxic, spam, NSFW, hate, harassment in English, Spanish, Portuguese, and French. Run one gate or all ten.</p>
           </div>
         </div>
 
@@ -253,6 +253,22 @@
       <h2 class="text-4xl font-black mb-lg text-center reveal">How It Works</h2>
 
       <div class="card reveal">
+        <h3 class="text-2xl font-bold mb-md">Available Gates</h3>
+        <div class="terminal mb-md">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span class="terminal-title">gates</span>
+          </div>
+          <div class="terminal-body" style="white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.8;">English:    toxic, spam, nsfw, hate, harassment
+Spanish:    toxic_es, spam_es, hate_es
+Portuguese: toxic_pt
+French:     toxic_fr</div>
+        </div>
+
         <h3 class="text-2xl font-bold mb-md">Simple API Call</h3>
         <div class="terminal mb-lg">
           <div class="terminal-header">
@@ -266,7 +282,7 @@
           <div class="terminal-body" style="white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.6;">curl -X POST https://sg-api.cyclecore.ai/v1/classify \
   -H "Content-Type: application/json" \
   -H "X-API-Key: YOUR_API_KEY" \
-  -d '{"text": "your content here", "gates": ["toxic"]}'</div>
+  -d '{"text": "your content here", "gates": ["toxic", "spam"]}'</div>
         </div>
 
         <h3 class="text-2xl font-bold mb-md">Instant Response</h3>
@@ -316,7 +332,7 @@
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
               <li class="mb-xs text-secondary">✓ 1,000 requests/day</li>
-              <li class="mb-xs text-secondary">✓ All 5 categories</li>
+              <li class="mb-xs text-secondary">✓ All 10 gates · 4 languages</li>
               <li class="mb-xs text-secondary">✓ SSL + DDoS protection</li>
               <li class="text-secondary">✓ No credit card</li>
             </ul>
@@ -337,12 +353,12 @@
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
               <li class="mb-xs text-secondary">✓ 100,000 requests/day</li>
-              <li class="mb-xs text-secondary">✓ All 5 categories</li>
+              <li class="mb-xs text-secondary">✓ All 10 gates · 4 languages</li>
               <li class="mb-xs text-secondary">✓ Email support</li>
               <li class="text-secondary">✓ Usage dashboard</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-primary w-full" style="white-space: nowrap;">Subscribe</a>
+          <button onclick="checkout('starter')" class="btn btn-primary w-full" style="white-space: nowrap;">Subscribe</button>
         </div>
 
         <!-- Pro Tier -->
@@ -356,12 +372,12 @@
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
               <li class="mb-xs text-secondary">✓ 500,000 requests/day</li>
-              <li class="mb-xs text-secondary">✓ All 5 categories</li>
+              <li class="mb-xs text-secondary">✓ All 10 gates · 4 languages</li>
               <li class="mb-xs text-secondary">✓ Email support</li>
               <li class="text-secondary">✓ Priority response</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-secondary w-full" style="white-space: nowrap;">Subscribe</a>
+          <button onclick="checkout('pro')" class="btn btn-secondary w-full" style="white-space: nowrap;">Subscribe</button>
         </div>
 
         <!-- Enterprise Tier -->
@@ -466,10 +482,41 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 CycleCore Technologies LLC. All rights reserved.</p>
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <script>
+    async function checkout(tier) {
+      const btn = event.target;
+      const originalText = btn.textContent;
+      btn.textContent = 'Loading...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://sg-api.cyclecore.ai/api/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tier: tier,
+            success_url: window.location.origin + '/safetygates/success.html',
+            cancel_url: window.location.href
+          })
+        });
+
+        if (!res.ok) {
+          throw new Error('Checkout failed');
+        }
+
+        const data = await res.json();
+        window.location.href = data.checkout_url;
+      } catch (err) {
+        alert('Error starting checkout. Please try again.');
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    }
+  </script>
 </body>
 </html>

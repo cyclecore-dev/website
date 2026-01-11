@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SafetyGates API Documentation - Content moderation API for developers">
+  <title>SafetyGates API Documentation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --accent: #3b82f6;
+      --accent-green: #22c55e;
+      --border: #334155;
+      --code-bg: #0d1117;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .header-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .header-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .header-links a:hover { text-decoration: underline; }
+
+    /* Navigation */
+    .nav {
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1rem; }
+
+    /* Code blocks */
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--code-bg);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .code-label {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Endpoint */
+    .endpoint {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      overflow: hidden;
+    }
+
+    .endpoint-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .method {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .method-post { background: #22c55e; color: #000; }
+    .method-get { background: #3b82f6; color: #fff; }
+
+    .endpoint-path {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .endpoint-body { padding: 1rem; }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .badge-required { background: #ef4444; color: #fff; }
+    .badge-optional { background: #6b7280; color: #fff; }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>SafetyGates API</h1>
+      <p>Content moderation API with sub-millisecond response times</p>
+      <div class="header-links">
+        <a href="https://sg-api.cyclecore.ai/signup">Get API Key</a>
+        <a href="https://sg-api.cyclecore.ai/docs">OpenAPI Spec</a>
+        <a href="https://www.npmjs.com/package/safetygates">npm Package</a>
+        <a href="/safetygates/">Back to SafetyGates</a>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul>
+        <li><a href="#quickstart">Quick Start</a></li>
+        <li><a href="#authentication">Authentication</a></li>
+        <li><a href="#endpoints">Endpoints</a></li>
+        <li><a href="#gates">Gates</a></li>
+        <li><a href="#errors">Errors</a></li>
+        <li><a href="#rate-limits">Rate Limits</a></li>
+        <li><a href="#sdks">SDKs</a></li>
+      </ul>
+    </nav>
+
+    <!-- Quick Start -->
+    <section id="quickstart">
+      <h2>Quick Start</h2>
+
+      <p>Get your free API key at <a href="https://sg-api.cyclecore.ai/signup" style="color: var(--accent)">sg-api.cyclecore.ai/signup</a></p>
+
+      <h3>cURL</h3>
+      <pre><code>curl -X POST https://sg-api.cyclecore.ai/v1/classify \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -d '{"text": "you are trash", "gates": ["toxic"]}'</code></pre>
+
+      <h3>Response</h3>
+      <pre><code>{
+  "results": {
+    "toxic": {
+      "label": true,
+      "confidence": 0.89
+    }
+  },
+  "latency_us": 1234.5
+}</code></pre>
+
+      <h3>Node.js</h3>
+      <pre><code>const SafetyGates = require('safetygates');
+const client = new SafetyGates('YOUR_API_KEY');
+
+const result = await client.classify('you are trash', ['toxic']);
+console.log(result.results.toxic.label); // true</code></pre>
+
+      <h3>Python</h3>
+      <pre><code>import requests
+
+response = requests.post(
+    'https://sg-api.cyclecore.ai/v1/classify',
+    headers={'X-API-Key': 'YOUR_API_KEY'},
+    json={'text': 'you are trash', 'gates': ['toxic']}
+)
+print(response.json()['results']['toxic']['label'])  # True</code></pre>
+    </section>
+
+    <!-- Authentication -->
+    <section id="authentication">
+      <h2>Authentication</h2>
+
+      <p>Include your API key in the <code>X-API-Key</code> header:</p>
+
+      <pre><code>X-API-Key: sg_live_xxxxxxxxxxxxx</code></pre>
+
+      <p>Or use Bearer token format:</p>
+
+      <pre><code>Authorization: Bearer sg_live_xxxxxxxxxxxxx</code></pre>
+
+      <div class="card">
+        <div class="card-title">Demo Key</div>
+        <p style="margin:0; color: var(--text-secondary)">Use <code>demo</code> as your API key to test without signing up. Limited to 100 requests/day.</p>
+      </div>
+    </section>
+
+    <!-- Endpoints -->
+    <section id="endpoints">
+      <h2>Endpoints</h2>
+
+      <p>Base URL: <code>https://sg-api.cyclecore.ai</code></p>
+
+      <!-- Classify -->
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="method method-post">POST</span>
+          <span class="endpoint-path">/v1/classify</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Classify a single text against one or more gates.</p>
+
+          <h3>Request Body</h3>
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>text</code> <span class="badge badge-required">required</span></td>
+              <td>string</td>
+              <td>Text to classify</td>
+            </tr>
+            <tr>
+              <td><code>gates</code> <span class="badge badge-optional">optional</span></td>
+              <td>array</td>
+              <td>Gates to check (default: <code>["toxic"]</code>)</td>
+            </tr>
+          </table>
+
+          <h3>Response</h3>
+          <pre><code>{
+  "results": {
+    "toxic": { "label": true, "confidence": 0.89 },
+    "spam": { "label": false, "confidence": 0.12 }
+  },
+  "latency_us": 1456.7
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Batch Classify -->
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="method method-post">POST</span>
+          <span class="endpoint-path">/v1/classify/batch</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Classify multiple texts in a single request (up to 10,000).</p>
+
+          <h3>Request Body</h3>
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>texts</code> <span class="badge badge-required">required</span></td>
+              <td>array</td>
+              <td>Array of texts to classify</td>
+            </tr>
+            <tr>
+              <td><code>gates</code> <span class="badge badge-optional">optional</span></td>
+              <td>array</td>
+              <td>Gates to check (default: <code>["toxic"]</code>)</td>
+            </tr>
+          </table>
+
+          <h3>Response</h3>
+          <pre><code>{
+  "results": [
+    { "toxic": { "label": false, "confidence": 0.1 } },
+    { "toxic": { "label": true, "confidence": 0.94 } }
+  ],
+  "total_latency_us": 2345.6,
+  "items_per_second": 852.4
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- List Gates -->
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="method method-get">GET</span>
+          <span class="endpoint-path">/v1/gates</span>
+        </div>
+        <div class="endpoint-body">
+          <p>List all available classification gates.</p>
+        </div>
+      </div>
+
+      <!-- Health -->
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="method method-get">GET</span>
+          <span class="endpoint-path">/health</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Health check endpoint. No authentication required.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gates -->
+    <section id="gates">
+      <h2>Available Gates</h2>
+
+      <table>
+        <tr>
+          <th>Gate ID</th>
+          <th>Language</th>
+          <th>Description</th>
+        </tr>
+        <tr><td><code>toxic</code></td><td>English</td><td>Toxic or abusive content</td></tr>
+        <tr><td><code>spam</code></td><td>English</td><td>Spam or promotional content</td></tr>
+        <tr><td><code>hate</code></td><td>English</td><td>Hate speech</td></tr>
+        <tr><td><code>nsfw</code></td><td>English</td><td>Adult/NSFW content</td></tr>
+        <tr><td><code>harassment</code></td><td>English</td><td>Harassment or bullying</td></tr>
+        <tr><td><code>toxic_es</code></td><td>Spanish</td><td>Toxic content</td></tr>
+        <tr><td><code>spam_es</code></td><td>Spanish</td><td>Spam content</td></tr>
+        <tr><td><code>hate_es</code></td><td>Spanish</td><td>Hate speech</td></tr>
+        <tr><td><code>toxic_pt</code></td><td>Portuguese</td><td>Toxic content</td></tr>
+        <tr><td><code>toxic_fr</code></td><td>French</td><td>Toxic content</td></tr>
+      </table>
+    </section>
+
+    <!-- Errors -->
+    <section id="errors">
+      <h2>Error Codes</h2>
+
+      <table>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        <tr><td>400</td><td>Bad request - Invalid parameters or unknown gate</td></tr>
+        <tr><td>401</td><td>Unauthorized - Missing or invalid API key</td></tr>
+        <tr><td>429</td><td>Rate limit exceeded</td></tr>
+        <tr><td>500</td><td>Internal server error</td></tr>
+        <tr><td>503</td><td>Service unavailable - Gates not loaded</td></tr>
+      </table>
+
+      <h3>Error Response</h3>
+      <pre><code>{
+  "detail": "Unknown gates: ['invalid']. Available: ['toxic', 'spam', ...]"
+}</code></pre>
+    </section>
+
+    <!-- Rate Limits -->
+    <section id="rate-limits">
+      <h2>Rate Limits</h2>
+
+      <table>
+        <tr>
+          <th>Tier</th>
+          <th>Price</th>
+          <th>Requests/Day</th>
+        </tr>
+        <tr><td>Free</td><td>$0</td><td>1,000</td></tr>
+        <tr><td>Starter</td><td>$19/mo</td><td>100,000</td></tr>
+        <tr><td>Pro</td><td>$49/mo</td><td>500,000</td></tr>
+        <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
+      </table>
+
+      <p>Batch requests count as 1 request regardless of batch size.</p>
+    </section>
+
+    <!-- SDKs -->
+    <section id="sdks">
+      <h2>SDKs & Examples</h2>
+
+      <div class="card">
+        <div class="card-title">Node.js / npm</div>
+        <pre style="margin:0.5rem 0 0"><code>npm install safetygates</code></pre>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Python (coming soon)</div>
+        <pre style="margin:0.5rem 0 0"><code>pip install safetygates</code></pre>
+      </div>
+
+      <p>See example code: <a href="https://github.com/cyclecore-dev/safetygates-js" style="color: var(--accent)">GitHub</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        <a href="/safetygates/">SafetyGates</a> by <a href="/">CycleCore Technologies</a>
+        &nbsp;|&nbsp;
+        <a href="mailto:hi@cyclecore.ai">hi@cyclecore.ai</a>
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>

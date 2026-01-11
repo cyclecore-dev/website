@@ -276,34 +276,13 @@
       </div>
     </div>
 
-    <h3>Architecture Overview</h3>
-    <table>
-      <tr>
-        <th>Component</th>
-        <th>Technology</th>
-        <th>Security Measure</th>
-      </tr>
-      <tr>
-        <td>Edge / CDN</td>
-        <td>Cloudflare</td>
-        <td>TLS termination, DDoS, WAF</td>
-      </tr>
-      <tr>
-        <td>API Gateway</td>
-        <td>Cloudflare Tunnel</td>
-        <td>No exposed ports, mTLS to origin</td>
-      </tr>
-      <tr>
-        <td>Application</td>
-        <td>FastAPI / Python</td>
-        <td>Input validation, rate limiting</td>
-      </tr>
-      <tr>
-        <td>ML Inference</td>
-        <td>scikit-learn</td>
-        <td>In-memory only, no external calls</td>
-      </tr>
-    </table>
+    <h3>Architecture Principles</h3>
+    <ul>
+      <li><strong>Defense in depth</strong> - Multiple security layers from edge to application</li>
+      <li><strong>Zero trust networking</strong> - No servers directly exposed to the internet</li>
+      <li><strong>Minimal data surface</strong> - Classification runs in-memory with no persistent storage</li>
+      <li><strong>No external calls</strong> - Inference is self-contained; your data never leaves our infrastructure</li>
+    </ul>
 
     <h2>Authentication & Access Control</h2>
 

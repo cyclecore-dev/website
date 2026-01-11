@@ -254,7 +254,6 @@
       <p>Content moderation API with sub-millisecond response times</p>
       <div class="header-links">
         <a href="https://sg-api.cyclecore.ai/signup">Get API Key</a>
-        <a href="https://sg-api.cyclecore.ai/docs">OpenAPI Spec</a>
         <a href="https://www.npmjs.com/package/safetygates">npm Package</a>
         <a href="/safetygates/">Back to SafetyGates</a>
       </div>
@@ -266,7 +265,6 @@
         <li><a href="#quickstart">Quick Start</a></li>
         <li><a href="#authentication">Authentication</a></li>
         <li><a href="#endpoints">Endpoints</a></li>
-        <li><a href="#gates">Gates</a></li>
         <li><a href="#errors">Errors</a></li>
         <li><a href="#rate-limits">Rate Limits</a></li>
         <li><a href="#sdks">SDKs</a></li>
@@ -277,31 +275,41 @@
     <section id="quickstart">
       <h2>Quick Start</h2>
 
-      <p>Get your free API key at <a href="https://sg-api.cyclecore.ai/signup" style="color: var(--accent)">sg-api.cyclecore.ai/signup</a></p>
+      <p>Send text, get a safety verdict. It's that simple.</p>
 
       <h3>cURL</h3>
       <pre><code>curl -X POST https://sg-api.cyclecore.ai/v1/classify \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: YOUR_API_KEY" \
-  -d '{"text": "you are trash", "gates": ["toxic"]}'</code></pre>
+  -H "X-API-Key: demo" \
+  -d '{"text": "Have a great day!"}'</code></pre>
 
       <h3>Response</h3>
       <pre><code>{
-  "results": {
-    "toxic": {
-      "label": true,
-      "confidence": 0.89
-    }
+  "safe": true,
+  "confidence": 0.92,
+  "categories": {
+    "toxic": 0.08,
+    "spam": 0.03,
+    "hate": 0.05,
+    "nsfw": 0.02,
+    "harassment": 0.11
   },
   "latency_us": 1234.5
 }</code></pre>
 
       <h3>Node.js</h3>
+      <pre><code>npm install safetygates</code></pre>
       <pre><code>const SafetyGates = require('safetygates');
 const client = new SafetyGates('YOUR_API_KEY');
 
-const result = await client.classify('you are trash', ['toxic']);
-console.log(result.results.toxic.label); // true</code></pre>
+const result = await client.classify('Have a great day!');
+console.log(result.safe);       // true
+console.log(result.confidence); // 0.92
+
+// Or use the convenience method
+if (await client.isSafe(userMessage)) {
+  // Allow the message
+}</code></pre>
 
       <h3>Python</h3>
       <pre><code>import requests
@@ -309,9 +317,10 @@ console.log(result.results.toxic.label); // true</code></pre>
 response = requests.post(
     'https://sg-api.cyclecore.ai/v1/classify',
     headers={'X-API-Key': 'YOUR_API_KEY'},
-    json={'text': 'you are trash', 'gates': ['toxic']}
+    json={'text': 'Have a great day!'}
 )
-print(response.json()['results']['toxic']['label'])  # True</code></pre>
+result = response.json()
+print(result['safe'])  # True</code></pre>
     </section>
 
     <!-- Authentication -->
@@ -328,7 +337,7 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
 
       <div class="card">
         <div class="card-title">Demo Key</div>
-        <p style="margin:0; color: var(--text-secondary)">Use <code>demo</code> as your API key to test without signing up. Limited to 100 requests/day.</p>
+        <p style="margin:0; color: var(--text-secondary)">Use <code>demo</code> as your API key to test without signing up. Limited to 1,000 requests/day.</p>
       </div>
     </section>
 
@@ -345,7 +354,7 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
           <span class="endpoint-path">/v1/classify</span>
         </div>
         <div class="endpoint-body">
-          <p>Classify a single text against one or more gates.</p>
+          <p>Classify text for safety. Returns a verdict with category scores.</p>
 
           <h3>Request Body</h3>
           <table>
@@ -359,18 +368,47 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
               <td>string</td>
               <td>Text to classify</td>
             </tr>
-            <tr>
-              <td><code>gates</code> <span class="badge badge-optional">optional</span></td>
-              <td>array</td>
-              <td>Gates to check (default: <code>["toxic"]</code>)</td>
-            </tr>
           </table>
 
           <h3>Response</h3>
+          <table>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>safe</code></td>
+              <td>boolean</td>
+              <td><code>true</code> if content is safe, <code>false</code> if flagged</td>
+            </tr>
+            <tr>
+              <td><code>confidence</code></td>
+              <td>float</td>
+              <td>Confidence score (0-1)</td>
+            </tr>
+            <tr>
+              <td><code>categories</code></td>
+              <td>object</td>
+              <td>Scores for each category (toxic, spam, hate, nsfw, harassment)</td>
+            </tr>
+            <tr>
+              <td><code>latency_us</code></td>
+              <td>float</td>
+              <td>Processing time in microseconds</td>
+            </tr>
+          </table>
+
+          <h3>Example</h3>
           <pre><code>{
-  "results": {
-    "toxic": { "label": true, "confidence": 0.89 },
-    "spam": { "label": false, "confidence": 0.12 }
+  "safe": false,
+  "confidence": 0.87,
+  "categories": {
+    "toxic": 0.87,
+    "spam": 0.05,
+    "hate": 0.23,
+    "nsfw": 0.12,
+    "harassment": 0.65
   },
   "latency_us": 1456.7
 }</code></pre>
@@ -398,33 +436,17 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
               <td>array</td>
               <td>Array of texts to classify</td>
             </tr>
-            <tr>
-              <td><code>gates</code> <span class="badge badge-optional">optional</span></td>
-              <td>array</td>
-              <td>Gates to check (default: <code>["toxic"]</code>)</td>
-            </tr>
           </table>
 
           <h3>Response</h3>
           <pre><code>{
   "results": [
-    { "toxic": { "label": false, "confidence": 0.1 } },
-    { "toxic": { "label": true, "confidence": 0.94 } }
+    { "toxic": 0.08, "spam": 0.02, "hate": 0.04, "nsfw": 0.01, "harassment": 0.09 },
+    { "toxic": 0.91, "spam": 0.05, "hate": 0.34, "nsfw": 0.15, "harassment": 0.78 }
   ],
   "total_latency_us": 2345.6,
   "items_per_second": 852.4
 }</code></pre>
-        </div>
-      </div>
-
-      <!-- List Gates -->
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="method method-get">GET</span>
-          <span class="endpoint-path">/v1/gates</span>
-        </div>
-        <div class="endpoint-body">
-          <p>List all available classification gates.</p>
         </div>
       </div>
 
@@ -436,31 +458,9 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
         </div>
         <div class="endpoint-body">
           <p>Health check endpoint. No authentication required.</p>
+          <pre><code>{ "status": "ok", "gates_loaded": 10 }</code></pre>
         </div>
       </div>
-    </section>
-
-    <!-- Gates -->
-    <section id="gates">
-      <h2>Available Gates</h2>
-
-      <table>
-        <tr>
-          <th>Gate ID</th>
-          <th>Language</th>
-          <th>Description</th>
-        </tr>
-        <tr><td><code>toxic</code></td><td>English</td><td>Toxic or abusive content</td></tr>
-        <tr><td><code>spam</code></td><td>English</td><td>Spam or promotional content</td></tr>
-        <tr><td><code>hate</code></td><td>English</td><td>Hate speech</td></tr>
-        <tr><td><code>nsfw</code></td><td>English</td><td>Adult/NSFW content</td></tr>
-        <tr><td><code>harassment</code></td><td>English</td><td>Harassment or bullying</td></tr>
-        <tr><td><code>toxic_es</code></td><td>Spanish</td><td>Toxic content</td></tr>
-        <tr><td><code>spam_es</code></td><td>Spanish</td><td>Spam content</td></tr>
-        <tr><td><code>hate_es</code></td><td>Spanish</td><td>Hate speech</td></tr>
-        <tr><td><code>toxic_pt</code></td><td>Portuguese</td><td>Toxic content</td></tr>
-        <tr><td><code>toxic_fr</code></td><td>French</td><td>Toxic content</td></tr>
-      </table>
     </section>
 
     <!-- Errors -->
@@ -472,16 +472,16 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
           <th>Code</th>
           <th>Description</th>
         </tr>
-        <tr><td>400</td><td>Bad request - Invalid parameters or unknown gate</td></tr>
+        <tr><td>400</td><td>Bad request - Invalid parameters</td></tr>
         <tr><td>401</td><td>Unauthorized - Missing or invalid API key</td></tr>
         <tr><td>429</td><td>Rate limit exceeded</td></tr>
         <tr><td>500</td><td>Internal server error</td></tr>
-        <tr><td>503</td><td>Service unavailable - Gates not loaded</td></tr>
+        <tr><td>503</td><td>Service unavailable</td></tr>
       </table>
 
       <h3>Error Response</h3>
       <pre><code>{
-  "detail": "Unknown gates: ['invalid']. Available: ['toxic', 'spam', ...]"
+  "detail": "API key required. Use X-API-Key header or Authorization: Bearer."
 }</code></pre>
     </section>
 
@@ -493,11 +493,11 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
         <tr>
           <th>Tier</th>
           <th>Price</th>
-          <th>Requests/Day</th>
+          <th>Requests/Month</th>
         </tr>
         <tr><td>Free</td><td>$0</td><td>1,000</td></tr>
         <tr><td>Starter</td><td>$19/mo</td><td>100,000</td></tr>
-        <tr><td>Pro</td><td>$49/mo</td><td>500,000</td></tr>
+        <tr><td>Pro</td><td>$49/mo</td><td>1,000,000</td></tr>
         <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
       </table>
 
@@ -506,10 +506,10 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
 
     <!-- SDKs -->
     <section id="sdks">
-      <h2>SDKs & Examples</h2>
+      <h2>SDKs</h2>
 
       <div class="card">
-        <div class="card-title">Node.js / npm</div>
+        <div class="card-title">Node.js</div>
         <pre style="margin:0.5rem 0 0"><code>npm install safetygates</code></pre>
       </div>
 
@@ -518,7 +518,28 @@ print(response.json()['results']['toxic']['label'])  # True</code></pre>
         <pre style="margin:0.5rem 0 0"><code>pip install safetygates</code></pre>
       </div>
 
-      <p>See example code: <a href="https://github.com/cyclecore-dev/safetygates-js" style="color: var(--accent)">GitHub</a></p>
+      <h3>SDK Example</h3>
+      <pre><code>const SafetyGates = require('safetygates');
+const client = new SafetyGates('YOUR_API_KEY');
+
+// Single classification
+const result = await client.classify('Check this message');
+if (!result.safe) {
+  console.log('Blocked:', result.categories);
+}
+
+// Batch classification
+const batch = await client.classifyBatch([
+  'Message 1',
+  'Message 2',
+  'Message 3'
+]);
+console.log(`Processed ${batch.results.length} messages`);
+
+// Quick safety check
+if (await client.isSafe(userInput)) {
+  // Process the message
+}</code></pre>
     </section>
 
     <!-- Footer -->

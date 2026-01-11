@@ -1,0 +1,11 @@
+# CycleCore Technologies Security Contact
+# https://securitytxt.org/
+
+Contact: mailto:security@cyclecore.ai
+Expires: 2027-01-11T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://cyclecore.ai/.well-known/security.txt
+Policy: https://cyclecore.ai/safetygates/trust.html
+
+# We appreciate responsible disclosure of security vulnerabilities.
+# Good-faith security research will not result in legal action.

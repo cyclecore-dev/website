@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SafetyGates Security & Trust Center - Learn about our security practices and data handling">
+  <title>Trust Center - SafetyGates</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --accent: #3b82f6;
+      --green: #10b981;
+      --border: #334155;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-secondary);
+    }
+
+    header a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p, ul, ol {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight {
+      background: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .highlight-green {
+      background: var(--bg-card);
+      border-left: 3px solid var(--green);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--green);
+    }
+
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--accent);
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .security-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .security-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .security-card p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .check-icon {
+      color: var(--green);
+      margin-right: 0.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    code {
+      background: var(--bg-card);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    td {
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Trust Center</h1>
+      <p>Security practices and data handling at SafetyGates</p>
+      <p><a href="/safetygates/">Back to SafetyGates</a></p>
+    </header>
+
+    <div class="highlight-green">
+      <p style="margin:0"><strong>Summary:</strong> Your data is never stored. All traffic is encrypted. We don't train on your inputs. Enterprise DPA available on request.</p>
+    </div>
+
+    <div style="margin: 1.5rem 0;">
+      <span class="badge badge-green">Encrypted Transit</span>
+      <span class="badge badge-green">No Data Storage</span>
+      <span class="badge badge-blue">DPA Available</span>
+      <span class="badge badge-blue">GDPR Ready</span>
+    </div>
+
+    <h2>Data Handling</h2>
+
+    <h3>What We Don't Store</h3>
+    <p>SafetyGates is designed for privacy by default:</p>
+    <ul>
+      <li><span class="check-icon">&#10003;</span><strong>Input text is never stored</strong> - Processed in memory, discarded immediately after classification</li>
+      <li><span class="check-icon">&#10003;</span><strong>No logging of content</strong> - We don't log the text you send for classification</li>
+      <li><span class="check-icon">&#10003;</span><strong>No training on your data</strong> - Your inputs are never used to train or improve our models</li>
+    </ul>
+
+    <h3>What We Do Collect</h3>
+    <p>For service operation and billing, we collect:</p>
+    <ul>
+      <li><strong>Request metadata</strong> - Timestamp, latency, text length (not content), API key identifier</li>
+      <li><strong>Usage counts</strong> - Number of API calls for billing and rate limiting</li>
+      <li><strong>Error logs</strong> - Technical errors (without input content) for debugging</li>
+    </ul>
+
+    <div class="highlight">
+      <p style="margin:0"><strong>Retention:</strong> Metadata is retained for 90 days for billing reconciliation, then deleted.</p>
+    </div>
+
+    <h2>Infrastructure Security</h2>
+
+    <div class="security-grid">
+      <div class="security-card">
+        <h4>Encryption in Transit</h4>
+        <p>All API traffic uses TLS 1.3 via Cloudflare. No unencrypted connections accepted.</p>
+      </div>
+      <div class="security-card">
+        <h4>DDoS Protection</h4>
+        <p>Cloudflare's global network provides automatic DDoS mitigation on all plans.</p>
+      </div>
+      <div class="security-card">
+        <h4>No Public IPs</h4>
+        <p>API servers are not directly internet-accessible. All traffic routes through Cloudflare Tunnel.</p>
+      </div>
+      <div class="security-card">
+        <h4>Rate Limiting</h4>
+        <p>Built-in rate limiting prevents abuse and ensures fair usage across all customers.</p>
+      </div>
+    </div>
+
+    <h3>Architecture Overview</h3>
+    <table>
+      <tr>
+        <th>Component</th>
+        <th>Technology</th>
+        <th>Security Measure</th>
+      </tr>
+      <tr>
+        <td>Edge / CDN</td>
+        <td>Cloudflare</td>
+        <td>TLS termination, DDoS, WAF</td>
+      </tr>
+      <tr>
+        <td>API Gateway</td>
+        <td>Cloudflare Tunnel</td>
+        <td>No exposed ports, mTLS to origin</td>
+      </tr>
+      <tr>
+        <td>Application</td>
+        <td>FastAPI / Python</td>
+        <td>Input validation, rate limiting</td>
+      </tr>
+      <tr>
+        <td>ML Inference</td>
+        <td>scikit-learn</td>
+        <td>In-memory only, no external calls</td>
+      </tr>
+    </table>
+
+    <h2>Authentication & Access Control</h2>
+
+    <h3>API Key Security</h3>
+    <ul>
+      <li>API keys are generated with cryptographically secure randomness</li>
+      <li>Keys are hashed before storage - we cannot retrieve your raw key</li>
+      <li>Keys can be rotated or revoked instantly via dashboard</li>
+      <li>Failed authentication attempts are logged and rate-limited</li>
+    </ul>
+
+    <h3>Response Watermarking</h3>
+    <p>Paid tier API responses include a cryptographic watermark that allows us to:</p>
+    <ul>
+      <li>Trace leaked responses back to their source</li>
+      <li>Detect unauthorized redistribution of API outputs</li>
+      <li>Support compliance investigations</li>
+    </ul>
+    <p>Watermarks do not contain your API key or any personally identifiable information.</p>
+
+    <h2>Compliance</h2>
+
+    <h3>GDPR</h3>
+    <p>SafetyGates is designed to be GDPR-compliant:</p>
+    <ul>
+      <li><strong>Data minimization</strong> - We only collect what's necessary for service operation</li>
+      <li><strong>No data retention</strong> - Input text is processed and immediately discarded</li>
+      <li><strong>DPA available</strong> - Enterprise customers can request a Data Processing Agreement</li>
+      <li><strong>Subprocessors</strong> - Our only subprocessor is Cloudflare (for CDN/security)</li>
+    </ul>
+
+    <h3>SOC 2</h3>
+    <p>We are currently pre-SOC 2. Our security practices align with SOC 2 Type II requirements, and we plan to pursue certification as the company grows.</p>
+
+    <h3>Export Controls</h3>
+    <p>SafetyGates complies with U.S. export control laws. Service is not available to embargoed countries or sanctioned entities. See our <a href="/safetygates/terms.html">Terms of Service</a> for details.</p>
+
+    <h2>Incident Response</h2>
+
+    <h3>Our Commitment</h3>
+    <ul>
+      <li><strong>Detection</strong> - Automated monitoring for anomalies and security events</li>
+      <li><strong>Response</strong> - Security incidents are triaged within 4 hours</li>
+      <li><strong>Notification</strong> - Affected customers notified within 72 hours of confirmed breach</li>
+      <li><strong>Post-mortem</strong> - Root cause analysis shared with affected parties</li>
+    </ul>
+
+    <h3>Vulnerability Disclosure</h3>
+    <p>If you discover a security vulnerability, please report it responsibly:</p>
+    <div class="highlight">
+      <p style="margin:0"><strong>Email:</strong> <a href="mailto:security@cyclecore.ai">security@cyclecore.ai</a><br>
+      <strong>Response time:</strong> Within 48 hours<br>
+      <strong>Safe harbor:</strong> Good-faith security research will not result in legal action</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Do you store the text I send for classification?</h3>
+    <p>No. Input text is processed in memory and immediately discarded after returning the classification result. We do not log, store, or retain your content.</p>
+
+    <h3>Do you use my data to train your models?</h3>
+    <p>No. We will never use customer input data to train or improve our classification models without explicit written consent.</p>
+
+    <h3>Can I get a DPA for GDPR compliance?</h3>
+    <p>Yes. Enterprise customers can request a Data Processing Agreement. Contact <a href="mailto:legal@cyclecore.ai">legal@cyclecore.ai</a>.</p>
+
+    <h3>What happens if there's a security incident?</h3>
+    <p>We will notify affected customers within 72 hours of confirming a security incident that impacts their data, as required by GDPR and best practices.</p>
+
+    <h3>Is SafetyGates SOC 2 certified?</h3>
+    <p>Not yet. We follow SOC 2 principles and plan to pursue certification. In the meantime, we're happy to answer security questionnaires and provide documentation of our practices.</p>
+
+    <hr>
+
+    <h2>Contact</h2>
+    <p>
+      <strong>Security inquiries:</strong> <a href="mailto:security@cyclecore.ai">security@cyclecore.ai</a><br>
+      <strong>Legal/compliance:</strong> <a href="mailto:legal@cyclecore.ai">legal@cyclecore.ai</a><br>
+      <strong>General:</strong> <a href="mailto:hello@cyclecore.ai">hello@cyclecore.ai</a>
+    </p>
+
+    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 2rem;"><em>Last updated: January 11, 2026</em></p>
+
+    <footer>
+      <p>
+        <a href="/safetygates/">SafetyGates</a> by <a href="/">CycleCore Technologies</a>
+        &nbsp;|&nbsp;
+        <a href="/safetygates/docs.html">API Docs</a>
+        &nbsp;|&nbsp;
+        <a href="/safetygates/terms.html">Terms</a>
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>

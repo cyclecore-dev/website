@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <span class="text-accent">products</span>    - All CycleCore products
   <span class="text-accent">mcpbodega</span>   - MCP server management
   <span class="text-accent">secretsage</span>  - Credential management
+  <span class="text-accent">safetygates</span> - Content moderation API
   <span class="text-accent">slmbench</span>    - Edge AI benchmarking
   <span class="text-accent">cyclesum</span>    - Offline PDF summarization
   <span class="text-accent">paper</span>       - Maaza research paper details
@@ -284,6 +285,11 @@ We'd love to hear from you.`,
   Terminal-based, Age encryption, grant/revoke flow
   npm: @cyclecore/secretsage
 
+<span class="text-accent">SafetyGates</span> - Content Moderation API
+  Real-time toxic, spam, hate detection in 4 languages
+  Privacy-first, no content storage
+  Visit: cyclecore.ai/safetygates
+
 <span class="text-accent">SLMBench</span> - Edge AI Benchmarking
   Professional benchmarks for Small Language Models
   EdgeJSON benchmark, transparent rankings
@@ -338,6 +344,27 @@ Privacy-first AI summarization
 Status: Coming soon
 Pricing: $49 one-time purchase
 Join waitlist: hi@cyclecore.ai`,
+
+    safetygates: `<span class="text-primary font-bold">SafetyGates - Content Moderation API</span>
+
+Stop toxic content, spam, and hate speech in real-time
+  • <span class="text-accent">4 languages:</span> English, Spanish, Portuguese, French
+  • <span class="text-accent">5 gates:</span> Toxic, Spam, Hate, Harassment, NSFW
+  • <span class="text-accent">Privacy-first:</span> No content storage, no training on your data
+  • <span class="text-accent">Fast:</span> ~50ms latency
+
+<span class="text-terminal-green">Pricing:</span>
+  Free:    100 requests/day
+  Starter: $19/mo (50k requests)
+  Pro:     $79/mo (500k requests)
+
+<span class="text-terminal-green">Try it:</span>
+  curl -X POST https://sg-api.cyclecore.ai/v1/classify \\
+    -H "X-API-Key: demo" \\
+    -d '{"text": "hello world", "gates": ["toxic"]}'
+
+Visit: cyclecore.ai/safetygates
+Docs: cyclecore.ai/safetygates/docs`,
 
     ls: `manifesto.txt  privacy.txt  values.txt  models/`,
 

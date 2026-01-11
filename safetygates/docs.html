@@ -6,202 +6,122 @@
   <meta name="description" content="SafetyGates API Documentation - Content moderation API for developers">
   <title>SafetyGates API Documentation</title>
 
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css">
+  <link rel="stylesheet" href="/css/cyclecore-base.css">
+  <link rel="stylesheet" href="/css/cyclecore-components.css">
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0f172a;
-      --bg-card: #1e293b;
-      --text: #e2e8f0;
-      --text-secondary: #94a3b8;
-      --accent: #3b82f6;
-      --accent-green: #22c55e;
-      --border: #334155;
-      --code-bg: #0d1117;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
+    .docs-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem;
     }
-
-    /* Header */
-    .header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .header p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    .header-links {
-      margin-top: 1rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .header-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .header-links a:hover { text-decoration: underline; }
-
-    /* Navigation */
-    .nav {
-      background: var(--bg-card);
+    .docs-nav {
+      background: var(--cc-surface-elevated);
       border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 2rem;
+      padding: var(--cc-space-md);
+      margin-bottom: var(--cc-space-lg);
     }
-
-    .nav ul {
+    .docs-nav ul {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 1.5rem;
+      gap: var(--cc-space-sm) var(--cc-space-lg);
+      padding: 0;
+      margin: 0;
     }
-
-    .nav a {
-      color: var(--text-secondary);
+    .docs-nav a {
+      color: var(--cc-text-secondary);
       text-decoration: none;
       font-size: 0.9rem;
     }
-
-    .nav a:hover { color: var(--accent); }
-
-    /* Sections */
-    section {
-      margin-bottom: 3rem;
+    .docs-nav a:hover { color: var(--cc-accent); }
+    .docs-section {
+      margin-bottom: var(--cc-space-2xl);
     }
-
-    h2 {
+    .docs-section h2 {
       font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--cc-space-md);
+      padding-bottom: var(--cc-space-sm);
+      border-bottom: 1px solid var(--cc-border);
     }
-
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
-      color: var(--accent);
+    .docs-section h3 {
+      font-size: 1.1rem;
+      color: var(--cc-accent);
+      margin: var(--cc-space-lg) 0 var(--cc-space-sm);
     }
-
-    p { margin-bottom: 1rem; }
-
-    /* Code blocks */
+    .docs-section p {
+      color: var(--cc-text-secondary);
+      margin-bottom: var(--cc-space-md);
+    }
     pre {
-      background: var(--code-bg);
-      border: 1px solid var(--border);
+      background: var(--cc-surface);
+      border: 1px solid var(--cc-border);
       border-radius: 8px;
-      padding: 1rem;
+      padding: var(--cc-space-md);
       overflow-x: auto;
-      margin: 1rem 0;
+      margin: var(--cc-space-md) 0;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
       line-height: 1.5;
     }
-
     code {
       font-family: 'JetBrains Mono', monospace;
-      background: var(--code-bg);
+      background: var(--cc-surface);
       padding: 0.15rem 0.4rem;
       border-radius: 4px;
       font-size: 0.85em;
     }
-
     pre code {
       background: none;
       padding: 0;
     }
-
-    .code-label {
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.25rem;
-    }
-
-    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1rem 0;
+      margin: var(--cc-space-md) 0;
       font-size: 0.9rem;
     }
-
     th, td {
       text-align: left;
-      padding: 0.75rem;
-      border-bottom: 1px solid var(--border);
+      padding: var(--cc-space-sm);
+      border-bottom: 1px solid var(--cc-border);
     }
-
     th {
-      color: var(--text-secondary);
+      color: var(--cc-text-secondary);
       font-weight: 500;
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
-
-    /* Cards */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      margin: 1rem 0;
-    }
-
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Endpoint */
+    td { color: var(--cc-text-secondary); }
     .endpoint {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      background: var(--cc-surface-elevated);
+      border: 1px solid var(--cc-border);
       border-radius: 8px;
-      margin: 1.5rem 0;
+      margin: var(--cc-space-lg) 0;
       overflow: hidden;
     }
-
     .endpoint-header {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 1rem;
-      border-bottom: 1px solid var(--border);
+      gap: var(--cc-space-sm);
+      padding: var(--cc-space-md);
+      border-bottom: 1px solid var(--cc-border);
     }
-
     .method {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
@@ -209,18 +129,13 @@
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
     }
-
-    .method-post { background: #22c55e; color: #000; }
-    .method-get { background: #3b82f6; color: #fff; }
-
+    .method-post { background: var(--cc-accent-cyan); color: #000; }
+    .method-get { background: var(--cc-accent); color: #fff; }
     .endpoint-path {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
     }
-
-    .endpoint-body { padding: 1rem; }
-
-    /* Badge */
+    .endpoint-body { padding: var(--cc-space-md); }
     .badge {
       display: inline-block;
       font-size: 0.7rem;
@@ -228,63 +143,74 @@
       border-radius: 4px;
       font-weight: 500;
     }
-
     .badge-required { background: #ef4444; color: #fff; }
     .badge-optional { background: #6b7280; color: #fff; }
-
-    /* Footer */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      margin-top: 3rem;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- Header -->
-    <header class="header">
-      <h1>SafetyGates API</h1>
-      <p>Content moderation API with sub-millisecond response times</p>
-      <div class="header-links">
-        <a href="https://sg-api.cyclecore.ai/signup">Get API Key</a>
-        <a href="https://www.npmjs.com/package/safetygates">npm Package</a>
-        <a href="/safetygates/">Back to SafetyGates</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="navbar-links">
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/terminal.html" class="navbar-link">Terminal</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/research.html" class="navbar-link">Research</a>
+        <a href="/#products" class="navbar-link">Products</a>
+        <a href="#contact" class="navbar-link">Contact</a>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <ul>
-        <li><a href="#quickstart">Quick Start</a></li>
-        <li><a href="#authentication">Authentication</a></li>
-        <li><a href="#endpoints">Endpoints</a></li>
-        <li><a href="#errors">Errors</a></li>
-        <li><a href="#rate-limits">Rate Limits</a></li>
-        <li><a href="#sdks">SDKs</a></li>
-      </ul>
-    </nav>
+  <!-- Content -->
+  <section class="section" style="padding-top: var(--cc-space-2xl);">
+    <div class="container">
+      <div class="docs-container">
 
-    <!-- Quick Start -->
-    <section id="quickstart">
-      <h2>Quick Start</h2>
+        <!-- Header -->
+        <p class="text-secondary mb-sm"><a href="/safetygates/">SafetyGates</a></p>
+        <h1 class="text-4xl font-bold mb-md">API Documentation</h1>
+        <p class="text-xl text-secondary mb-lg">Content moderation with sub-millisecond response times</p>
 
-      <p>Send text, get a safety verdict. It's that simple.</p>
+        <div style="display: flex; gap: var(--cc-space-md); flex-wrap: wrap; margin-bottom: var(--cc-space-xl);">
+          <a href="https://sg-api.cyclecore.ai/signup" class="btn btn-primary">Get API Key</a>
+          <a href="https://www.npmjs.com/package/safetygates" class="btn btn-secondary">npm Package</a>
+        </div>
 
-      <h3>cURL</h3>
-      <pre><code>curl -X POST https://sg-api.cyclecore.ai/v1/classify \
+        <!-- Navigation -->
+        <nav class="docs-nav">
+          <ul>
+            <li><a href="#quickstart">Quick Start</a></li>
+            <li><a href="#authentication">Authentication</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
+            <li><a href="#errors">Errors</a></li>
+            <li><a href="#rate-limits">Rate Limits</a></li>
+            <li><a href="#sdks">SDKs</a></li>
+          </ul>
+        </nav>
+
+        <!-- Quick Start -->
+        <section id="quickstart" class="docs-section">
+          <h2>Quick Start</h2>
+          <p>Send text, get a safety verdict. It's that simple.</p>
+
+          <h3>cURL</h3>
+          <pre><code>curl -X POST https://sg-api.cyclecore.ai/v1/classify \
   -H "Content-Type: application/json" \
   -H "X-API-Key: demo" \
   -d '{"text": "Have a great day!"}'</code></pre>
 
-      <h3>Response</h3>
-      <pre><code>{
+          <h3>Response</h3>
+          <pre><code>{
   "safe": true,
   "confidence": 0.92,
   "categories": {
@@ -297,9 +223,9 @@
   "latency_us": 1234.5
 }</code></pre>
 
-      <h3>Node.js</h3>
-      <pre><code>npm install safetygates</code></pre>
-      <pre><code>const SafetyGates = require('safetygates');
+          <h3>Node.js</h3>
+          <pre><code>npm install safetygates</code></pre>
+          <pre><code>const SafetyGates = require('safetygates');
 const client = new SafetyGates('YOUR_API_KEY');
 
 const result = await client.classify('Have a great day!');
@@ -311,8 +237,8 @@ if (await client.isSafe(userMessage)) {
   // Allow the message
 }</code></pre>
 
-      <h3>Python</h3>
-      <pre><code>import requests
+          <h3>Python</h3>
+          <pre><code>import requests
 
 response = requests.post(
     'https://sg-api.cyclecore.ai/v1/classify',
@@ -321,86 +247,57 @@ response = requests.post(
 )
 result = response.json()
 print(result['safe'])  # True</code></pre>
-    </section>
+        </section>
 
-    <!-- Authentication -->
-    <section id="authentication">
-      <h2>Authentication</h2>
+        <!-- Authentication -->
+        <section id="authentication" class="docs-section">
+          <h2>Authentication</h2>
+          <p>Include your API key in the <code>X-API-Key</code> header:</p>
+          <pre><code>X-API-Key: sg_live_xxxxxxxxxxxxx</code></pre>
+          <p>Or use Bearer token format:</p>
+          <pre><code>Authorization: Bearer sg_live_xxxxxxxxxxxxx</code></pre>
 
-      <p>Include your API key in the <code>X-API-Key</code> header:</p>
+          <div class="card" style="margin-top: var(--cc-space-md);">
+            <h4 class="text-md font-semibold mb-sm">Demo Key</h4>
+            <p class="text-secondary text-sm" style="margin:0">Use <code>demo</code> as your API key to test without signing up. Limited to 1,000 requests/day.</p>
+          </div>
+        </section>
 
-      <pre><code>X-API-Key: sg_live_xxxxxxxxxxxxx</code></pre>
+        <!-- Endpoints -->
+        <section id="endpoints" class="docs-section">
+          <h2>Endpoints</h2>
+          <p>Base URL: <code>https://sg-api.cyclecore.ai</code></p>
 
-      <p>Or use Bearer token format:</p>
+          <!-- Classify -->
+          <div class="endpoint">
+            <div class="endpoint-header">
+              <span class="method method-post">POST</span>
+              <span class="endpoint-path">/v1/classify</span>
+            </div>
+            <div class="endpoint-body">
+              <p>Classify text for safety. Returns a verdict with category scores.</p>
 
-      <pre><code>Authorization: Bearer sg_live_xxxxxxxxxxxxx</code></pre>
+              <h3>Request Body</h3>
+              <table>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                <tr>
+                  <td><code>text</code> <span class="badge badge-required">required</span></td>
+                  <td>string</td>
+                  <td>Text to classify</td>
+                </tr>
+              </table>
 
-      <div class="card">
-        <div class="card-title">Demo Key</div>
-        <p style="margin:0; color: var(--text-secondary)">Use <code>demo</code> as your API key to test without signing up. Limited to 1,000 requests/day.</p>
-      </div>
-    </section>
+              <h3>Response</h3>
+              <table>
+                <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+                <tr><td><code>safe</code></td><td>boolean</td><td><code>true</code> if content is safe</td></tr>
+                <tr><td><code>confidence</code></td><td>float</td><td>Confidence score (0-1)</td></tr>
+                <tr><td><code>categories</code></td><td>object</td><td>Scores for each category</td></tr>
+                <tr><td><code>latency_us</code></td><td>float</td><td>Processing time in microseconds</td></tr>
+              </table>
 
-    <!-- Endpoints -->
-    <section id="endpoints">
-      <h2>Endpoints</h2>
-
-      <p>Base URL: <code>https://sg-api.cyclecore.ai</code></p>
-
-      <!-- Classify -->
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="method method-post">POST</span>
-          <span class="endpoint-path">/v1/classify</span>
-        </div>
-        <div class="endpoint-body">
-          <p>Classify text for safety. Returns a verdict with category scores.</p>
-
-          <h3>Request Body</h3>
-          <table>
-            <tr>
-              <th>Parameter</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td><code>text</code> <span class="badge badge-required">required</span></td>
-              <td>string</td>
-              <td>Text to classify</td>
-            </tr>
-          </table>
-
-          <h3>Response</h3>
-          <table>
-            <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td><code>safe</code></td>
-              <td>boolean</td>
-              <td><code>true</code> if content is safe, <code>false</code> if flagged</td>
-            </tr>
-            <tr>
-              <td><code>confidence</code></td>
-              <td>float</td>
-              <td>Confidence score (0-1)</td>
-            </tr>
-            <tr>
-              <td><code>categories</code></td>
-              <td>object</td>
-              <td>Scores for each category (toxic, spam, hate, nsfw, harassment)</td>
-            </tr>
-            <tr>
-              <td><code>latency_us</code></td>
-              <td>float</td>
-              <td>Processing time in microseconds</td>
-            </tr>
-          </table>
-
-          <h3>Example</h3>
-          <pre><code>{
+              <h3>Example</h3>
+              <pre><code>{
   "safe": false,
   "confidence": 0.87,
   "categories": {
@@ -412,34 +309,30 @@ print(result['safe'])  # True</code></pre>
   },
   "latency_us": 1456.7
 }</code></pre>
-        </div>
-      </div>
+            </div>
+          </div>
 
-      <!-- Batch Classify -->
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="method method-post">POST</span>
-          <span class="endpoint-path">/v1/classify/batch</span>
-        </div>
-        <div class="endpoint-body">
-          <p>Classify multiple texts in a single request (up to 10,000).</p>
+          <!-- Batch Classify -->
+          <div class="endpoint">
+            <div class="endpoint-header">
+              <span class="method method-post">POST</span>
+              <span class="endpoint-path">/v1/classify/batch</span>
+            </div>
+            <div class="endpoint-body">
+              <p>Classify multiple texts in a single request (up to 10,000).</p>
 
-          <h3>Request Body</h3>
-          <table>
-            <tr>
-              <th>Parameter</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td><code>texts</code> <span class="badge badge-required">required</span></td>
-              <td>array</td>
-              <td>Array of texts to classify</td>
-            </tr>
-          </table>
+              <h3>Request Body</h3>
+              <table>
+                <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+                <tr>
+                  <td><code>texts</code> <span class="badge badge-required">required</span></td>
+                  <td>array</td>
+                  <td>Array of texts to classify</td>
+                </tr>
+              </table>
 
-          <h3>Response</h3>
-          <pre><code>{
+              <h3>Response</h3>
+              <pre><code>{
   "results": [
     { "toxic": 0.08, "spam": 0.02, "hate": 0.04, "nsfw": 0.01, "harassment": 0.09 },
     { "toxic": 0.91, "spam": 0.05, "hate": 0.34, "nsfw": 0.15, "harassment": 0.78 }
@@ -447,79 +340,69 @@ print(result['safe'])  # True</code></pre>
   "total_latency_us": 2345.6,
   "items_per_second": 852.4
 }</code></pre>
-        </div>
-      </div>
+            </div>
+          </div>
 
-      <!-- Health -->
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="method method-get">GET</span>
-          <span class="endpoint-path">/health</span>
-        </div>
-        <div class="endpoint-body">
-          <p>Health check endpoint. No authentication required.</p>
-          <pre><code>{ "status": "ok", "gates_loaded": 10 }</code></pre>
-        </div>
-      </div>
-    </section>
+          <!-- Health -->
+          <div class="endpoint">
+            <div class="endpoint-header">
+              <span class="method method-get">GET</span>
+              <span class="endpoint-path">/health</span>
+            </div>
+            <div class="endpoint-body">
+              <p>Health check endpoint. No authentication required.</p>
+              <pre><code>{ "status": "ok", "gates_loaded": 10 }</code></pre>
+            </div>
+          </div>
+        </section>
 
-    <!-- Errors -->
-    <section id="errors">
-      <h2>Error Codes</h2>
+        <!-- Errors -->
+        <section id="errors" class="docs-section">
+          <h2>Error Codes</h2>
+          <table>
+            <tr><th>Code</th><th>Description</th></tr>
+            <tr><td>400</td><td>Bad request - Invalid parameters</td></tr>
+            <tr><td>401</td><td>Unauthorized - Missing or invalid API key</td></tr>
+            <tr><td>429</td><td>Rate limit exceeded</td></tr>
+            <tr><td>500</td><td>Internal server error</td></tr>
+            <tr><td>503</td><td>Service unavailable</td></tr>
+          </table>
 
-      <table>
-        <tr>
-          <th>Code</th>
-          <th>Description</th>
-        </tr>
-        <tr><td>400</td><td>Bad request - Invalid parameters</td></tr>
-        <tr><td>401</td><td>Unauthorized - Missing or invalid API key</td></tr>
-        <tr><td>429</td><td>Rate limit exceeded</td></tr>
-        <tr><td>500</td><td>Internal server error</td></tr>
-        <tr><td>503</td><td>Service unavailable</td></tr>
-      </table>
-
-      <h3>Error Response</h3>
-      <pre><code>{
+          <h3>Error Response</h3>
+          <pre><code>{
   "detail": "API key required. Use X-API-Key header or Authorization: Bearer."
 }</code></pre>
-    </section>
+        </section>
 
-    <!-- Rate Limits -->
-    <section id="rate-limits">
-      <h2>Rate Limits</h2>
+        <!-- Rate Limits -->
+        <section id="rate-limits" class="docs-section">
+          <h2>Rate Limits</h2>
+          <table>
+            <tr><th>Tier</th><th>Price</th><th>Requests/Month</th></tr>
+            <tr><td>Free</td><td>$0</td><td>1,000</td></tr>
+            <tr><td>Starter</td><td>$19/mo</td><td>100,000</td></tr>
+            <tr><td>Pro</td><td>$49/mo</td><td>1,000,000</td></tr>
+            <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
+          </table>
+          <p>Batch requests count as 1 request regardless of batch size.</p>
+        </section>
 
-      <table>
-        <tr>
-          <th>Tier</th>
-          <th>Price</th>
-          <th>Requests/Month</th>
-        </tr>
-        <tr><td>Free</td><td>$0</td><td>1,000</td></tr>
-        <tr><td>Starter</td><td>$19/mo</td><td>100,000</td></tr>
-        <tr><td>Pro</td><td>$49/mo</td><td>1,000,000</td></tr>
-        <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
-      </table>
+        <!-- SDKs -->
+        <section id="sdks" class="docs-section">
+          <h2>SDKs</h2>
 
-      <p>Batch requests count as 1 request regardless of batch size.</p>
-    </section>
+          <div class="card" style="margin-bottom: var(--cc-space-md);">
+            <h4 class="text-md font-semibold mb-sm">Node.js</h4>
+            <pre style="margin:0"><code>npm install safetygates</code></pre>
+          </div>
 
-    <!-- SDKs -->
-    <section id="sdks">
-      <h2>SDKs</h2>
+          <div class="card" style="margin-bottom: var(--cc-space-md);">
+            <h4 class="text-md font-semibold mb-sm">Python (coming soon)</h4>
+            <pre style="margin:0"><code>pip install safetygates</code></pre>
+          </div>
 
-      <div class="card">
-        <div class="card-title">Node.js</div>
-        <pre style="margin:0.5rem 0 0"><code>npm install safetygates</code></pre>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Python (coming soon)</div>
-        <pre style="margin:0.5rem 0 0"><code>pip install safetygates</code></pre>
-      </div>
-
-      <h3>SDK Example</h3>
-      <pre><code>const SafetyGates = require('safetygates');
+          <h3>SDK Example</h3>
+          <pre><code>const SafetyGates = require('safetygates');
 const client = new SafetyGates('YOUR_API_KEY');
 
 // Single classification
@@ -540,17 +423,44 @@ console.log(`Processed ${batch.results.length} messages`);
 if (await client.isSafe(userInput)) {
   // Process the message
 }</code></pre>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>
-        <a href="/safetygates/">SafetyGates</a> by <a href="/">CycleCore Technologies</a>
-        &nbsp;|&nbsp;
-        <a href="mailto:hi@cyclecore.ai">hi@cyclecore.ai</a>
-      </p>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Privacy-first AI tools you can trust.</p>
+        </div>
+        <div class="footer-section">
+          <h4>SafetyGates</h4>
+          <div class="footer-links">
+            <a href="/safetygates/" class="footer-link">Overview</a>
+            <a href="/safetygates/docs.html" class="footer-link">API Docs</a>
+            <a href="/safetygates/trust.html" class="footer-link">Trust Center</a>
+            <a href="/safetygates/privacy.html" class="footer-link">Privacy</a>
+            <a href="/safetygates/terms.html" class="footer-link">Terms</a>
+            <a href="https://stats.uptimerobot.com/kQ0vbI9gqw" class="footer-link" target="_blank">Status</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

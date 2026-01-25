@@ -286,7 +286,7 @@ We'd love to hear from you.`,
   npm: @cyclecore/secretsage
 
 <span class="text-accent">SafetyGates</span> - Content Moderation API
-  Real-time toxic, spam, hate detection in 4 languages
+  Real-time toxic, spam, hate detection in 5 languages
   Privacy-first, no content storage
   Visit: cyclecore.ai/safetygates
 
@@ -348,7 +348,7 @@ Join waitlist: hi@cyclecore.ai`,
     safetygates: `<span class="text-primary font-bold">SafetyGates - Content Moderation API</span>
 
 Stop toxic content, spam, and hate speech in real-time
-  • <span class="text-accent">4 languages:</span> English, Spanish, Portuguese, French
+  • <span class="text-accent">5 languages:</span> English, Spanish, Portuguese, French, German
   • <span class="text-accent">5 gates:</span> Toxic, Spam, Hate, Harassment, NSFW
   • <span class="text-accent">Privacy-first:</span> No content storage, no training on your data
   • <span class="text-accent">Fast:</span> ~50ms latency

@@ -87,10 +87,10 @@
               <span style="color: var(--cc-red);">✗</span> <strong class="text-primary">Too expensive</strong> — Costs explode at scale
             </li>
             <li class="text-secondary mb-sm">
-              <span style="color: var(--cc-red);">✗</span> <strong class="text-primary">Privacy risk</strong> — They train on your data
+              <span style="color: var(--cc-red);">✗</span> <strong class="text-primary">Text-only</strong> — No unified text + image
             </li>
             <li class="text-secondary">
-              <span style="color: var(--cc-red);">✗</span> <strong class="text-primary">Vendor lock-in</strong> — Dependent on Big Tech
+              <span style="color: var(--cc-red);">✗</span> <strong class="text-primary">Privacy risk</strong> — They train on your data
             </li>
           </ul>
         </div>
@@ -99,16 +99,16 @@
           <h3 class="text-2xl font-bold mb-md">SafetyGates</h3>
           <ul style="list-style: none; padding: 0;">
             <li class="text-secondary mb-sm">
-              <span class="text-accent">✓</span> <strong class="text-primary">Blazing fast</strong> — Built for real-time
+              <span class="text-accent">✓</span> <strong class="text-primary">Blazing fast</strong> — Millisecond inference
             </li>
             <li class="text-secondary mb-sm">
-              <span class="text-accent">✓</span> <strong class="text-primary">Affordable</strong> — Start free, scale predictably
+              <span class="text-accent">✓</span> <strong class="text-primary">Multimodal</strong> — Text + image, one API
             </li>
             <li class="text-secondary mb-sm">
               <span class="text-accent">✓</span> <strong class="text-primary">Privacy-first</strong> — We don't store your content
             </li>
             <li class="text-secondary">
-              <span class="text-accent">✓</span> <strong class="text-primary">93%+ accuracy</strong> — Reliable detection
+              <span class="text-accent">✓</span> <strong class="text-primary">Affordable</strong> — Start free, scale predictably
             </li>
           </ul>
         </div>
@@ -142,7 +142,7 @@
             <h3 class="card-title">Simple API</h3>
           </div>
           <div class="card-body">
-            <p>One endpoint. Send text, get results. Integrate in minutes with any language or framework.</p>
+            <p>Send text or images, get results. Integrate in minutes with any language or framework.</p>
           </div>
         </div>
 
@@ -210,6 +210,58 @@
           <div class="card-body">
             <p>Classify text and images together. Perfect for social posts, chat attachments, and user-generated content.</p>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Pillars Section -->
+  <section class="section" style="padding-top: var(--cc-space-lg); padding-bottom: var(--cc-space-lg);">
+    <div class="container">
+      <h2 class="text-4xl font-black mb-lg text-center reveal">What We Detect</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg); max-width: 900px; margin: 0 auto;">
+
+        <div class="card reveal" style="border-color: var(--cc-accent-cyan);">
+          <h3 class="text-2xl font-bold mb-md gradient-text">Text Gates</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">Toxic</strong> — Harmful or abusive language
+            </li>
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">Spam</strong> — Promotional or repetitive content
+            </li>
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">Hate</strong> — Discriminatory speech
+            </li>
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">NSFW</strong> — Adult or explicit content
+            </li>
+            <li class="text-secondary">
+              <span class="text-accent">▸</span> <strong class="text-primary">Harassment</strong> — Targeted attacks
+            </li>
+          </ul>
+          <p class="text-sm text-secondary mt-md" style="opacity: 0.7;">EN, ES, PT, FR, DE</p>
+        </div>
+
+        <div class="card reveal" style="border-color: var(--cc-accent-cyan);">
+          <h3 class="text-2xl font-bold mb-md gradient-text">Vision Gates</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">NSFW</strong> — Adult or explicit imagery
+            </li>
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">Violence</strong> — Graphic or harmful content
+            </li>
+            <li class="text-secondary mb-sm">
+              <span class="text-accent">▸</span> <strong class="text-primary">Hate symbols</strong> — Extremist imagery
+            </li>
+            <li class="text-secondary">
+              <span class="text-accent">▸</span> <strong class="text-primary">Spam</strong> — Watermarks, overlays, bait
+            </li>
+          </ul>
+          <p class="text-sm text-secondary mt-md" style="opacity: 0.7;">CLIP-based extraction</p>
         </div>
 
       </div>
@@ -305,7 +357,7 @@
         <div class="card reveal text-center">
           <div class="product-icon" style="font-size: 3rem;">3</div>
           <h3 class="text-xl font-bold mb-sm">Get Results Instantly</h3>
-          <p class="text-secondary">Know if it's toxic, spam, or hate speech—in milliseconds.</p>
+          <p class="text-secondary">Safe or unsafe, with category scores—in milliseconds.</p>
         </div>
 
       </div>
@@ -334,9 +386,9 @@
           </div>
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-              <li class="mb-xs text-secondary">✓ 1,000 requests/day</li>
-              <li class="mb-xs text-secondary">✓ Text + image moderation</li>
-              <li class="mb-xs text-secondary">✓ SSL + DDoS protection</li>
+              <li class="mb-xs text-secondary">✓ 1,000 API calls/day</li>
+              <li class="mb-xs text-secondary">✓ Text + image</li>
+              <li class="mb-xs text-secondary">✓ All categories</li>
               <li class="text-secondary">✓ No credit card</li>
             </ul>
           </div>
@@ -355,8 +407,8 @@
           </div>
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-              <li class="mb-xs text-secondary">✓ 100,000 requests/day</li>
-              <li class="mb-xs text-secondary">✓ Text + image moderation</li>
+              <li class="mb-xs text-secondary">✓ 100K API calls/day</li>
+              <li class="mb-xs text-secondary">✓ Text + image</li>
               <li class="mb-xs text-secondary">✓ Strictness controls</li>
               <li class="mb-xs text-secondary">✓ Email support</li>
               <li class="text-secondary">✓ Usage dashboard</li>
@@ -375,8 +427,8 @@
           </div>
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-              <li class="mb-xs text-secondary">✓ 500,000 requests/day</li>
-              <li class="mb-xs text-secondary">✓ Text + image moderation</li>
+              <li class="mb-xs text-secondary">✓ 500K API calls/day</li>
+              <li class="mb-xs text-secondary">✓ Text + image</li>
               <li class="mb-xs text-secondary">✓ Strictness controls</li>
               <li class="mb-xs text-secondary">✓ Email support</li>
               <li class="text-secondary">✓ Priority response</li>
@@ -396,7 +448,7 @@
           <div class="text-left mb-md" style="flex: 1;">
             <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
               <li class="mb-xs"><span class="text-accent">✓</span> <strong style="color: var(--cc-accent-cyan);">Deploy on your servers</strong></li>
-              <li class="mb-xs"><span class="text-accent">✓</span> <strong style="color: var(--cc-accent-cyan);">Unlimited text + image</strong></li>
+              <li class="mb-xs"><span class="text-accent">✓</span> <strong style="color: var(--cc-accent-cyan);">Unlimited API calls</strong></li>
               <li class="mb-xs text-secondary">✓ Microsecond latency</li>
               <li class="mb-xs text-secondary">✓ Data never leaves your network</li>
               <li class="text-secondary">✓ SLA + dedicated support</li>

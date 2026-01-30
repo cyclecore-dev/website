@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'Models that run where you need them.^500\n\n',
     'MCPBodega. SecretSage. SLMBench. CycleSum.^800\n',
     'Tools for developers who value control.^500\n\n',
-    'Because AI should work for you, not track you.^1000\n\n',
+    'Because AI should work for you, not track you.^800\n',
     'Patents Pending.^500\n\n',
     '$ _'
   ];

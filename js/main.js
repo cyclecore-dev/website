@@ -276,6 +276,44 @@ Join waitlist: hi@cyclecore.ai`
   }
 
   // ====================
+  // SCROLL SPY FOR NAV
+  // ====================
+
+  const sections = document.querySelectorAll('section[id], .section-hero');
+  const navLinks = document.querySelectorAll('.navbar-link:not(.navbar-link-subtle)');
+
+  if (sections.length > 0 && navLinks.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id || 'home';
+
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+
+            // Match section to nav link
+            if (sectionId === 'home' && href === '/') {
+              link.classList.add('active');
+            } else if (href === `#${sectionId}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach(section => observer.observe(section));
+  }
+
+  // ====================
   // SMOOTH SCROLL FOR ANCHOR LINKS
   // ====================
 

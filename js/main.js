@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const manifestoLines = [
     'cat /etc/cyclecore/manifesto.txt^500\n\n',
     'We build Maaza models. 9M to 360M parameters. Edge-first.^800\n',
-    'JSON extraction. Tool orchestration. Structured output.^500\n\n',
+    'AI inference. Fast. Determinism when possible. Safety.^600\n',
+    'JSON extraction. Tool orchestration. Structured output.^600\n',
+    'Very high throughput models.^500\n\n',
     'Privacy through architecture. Local or cloud, you choose.^800\n',
     'Models that run where you need them.^500\n\n',
     'MCPBodega. SecretSage. SLMBench. CycleSum.^800\n',

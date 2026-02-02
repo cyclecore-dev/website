@@ -312,8 +312,7 @@ span.terminal-input[contenteditable]:empty:before {
   left: 0;
   right: 0;
   z-index: var(--cc-z-sticky);
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(12px);
+  background: #000000;
   border-bottom: var(--cc-border-width) solid var(--cc-border-color);
   transition: var(--cc-transition-base);
 }

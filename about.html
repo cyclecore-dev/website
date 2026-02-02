@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About CycleCore Technologies - Building privacy-first AI tools you can trust.">
-  <meta name="keywords" content="about CycleCore, company, mission, team, privacy-first AI">
+  <meta name="description" content="About CycleCore Technologies - Microsecond AI inference on edge hardware. Building the infrastructure layer for edge AI, agent systems, and developer tools.">
+  <meta name="keywords" content="about CycleCore, company, mission, edge AI, microsecond inference, agent infrastructure">
 
   <title>About - CycleCore Technologies</title>
 
@@ -32,7 +32,10 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
       <button class="navbar-hamburger" aria-label="Toggle navigation menu">
         <div class="hamburger-icon">
           <span></span>
@@ -41,13 +44,12 @@
         </div>
       </button>
       <div class="navbar-links">
-        <a href="/" class="navbar-link">Home</a>
-        <a href="/terminal.html" class="navbar-link">Terminal</a>
-        <a href="/about.html" class="navbar-link active">About</a>
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
         <a href="/research.html" class="navbar-link">Research</a>
-        <a href="/#products" class="navbar-link">Products</a>
-        <a href="#contact" class="navbar-link">Contact</a>
-        <a href="/work.html" class="navbar-link navbar-link-subtle">Work</a>
+        <a href="/about.html" class="navbar-link active">About</a>
+        <a href="/#contact" class="navbar-link">Contact</a>
       </div>
     </div>
   </nav>
@@ -55,11 +57,14 @@
   <!-- Hero Section -->
   <section class="section-hero">
     <div class="container max-w-lg text-center">
+      <div class="hero-logo fade-in">
+        <img src="/assets/logo/cyclecore-logo-l.png" alt="CycleCore Technologies" class="hero-logo-img">
+      </div>
       <h1 class="text-6xl font-black mb-md fade-in">
         <span class="gradient-text">About CycleCore</span>
       </h1>
       <p class="text-2xl text-secondary fade-in-up">
-        Building AI tools developers can trust.
+        Building the infrastructure layer for edge AI.
       </p>
     </div>
   </section>
@@ -71,27 +76,25 @@
 
       <div class="card reveal">
         <p class="text-xl text-secondary leading-relaxed mb-md">
-          To build AI infrastructure with <strong class="text-primary">privacy as the foundation</strong>,
-          not an afterthought.
+          To enable <strong class="text-primary">microsecond AI inference</strong> on edge hardware,
+          making real-time intelligence accessible for robotics, medical devices, and autonomous systems.
         </p>
         <p class="text-xl text-secondary leading-relaxed">
-          We create tools that respect developer sovereignty, practice radical transparency,
-          and reject surveillance capitalism.
+          We build the platform that connects enterprise AI inference with agent infrastructure and developer tools—each track reinforcing the others.
         </p>
       </div>
 
       <div class="text-lg text-secondary leading-relaxed mt-xl">
         <p class="mb-md reveal">
-          Too many developer tools prioritize data extraction over user trust. Too many privacy
-          policies are intentionally vague. Too many companies treat developers as products to monetize.
+          Current AI inference is too slow for real-time systems. Cloud latency kills safety-critical applications.
+          GPU requirements limit deployment scenarios. The edge needs purpose-built AI infrastructure.
         </p>
         <p class="mb-md reveal">
-          <strong class="text-primary">We're building an alternative.</strong>
+          <strong class="text-primary">We're building that infrastructure.</strong>
         </p>
         <p class="reveal">
-          CycleCore Technologies builds AI tools with privacy-first architecture—whether local or cloud.
-          We're transparent about our practices, honest about trade-offs, and committed to earning
-          your trust through action, not promises.
+          CycleCore Technologies develops deterministic AI inference engines, agent infrastructure for the AI-native future,
+          and developer tools that make edge AI accessible. Three tracks, one flywheel—each giving credibility to the others.
         </p>
       </div>
     </div>
@@ -100,38 +103,47 @@
   <!-- What We Build -->
   <section class="section">
     <div class="container max-w-lg">
-      <h2 class="text-5xl font-black mb-xl text-center reveal">What We Build</h2>
+      <h2 class="text-5xl font-black mb-xl text-center reveal">The Platform</h2>
 
       <div class="grid" style="grid-template-columns: 1fr; gap: var(--cc-space-lg);">
 
-        <!-- Local Tools -->
-        <div class="card reveal">
-          <h3 class="text-3xl font-bold mb-sm gradient-text">Local-First Tools</h3>
+        <!-- AI Inference -->
+        <a href="/inference.html" class="card card-hover reveal" style="text-decoration: none;">
+          <div class="pillar-number">01</div>
+          <h3 class="text-3xl font-bold mb-sm gradient-text">AI Inference</h3>
           <p class="text-lg text-secondary mb-md">
-            For professionals who demand absolute privacy. 100% offline processing.
-            Your data never leaves your device.
+            Microsecond latency on edge hardware. No GPU required. ISO 13849 designed
+            for robotics, medical devices, and autonomous systems.
           </p>
-          <div class="flex gap-sm">
-            <span class="text-sm text-accent">→ CycleSum Lite</span>
-          </div>
-        </div>
+          <div class="card-link">Learn more →</div>
+        </a>
 
-        <!-- Cloud Tools -->
-        <div class="card reveal">
-          <h3 class="text-3xl font-bold mb-sm gradient-text">Privacy-Respecting SaaS</h3>
+        <!-- Agent Infrastructure -->
+        <a href="/agents.html" class="card card-hover reveal" style="text-decoration: none;">
+          <div class="pillar-number">02</div>
+          <h3 class="text-3xl font-bold mb-sm gradient-text">Agent Infrastructure</h3>
           <p class="text-lg text-secondary mb-md">
-            For teams who need cloud infrastructure. Minimal data collection,
-            maximum transparency, no tracking.
+            Tools for the agent-native future. Content moderation, credential management,
+            and MCP integration for AI agents at scale.
           </p>
-          <div class="flex gap-sm">
-            <span class="text-sm text-accent">→ MCPBodega</span>
-          </div>
-        </div>
+          <div class="card-link">Learn more →</div>
+        </a>
+
+        <!-- Dev Tools -->
+        <a href="/tools.html" class="card card-hover reveal" style="text-decoration: none;">
+          <div class="pillar-number">03</div>
+          <h3 class="text-3xl font-bold mb-sm gradient-text">Dev Tools</h3>
+          <p class="text-lg text-secondary mb-md">
+            Practical tools for developers building with edge AI and agents.
+            Benchmarks, MCP servers, and credential management.
+          </p>
+          <div class="card-link">Learn more →</div>
+        </a>
 
       </div>
 
       <p class="text-center text-secondary mt-lg reveal">
-        <em>Different execution. Same privacy-first principles.</em>
+        <em>Three tracks. One flywheel. Each gives credibility to the others.</em>
       </p>
     </div>
   </section>
@@ -144,43 +156,43 @@
       <div class="grid" style="grid-template-columns: 1fr; gap: var(--cc-space-md);">
 
         <div class="reveal">
-          <h3 class="text-2xl font-bold mb-sm">🔒 Privacy by Design</h3>
+          <h3 class="text-2xl font-bold mb-sm">Deterministic Performance</h3>
           <p class="text-secondary">
-            Not bolted on after launch. Built into the architecture from day one.
-            Local tools process everything on your device. Cloud tools collect only
-            essential data, encrypted end-to-end.
+            Our AI inference delivers guaranteed latency bounds. When your robot arm needs
+            to make a decision in 5 microseconds, it gets 5 microseconds. Every time.
           </p>
         </div>
 
         <div class="reveal">
-          <h3 class="text-2xl font-bold mb-sm">🔍 Radically Transparent</h3>
+          <h3 class="text-2xl font-bold mb-sm">Safety-First Architecture</h3>
           <p class="text-secondary">
-            We tell you exactly what data goes where, why it's collected, and how
-            it's protected. No vague policies. No hidden tracking. Honest about trade-offs.
+            Designed with ISO 13849 principles from the ground up. Safety-critical systems
+            need AI infrastructure built to their standards, not adapted from consumer tech.
           </p>
         </div>
 
         <div class="reveal">
-          <h3 class="text-2xl font-bold mb-sm">💰 No Surveillance Business Model</h3>
+          <h3 class="text-2xl font-bold mb-sm">Edge Native</h3>
           <p class="text-secondary">
-            We make money by building tools worth paying for—not by monetizing your data.
-            No behavioral profiling. No third-party data sales. No advertising.
+            No cloud dependency. No GPU requirement. Our inference runs on standard edge
+            hardware, keeping latency low and deployment simple.
           </p>
         </div>
 
         <div class="reveal">
-          <h3 class="text-2xl font-bold mb-sm">⚡ Developer Sovereignty</h3>
+          <h3 class="text-2xl font-bold mb-sm">Research-Backed</h3>
           <p class="text-secondary">
-            You choose the tools that fit your needs. No vendor lock-in. No forced migrations.
-            No surprise pricing changes. Own your stack, keep your freedom.
+            3 patents pending. Peer-reviewed publications. Our technology comes from
+            real research, not marketing claims. See our work on the Research page.
           </p>
         </div>
 
         <div class="reveal">
-          <h3 class="text-2xl font-bold mb-sm">📖 Building Trust Through Transparency</h3>
+          <h3 class="text-2xl font-bold mb-sm">Platform Thinking</h3>
           <p class="text-secondary">
-            We document our practices clearly, communicate honestly about trade-offs,
-            and remain accountable to our users. Trust is earned through consistent action.
+            AI Inference, Agent Infrastructure, and Dev Tools work together.
+            Enterprise credibility feeds developer adoption. Developer tools prove the technology.
+            The flywheel compounds.
           </p>
         </div>
 
@@ -188,37 +200,34 @@
     </div>
   </section>
 
-  <!-- Values in Action -->
+  <!-- Company Info -->
   <section class="section">
     <div class="container max-w-lg">
-      <h2 class="text-5xl font-black mb-xl text-center reveal">Values in Action</h2>
+      <h2 class="text-5xl font-black mb-xl text-center reveal">Company</h2>
 
       <div class="text-lg text-secondary leading-relaxed">
         <p class="mb-md reveal">
-          Our principles aren't just words on a page. They guide every decision we make:
+          CycleCore Technologies LLC is headquartered in Casper, Wyoming.
         </p>
 
         <ul class="mb-md" style="list-style: none; padding-left: 1.5rem;">
           <li class="mb-sm reveal">
-            <span class="text-accent">→</span> <strong class="text-primary">Product design:</strong> Privacy-first architecture, minimal data collection
+            <span class="text-accent">→</span> <strong class="text-primary">3 patents pending</strong> on core inference technology
           </li>
           <li class="mb-sm reveal">
-            <span class="text-accent">→</span> <strong class="text-primary">Communication:</strong> Transparent documentation, honest marketing
+            <span class="text-accent">→</span> <strong class="text-primary">ISO 13849</strong> designed architecture for safety-critical applications
           </li>
           <li class="mb-sm reveal">
-            <span class="text-accent">→</span> <strong class="text-primary">Business model:</strong> Sustainable pricing, no surveillance monetization
+            <span class="text-accent">→</span> <strong class="text-primary">Peer-reviewed research</strong> published on Zenodo and HuggingFace
           </li>
           <li class="mb-sm reveal">
-            <span class="text-accent">→</span> <strong class="text-primary">Development:</strong> Security audits, careful dependency management
-          </li>
-          <li class="mb-sm reveal">
-            <span class="text-accent">→</span> <strong class="text-primary">Support:</strong> Respectful of your time, no dark patterns
+            <span class="text-accent">→</span> <strong class="text-primary">Open source contributions</strong> including MAAZA models and benchmarks
           </li>
         </ul>
 
         <p class="reveal">
-          Every feature, every line of code, every policy reflects our commitment
-          to privacy, transparency, and trust.
+          We're building infrastructure for the long term. Enterprise partnerships,
+          technical inquiries, and collaboration opportunities welcome.
         </p>
       </div>
     </div>
@@ -231,19 +240,23 @@
 
       <div class="card text-center reveal">
         <p class="text-xl text-secondary mb-lg">
-          Questions? Feedback? Want to collaborate?<br>
-          We'd love to hear from you.
+          Enterprise partnerships, technical inquiries, or general questions.
         </p>
 
-        <div class="flex flex-col gap-md items-center">
+        <div class="flex flex-col gap-md items-center mb-lg">
           <div>
-            <p class="text-sm text-tertiary mb-xs">Email</p>
+            <p class="text-sm text-tertiary mb-xs">Enterprise Partnerships</p>
+            <a href="mailto:partnerships@cyclecore.ai" class="text-xl text-accent font-medium">partnerships@cyclecore.ai</a>
+          </div>
+          <div>
+            <p class="text-sm text-tertiary mb-xs">General Inquiries</p>
             <a href="mailto:hi@cyclecore.ai" class="text-xl text-accent font-medium">hi@cyclecore.ai</a>
           </div>
         </div>
 
-        <div class="mt-lg">
-          <a href="mailto:hi@cyclecore.ai" class="btn btn-primary btn-large">Send us an email</a>
+        <div class="flex justify-center gap-md flex-wrap">
+          <a href="mailto:partnerships@cyclecore.ai" class="btn btn-primary btn-large">Enterprise Partnerships</a>
+          <a href="https://x.com/CyclecoreTech" class="btn btn-ghost btn-large" target="_blank" rel="noopener">@CyclecoreTech</a>
         </div>
       </div>
     </div>
@@ -255,21 +268,24 @@
       <div class="footer-grid">
         <div class="footer-section">
           <h4>CycleCore Technologies</h4>
-          <p class="text-secondary text-sm mb-sm">Privacy-first AI tools you can trust.</p>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
         </div>
         <div class="footer-section">
-          <h4>Products</h4>
+          <h4>Platform</h4>
           <div class="footer-links">
-            <a href="https://mcpbodega.com" class="footer-link">MCPBodega</a>
-            <a href="/cyclesum" class="footer-link">CycleSum Lite</a>
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
           </div>
         </div>
         <div class="footer-section">
           <h4>Company</h4>
           <div class="footer-links">
-            <a href="/terminal.html" class="footer-link">Terminal</a>
             <a href="/about.html" class="footer-link">About</a>
             <a href="/transparency.html" class="footer-link">Transparency</a>
+            <a href="/#contact" class="footer-link">Contact</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
           </div>
         </div>
         <div class="footer-section">
@@ -282,6 +298,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
       </div>
     </div>
   </footer>

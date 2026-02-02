@@ -38,7 +38,10 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
       <button class="navbar-hamburger" aria-label="Toggle navigation menu">
         <div class="hamburger-icon">
           <span></span>
@@ -47,13 +50,12 @@
         </div>
       </button>
       <div class="navbar-links">
-        <a href="/" class="navbar-link">Home</a>
-        <a href="/terminal.html" class="navbar-link">Terminal</a>
-        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
         <a href="/research.html" class="navbar-link active">Research</a>
-        <a href="/#products" class="navbar-link">Products</a>
-        <a href="#contact" class="navbar-link">Contact</a>
-        <a href="/work.html" class="navbar-link navbar-link-subtle">Work</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/#contact" class="navbar-link">Contact</a>
       </div>
     </div>
   </nav>
@@ -419,20 +421,60 @@
     </div>
   </section>
 
+  <!-- Zenodo Paper Section -->
+  <section class="section-standard" id="ap28">
+    <div class="container">
+      <div class="card fade-in-up">
+        <h2 class="card-title">A Large-Scale ML-Guided Search for 28-Term Prime Progressions</h2>
+        <p class="card-description">
+          We present a computational search for arithmetic progressions of primes with 28 or more terms.
+          Using ML-guided candidate generation and distributed verification across 10^9 candidates,
+          we find no progressions exceeding 10 primes among the search space.
+        </p>
+
+        <div style="margin-top: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--cc-accent-cyan);">Publication</h3>
+          <p style="margin-bottom: 1rem; color: var(--cc-gray-300); line-height: 1.8;">
+            Published on Zenodo, 2025. DOI: <a href="https://doi.org/10.5281/zenodo.17889361" target="_blank" rel="noopener" style="color: var(--cc-accent-cyan);">10.5281/zenodo.17889361</a>
+          </p>
+          <a href="https://doi.org/10.5281/zenodo.17889361" class="btn btn-primary" target="_blank" rel="noopener">
+            View on Zenodo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Citation Section -->
   <section class="section-standard">
     <div class="container">
       <div class="card fade-in-up">
-        <h3 class="card-title">Citation</h3>
-        <pre style="background: var(--cc-gray-900); padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; font-family: var(--cc-font-mono); font-size: 0.875rem; line-height: 1.6;">
+        <h3 class="card-title">Citations</h3>
+
+        <h4 style="font-size: 1rem; margin-bottom: 0.75rem; color: var(--cc-accent-cyan);">MAAZA Paper</h4>
+        <pre style="background: var(--cc-gray-900); padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; font-family: var(--cc-font-mono); font-size: 0.875rem; line-height: 1.6; margin-bottom: 2rem;">
 @techreport{maaza2025,
-  title={Task-Specialized Micro Language Models Outperform Larger 
+  title={Task-Specialized Micro Language Models Outperform Larger
          Zero-Shot Models on Structured Data Extraction},
   author={CycleCore Technologies},
   institution={CycleCore Technologies},
   year={2025},
   type={Technical Report},
   url={https://cyclecore.ai/research}
+}</pre>
+
+        <h4 style="font-size: 1rem; margin-bottom: 0.75rem; color: var(--cc-accent-cyan);">AP28 Paper</h4>
+        <pre style="background: var(--cc-gray-900); padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; font-family: var(--cc-font-mono); font-size: 0.875rem; line-height: 1.6;">
+@dataset{cyclecore_ap28_2025,
+  author={CycleCore Technologies},
+  title={A Large-Scale ML-Guided Search for 28-Term Prime
+         Progressions: No Progressions with More Than 10
+         Primes Found Among 10^9 Candidates},
+  year={2025},
+  publisher={Zenodo},
+  version={v1.0},
+  doi={10.5281/zenodo.17889361},
+  url={https://doi.org/10.5281/zenodo.17889361}
 }</pre>
       </div>
     </div>
@@ -446,16 +488,17 @@
         <!-- Company -->
         <div class="footer-section">
           <h4>CycleCore Technologies</h4>
-          <p class="text-secondary text-sm mb-sm">Privacy-first AI tools you can trust.</p>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
         </div>
 
-        <!-- Products -->
+        <!-- Platform -->
         <div class="footer-section">
-          <h4>Products</h4>
+          <h4>Platform</h4>
           <div class="footer-links">
-            <a href="https://slmbench.com" class="footer-link">SLM-Bench</a>
-            <a href="https://mcpbodega.com" class="footer-link">MCPBodega</a>
-            <a href="/cyclesum" class="footer-link">CycleSum Lite</a>
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
           </div>
         </div>
 
@@ -463,10 +506,10 @@
         <div class="footer-section">
           <h4>Company</h4>
           <div class="footer-links">
-            <a href="/terminal.html" class="footer-link">Terminal</a>
             <a href="/about.html" class="footer-link">About</a>
             <a href="/transparency.html" class="footer-link">Transparency</a>
-            <a href="#contact" class="footer-link">Contact</a>
+            <a href="/#contact" class="footer-link">Contact</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
           </div>
         </div>
 
@@ -483,6 +526,7 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
       </div>
     </div>
   </footer>

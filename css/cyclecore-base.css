@@ -213,10 +213,10 @@ a:focus-visible {
   padding-top: var(--cc-hero-padding-y);
   padding-bottom: var(--cc-hero-padding-y);
   background: linear-gradient(180deg,
-    #0a1628 0%,
-    #0a1220 40%,
-    var(--cc-black) 85%,
-    var(--cc-black) 100%
+    var(--cc-black) 0%,
+    var(--cc-black) 30%,
+    #0a1220 60%,
+    var(--cc-gray-900) 100%
   );
 }
 

@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CycleCore Technologies - Privacy-first AI tools you can trust. Build with independence. Deploy with confidence.">
-  <meta name="keywords" content="privacy, AI, offline-first, developer tools, MCP, CycleCore">
+  <meta name="description" content="CycleCore Technologies - Microsecond AI inference on edge hardware. 5μs latency. No GPU required. 3 patents pending.">
+  <meta name="keywords" content="edge AI, microsecond inference, robotics AI, medical device AI, agent infrastructure, MCP, CycleCore">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="CycleCore Technologies - Privacy-First AI Infrastructure">
-  <meta property="og:description" content="Build AI tools developers can trust. 100% local. 100% private. 100% yours.">
+  <meta property="og:title" content="CycleCore Technologies - Microsecond AI Inference">
+  <meta property="og:description" content="5μs latency on edge hardware. No GPU required. 3 patents pending. Building the infrastructure layer for edge AI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cyclecore.ai">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CycleCore Technologies - Privacy-First AI Infrastructure">
-  <meta name="twitter:description" content="Build AI tools developers can trust. 100% local. 100% private. 100% yours.">
+  <meta name="twitter:title" content="CycleCore Technologies - Microsecond AI Inference">
+  <meta name="twitter:description" content="5μs latency on edge hardware. No GPU required. 3 patents pending.">
 
-  <title>CycleCore Technologies - Privacy-First AI Infrastructure</title>
+  <title>CycleCore Technologies - Microsecond AI Inference on Edge Hardware</title>
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -46,7 +46,10 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
       <button class="navbar-hamburger" aria-label="Toggle navigation menu">
         <div class="hamburger-icon">
           <span></span>
@@ -55,173 +58,97 @@
         </div>
       </button>
       <div class="navbar-links">
-        <a href="/" class="navbar-link active">Home</a>
-        <a href="/terminal.html" class="navbar-link">Terminal</a>
-        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
         <a href="/research.html" class="navbar-link">Research</a>
-        <a href="#products" class="navbar-link">Products</a>
+        <a href="/about.html" class="navbar-link">About</a>
         <a href="#contact" class="navbar-link">Contact</a>
-        <a href="/work.html" class="navbar-link navbar-link-subtle">Work</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section with Terminal -->
+  <!-- Hero Section -->
   <section class="section-hero" id="home">
     <div class="container">
 
-      <!-- Terminal Manifesto -->
-      <div class="terminal terminal-hero fade-in">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-          </div>
-          <span class="terminal-title">cyclecore@terminal:~$</span>
-        </div>
-        <div class="terminal-body">
-          <span class="terminal-prompt">$ </span><span id="typed-output"></span>
-        </div>
+      <!-- Logo -->
+      <div class="hero-logo fade-in">
+        <img src="/assets/logo/cyclecore-logo-l.png" alt="CycleCore Technologies" class="hero-logo-img">
       </div>
 
       <!-- Hero Headline -->
       <h1 class="hero-headline fade-in-up">
-        <span class="hero-headline-line gradient-text">Privacy-First AI.</span>
-        <span class="hero-headline-line gradient-text">Transparent by Design.</span>
-        <span class="hero-headline-line">Built for Trust.</span>
+        <span class="hero-headline-line gradient-text">Microsecond AI Inference</span>
+        <span class="hero-headline-line">on Edge Hardware</span>
       </h1>
 
       <!-- Hero Subtitle -->
       <p class="hero-subtitle fade-in-up">
-        We build AI tools with privacy as the foundation. Some run locally. Some run in the cloud.
-        All built with transparency, honesty, and your trust in mind.
+        5μs latency. No GPU required. 3 patents pending.
       </p>
+
+      <!-- Trust Bar -->
+      <div class="hero-trust-bar fade-in-up">
+        <span class="trust-badge">ISO 13849 Designed</span>
+        <span class="trust-badge">Patents Pending</span>
+        <span class="trust-badge">Enterprise Ready</span>
+      </div>
 
       <!-- CTA Buttons -->
       <div class="hero-cta fade-in-up">
-        <a href="https://mcpbodega.com" class="btn btn-primary btn-large">Explore Our Tools</a>
-        <a href="/terminal.html" class="btn btn-secondary btn-large">Explore Terminal</a>
+        <a href="/inference.html" class="btn btn-primary btn-large">AI Inference</a>
+        <a href="mailto:partnerships@cyclecore.ai" class="btn btn-secondary btn-large">Request Technical Brief</a>
       </div>
 
     </div>
   </section>
 
-  <!-- Values Section -->
-  <section class="section">
+  <!-- Three Pillars Section -->
+  <section class="section" id="pillars">
     <div class="container">
-      <h2 class="text-6xl font-black text-center mb-xl">Our Principles</h2>
+      <h2 class="text-6xl font-black text-center mb-lg">The Platform</h2>
+      <p class="text-2xl text-secondary text-center mb-xl" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+        Three tracks. One flywheel. Each gives credibility to the others.
+      </p>
 
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg);">
 
-        <!-- Privacy-First Architecture -->
-        <div class="card card-hover reveal">
+        <!-- AI Inference -->
+        <a href="/inference.html" class="card card-hover reveal" style="text-decoration: none;">
           <div class="card-header">
-            <div class="product-icon">🔒</div>
-            <h3 class="card-title">Privacy-First Architecture</h3>
+            <div class="pillar-number">01</div>
+            <h3 class="card-title">AI Inference</h3>
           </div>
           <div class="card-body">
-            <p>Whether local or cloud, privacy is built into our design. Minimal data collection. No tracking. No surveillance capitalism. Your privacy isn't negotiable.</p>
+            <p>Microsecond latency on edge hardware. Multimodal-ready. ISO 13849 designed. For robotics, medical devices, and autonomous systems.</p>
           </div>
-        </div>
+          <div class="card-link">Learn more →</div>
+        </a>
 
-        <!-- Transparency & Trust -->
-        <div class="card card-hover reveal">
+        <!-- Agent Infrastructure -->
+        <a href="/agents.html" class="card card-hover reveal" style="text-decoration: none;">
           <div class="card-header">
-            <div class="product-icon">🔍</div>
-            <h3 class="card-title">Transparency & Trust</h3>
+            <div class="pillar-number">02</div>
+            <h3 class="card-title">Agent Infrastructure</h3>
           </div>
           <div class="card-body">
-            <p>Honest about what data goes where. Clear about trade-offs. Open about our practices. We earn your trust through transparency, not marketing.</p>
+            <p>Tools for the agent future. Content moderation, credential management, and the ecosystem that powers AI agents at scale.</p>
           </div>
-        </div>
+          <div class="card-link">Learn more →</div>
+        </a>
 
-        <!-- Developer Sovereignty -->
-        <div class="card card-hover reveal">
+        <!-- Dev Tools -->
+        <a href="/tools.html" class="card card-hover reveal" style="text-decoration: none;">
           <div class="card-header">
-            <div class="product-icon">⚡</div>
-            <h3 class="card-title">Developer Sovereignty</h3>
+            <div class="pillar-number">03</div>
+            <h3 class="card-title">Dev Tools</h3>
           </div>
           <div class="card-body">
-            <p>You choose: local tools or privacy-respecting SaaS. No vendor lock-in. No gatekeepers. Control your stack. Keep your freedom.</p>
+            <p>Practical tools for developers. Edge AI benchmarks, MCP servers, credential management, and more.</p>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section class="section" id="products">
-    <div class="container">
-      <h2 class="text-6xl font-black text-center mb-xl">Our Tools</h2>
-
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--cc-space-xl);">
-
-        <!-- MCPBodega -->
-        <div class="product-card card card-hover reveal">
-          <div class="product-icon">🏪</div>
-          <h3 class="card-title text-4xl mb-sm">MCPBodega</h3>
-          <p class="card-subtitle mb-md">Privacy-Respecting SaaS · MCP Management</p>
-          <div class="card-body mb-lg">
-            <p>Centralized MCP server management for dev teams. Policy control, caching, observability. Cloud-hosted with minimal data collection and maximum transparency.</p>
-          </div>
-          <div class="card-footer">
-            <a href="https://mcpbodega.com" class="btn btn-primary w-full">Explore MCPBodega →</a>
-          </div>
-        </div>
-
-        <!-- SecretSage -->
-        <div class="product-card card card-hover reveal">
-          <div class="product-icon">🗝️</div>
-          <h3 class="card-title text-4xl mb-sm">SecretSage</h3>
-          <p class="card-subtitle mb-md">Privacy-First · Agent Credentials</p>
-          <div class="card-body mb-lg">
-            <p>Terminal-based credential wizard for agent-driven development. Store secrets securely, grant them to agents on demand, revoke when done.</p>
-          </div>
-          <div class="card-footer">
-            <a href="/secretsage" class="btn btn-primary w-full">Install SecretSage →</a>
-          </div>
-        </div>
-
-        <!-- CycleSum Lite -->
-        <div class="product-card card card-hover reveal">
-          <div class="product-icon">📄</div>
-          <h3 class="card-title text-4xl mb-sm">CycleSum Lite</h3>
-          <p class="card-subtitle mb-md">100% Offline · AI Summarization</p>
-          <div class="card-body mb-lg">
-            <p>Privacy-first PDF summarization that runs entirely on your device. Your data never leaves your machine. No internet required. For professionals who demand data sovereignty.</p>
-          </div>
-          <div class="card-footer">
-            <a href="/cyclesum" class="btn btn-primary w-full">Learn About CycleSum →</a>
-          </div>
-        </div>
-
-        <!-- SLM-Bench -->
-        <div class="product-card card card-hover reveal">
-          <div class="product-icon">📊</div>
-          <h3 class="card-title text-4xl mb-sm">SLM-Bench</h3>
-          <p class="card-subtitle mb-md">Professional Benchmarks · Edge AI · Featuring Maaza Models</p>
-          <div class="card-body mb-lg">
-            <p>Rigorous edge AI evaluation for Small Language Models. <strong>Built the benchmark AND the top-performing models.</strong> Featuring our Maaza series - specialized SLMs for JSON extraction on edge devices. Independent, transparent rankings.</p>
-          </div>
-          <div class="card-footer">
-            <a href="https://slmbench.com" class="btn btn-primary w-full">Visit SLM-Bench →</a>
-          </div>
-        </div>
-
-        <!-- SafetyGates -->
-        <div class="product-card card card-hover reveal">
-          <div class="product-icon">🛡️</div>
-          <h3 class="card-title text-4xl mb-sm">SafetyGates</h3>
-          <p class="card-subtitle mb-md">Content Moderation · 5 Languages · Instant</p>
-          <div class="card-body mb-lg">
-            <p>Stop toxic content, spam, and hate speech in real-time. <strong>Works in English, Spanish, Portuguese, French, and German.</strong> Privacy-first. Start free.</p>
-          </div>
-          <div class="card-footer">
-            <a href="/safetygates" class="btn btn-primary w-full">Explore SafetyGates →</a>
-          </div>
-        </div>
+          <div class="card-link">Learn more →</div>
+        </a>
 
       </div>
     </div>
@@ -232,12 +159,12 @@
     <div class="container text-center">
       <h2 class="text-6xl font-black mb-md reveal">Get in Touch</h2>
       <p class="text-2xl text-secondary mb-xl max-w-lg" style="margin-left: auto; margin-right: auto;">
-        Questions about our tools? Want to collaborate? Reach out.
+        Enterprise partnerships, technical inquiries, or general questions.
       </p>
       <div class="flex justify-center gap-md flex-wrap">
-        <a href="mailto:hi@cyclecore.ai" class="btn btn-secondary btn-large">Email Us</a>
+        <a href="mailto:partnerships@cyclecore.ai" class="btn btn-primary btn-large">Enterprise Partnerships</a>
+        <a href="mailto:hi@cyclecore.ai" class="btn btn-secondary btn-large">General Inquiries</a>
         <a href="https://x.com/CyclecoreTech" class="btn btn-ghost btn-large">@CyclecoreTech</a>
-        <a href="/about.html" class="btn btn-ghost btn-large">Learn More</a>
       </div>
       <div class="mt-xl text-secondary text-sm" style="opacity: 0.8;">
         <p style="margin-bottom: 0.25rem;">CycleCore Technologies LLC</p>
@@ -256,18 +183,17 @@
         <!-- Company -->
         <div class="footer-section">
           <h4>CycleCore Technologies</h4>
-          <p class="text-secondary text-sm mb-sm">Privacy-first AI tools you can trust.</p>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
         </div>
 
-        <!-- Products -->
+        <!-- Platform -->
         <div class="footer-section">
-          <h4>Products</h4>
+          <h4>Platform</h4>
           <div class="footer-links">
-            <a href="https://slmbench.com" class="footer-link">SLM-Bench</a>
-            <a href="https://mcpbodega.com" class="footer-link">MCPBodega</a>
-            <a href="/cyclesum" class="footer-link">CycleSum Lite</a>
-            <a href="/secretsage" class="footer-link">SecretSage</a>
-            <a href="/safetygates" class="footer-link">SafetyGates</a>
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
           </div>
         </div>
 
@@ -275,7 +201,6 @@
         <div class="footer-section">
           <h4>Company</h4>
           <div class="footer-links">
-            <a href="/terminal.html" class="footer-link">Terminal</a>
             <a href="/about.html" class="footer-link">About</a>
             <a href="/transparency.html" class="footer-link">Transparency</a>
             <a href="#contact" class="footer-link">Contact</a>

@@ -483,6 +483,59 @@ span.terminal-input[contenteditable]:empty:before {
 /* HERO COMPONENTS      */
 /* ==================== */
 
+.hero-logo {
+  text-align: center;
+  margin-bottom: var(--cc-space-lg);
+}
+
+.hero-logo-img {
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero-trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--cc-space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--cc-space-lg);
+}
+
+.trust-badge {
+  font-family: var(--cc-font-mono);
+  font-size: var(--cc-text-sm);
+  color: var(--cc-text-secondary);
+  padding: var(--cc-space-xs) var(--cc-space-sm);
+  border: 1px solid var(--cc-border-color);
+  border-radius: var(--cc-radius-sm);
+  background: var(--cc-gray-900);
+}
+
+.pillar-number {
+  font-family: var(--cc-font-mono);
+  font-size: var(--cc-text-sm);
+  color: var(--cc-accent-cyan);
+  margin-bottom: var(--cc-space-xs);
+}
+
+.card-link {
+  color: var(--cc-accent-cyan);
+  font-weight: var(--cc-weight-medium);
+  margin-top: var(--cc-space-md);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--cc-space-xs);
+}
+
+.navbar-logo-img {
+  width: 32px;
+  height: auto;
+}
+
 .hero-headline {
   font-size: var(--cc-text-hero);
   font-weight: var(--cc-weight-black);

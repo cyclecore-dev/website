@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Microsecond AI inference on edge hardware. 5μs latency, no GPU required, ISO 13849 designed for robotics, medical devices, and autonomous systems.">
+  <meta name="keywords" content="edge AI inference, microsecond latency, robotics AI, medical device AI, autonomous systems, ISO 13849, CycleCore">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Inference - CycleCore Technologies">
+  <meta property="og:description" content="Microsecond AI inference on edge hardware. 5μs latency, no GPU required, ISO 13849 designed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cyclecore.ai/inference">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Inference - CycleCore Technologies">
+  <meta name="twitter:description" content="Microsecond AI inference on edge hardware. 5μs latency, no GPU required.">
+
+  <title>AI Inference - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Preload Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css">
+  <link rel="stylesheet" href="/css/cyclecore-base.css">
+  <link rel="stylesheet" href="/css/cyclecore-components.css">
+
+  <!-- Main JavaScript -->
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="navbar-links">
+        <a href="/inference.html" class="navbar-link active">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
+        <a href="/research.html" class="navbar-link">Research</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/#contact" class="navbar-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-hero" id="top">
+    <div class="container">
+      <h1 class="hero-headline fade-in-up">
+        <span class="hero-headline-line gradient-text">Microsecond AI Inference</span>
+        <span class="hero-headline-line">on Edge Hardware</span>
+      </h1>
+
+      <p class="hero-subtitle fade-in-up">
+        Real-time AI for systems where milliseconds matter. No GPU required.
+      </p>
+
+      <div class="hero-trust-bar fade-in-up">
+        <span class="trust-badge">5μs Latency</span>
+        <span class="trust-badge">ISO 13849 Designed</span>
+        <span class="trust-badge">3 Patents Pending</span>
+      </div>
+
+      <div class="hero-cta fade-in-up">
+        <a href="mailto:partnerships@cyclecore.ai" class="btn btn-primary btn-large">Request Technical Brief</a>
+        <a href="/research.html" class="btn btn-secondary btn-large">View Research</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section class="section" id="problem">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-lg reveal">The Latency Problem</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--cc-space-lg);">
+
+        <div class="card reveal">
+          <div class="card-body">
+            <h3 class="text-2xl font-semibold mb-sm">Cloud AI</h3>
+            <p class="text-mono text-4xl gradient-text mb-sm">100-500ms</p>
+            <p class="text-secondary">Network latency, queuing, and round-trip delays make cloud AI unusable for real-time control.</p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-body">
+            <h3 class="text-2xl font-semibold mb-sm">GPU Inference</h3>
+            <p class="text-mono text-4xl gradient-text mb-sm">1-50ms</p>
+            <p class="text-secondary">Power hungry, heat generating, and still too slow for microsecond-critical applications.</p>
+          </div>
+        </div>
+
+        <div class="card card-highlight reveal">
+          <div class="card-body">
+            <h3 class="text-2xl font-semibold mb-sm">CycleCore</h3>
+            <p class="text-mono text-4xl gradient-text mb-sm">≥5μs</p>
+            <p class="text-secondary">Deterministic inference on standard edge hardware. No GPU. No cloud dependency.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Industries -->
+  <section class="section section-alt" id="industries">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-md reveal">Built For</h2>
+      <p class="text-xl text-secondary text-center mb-xl" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Industries where latency isn't a metric—it's a safety requirement.
+      </p>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg);">
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="pillar-number">01</div>
+            <h3 class="card-title">Robotics</h3>
+          </div>
+          <div class="card-body">
+            <p>Real-time perception and control for industrial automation, collaborative robots, and autonomous mobile platforms. Sub-millisecond response for safety-critical motion planning.</p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="pillar-number">02</div>
+            <h3 class="card-title">Medical Devices</h3>
+          </div>
+          <div class="card-body">
+            <p>AI-assisted diagnostics and surgical systems requiring deterministic latency. Designed with ISO 13849 safety principles for regulatory pathways.</p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div class="pillar-number">03</div>
+            <h3 class="card-title">Autonomous Systems</h3>
+          </div>
+          <div class="card-body">
+            <p>Vehicle perception, drone navigation, and industrial autonomous systems. Multimodal sensor fusion at speeds matching physical world constraints.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Capabilities -->
+  <section class="section" id="capabilities">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-lg reveal">Technical Capabilities</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--cc-space-md);">
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Deterministic Latency</h4>
+            <p class="text-secondary text-sm">Guaranteed ≥5μs inference timing for real-time control loops.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">No GPU Required</h4>
+            <p class="text-secondary text-sm">Runs on standard ARM and x86 edge processors. Lower power, lower cost.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Multimodal Ready</h4>
+            <p class="text-secondary text-sm">Vision, audio, sensor fusion. Process multiple input streams simultaneously.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">ISO 13849 Designed</h4>
+            <p class="text-secondary text-sm">Safety architecture aligned with functional safety standards.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Edge Native</h4>
+            <p class="text-secondary text-sm">No cloud dependency. Full inference runs locally on your hardware.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Custom Model Support</h4>
+            <p class="text-secondary text-sm">Optimize your models for our inference engine. Integration support available.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration -->
+  <section class="section section-alt" id="integration">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--cc-space-xl); align-items: center;">
+
+        <div class="reveal">
+          <h2 class="text-5xl font-bold mb-md">Integration</h2>
+          <p class="text-xl text-secondary mb-lg">
+            CycleCore inference integrates into your existing edge architecture. We work with your engineering team to optimize deployment for your specific hardware and latency requirements.
+          </p>
+          <ul class="feature-list">
+            <li>C/C++ and Rust APIs</li>
+            <li>ROS2 integration packages</li>
+            <li>Real-time OS support (PREEMPT_RT, Xenomai)</li>
+            <li>Custom silicon optimization available</li>
+          </ul>
+        </div>
+
+        <div class="code-block reveal">
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">inference_example.cpp</span>
+          </div>
+          <pre><code><span class="code-comment">// Initialize inference engine</span>
+<span class="code-keyword">auto</span> engine = cyclecore::Engine::create(
+    model_path,
+    cyclecore::Config{
+        .latency_target_us = <span class="code-number">5</span>,
+        .precision = cyclecore::INT8
+    }
+);
+
+<span class="code-comment">// Run inference (blocking, deterministic)</span>
+<span class="code-keyword">auto</span> result = engine->infer(sensor_data);
+
+<span class="code-comment">// Guaranteed: result ready in ≥5μs</span></code></pre>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Link -->
+  <section class="section" id="research-cta">
+    <div class="container text-center">
+      <h2 class="text-5xl font-bold mb-md reveal">Backed by Research</h2>
+      <p class="text-xl text-secondary mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Our inference architecture is built on peer-reviewed research and validated benchmarks.
+      </p>
+      <div class="flex justify-center gap-md flex-wrap">
+        <a href="/research.html" class="btn btn-secondary btn-large">View Publications</a>
+        <a href="/research.html#benchmarks" class="btn btn-ghost btn-large">See Benchmarks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-alt" id="cta">
+    <div class="container text-center">
+      <h2 class="text-5xl font-bold mb-md reveal">Ready to Talk?</h2>
+      <p class="text-xl text-secondary mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        We work with enterprise partners building the next generation of intelligent systems. Request a technical brief or schedule an architecture review.
+      </p>
+      <div class="flex justify-center gap-md flex-wrap">
+        <a href="mailto:partnerships@cyclecore.ai" class="btn btn-primary btn-large">Request Technical Brief</a>
+        <a href="mailto:partnerships@cyclecore.ai?subject=Architecture Review" class="btn btn-secondary btn-large">Schedule Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
+        </div>
+
+        <!-- Platform -->
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <div class="footer-links">
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+            <a href="/#contact" class="footer-link">Contact</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

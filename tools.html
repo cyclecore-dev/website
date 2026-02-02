@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Developer tools for edge AI and agent development. Benchmarks, MCP servers, credential management, and more.">
+  <meta name="keywords" content="developer tools, edge AI, MCP servers, benchmarks, credential management, CycleCore">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dev Tools - CycleCore Technologies">
+  <meta property="og:description" content="Developer tools for edge AI and agent development. Benchmarks, MCP servers, and credential management.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cyclecore.ai/tools">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dev Tools - CycleCore Technologies">
+  <meta name="twitter:description" content="Developer tools for edge AI and agent development.">
+
+  <title>Dev Tools - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Preload Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css">
+  <link rel="stylesheet" href="/css/cyclecore-base.css">
+  <link rel="stylesheet" href="/css/cyclecore-components.css">
+
+  <!-- Main JavaScript -->
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="navbar-links">
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link active">Dev Tools</a>
+        <a href="/research.html" class="navbar-link">Research</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/#contact" class="navbar-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-hero" id="top">
+    <div class="container">
+      <h1 class="hero-headline fade-in-up">
+        <span class="hero-headline-line gradient-text">Dev Tools</span>
+        <span class="hero-headline-line">for Edge AI & Agents</span>
+      </h1>
+
+      <p class="hero-subtitle fade-in-up">
+        Practical tools for developers building the next generation of AI systems.
+      </p>
+
+      <div class="hero-cta fade-in-up">
+        <a href="#tools" class="btn btn-primary btn-large">Explore Tools</a>
+        <a href="https://github.com/cyclecore-dev" class="btn btn-secondary btn-large" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Grid -->
+  <section class="section" id="tools">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-md reveal">Our Tools</h2>
+      <p class="text-xl text-secondary text-center mb-xl" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Open source and production-ready. Built by developers, for developers.
+      </p>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--cc-space-lg);">
+
+        <!-- SLMBench -->
+        <div class="card reveal">
+          <div class="card-header">
+            <h3 class="card-title">SLMBench</h3>
+            <span class="badge badge-green">Benchmarks</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              Edge AI benchmark suite. Test small language models on real edge hardware. Includes our MAAZA model family optimized for microsecond inference.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Standardized edge benchmarks</li>
+              <li>MAAZA model weights</li>
+              <li>Hardware compatibility matrix</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <a href="https://huggingface.co/cyclecore" class="btn btn-ghost btn-small" target="_blank" rel="noopener">HuggingFace →</a>
+          </div>
+        </div>
+
+        <!-- SecretSage -->
+        <a href="/secretsage/" class="card card-hover reveal" style="text-decoration: none;">
+          <div class="card-header">
+            <h3 class="card-title">SecretSage</h3>
+            <span class="badge">CLI Tool</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              Terminal-based credential management. Secure storage, quick retrieval, and integration with your development workflow.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Encrypted local storage</li>
+              <li>Shell integration</li>
+              <li>Team sharing (optional)</li>
+            </ul>
+          </div>
+          <div class="card-link">Learn more →</div>
+        </a>
+
+        <!-- MCPBodega -->
+        <a href="/mcpbodega/" class="card card-hover reveal" style="text-decoration: none;">
+          <div class="card-header">
+            <h3 class="card-title">MCPBodega</h3>
+            <span class="badge">MCP Servers</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              Collection of MCP servers for AI development. Connect Claude, GPT, and other models to external tools and services.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Pre-built server collection</li>
+              <li>npm packages</li>
+              <li>Custom server templates</li>
+            </ul>
+          </div>
+          <div class="card-link">Learn more →</div>
+        </a>
+
+        <!-- CycleSum -->
+        <div class="card reveal" style="opacity: 0.7;">
+          <div class="card-header">
+            <h3 class="card-title">CycleSum</h3>
+            <span class="badge badge-outline">Coming Soon</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              PDF summarization tool. Extract key information from documents using edge-optimized models.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Local processing</li>
+              <li>Structured output</li>
+              <li>Batch processing</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Example -->
+  <section class="section section-alt" id="quickstart">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-lg reveal">Quick Start</h2>
+
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--cc-space-xl);">
+
+        <div class="code-block reveal">
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">Install SecretSage</span>
+          </div>
+          <pre><code><span class="code-comment"># Install via npm</span>
+npm install -g @cyclecore/secretsage
+
+<span class="code-comment"># Initialize vault</span>
+secretsage init
+
+<span class="code-comment"># Store a secret</span>
+secretsage set OPENAI_KEY "sk-..."
+
+<span class="code-comment"># Use in scripts</span>
+export OPENAI_KEY=$(secretsage get OPENAI_KEY)</code></pre>
+        </div>
+
+        <div class="code-block reveal">
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">Install MCPBodega Server</span>
+          </div>
+          <pre><code><span class="code-comment"># Install a specific MCP server</span>
+npm install @cyclecore/mcp-github
+
+<span class="code-comment"># Add to Claude config</span>
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["@cyclecore/mcp-github"]
+    }
+  }
+}</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- External Links -->
+  <section class="section" id="external">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-lg reveal">Find Us</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--cc-space-md);">
+
+        <a href="https://github.com/cyclecore-dev" class="card card-hover card-compact reveal" style="text-decoration: none;" target="_blank" rel="noopener">
+          <div class="card-body text-center">
+            <div class="text-4xl mb-sm" style="font-family: var(--cc-font-mono);">GitHub</div>
+            <p class="text-secondary text-sm">Source code & issues</p>
+          </div>
+        </a>
+
+        <a href="https://huggingface.co/cyclecore" class="card card-hover card-compact reveal" style="text-decoration: none;" target="_blank" rel="noopener">
+          <div class="card-body text-center">
+            <div class="text-4xl mb-sm" style="font-family: var(--cc-font-mono);">HF</div>
+            <p class="text-secondary text-sm">Models & datasets</p>
+          </div>
+        </a>
+
+        <a href="https://www.npmjs.com/org/cyclecore" class="card card-hover card-compact reveal" style="text-decoration: none;" target="_blank" rel="noopener">
+          <div class="card-body text-center">
+            <div class="text-4xl mb-sm" style="font-family: var(--cc-font-mono);">npm</div>
+            <p class="text-secondary text-sm">Packages</p>
+          </div>
+        </a>
+
+        <a href="https://x.com/CyclecoreTech" class="card card-hover card-compact reveal" style="text-decoration: none;" target="_blank" rel="noopener">
+          <div class="card-body text-center">
+            <div class="text-4xl mb-sm" style="font-family: var(--cc-font-mono);">X</div>
+            <p class="text-secondary text-sm">Updates & news</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-alt" id="cta">
+    <div class="container text-center">
+      <h2 class="text-5xl font-bold mb-md reveal">Start Building</h2>
+      <p class="text-xl text-secondary mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        All tools are open source or have generous free tiers. Jump in and start building.
+      </p>
+      <div class="flex justify-center gap-md flex-wrap">
+        <a href="https://github.com/cyclecore-dev" class="btn btn-primary btn-large" target="_blank" rel="noopener">View on GitHub</a>
+        <a href="/agents.html" class="btn btn-secondary btn-large">Agent Infrastructure →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
+        </div>
+
+        <!-- Platform -->
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <div class="footer-links">
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+            <a href="/#contact" class="footer-link">Contact</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

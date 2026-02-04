@@ -73,7 +73,7 @@
   --cc-text-6xl: 3.75rem;         /* 60px */
   --cc-text-7xl: 4.5rem;          /* 72px */
   --cc-text-8xl: 6rem;            /* 96px */
-  --cc-text-hero: clamp(1.5rem, 5.5vw, 7rem); /* Responsive hero (24-112px) */
+  --cc-text-hero: clamp(1.2rem, 5.5vw, 7rem); /* Responsive hero (19-112px) */
 
   /* Line Heights */
   --cc-leading-tight: 1.1;        /* Headlines */

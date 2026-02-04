@@ -545,7 +545,7 @@ span.terminal-input[contenteditable]:empty:before {
 }
 
 .hero-headline-line {
-  display: block;
+  display: block !important;
   margin-bottom: 0.2em;
 }
 
@@ -669,6 +669,13 @@ span.terminal-input[contenteditable]:empty:before {
   /* Fix feature grid card body on mobile */
   .card-feature .card-body[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* Hide tiny navbar logo on mobile - text only is cleaner */
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    display: none;
   }
 }
 

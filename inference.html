@@ -232,18 +232,18 @@
             <span class="code-dot"></span>
             <span class="code-title">inference_example.cpp</span>
           </div>
-          <pre><code><span class="code-comment">// Initialize inference engine</span>
-<span class="code-keyword">auto</span> engine = cyclecore::Engine::create(
-    model_path,
-    cyclecore::Config{
-        .latency_target_us = <span class="code-number">5</span>,
-        .precision = cyclecore::INT8
-    }
-);
+          <pre><code><span class="code-keyword">#include</span> &lt;cyclecore/engine.hpp&gt;
 
-<span class="code-comment">// Run inference (blocking, deterministic)</span>
-<span class="code-keyword">auto</span> result = engine->infer(sensor_data);
+<span class="code-comment">// Load gates from ONNX models</span>
+<span class="code-keyword">auto</span> engine = cyclecore::Engine::load(<span class="code-string">"/path/to/gates"</span>);
 
+<span class="code-comment">// Single inference — safety decision</span>
+<span class="code-keyword">auto</span> result = engine->infer(<span class="code-string">"kb-imu-tilt"</span>,
+    {<span class="code-number">0.1f</span>, <span class="code-number">0.2f</span>, <span class="code-number">0.0f</span>});
+
+<span class="code-keyword">if</span> (result.is_veto()) {
+    trigger_safety_stop();
+}
 <span class="code-comment">// Response in microseconds</span></code></pre>
         </div>
 

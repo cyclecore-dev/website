@@ -28,6 +28,7 @@ body {
   color: var(--cc-text-primary);
   background-color: var(--cc-black);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Remove default list styles */

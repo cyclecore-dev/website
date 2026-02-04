@@ -264,13 +264,11 @@ Join waitlist: hi@cyclecore.ai`
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset;
 
-      // Add background blur on scroll
+      // Subtle border emphasis on scroll, keep solid black background
       if (currentScroll > 50) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-        navbar.style.backdropFilter = 'blur(16px)';
+        navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.1)';
       } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.8)';
-        navbar.style.backdropFilter = 'blur(12px)';
+        navbar.style.borderBottomColor = '';
       }
 
       lastScroll = currentScroll;

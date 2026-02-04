@@ -674,25 +674,18 @@ span.terminal-input[contenteditable]:empty:before {
 
 /* Small mobile (iPhone SE, etc.) */
 @media (max-width: 480px) {
-  .section-hero .container,
-  .section .container {
-    max-width: 100%;
-    overflow: hidden;
-  }
-
   .hero-headline {
-    font-size: 1.5rem;
+    font-size: 1.25rem !important;
     letter-spacing: -0.02em;
-    max-width: 100%;
   }
 
-  .hero-headline-line {
-    white-space: normal;
-    word-wrap: break-word;
+  .hero-headline .gradient-text,
+  .hero-headline .hero-headline-line {
+    display: block !important;
   }
 
   .hero-subtitle {
-    font-size: var(--cc-text-base);
+    font-size: var(--cc-text-sm);
   }
 
   .hero-logo-img {

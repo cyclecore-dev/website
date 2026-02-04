@@ -536,12 +536,13 @@ span.terminal-input[contenteditable]:empty:before {
 }
 
 .hero-headline {
-  font-size: var(--cc-text-hero);
+  font-size: clamp(1.2rem, 5.5vw, 7rem);
   font-weight: var(--cc-weight-black);
   line-height: var(--cc-leading-tight);
   letter-spacing: var(--cc-tracking-tighter);
   text-align: center;
   margin-bottom: var(--cc-space-md);
+  max-width: 100%;
 }
 
 .hero-headline-line {
@@ -618,7 +619,6 @@ span.terminal-input[contenteditable]:empty:before {
   }
 
   .hero-headline {
-    font-size: clamp(1.75rem, 6.5vw, 3.5rem);
     overflow-wrap: break-word;
     word-break: break-word;
   }

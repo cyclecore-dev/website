@@ -371,6 +371,28 @@ Join waitlist: hi@cyclecore.ai`
   }
 
   // ====================
+  // CODE COPY BUTTONS
+  // ====================
+
+  document.querySelectorAll('.code-copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.closest('.code-block');
+      const code = codeBlock.querySelector('code');
+      if (!code) return;
+
+      const text = code.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
+
+  // ====================
   // CONSOLE EASTER EGG
   // ====================
 

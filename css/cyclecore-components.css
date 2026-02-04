@@ -872,6 +872,34 @@ span.terminal-input[contenteditable]:empty:before {
   display: flex;
   align-items: center;
   gap: var(--cc-space-xs);
+  position: relative;
+}
+
+.code-copy-btn {
+  position: absolute;
+  right: var(--cc-space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--cc-font-mono);
+  font-size: var(--cc-text-xs);
+  color: var(--cc-text-tertiary);
+  background: transparent;
+  border: 1px solid var(--cc-border-color);
+  border-radius: var(--cc-radius-sm);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: var(--cc-transition-colors);
+}
+
+.code-copy-btn:hover {
+  color: var(--cc-text-primary);
+  border-color: var(--cc-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.code-copy-btn.copied {
+  color: var(--cc-terminal-green);
+  border-color: var(--cc-terminal-green);
 }
 
 .code-dot {

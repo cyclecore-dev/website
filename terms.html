@@ -3,265 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - Maaza API</title>
-  
+  <meta name="description" content="CycleCore Technologies Terms of Service">
+  <title>Terms of Service - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260203b">
   <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260203">
   <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260203b">
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
+
+  <style>
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .content-section h2 {
+      color: var(--cc-accent-cyan);
+      margin-top: var(--cc-space-xl);
+      margin-bottom: var(--cc-space-md);
+    }
+    .content-section h3 {
+      margin-top: var(--cc-space-lg);
+      margin-bottom: var(--cc-space-sm);
+    }
+    .content-section p, .content-section ul, .content-section ol {
+      color: var(--cc-text-secondary);
+      margin-bottom: var(--cc-space-md);
+    }
+    .content-section ul, .content-section ol {
+      padding-left: var(--cc-space-lg);
+    }
+    .content-section li {
+      margin-bottom: var(--cc-space-xs);
+    }
+    .content-section strong {
+      color: var(--cc-text-primary);
+    }
+    .content-section a {
+      color: var(--cc-accent-cyan);
+    }
+    .summary-box {
+      background: var(--cc-gray-900);
+      border-left: 3px solid var(--cc-accent-cyan);
+      padding: var(--cc-space-md);
+      margin: var(--cc-space-lg) 0;
+    }
+    .legal-caps {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .highlight {
+      background: var(--cc-gray-900);
+      border-left: 3px solid var(--cc-accent-cyan);
+      padding: var(--cc-space-md);
+      margin: var(--cc-space-md) 0;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="/" class="navbar-logo">CycleCore Technologies</a>
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
       <div class="navbar-links">
-        <a href="/" class="navbar-link">Home</a>
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
         <a href="/research.html" class="navbar-link">Research</a>
-        <a href="#contact" class="navbar-link">Contact</a>
-        <a href="/work.html" class="navbar-link navbar-link-subtle">Work</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="/#contact" class="navbar-link">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Terms Content -->
-  <section class="section-standard" style="padding-top: calc(var(--cc-navbar-height, 70px) + var(--cc-space-2xl, 6rem));">
-    <div class="container" style="max-width: 800px;">
-      <h1 class="page-title">Maaza API - Terms of Service</h1>
-      <p style="color: var(--cc-gray-400); margin-bottom: 3rem;">
-        <strong>Effective Date:</strong> November 27, 2025<br>
-        <strong>Last Updated:</strong> November 27, 2025
-      </p>
+  <!-- Content -->
+  <section class="section" style="padding-top: var(--cc-space-2xl);">
+    <div class="container">
+      <div class="content-section">
+        <h1 class="text-4xl font-bold mb-md">Terms of Service</h1>
+        <p class="text-secondary">Effective Date: February 3, 2026</p>
 
-      <div style="line-height: 1.8; color: var(--cc-gray-300);">
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">1. Acceptance of Terms</h2>
-        <p>By using the Maaza API ("Service"), you agree to these Terms of Service ("Terms"). If you do not agree, do not use the Service.</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">2. Description of Service</h2>
-        <p>Maaza API is a JSON extraction service that uses small language models to extract structured data from unstructured text. The Service is provided by CycleCore Technologies, LLC ("Company", "we", "us", or "our").</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">3. API Key and Account Security</h2>
-        <p><strong>You are responsible for:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Maintaining the confidentiality of your API key</li>
-          <li>All activities that occur under your account</li>
-          <li>Notifying us immediately of any unauthorized use</li>
-          <li>Using the Service only for lawful purposes</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">4. Acceptable Use</h2>
-        <p><strong>You may NOT use the Service to:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Process illegal, harmful, or malicious content</li>
-          <li>Violate any applicable laws or regulations</li>
-          <li>Infringe intellectual property rights</li>
-          <li>Reverse engineer or attempt to extract the underlying models</li>
-          <li>Resell or redistribute the Service without authorization</li>
-          <li>Conduct excessive or abusive API requests (rate limit abuse)</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">5. Disclaimer of Warranties</h2>
-        
-        <div style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1.5rem; margin: 1.5rem 0; border-radius: 0.5rem;">
-          <p style="margin: 0;"><strong>⚠️ NO WARRANTY:</strong> THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.</p>
+        <div class="summary-box">
+          <p style="margin:0"><strong>Summary:</strong> Use our services responsibly. Your data stays yours. We don't train on your inputs. Wyoming law governs. Patents pending on our core technology.</p>
         </div>
 
-        <p><strong>WE SPECIFICALLY DISCLAIM:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li><strong>Accuracy:</strong> We do not guarantee that extraction results are accurate, complete, or suitable for your purposes</li>
-          <li><strong>Availability:</strong> The Service may be interrupted, delayed, or unavailable</li>
-          <li><strong>Merchantability:</strong> No warranty that the Service is merchantable or fit for any particular purpose</li>
-          <li><strong>Security:</strong> While we implement security measures, we cannot guarantee absolute security</li>
-          <li><strong>Data Loss:</strong> We are not responsible for any loss of data or content</li>
+        <h2 class="text-2xl font-bold">Agreement to Terms</h2>
+        <p>By accessing or using any services provided by CycleCore Technologies LLC ("Company", "we", "us", or "our"), including our website, APIs, software, and tools (collectively, the "Services"), you agree to be bound by these Terms of Service ("Terms"). If you are using the Services on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+        <p><strong>If you do not agree to these Terms, do not use the Services.</strong></p>
+
+        <h2 class="text-2xl font-bold">1. Definitions</h2>
+        <ul>
+          <li><strong>"Company"</strong> means CycleCore Technologies LLC, a Wyoming limited liability company.</li>
+          <li><strong>"Services"</strong> means all products, APIs, software, tools, and websites operated by Company, including but not limited to the CycleCore inference engine, SafetyGates, SecretSage, MCPBodega, and cyclecore.ai.</li>
+          <li><strong>"Customer"</strong> or <strong>"you"</strong> means the individual or entity using the Services.</li>
+          <li><strong>"Content"</strong> means any data, text, or materials you submit to or through the Services.</li>
         </ul>
 
-        <p style="margin-top: 1rem;"><strong>YOU USE THE SERVICE AT YOUR OWN RISK.</strong> You are solely responsible for verifying all extraction results before using them in production or business-critical applications.</p>
+        <h2 class="text-2xl font-bold">2. License Grant</h2>
+        <p>Subject to your compliance with these Terms, Company grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Services for your internal purposes.</p>
 
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">6. Limitation of Liability</h2>
-        
-        <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, CYCLECORE TECHNOLOGIES SHALL NOT BE LIABLE FOR:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Indirect, incidental, special, consequential, or punitive damages</li>
-          <li>Loss of profits, revenue, data, or business opportunities</li>
-          <li>Errors, inaccuracies, or omissions in extraction results</li>
-          <li>Damages resulting from unauthorized access to your account</li>
-          <li>Service interruptions, downtime, or data loss</li>
+        <h2 class="text-2xl font-bold">3. Intellectual Property</h2>
+
+        <h3 class="text-lg font-semibold">3.1 Ownership</h3>
+        <p>The Services, including all software, models, algorithms, methodologies, and underlying technology, are and remain the exclusive property of Company. Nothing in these Terms grants you ownership rights in the Services or their components. CycleCore's core technologies are patent-pending.</p>
+
+        <h3 class="text-lg font-semibold">3.2 Restrictions</h3>
+        <p>You agree not to, and will not permit any third party to:</p>
+        <ol type="a">
+          <li><strong>Reverse engineer, decompile, disassemble, or attempt to derive</strong> the source code, algorithms, models, or methodologies underlying the Services;</li>
+          <li><strong>Extract, harvest, or collect</strong> outputs or data for the purpose of training, developing, or improving any machine learning model or AI system;</li>
+          <li><strong>Systematically query</strong> any Service to approximate, reconstruct, or distill Company's proprietary technology;</li>
+          <li><strong>Probe, scan, or test</strong> the vulnerability of the Services or breach any security measures;</li>
+          <li><strong>Circumvent, disable, or interfere</strong> with rate limiting, access controls, or other protective features;</li>
+          <li><strong>Remove, alter, or obscure</strong> any proprietary notices, watermarks, or technical protection measures;</li>
+          <li><strong>Resell, sublicense, or provide access</strong> to the Services to third parties without a written agreement.</li>
+        </ol>
+
+        <h3 class="text-lg font-semibold">3.3 Competitive Use</h3>
+        <p>You may not use the Services to develop, train, or validate a substantially similar product or service that you offer commercially. This does not restrict you from building applications that incorporate the Services for your own use.</p>
+
+        <h3 class="text-lg font-semibold">3.4 Benchmarking</h3>
+        <p>You may publish performance benchmarks of the Services provided that: (a) your methodology is disclosed in full, (b) tests are conducted in good faith under normal usage conditions, and (c) you provide Company reasonable opportunity to review and comment prior to publication.</p>
+
+        <h2 class="text-2xl font-bold">4. Your Data</h2>
+
+        <h3 class="text-lg font-semibold">4.1 Ownership</h3>
+        <p>You retain all rights to your Content. Company does not claim ownership of Content you submit.</p>
+
+        <h3 class="text-lg font-semibold">4.2 No Training on Customer Data</h3>
+        <p><strong>Company will not use your Content to train or improve models without your explicit written consent.</strong></p>
+
+        <h3 class="text-lg font-semibold">4.3 Usage Analytics</h3>
+        <p>Company may collect anonymized, aggregated usage metadata (such as request counts and performance metrics) to improve the Services. This metadata will not include identifiable Content.</p>
+
+        <h2 class="text-2xl font-bold">5. Acceptable Use</h2>
+        <p>You may not use the Services to:</p>
+        <ol type="a">
+          <li>Violate any applicable law or regulation;</li>
+          <li>Process content involving the exploitation of minors;</li>
+          <li>Facilitate harassment, stalking, or threats of violence;</li>
+          <li>Infringe intellectual property rights of any third party;</li>
+          <li>Distribute malware, viruses, or other harmful code;</li>
+          <li>Exceed reasonable usage volumes or engage in abusive patterns.</li>
+        </ol>
+        <p>Company reserves the right to suspend access for violations of this section.</p>
+
+        <h2 class="text-2xl font-bold">6. Indemnification</h2>
+        <p>You agree to indemnify, defend, and hold harmless Company and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from:</p>
+        <ol type="a">
+          <li>Your use of the Services;</li>
+          <li>Your violation of these Terms;</li>
+          <li>Your violation of any third-party rights;</li>
+          <li>Content you submit or process through the Services.</li>
+        </ol>
+
+        <h2 class="text-2xl font-bold">7. Disclaimer of Warranties</h2>
+        <p class="legal-caps"><strong>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND.</strong></p>
+        <p class="legal-caps"><strong>COMPANY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT.</strong></p>
+        <p>Performance claims, benchmarks, and latency figures on our website are based on internal testing and may vary depending on hardware, configuration, and workload. We do not guarantee specific performance outcomes.</p>
+
+        <h2 class="text-2xl font-bold">8. Limitation of Liability</h2>
+
+        <h3 class="text-lg font-semibold">8.1 Liability Cap</h3>
+        <p class="legal-caps"><strong>IN NO EVENT SHALL COMPANY'S TOTAL LIABILITY EXCEED THE AMOUNTS PAID BY YOU TO COMPANY IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR $100 USD, WHICHEVER IS GREATER.</strong></p>
+
+        <h3 class="text-lg font-semibold">8.2 Exclusion of Damages</h3>
+        <p class="legal-caps"><strong>COMPANY SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, GOODWILL, OR BUSINESS OPPORTUNITIES, REGARDLESS OF WHETHER COMPANY WAS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</strong></p>
+
+        <h3 class="text-lg font-semibold">8.3 Basis of the Bargain</h3>
+        <p>The limitations in this section reflect the allocation of risk between the parties and are an essential basis of the bargain.</p>
+
+        <h2 class="text-2xl font-bold">9. Dispute Resolution</h2>
+
+        <h3 class="text-lg font-semibold">9.1 Governing Law</h3>
+        <p><strong>These Terms are governed by the laws of the State of Wyoming</strong>, without regard to conflict of law principles.</p>
+
+        <h3 class="text-lg font-semibold">9.2 Binding Arbitration</h3>
+        <p>Any dispute arising from these Terms or the Services shall be resolved by binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules. The arbitration shall be conducted in Wyoming or remotely at the arbitrator's discretion.</p>
+
+        <h3 class="text-lg font-semibold">9.3 Class Action Waiver</h3>
+        <p class="legal-caps"><strong>YOU AGREE THAT ANY DISPUTE RESOLUTION WILL BE CONDUCTED ON AN INDIVIDUAL BASIS AND NOT AS A CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION.</strong></p>
+
+        <h3 class="text-lg font-semibold">9.4 Exceptions</h3>
+        <p>Either party may seek injunctive relief in any court of competent jurisdiction to protect intellectual property rights or prevent irreparable harm.</p>
+
+        <h2 class="text-2xl font-bold">10. Termination</h2>
+
+        <h3 class="text-lg font-semibold">10.1 Termination by You</h3>
+        <p>You may stop using the Services at any time.</p>
+
+        <h3 class="text-lg font-semibold">10.2 Termination by Company</h3>
+        <p>Company may suspend or terminate your access immediately if you breach these Terms. Company may also discontinue any Service with 30 days' notice.</p>
+
+        <h3 class="text-lg font-semibold">10.3 Effect of Termination</h3>
+        <p>Upon termination, your license to use the Services ends. Sections 3 (Intellectual Property), 6 (Indemnification), 7 (Disclaimers), 8 (Limitation of Liability), and 9 (Dispute Resolution) survive termination.</p>
+
+        <h2 class="text-2xl font-bold">11. Export Controls</h2>
+        <p>The Services are subject to U.S. export control laws. You may not use the Services if you are: (a) located in a country subject to U.S. embargo; (b) on the U.S. Treasury Department's Specially Designated Nationals list; or (c) on the U.S. Commerce Department's Denied Persons List.</p>
+
+        <h2 class="text-2xl font-bold">12. General Provisions</h2>
+
+        <h3 class="text-lg font-semibold">12.1 Entire Agreement</h3>
+        <p>These Terms constitute the entire agreement between you and Company regarding the Services and supersede all prior agreements.</p>
+
+        <h3 class="text-lg font-semibold">12.2 Severability</h3>
+        <p>If any provision is held unenforceable, the remaining provisions remain in effect.</p>
+
+        <h3 class="text-lg font-semibold">12.3 Waiver</h3>
+        <p>Failure to enforce any provision is not a waiver of future enforcement.</p>
+
+        <h3 class="text-lg font-semibold">12.4 Assignment</h3>
+        <p>You may not assign these Terms without Company's consent. Company may assign these Terms in connection with a merger, acquisition, or sale of assets.</p>
+
+        <h3 class="text-lg font-semibold">12.5 Force Majeure</h3>
+        <p>Company is not liable for delays or failures due to circumstances beyond its reasonable control.</p>
+
+        <h3 class="text-lg font-semibold">12.6 Age Requirement</h3>
+        <p>You must be at least 18 years old to use the Services.</p>
+
+        <h3 class="text-lg font-semibold">12.7 Modifications</h3>
+        <p>Company may modify these Terms at any time. The current version is always available at this URL. Your continued use of the Services constitutes acceptance of any modifications.</p>
+
+        <h2 class="text-2xl font-bold">13. Product-Specific Terms</h2>
+        <p>Individual CycleCore products may have additional terms with more specific detail:</p>
+        <ul>
+          <li><a href="/safetygates/terms.html">SafetyGates Terms of Service</a></li>
         </ul>
+        <p>Where product-specific terms exist, they supplement these general terms for that product. In the event of a conflict, product-specific terms govern for that product.</p>
 
-        <p style="margin-top: 1rem;"><strong>LIABILITY CAP:</strong> Our total liability for any claim shall not exceed the lesser of:</p>
-        <ul style="margin-left: 1.5rem;">
-          <li>(a) One month of your subscription fees, or</li>
-          <li>(b) $100 USD</li>
-        </ul>
+        <h2 class="text-2xl font-bold">14. Contact</h2>
+        <p>Questions about these Terms:</p>
+        <p>
+          <strong>CycleCore Technologies LLC</strong><br>
+          Email: <a href="mailto:legal@cyclecore.ai">legal@cyclecore.ai</a><br>
+          Web: <a href="https://cyclecore.ai">https://cyclecore.ai</a>
+        </p>
 
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">7. Billing and Payment</h2>
-        
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">7.1 Subscription Plans</h3>
-        <p>We offer multiple subscription tiers with different usage quotas. Fees are charged monthly in advance.</p>
-
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">7.2 Overage Charges</h3>
-        <p>If you exceed your monthly quota, overage charges apply as specified in your plan. You authorize us to charge your payment method for overages.</p>
-
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">7.3 Refunds</h3>
-        <p>Subscription fees are non-refundable. You may cancel at any time, but no refunds will be provided for partial months.</p>
-
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">7.4 Payment Processing</h3>
-        <p>Payments are processed securely through Stripe. We do not store your payment card information.</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">8. Data Privacy</h2>
-        <p><strong>Your data is processed as follows:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li><strong>Input Text:</strong> Processed through our models and discarded immediately after extraction</li>
-          <li><strong>API Keys:</strong> Stored securely (hashed) in our database</li>
-          <li><strong>Usage Logs:</strong> We log API requests for billing and abuse prevention</li>
-          <li><strong>Email:</strong> Used only for service communications (welcome emails, billing notices)</li>
-          <li><strong>No Training:</strong> Your data is never used to train our models</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">9. Service Modifications</h2>
-        <p>We reserve the right to:</p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Modify, suspend, or discontinue the Service at any time</li>
-          <li>Change pricing with 30 days notice for existing customers</li>
-          <li>Update these Terms (changes effective upon posting)</li>
-          <li>Limit or restrict access to the Service</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">10. Termination</h2>
-        <p>We may terminate or suspend your access immediately if you:</p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Violate these Terms</li>
-          <li>Engage in abusive or fraudulent behavior</li>
-          <li>Fail to pay applicable fees</li>
-          <li>Use the Service in a manner that harms our systems or other users</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">11. Dispute Resolution</h2>
-        
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">11.1 Binding Arbitration</h3>
-        <p><strong>Any dispute arising from these Terms or the Service shall be resolved through binding arbitration</strong> in accordance with the rules of the American Arbitration Association.</p>
-        
-        <p style="margin-top: 1rem;"><strong>You waive your right to:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>File a lawsuit in court</li>
-          <li>Participate in a class action lawsuit</li>
-          <li>Have a jury trial</li>
-        </ul>
-
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">11.2 Governing Law</h3>
-        <p><strong>These Terms are governed by the laws of the State of Wyoming, USA,</strong> without regard to conflict of law principles.</p>
-
-        <h3 style="color: var(--cc-gray-200); margin-top: 1.5rem;">11.3 Arbitration Location</h3>
-        <p>Arbitration shall be conducted in Wyoming or remotely via videoconference.</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">12. Indemnification</h2>
-        <p>You agree to indemnify and hold harmless CycleCore Technologies, LLC and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including legal fees) arising from:</p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Your use of the Service</li>
-          <li>Your violation of these Terms</li>
-          <li>Your violation of any law or third-party rights</li>
-          <li>Any content you submit or process through the Service</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">13. API Usage Limits</h2>
-        <p><strong>Usage quotas are enforced per your subscription tier:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Free: 1,000 requests/month</li>
-          <li>Starter: 10,000 requests/month + overage at $0.01/1K</li>
-          <li>Pro: 100,000 requests/month + overage at $0.004/1K</li>
-          <li>Enterprise: Custom quotas</li>
-        </ul>
-        <p>We may suspend service if quotas are exceeded and overages are not paid.</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">14. Intellectual Property</h2>
-        <p><strong>The Service, models, and all related intellectual property are owned by CycleCore Technologies, LLC.</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>The Maaza models are open source (Apache 2.0 License) and available on HuggingFace</li>
-          <li>The API service and infrastructure are proprietary</li>
-          <li>You retain ownership of your input text and extraction results</li>
-          <li>We retain the right to use anonymized, aggregated usage statistics</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">15. Performance Claims and Benchmarks</h2>
-        <p><strong>Accuracy, speed, and cost comparisons are estimates based on:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Internal testing on the EdgeJSON v3 benchmark dataset</li>
-          <li>Publicly available pricing from competitor APIs (as of November 2025)</li>
-          <li>Typical use cases for structured data extraction</li>
-          <li>Assumptions about token counts and API usage patterns</li>
-        </ul>
-        
-        <p style="margin-top: 1rem;"><strong>⚠️ Important Disclaimers:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li><strong>Results vary:</strong> Your actual accuracy, latency, and costs will depend on your specific data, schemas, and usage patterns</li>
-          <li><strong>No guarantees:</strong> We do not guarantee any specific accuracy percentage or cost savings compared to other services</li>
-          <li><strong>Competitive claims:</strong> Comparisons to other APIs (GPT-4, Claude, etc.) are good-faith estimates based on publicly available information and are not endorsements or official benchmarks</li>
-          <li><strong>Subject to change:</strong> Competitor pricing and our own pricing/performance may change without notice</li>
-          <li><strong>Test before deploying:</strong> Always validate the Service meets your requirements before using in production</li>
-        </ul>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">16. Service Level</h2>
-        <p><strong>We aim for high availability but make NO guarantees regarding:</strong></p>
-        <ul style="margin-left: 1.5rem;">
-          <li>Uptime percentage (no SLA for Free or Starter tiers)</li>
-          <li>Response times or latency</li>
-          <li>Concurrent request handling</li>
-        </ul>
-        <p>Enterprise customers may negotiate custom SLAs separately.</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">16. Changes to Terms</h2>
-        <p>We may update these Terms at any time. Changes are effective immediately upon posting. Your continued use of the Service constitutes acceptance of updated Terms.</p>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 2rem;">17. Contact</h2>
-        <p>Questions about these Terms? Contact us:</p>
-        <ul style="margin-left: 1.5rem; list-style: none;">
-          <li><strong>Email:</strong> hi@cyclecore.ai</li>
-          <li><strong>Company:</strong> CycleCore Technologies, LLC</li>
-        </ul>
-
-        <div style="background: var(--cc-gray-900); border: 1px solid var(--cc-gray-700); border-radius: 0.5rem; padding: 1.5rem; margin-top: 3rem;">
-          <p style="margin: 0; font-size: 0.875rem;"><strong>Summary:</strong> Use the Service responsibly, verify all results, and understand that we provide the Service "as is" without warranties. Disputes go to arbitration under Wyoming law. We're not liable for inaccurate extractions or business losses.</p>
-        </div>
-
-        <h2 style="color: var(--cc-accent-cyan); margin-top: 3rem;">18. Related Services</h2>
-        <p>CycleCore Technologies operates multiple services under unified terms. For terms related to other CycleCore products, see:</p>
-        <ul style="margin-left: 1.5rem; list-style: none;">
-          <li>→ <a href="https://mcpbodega.com/terms" style="color: var(--cc-accent-cyan);">MCPBodega Terms of Service</a></li>
-          <li>→ <a href="https://cyclecore.ai/terms.html" style="color: var(--cc-accent-cyan);">General CycleCore Terms</a> (this page applies to all services unless specified)</li>
-        </ul>
-
+        <p class="text-sm text-secondary" style="margin-top: var(--cc-space-xl);"><em>Last updated: February 3, 2026</em></p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3 class="footer-title">CycleCore Technologies</h3>
-        <p class="footer-text">Privacy-first AI infrastructure for developers.</p>
-      </div>
-      <div class="footer-section">
-        <h4 class="footer-subtitle">Legal</h4>
-        <div class="footer-links">
-          <a href="/terms.html" class="footer-link">Terms of Service</a>
-          <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
         </div>
-      </div>
-      <div class="footer-section">
-        <h4 class="footer-subtitle" id="contact">Contact</h4>
-        <div class="footer-links">
-          <a href="mailto:hi@cyclecore.ai" class="footer-link">hi@cyclecore.ai</a>
+
+        <!-- Platform -->
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <div class="footer-links">
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
+          </div>
         </div>
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+            <a href="/#contact" class="footer-link">Contact</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copyright">© 2026 CycleCore Technologies, LLC. All rights reserved.</p>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
+      </div>
     </div>
   </footer>
 
 </body>
 </html>
-

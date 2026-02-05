@@ -1,0 +1,29 @@
+# Internal operations
+ops/
+*.bus.jsonl
+
+# Status docs (federation)
+CC-*
+*_STATUS_*.md
+
+# Internal implementation docs
+SECURITY.md
+SECURITY_IMPLEMENTATION.md
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Temp
+*.tmp
+*.temp

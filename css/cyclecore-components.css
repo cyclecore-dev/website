@@ -959,13 +959,13 @@ span.terminal-input[contenteditable]:empty:before {
 /* ==================== */
 
 .section-standard {
-  padding-top: var(--cc-space-xl);
-  padding-bottom: var(--cc-space-xl);
+  padding-top: var(--cc-space-lg);
+  padding-bottom: var(--cc-space-lg);
 }
 
 .page-header {
-  padding-top: calc(var(--cc-navbar-height, 70px) + var(--cc-space-xl));
-  padding-bottom: var(--cc-space-lg);
+  padding-top: calc(var(--cc-navbar-height, 70px) + var(--cc-space-lg));
+  padding-bottom: var(--cc-space-md);
   text-align: center;
 }
 

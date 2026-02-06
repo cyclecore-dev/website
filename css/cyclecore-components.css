@@ -953,3 +953,109 @@ span.terminal-input[contenteditable]:empty:before {
 }
 
 .code-string { color: var(--cc-terminal-green); }
+
+/* ==================== */
+/* PAGE SECTIONS        */
+/* ==================== */
+
+.section-standard {
+  padding-top: var(--cc-space-xl);
+  padding-bottom: var(--cc-space-xl);
+}
+
+.page-header {
+  padding-top: calc(var(--cc-navbar-height, 70px) + var(--cc-space-xl));
+  padding-bottom: var(--cc-space-lg);
+  text-align: center;
+}
+
+.page-title {
+  font-size: var(--cc-text-5xl);
+  font-weight: var(--cc-weight-black);
+  margin-bottom: var(--cc-space-xs);
+}
+
+.page-subtitle {
+  font-size: var(--cc-text-xl);
+  color: var(--cc-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--cc-leading-relaxed);
+}
+
+/* ==================== */
+/* CARD GRID            */
+/* ==================== */
+
+.card-grid {
+  display: grid;
+  gap: var(--cc-space-lg);
+}
+
+/* ==================== */
+/* RESEARCH PAGE        */
+/* ==================== */
+
+.paper-card {
+  border-left: 3px solid var(--cc-accent-cyan);
+}
+
+.paper-meta {
+  display: flex;
+  gap: var(--cc-space-sm);
+  align-items: center;
+  margin-bottom: var(--cc-space-sm);
+  flex-wrap: wrap;
+}
+
+.paper-section {
+  margin-top: var(--cc-space-lg);
+}
+
+.paper-section-title {
+  font-size: var(--cc-text-lg);
+  font-weight: var(--cc-weight-semibold);
+  color: var(--cc-text-primary);
+  margin-bottom: var(--cc-space-sm);
+}
+
+.paper-results {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cc-space-sm);
+}
+
+.text-tertiary {
+  color: var(--cc-text-tertiary);
+}
+
+.text-sm {
+  font-size: var(--cc-text-sm);
+}
+
+.mt-sm {
+  margin-top: var(--cc-space-sm);
+}
+
+.security-list {
+  margin-top: var(--cc-space-md);
+  padding-left: 1.5rem;
+  line-height: 2;
+  color: var(--cc-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .page-title {
+    font-size: var(--cc-text-4xl);
+  }
+}

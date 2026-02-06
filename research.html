@@ -126,7 +126,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260203b">
   <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260203">
-  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260203b">
+  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260205">
 
   <!-- Main JavaScript -->
   <script src="/js/main.js" defer></script>
@@ -159,11 +159,11 @@
   </nav>
 
   <!-- Research Header -->
-  <section class="section-standard" style="padding-top: calc(var(--cc-navbar-height, 70px) + var(--cc-space-2xl, 6rem));">
+  <section class="page-header">
     <div class="container">
       <h1 class="page-title gradient-text fade-in">Research</h1>
       <p class="page-subtitle fade-in-up">
-        Building the future of edge AI with transparency and open research.
+        Open research. Practical results. Edge AI.
       </p>
     </div>
   </section>
@@ -171,56 +171,42 @@
   <!-- Maaza Paper Section -->
   <section class="section-standard" id="maaza">
     <div class="container">
-      <div class="card-grid fade-in-up">
+      <div class="card paper-card fade-in-up">
+        <div class="paper-meta">
+          <span class="badge">Technical Report</span>
+          <span class="text-tertiary text-sm">2025</span>
+        </div>
+        <h2 class="card-title">Task-Specialized Micro Language Models Outperform Larger Zero-Shot Models on Structured Data Extraction</h2>
+        <p class="text-tertiary text-sm" style="margin-bottom: 1rem;">maaza model family</p>
+        <p class="card-description">
+          Small language models designed for structured JSON generation on edge devices.
+          Task-specific models that outperform larger general-purpose models on structured output.
+        </p>
 
-        <!-- Paper Card -->
-        <div class="card">
-          <h2 class="card-title" style="color: var(--cc-accent-cyan);">Task-Specialized Micro Language Models Outperform Larger Zero-Shot Models on Structured Data Extraction</h2>
-          <p class="card-description" style="font-size: 0.9rem; color: var(--cc-text-tertiary); margin-bottom: 1rem;">
-            maaza model family
-          </p>
-          <p class="card-description">
-            Small language models designed for structured JSON generation on edge devices.
-            Task-specific models that outperform larger general-purpose models on structured output.
-          </p>
-
-          <div style="margin-top: 2rem;">
-            <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--cc-accent-cyan);">Key Results</h3>
-            <ul style="margin: 0; padding-left: 1.5rem; line-height: 1.8;">
-              <li>72.3% JSONExact accuracy, 0.878 Field F1</li>
-              <li>70% tool routing accuracy, 70ms latency</li>
-              <li>CPU-only inference, &lt;150MB disk footprint</li>
-            </ul>
-          </div>
-
-          <div style="margin-top: 2rem;">
-            <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--cc-accent-cyan);">Download Paper</h3>
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <a href="/papers/MAAZA_PAPER_v0.7.pdf" class="btn btn-primary" download>
-                Download PDF (Light Theme)
-              </a>
-              <a href="/papers/MAAZA_PAPER_v0.7_dark.pdf" class="btn btn-secondary" download>
-                Download PDF (Dark Theme)
-              </a>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--cc-gray-400);">
-              Version 0.7 | 2025
-            </p>
-          </div>
-
-          <div style="margin-top: 2rem;">
-            <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--cc-accent-cyan);">Models</h3>
-            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-              <a href="https://huggingface.co/CycleCoreTechnologies"
-                 style="color: var(--cc-accent-cyan); text-decoration: none;"
-                 target="_blank" rel="noopener">
-                → View models on HuggingFace
-              </a>
-            </div>
-          </div>
-
+        <div class="paper-section">
+          <h3 class="paper-section-title">Key Results</h3>
+          <ul class="paper-results">
+            <li>72.3% JSONExact accuracy, 0.878 Field F1</li>
+            <li>70% tool routing accuracy, 70ms latency</li>
+            <li>CPU-only inference, &lt;150MB disk footprint</li>
+          </ul>
         </div>
 
+        <div class="paper-section">
+          <h3 class="paper-section-title">Download Paper</h3>
+          <div class="btn-row">
+            <a href="/papers/MAAZA_PAPER_v0.7.pdf" class="btn btn-primary" download>PDF (Light)</a>
+            <a href="/papers/MAAZA_PAPER_v0.7_dark.pdf" class="btn btn-secondary" download>PDF (Dark)</a>
+          </div>
+          <p class="text-tertiary text-sm mt-sm">Version 0.7</p>
+        </div>
+
+        <div class="paper-section">
+          <h3 class="paper-section-title">Models</h3>
+          <a href="https://huggingface.co/CycleCoreTechnologies" class="btn btn-secondary" target="_blank" rel="noopener">
+            View on HuggingFace →
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -229,19 +215,21 @@
   <section class="section-standard" id="ap28">
     <div class="container">
       <div class="card fade-in-up">
-        <h2 class="card-title" style="color: var(--cc-accent-cyan);">A Large-Scale ML-Guided Search for 28-Term Prime Progressions: No Progressions with More Than 10 Primes Found Among 10^9 Candidates</h2>
+        <div class="paper-meta">
+          <span class="badge badge-outline">Dataset</span>
+          <span class="text-tertiary text-sm">Zenodo 2025</span>
+        </div>
+        <h2 class="card-title">A Large-Scale ML-Guided Search for 28-Term Prime Progressions</h2>
         <p class="card-description">
-          We present a computational search for arithmetic progressions of primes with 28 or more terms.
-          Using ML-guided candidate generation and distributed verification across 10^9 candidates,
-          we find no progressions exceeding 10 primes among the search space.
+          Computational search for arithmetic progressions of primes with 28 or more terms.
+          ML-guided candidate generation across 10^9 candidates found no progressions exceeding 10 primes.
         </p>
 
-        <div style="margin-top: 2rem;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--cc-accent-cyan);">Publication</h3>
-          <p style="margin-bottom: 1rem; color: var(--cc-gray-300); line-height: 1.8;">
-            Published on Zenodo, 2025. DOI: <a href="https://doi.org/10.5281/zenodo.17889361" target="_blank" rel="noopener" style="color: var(--cc-accent-cyan);">10.5281/zenodo.17889361</a>
+        <div class="paper-section">
+          <p class="text-secondary">
+            DOI: <a href="https://doi.org/10.5281/zenodo.17889361" target="_blank" rel="noopener">10.5281/zenodo.17889361</a>
           </p>
-          <a href="https://doi.org/10.5281/zenodo.17889361" class="btn btn-primary" target="_blank" rel="noopener">
+          <a href="https://doi.org/10.5281/zenodo.17889361" class="btn btn-primary mt-sm" target="_blank" rel="noopener">
             View on Zenodo →
           </a>
         </div>
@@ -253,9 +241,9 @@
   <section class="section-standard">
     <div class="container">
       <div class="card fade-in-up">
-        <h3 class="card-title" style="color: var(--cc-accent-cyan);">Security Research</h3>
-        <p class="card-description">Vulnerability research and responsible disclosure across AI infrastructure and model formats.</p>
-        <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8; color: var(--cc-text-secondary);">
+        <h3 class="card-title">Security Research</h3>
+        <p class="card-description">Vulnerability research and responsible disclosure across AI infrastructure.</p>
+        <ul class="security-list">
           <li>OpenRouter</li>
           <li>LiteLLM</li>
           <li>Ollama</li>

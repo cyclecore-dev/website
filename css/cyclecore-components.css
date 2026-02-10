@@ -1048,6 +1048,22 @@ span.terminal-input[contenteditable]:empty:before {
   padding-left: 1.5rem;
   line-height: 2;
   color: var(--cc-text-secondary);
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.security-list li {
+  transition: color 0.15s ease;
+}
+
+.security-list li:hover {
+  color: var(--cc-text-primary);
+}
+
+@media (max-width: 640px) {
+  .security-list {
+    columns: 1;
+  }
 }
 
 @media (max-width: 640px) {

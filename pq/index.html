@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Post-Quantum Cryptography API. Dilithium3 signing, Kyber768 encryption. One API call. NIST-standardized, managed keys, sub-100μs performance.">
+  <meta name="keywords" content="post-quantum cryptography, PQC API, Dilithium3, Kyber768, quantum-resistant, NIST, CycleCore">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PQCaaS - Post-Quantum Cryptography API">
+  <meta property="og:description" content="Dilithium3 signing. Kyber768 encryption. One API call. NIST-standardized quantum-resistant cryptography.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cyclecore.ai/pq/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PQCaaS - Post-Quantum Cryptography API">
+  <meta name="twitter:description" content="Dilithium3 signing. Kyber768 encryption. One API call.">
+
+  <title>PQCaaS - Post-Quantum Cryptography API - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Preload Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260203b">
+  <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260203">
+  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260203b">
+
+  <!-- Main JavaScript -->
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">
+        <img src="/assets/logo/cyclecore-logo-s.png" alt="CycleCore" class="navbar-logo-img">
+        <span>CycleCore</span>
+      </a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="navbar-links">
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
+        <a href="/security.html" class="navbar-link">Security</a>
+        <a href="/pq/" class="navbar-link active">PQCaaS</a>
+        <a href="/about.html" class="navbar-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-hero" id="top">
+    <div class="container">
+      <h1 class="hero-headline fade-in-up">
+        <span class="hero-headline-line gradient-text">Post-Quantum Cryptography API</span>
+        <span class="hero-headline-line">Dilithium3 signing. Kyber768 encryption. One API call.</span>
+      </h1>
+
+      <p class="hero-subtitle fade-in-up">
+        NIST-standardized quantum-resistant cryptography as a service. No crypto libraries to install. No key management. Sub-100μs signing on commodity hardware.
+      </p>
+
+      <div class="hero-trust-bar fade-in-up">
+        <span class="trust-badge">NIST-Standardized</span>
+        <span class="trust-badge">Sub-100μs Signing</span>
+        <span class="trust-badge">Managed Keys</span>
+      </div>
+
+      <div class="hero-cta fade-in-up">
+        <a href="/pq/docs/" class="btn btn-primary btn-large">Get Free API Key</a>
+        <a href="/pq/docs/" class="btn btn-secondary btn-large">View Docs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-md reveal">Why PQCaaS</h2>
+      <p class="text-xl text-secondary text-center mb-xl" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Quantum-ready cryptography without the complexity.
+      </p>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg);">
+
+        <!-- Quantum-Ready -->
+        <div class="card reveal">
+          <div class="card-header">
+            <h3 class="card-title">Quantum-Ready</h3>
+            <span class="badge">Core</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              NIST-standardized algorithms (ML-DSA, ML-KEM). Drop-in protection before Q-Day.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Dilithium3 digital signatures</li>
+              <li>Kyber768 key encapsulation</li>
+              <li>AES-256-GCM hybrid encryption</li>
+              <li>Hybrid Noise XX handshakes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Zero Setup -->
+        <div class="card reveal">
+          <div class="card-header">
+            <h3 class="card-title">Zero Setup</h3>
+            <span class="badge badge-outline">Simple</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              No crypto libraries. No key management. Sign, encrypt, and verify in one HTTP call.
+            </p>
+            <ul class="feature-list-compact">
+              <li>One POST request to sign</li>
+              <li>One POST request to encrypt</li>
+              <li>Base64 in, base64 out</li>
+              <li>Python SDK available</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Managed Keys -->
+        <div class="card reveal">
+          <div class="card-header">
+            <h3 class="card-title">Managed Keys</h3>
+            <span class="badge badge-outline">Secure</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              Private keys never leave the server. We handle generation, storage, and rotation.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Auto-generated key pairs on signup</li>
+              <li>Server-side key storage</li>
+              <li>One-click key rotation</li>
+              <li>Public key export for verification</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Example -->
+  <section class="section section-alt" id="example">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-md reveal">Try It</h2>
+      <p class="text-xl text-secondary text-center mb-xl" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Sign a message in one API call.
+      </p>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+
+        <!-- curl example -->
+        <div class="code-block reveal mb-lg">
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">bash</span>
+            <button class="code-copy-btn">Copy</button>
+          </div>
+          <pre><code><span class="code-comment"># Sign a document</span>
+curl -X POST https://pq-api.cyclecore.ai/v1/sign \
+  -H <span class="code-string">"X-API-Key: pq_live_YOUR_KEY"</span> \
+  -H <span class="code-string">"Content-Type: application/json"</span> \
+  -d <span class="code-string">'{"message": "aGVsbG8gd29ybGQ="}'</span>
+
+<span class="code-comment"># Response</span>
+{
+  <span class="code-string">"signature"</span>: <span class="code-string">"MIIFkj..."</span>,
+  <span class="code-string">"public_key"</span>: <span class="code-string">"a3f2c1..."</span>,
+  <span class="code-string">"latency_us"</span>: <span class="code-number">1842.5</span>
+}</code></pre>
+        </div>
+
+        <!-- Python example -->
+        <div class="code-block reveal">
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">python</span>
+            <button class="code-copy-btn">Copy</button>
+          </div>
+          <pre><code><span class="code-keyword">from</span> cyclecore_pq <span class="code-keyword">import</span> CycleCoreClient
+
+client = CycleCoreClient(<span class="code-string">"pq_live_YOUR_KEY"</span>)
+result = client.sign(<span class="code-keyword">b</span><span class="code-string">"hello world"</span>)
+print(result.valid)  <span class="code-comment"># True</span></code></pre>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section" id="use-cases">
+    <div class="container">
+      <h2 class="text-5xl font-bold text-center mb-lg reveal">Use Cases</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--cc-space-md);">
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Crypto & DeFi</h4>
+            <p class="text-secondary text-sm">Post-quantum wallet signing. Every transaction signed with Dilithium3, quantum-proof from day one. Protect against harvest-now-decrypt-later attacks.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Healthcare & Compliance</h4>
+            <p class="text-secondary text-sm">Attestation chains for tamper-evident audit logs. Export for regulatory review. Quantum-resistant audit trails for HIPAA and insurance verification.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Financial Services</h4>
+            <p class="text-secondary text-sm">Encrypt sensitive data with Kyber768. NIST-standardized, no algorithm migration needed. Ready for post-quantum compliance requirements.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">IoT & Supply Chain</h4>
+            <p class="text-secondary text-sm">Batch signing for device attestation — up to 1,000 signatures per call. Low-latency security for real-time systems.</p>
+          </div>
+        </div>
+
+        <div class="card card-compact reveal">
+          <div class="card-body">
+            <h4 class="text-lg font-semibold mb-xs">Secure Messaging</h4>
+            <p class="text-secondary text-sm">Hybrid Noise XX handshake for post-quantum key exchange between parties. Forward secrecy with quantum-resistant algorithms.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-alt" id="cta">
+    <div class="container text-center">
+      <h2 class="text-5xl font-bold mb-md reveal">Get Started Free</h2>
+      <p class="text-xl text-secondary mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        1,000 free operations per day. No credit card required.
+      </p>
+      <div class="flex justify-center gap-md flex-wrap">
+        <a href="/pq/docs/" class="btn btn-primary btn-large">Get Free API Key</a>
+        <a href="/pq/pricing/" class="btn btn-secondary btn-large">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Post-quantum cryptography and microsecond AI inference.</p>
+        </div>
+
+        <!-- Platform -->
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <div class="footer-links">
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/security.html" class="footer-link">Security</a>
+            <a href="/pq/" class="footer-link">PQCaaS</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+            <a href="/#contact" class="footer-link">Contact</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="/pq/docs/" class="footer-link">PQCaaS Docs</a>
+            <a href="/pq/pricing/" class="footer-link">Pricing</a>
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

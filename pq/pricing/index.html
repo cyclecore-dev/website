@@ -110,7 +110,7 @@
             </ul>
           </div>
           <div class="card-footer">
-            <a href="/pq/docs/#signup" class="btn btn-primary w-full">Get Started</a>
+            <button class="btn btn-primary w-full" onclick="checkout('starter')">Get Started</button>
           </div>
         </div>
 
@@ -131,7 +131,7 @@
             </ul>
           </div>
           <div class="card-footer">
-            <a href="/pq/docs/#signup" class="btn btn-primary w-full">Get Started</a>
+            <button class="btn btn-primary w-full" onclick="checkout('pro')">Get Started</button>
           </div>
         </div>
 
@@ -263,6 +263,39 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    async function checkout(tier) {
+      const btn = event.currentTarget;
+      const originalText = btn.textContent;
+      btn.textContent = 'Redirecting...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://pq-api.cyclecore.ai/v1/auth/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tier: tier,
+            success_url: 'https://cyclecore.ai/pq/success/',
+            cancel_url: 'https://cyclecore.ai/pq/pricing/'
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.detail || 'Checkout failed');
+        }
+
+        const data = await res.json();
+        window.location.href = data.checkout_url;
+      } catch (e) {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Checkout error: ' + e.message + '\n\nPlease try again or contact hi@cyclecore.ai');
+      }
+    }
+  </script>
 
 </body>
 </html>

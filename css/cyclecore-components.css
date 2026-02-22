@@ -326,13 +326,6 @@ span.terminal-input[contenteditable]:empty:before {
   margin: 0 auto;
 }
 
-.navbar-logo {
-  font-size: var(--cc-text-xl);
-  font-weight: var(--cc-weight-bold);
-  color: var(--cc-text-primary);
-  letter-spacing: var(--cc-tracking-tight);
-}
-
 .navbar-links {
   display: flex;
   align-items: center;

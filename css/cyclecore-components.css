@@ -520,7 +520,7 @@ span.terminal-input[contenteditable]:empty:before {
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   text-decoration: none;
   flex-shrink: 0;
   margin-right: var(--cc-space-lg);
@@ -533,7 +533,7 @@ span.terminal-input[contenteditable]:empty:before {
 }
 
 .navbar-logo-wordmark {
-  height: 12px;
+  height: 24px;
   width: auto;
 }
 

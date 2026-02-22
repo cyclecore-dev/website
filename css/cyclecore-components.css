@@ -527,35 +527,20 @@ span.terminal-input[contenteditable]:empty:before {
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   text-decoration: none;
+  flex-shrink: 0;
+  margin-right: var(--cc-space-md);
 }
 
 .navbar-logo-mark {
-  height: 32px;
+  height: 28px;
   width: auto;
 }
 
-.navbar-logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.navbar-logo-name {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-}
-
-.navbar-logo-sub {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 8.5px;
-  letter-spacing: 0.24em;
-  color: #5ce0d8;
+.navbar-logo-wordmark {
+  height: 22px;
+  width: auto;
 }
 
 .hero-headline {
@@ -695,14 +680,10 @@ span.terminal-input[contenteditable]:empty:before {
   }
 }
 
-/* On mobile, keep mark but hide text for cleaner nav */
+/* On mobile, keep mark but hide wordmark for cleaner nav */
 @media (max-width: 768px) {
-  .navbar-logo-text {
+  .navbar-logo-wordmark {
     display: none;
-  }
-  .navbar-logo-mark {
-    width: 32px;
-    height: 32px;
   }
 }
 

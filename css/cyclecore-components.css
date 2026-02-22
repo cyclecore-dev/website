@@ -530,17 +530,17 @@ span.terminal-input[contenteditable]:empty:before {
   gap: 6px;
   text-decoration: none;
   flex-shrink: 0;
-  margin-right: var(--cc-space-xl);
+  margin-right: var(--cc-space-lg);
   z-index: 2;
 }
 
 .navbar-logo-mark {
-  height: 26px;
+  height: 22px;
   width: auto;
 }
 
 .navbar-logo-wordmark {
-  height: 15px;
+  height: 12px;
   width: auto;
 }
 

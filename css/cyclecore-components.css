@@ -527,12 +527,35 @@ span.terminal-input[contenteditable]:empty:before {
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: var(--cc-space-xs);
+  gap: 10px;
+  text-decoration: none;
 }
 
-.navbar-logo-img {
-  width: 32px;
-  height: auto;
+.navbar-logo-mark {
+  height: 32px;
+  width: auto;
+}
+
+.navbar-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.navbar-logo-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.navbar-logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 8.5px;
+  letter-spacing: 0.24em;
+  color: #5ce0d8;
 }
 
 .hero-headline {
@@ -672,10 +695,14 @@ span.terminal-input[contenteditable]:empty:before {
   }
 }
 
-/* Hide tiny navbar logo on mobile - text only is cleaner */
+/* On mobile, keep mark but hide text for cleaner nav */
 @media (max-width: 768px) {
-  .navbar-logo-img {
+  .navbar-logo-text {
     display: none;
+  }
+  .navbar-logo-mark {
+    width: 32px;
+    height: 32px;
   }
 }
 

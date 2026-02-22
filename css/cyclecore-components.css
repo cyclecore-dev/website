@@ -530,7 +530,8 @@ span.terminal-input[contenteditable]:empty:before {
   gap: 6px;
   text-decoration: none;
   flex-shrink: 0;
-  margin-right: var(--cc-space-md);
+  margin-right: var(--cc-space-xl);
+  z-index: 2;
 }
 
 .navbar-logo-mark {

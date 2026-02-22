@@ -534,12 +534,12 @@ span.terminal-input[contenteditable]:empty:before {
 }
 
 .navbar-logo-mark {
-  height: 28px;
+  height: 26px;
   width: auto;
 }
 
 .navbar-logo-wordmark {
-  height: 22px;
+  height: 15px;
   width: auto;
 }
 

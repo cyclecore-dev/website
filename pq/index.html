@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Post-Quantum Cryptography API. Dilithium3 signing, Kyber768 encryption. One API call. NIST-standardized, managed keys, sub-100μs performance.">
+  <meta name="description" content="Post-Quantum Cryptography API. Dilithium3 signing, Kyber768 encryption, Zero-Exposure Signing. One API call. NIST-standardized, managed keys, sub-100μs performance.">
   <meta name="keywords" content="post-quantum cryptography, PQC API, Dilithium3, Kyber768, quantum-resistant, NIST, CycleCore">
 
   <!-- Open Graph -->
@@ -83,6 +83,7 @@
         <span class="trust-badge">NIST-Standardized</span>
         <span class="trust-badge">Sub-100μs Signing</span>
         <span class="trust-badge">Managed Keys</span>
+        <span class="trust-badge">Zero-Exposure Signing</span>
       </div>
 
       <div class="hero-cta fade-in-up">
@@ -160,6 +161,25 @@
           </div>
         </div>
 
+        <!-- Zero-Exposure Signing -->
+        <div class="card reveal">
+          <div class="card-header">
+            <h3 class="card-title">Zero-Exposure Signing</h3>
+            <span class="badge">New</span>
+          </div>
+          <div class="card-body">
+            <p class="text-secondary mb-md">
+              Sign data without exposing plaintext to the API. Client-side hashing — we only see a 32-byte digest, never your content.
+            </p>
+            <ul class="feature-list-compact">
+              <li>Client hashes locally (SHAKE-256)</li>
+              <li>API signs the digest, not your data</li>
+              <li>HIPAA, PCI, GDPR friendly</li>
+              <li>Send 32 bytes instead of 10MB</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -213,6 +233,28 @@ result = client.sign(<span class="code-keyword">b</span><span class="code-string
 print(result.valid)  <span class="code-comment"># True</span></code></pre>
         </div>
 
+        <!-- ZES example -->
+        <div class="code-block reveal" style="margin-top: var(--cc-space-lg);">
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">python — Zero-Exposure Signing</span>
+            <button class="code-copy-btn">Copy</button>
+          </div>
+          <pre><code><span class="code-keyword">from</span> cyclecore_pq <span class="code-keyword">import</span> CycleCoreClient, zes_sign, zes_verify
+
+client = CycleCoreClient(<span class="code-string">"pq_live_YOUR_KEY"</span>)
+
+<span class="code-comment"># Your data is hashed locally — the API never sees it</span>
+result = zes_sign(client, <span class="code-keyword">b</span><span class="code-string">"patient record, financial tx, anything sensitive"</span>)
+print(result.signature[:40])  <span class="code-comment"># Dilithium3 signature of the digest</span>
+
+<span class="code-comment"># Verify (also hashes locally before checking)</span>
+verified = zes_verify(client, <span class="code-keyword">b</span><span class="code-string">"patient record, financial tx, anything sensitive"</span>, result.signature_bytes)
+print(verified.valid)  <span class="code-comment"># True — and CycleCore never saw your data</span></code></pre>
+        </div>
+
         <div class="text-center reveal" style="margin-top: var(--cc-space-lg);">
           <p class="text-secondary mb-md">No API key? Try it right now in your browser.</p>
           <a href="https://pq-api.cyclecore.ai/try" class="btn btn-primary btn-large">Open Live Terminal</a>
@@ -232,14 +274,14 @@ print(result.valid)  <span class="code-comment"># True</span></code></pre>
         <div class="card card-compact reveal">
           <div class="card-body">
             <h4 class="text-lg font-semibold mb-xs">Crypto & DeFi</h4>
-            <p class="text-secondary text-sm">Post-quantum wallet signing. Every transaction signed with Dilithium3, quantum-proof from day one. Protect against harvest-now-decrypt-later attacks.</p>
+            <p class="text-secondary text-sm">Post-quantum wallet signing. Zero-Exposure Signing lets you sign transaction digests without exposing full tx data. Quantum-proof from day one.</p>
           </div>
         </div>
 
         <div class="card card-compact reveal">
           <div class="card-body">
             <h4 class="text-lg font-semibold mb-xs">Healthcare & Compliance</h4>
-            <p class="text-secondary text-sm">Attestation chains for tamper-evident audit logs. Export for regulatory review. Quantum-resistant audit trails for HIPAA and insurance verification.</p>
+            <p class="text-secondary text-sm">Attestation chains for tamper-evident audit logs. Use Zero-Exposure Signing to sign HIPAA records without sending PII to a third party. Quantum-resistant audit trails for regulatory review.</p>
           </div>
         </div>
 

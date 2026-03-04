@@ -585,27 +585,19 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="section-hero" id="home">
+  <!-- Hero Section (compact — products must be above the fold) -->
+  <section id="home" style="padding-top: calc(70px + var(--cc-space-lg)); padding-bottom: var(--cc-space-md); text-align: center;">
     <div class="container">
 
-      <!-- Logo -->
-      <div class="hero-logo fade-in">
-        <img src="/assets/logo/cyclecore-logo-l.png" alt="CycleCore Technologies" class="hero-logo-img">
-      </div>
-
-      <!-- Hero Headline -->
-      <h1 class="hero-headline fade-in-up">
-        <span class="hero-headline-line gradient-text">Microsecond AI Infrastructure</span>
+      <h1 class="fade-in-up" style="font-size: clamp(1.5rem, 4vw, 3.75rem); font-weight: var(--cc-weight-black); line-height: var(--cc-leading-tight); letter-spacing: var(--cc-tracking-tighter); margin-bottom: var(--cc-space-xs);">
+        <span class="gradient-text">Microsecond AI Infrastructure</span>
       </h1>
 
-      <!-- Hero Subtitle -->
-      <p class="hero-subtitle fade-in-up">
+      <p class="fade-in-up" style="font-size: var(--cc-text-lg); color: var(--cc-text-secondary); margin-bottom: var(--cc-space-sm);">
         Hardware. APIs. Tools. Ship quantum-safe today.
       </p>
 
-      <!-- Trust Bar -->
-      <div class="hero-trust-bar fade-in-up">
+      <div class="hero-trust-bar fade-in-up" style="margin-bottom: 0;">
         <span class="trust-badge">Patent-Pending Architecture</span>
         <span class="trust-badge">Sub-5&micro;s</span>
         <span class="trust-badge">Ships in 7 Days</span>
@@ -666,7 +658,20 @@
         </div>
 
         <!-- Card 4: PQ/QR — pending product decision -->
-        <!-- Card 5: gg — pending product page -->
+
+        <!-- Card 5: gg -->
+        <div class="carousel-card">
+          <span class="carousel-card-badge badge-devtool">Dev Tool</span>
+          <h3 class="carousel-card-name">gg</h3>
+          <p class="carousel-card-subtitle">Agent-Native Git Client</p>
+          <p class="carousel-card-desc">
+            2-letter CLI. 98% token savings. Built for AI agents.
+            GitHub, A2A, and more.
+          </p>
+          <div class="carousel-card-price">Free<span style="font-size: var(--cc-text-lg); font-weight: 400;"> / $15 Pro</span></div>
+          <div class="carousel-card-price-note">npm i -g @ggdotdev/gg</div>
+          <a href="https://www.npmjs.com/package/@ggdotdev/gg" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto;">Install Free</a>
+        </div>
 
 
       </div>
@@ -677,6 +682,7 @@
         <div class="carousel-dots" id="carousel-dots">
           <button class="carousel-dot active" data-index="0" aria-label="Page 1"></button>
           <button class="carousel-dot" data-index="1" aria-label="Page 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Page 3"></button>
         </div>
         <button class="carousel-arrow" id="carousel-next" aria-label="Next">&rarr;</button>
       </div>

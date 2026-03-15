@@ -85,6 +85,17 @@
       box-shadow: 0 12px 40px rgba(0, 212, 255, 0.12);
     }
 
+    /* Premium glow for hardware cards */
+    .carousel-card.card-hardware {
+      border-top: 2px solid rgba(0, 212, 255, 0.3);
+      background: linear-gradient(180deg, rgba(0, 212, 255, 0.04) 0%, var(--cc-gray-900) 15%);
+    }
+
+    .carousel-card.card-hardware:hover {
+      border-top-color: var(--cc-accent-cyan);
+      box-shadow: 0 12px 40px rgba(0, 212, 255, 0.18), 0 0 60px rgba(0, 212, 255, 0.06);
+    }
+
     .carousel-card-badge {
       font-family: var(--cc-font-mono);
       font-size: 0.65rem;
@@ -211,6 +222,11 @@
       border-color: var(--cc-accent-cyan);
       color: var(--cc-text-primary);
       background: var(--cc-gray-900);
+      transform: scale(1.1);
+    }
+
+    .carousel-arrow:active {
+      transform: scale(0.95);
     }
 
     .carousel-dots {
@@ -613,7 +629,7 @@
       <div class="carousel-track" id="carousel-track">
 
         <!-- Card 1: PQ Box -->
-        <div class="carousel-card">
+        <div class="carousel-card card-hardware">
           <span class="carousel-card-badge badge-hardware">Hardware</span>
           <h3 class="carousel-card-name">PQ Box</h3>
           <p class="carousel-card-subtitle">Enterprise PQCaaS Appliance</p>
@@ -629,7 +645,7 @@
         </div>
 
         <!-- Card 2: PQ/QR Box -->
-        <div class="carousel-card">
+        <div class="carousel-card card-hardware">
           <span class="carousel-card-badge badge-hardware">Hardware</span>
           <h3 class="carousel-card-name">PQ/QR Box</h3>
           <p class="carousel-card-subtitle">Visual Crypto Appliance</p>
@@ -955,6 +971,8 @@
 
       const dots = dotsContainer.querySelectorAll('.carousel-dot');
       const cards = track.querySelectorAll('.carousel-card');
+      var autoTimer = null;
+      var paused = false;
 
       function getCardsPerView() {
         if (window.innerWidth <= 640) return 1;
@@ -962,28 +980,36 @@
         return 3;
       }
 
+      function getCurrentIndex() {
+        var cardWidth = cards[0].offsetWidth + 32;
+        return Math.round(track.scrollLeft / cardWidth);
+      }
+
       function scrollToIndex(index) {
-        const card = cards[index];
+        var card = cards[index];
         if (card) {
           track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
         }
       }
 
-      prevBtn.addEventListener('click', function() {
-        const perView = getCardsPerView();
-        const scrollLeft = track.scrollLeft;
-        const cardWidth = cards[0].offsetWidth + 32; // gap
-        const currentIndex = Math.round(scrollLeft / cardWidth);
-        scrollToIndex(Math.max(0, currentIndex - perView));
-      });
+      function advance(direction) {
+        var perView = getCardsPerView();
+        var current = getCurrentIndex();
+        var maxStart = cards.length - perView;
+        var next;
 
-      nextBtn.addEventListener('click', function() {
-        const perView = getCardsPerView();
-        const scrollLeft = track.scrollLeft;
-        const cardWidth = cards[0].offsetWidth + 32;
-        const currentIndex = Math.round(scrollLeft / cardWidth);
-        scrollToIndex(Math.min(cards.length - 1, currentIndex + perView));
-      });
+        if (direction > 0) {
+          next = current + perView;
+          if (next > maxStart) next = 0; // wrap to start
+        } else {
+          next = current - perView;
+          if (next < 0) next = maxStart; // wrap to end
+        }
+        scrollToIndex(next);
+      }
+
+      prevBtn.addEventListener('click', function() { advance(-1); resetAuto(); });
+      nextBtn.addEventListener('click', function() { advance(1); resetAuto(); });
 
       // Dot click handlers
       dots.forEach(function(dot) {
@@ -991,6 +1017,7 @@
           var index = parseInt(this.dataset.index);
           var perView = getCardsPerView();
           scrollToIndex(index * perView);
+          resetAuto();
         });
       });
 
@@ -1007,6 +1034,32 @@
           });
         }, 50);
       }, { passive: true });
+
+      // Auto-advance every 5s, pause on hover/touch
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(function() {
+          if (!paused) advance(1);
+        }, 5000);
+      }
+
+      function stopAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      }
+
+      function resetAuto() {
+        startAuto();
+      }
+
+      track.addEventListener('mouseenter', function() { paused = true; });
+      track.addEventListener('mouseleave', function() { paused = false; });
+      track.addEventListener('touchstart', function() { paused = true; }, { passive: true });
+      track.addEventListener('touchend', function() {
+        paused = false;
+        resetAuto();
+      }, { passive: true });
+
+      startAuto();
     });
   </script>
 

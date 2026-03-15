@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="CycleCore Technologies - Microsecond AI inference on edge hardware. 5μs latency. Patents pending.">
-  <meta name="keywords" content="edge AI, microsecond inference, robotics AI, medical device AI, agent infrastructure, MCP, CycleCore">
+  <meta name="description" content="CycleCore Technologies - Microsecond AI infrastructure. Hardware, APIs, and tools. Sub-5μs post-quantum cryptography. Patent-pending architecture.">
+  <meta name="keywords" content="post-quantum cryptography, PQCaaS, edge AI, microsecond inference, ML-DSA, hardware security module, CycleCore">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="CycleCore Technologies - Microsecond AI Inference">
-  <meta property="og:description" content="5μs latency on standard edge hardware. Patents pending. Building the infrastructure layer for edge AI.">
+  <meta property="og:title" content="CycleCore Technologies - Microsecond AI Infrastructure">
+  <meta property="og:description" content="Hardware. APIs. Tools. Sub-5μs post-quantum crypto. Patent-pending architecture. Ship quantum-safe today.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cyclecore.ai">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CycleCore Technologies - Microsecond AI Inference">
-  <meta name="twitter:description" content="5μs latency on existing hardware. Patents pending.">
+  <meta name="twitter:title" content="CycleCore Technologies - Microsecond AI Infrastructure">
+  <meta name="twitter:description" content="Hardware. APIs. Tools. Sub-5μs post-quantum crypto. Ship quantum-safe today.">
 
-  <title>CycleCore Technologies - Microsecond AI Inference on Edge Hardware</title>
+  <title>CycleCore Technologies - Microsecond AI Infrastructure</title>
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -32,15 +32,479 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260203b">
-  <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260203">
-  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260203b">
-
-  <!-- Typed.js for Terminal Effect -->
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260304">
+  <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260304">
+  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260304">
 
   <!-- Main JavaScript -->
   <script src="/js/main.js" defer></script>
+
+  <style>
+    /* ==================== */
+    /* PRODUCT CAROUSEL     */
+    /* ==================== */
+
+    .carousel {
+      position: relative;
+      max-width: var(--cc-container-xl);
+      margin: 0 auto;
+      padding: 0 var(--cc-space-md);
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: var(--cc-space-md);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: var(--cc-space-sm) 0;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-card {
+      flex: 0 0 calc(33.333% - 1.4rem);
+      scroll-snap-align: start;
+      background: var(--cc-gray-900);
+      border: 1px solid var(--cc-gray-700);
+      border-radius: var(--cc-radius-lg);
+      padding: var(--cc-space-md);
+      display: flex;
+      flex-direction: column;
+      transition: var(--cc-transition-slow);
+      min-height: 380px;
+    }
+
+    .carousel-card:hover {
+      border-color: var(--cc-accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 212, 255, 0.12);
+    }
+
+    .carousel-card-badge {
+      font-family: var(--cc-font-mono);
+      font-size: 0.65rem;
+      font-weight: var(--cc-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.625rem;
+      border-radius: var(--cc-radius-sm);
+      display: inline-block;
+      margin-bottom: var(--cc-space-sm);
+      width: fit-content;
+    }
+
+    .badge-hardware {
+      background: rgba(0, 212, 255, 0.15);
+      color: var(--cc-accent-cyan);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .badge-cloud {
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--cc-success);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .badge-devtool {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--cc-warning);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .carousel-card-name {
+      font-size: var(--cc-text-2xl);
+      font-weight: var(--cc-weight-bold);
+      color: var(--cc-text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .carousel-card-subtitle {
+      font-size: var(--cc-text-sm);
+      color: var(--cc-text-secondary);
+      margin-bottom: var(--cc-space-sm);
+    }
+
+    .carousel-card-desc {
+      font-size: var(--cc-text-sm);
+      color: var(--cc-text-tertiary);
+      line-height: var(--cc-leading-relaxed);
+      margin-bottom: auto;
+      padding-bottom: var(--cc-space-sm);
+    }
+
+    .carousel-card-price {
+      font-size: var(--cc-text-3xl);
+      font-weight: var(--cc-weight-bold);
+      color: var(--cc-accent-cyan);
+      margin-bottom: 0.25rem;
+    }
+
+    .carousel-card-price-note {
+      font-size: var(--cc-text-xs);
+      color: var(--cc-text-tertiary);
+      margin-bottom: var(--cc-space-sm);
+    }
+
+    .carousel-card-promo {
+      font-family: var(--cc-font-mono);
+      font-size: 0.65rem;
+      color: var(--cc-success);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: var(--cc-radius-sm);
+      padding: 0.3rem 0.5rem;
+      margin-bottom: var(--cc-space-sm);
+      display: inline-block;
+    }
+
+    .carousel-card-support {
+      font-size: var(--cc-text-xs);
+      color: var(--cc-text-tertiary);
+      margin-bottom: var(--cc-space-sm);
+    }
+
+    .carousel-card-support a {
+      color: var(--cc-text-secondary);
+      text-decoration: underline;
+      text-decoration-color: var(--cc-gray-600);
+    }
+
+    .carousel-card-support a:hover {
+      color: var(--cc-accent-cyan);
+    }
+
+    .carousel-card .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Carousel Navigation */
+    .carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--cc-space-sm);
+      margin-top: var(--cc-space-md);
+    }
+
+    .carousel-arrow {
+      background: var(--cc-gray-800);
+      border: 1px solid var(--cc-gray-700);
+      color: var(--cc-text-secondary);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--cc-radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--cc-transition-base);
+      font-size: 1.1rem;
+    }
+
+    .carousel-arrow:hover {
+      border-color: var(--cc-accent-cyan);
+      color: var(--cc-text-primary);
+      background: var(--cc-gray-900);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--cc-radius-full);
+      background: var(--cc-gray-600);
+      border: none;
+      cursor: pointer;
+      transition: var(--cc-transition-base);
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: var(--cc-accent-cyan);
+      width: 24px;
+    }
+
+    /* Responsive Carousel */
+    @media (max-width: 1024px) {
+      .carousel-card {
+        flex: 0 0 calc(50% - 1rem);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .carousel-card {
+        flex: 0 0 calc(100% - 0.5rem);
+        min-height: 340px;
+      }
+      .carousel-arrow {
+        display: none;
+      }
+    }
+
+    /* ==================== */
+    /* HARDWARE SECTION     */
+    /* ==================== */
+
+    .hardware-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--cc-space-lg);
+      max-width: var(--cc-container-xl);
+      margin: 0 auto;
+    }
+
+    .hardware-card {
+      background: var(--cc-gray-900);
+      border: 1px solid var(--cc-gray-700);
+      border-radius: var(--cc-radius-lg);
+      padding: var(--cc-space-lg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hardware-visual {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--cc-black);
+      border: 1px solid var(--cc-gray-700);
+      border-radius: var(--cc-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--cc-space-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hardware-visual::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--cc-radius-md);
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.2), transparent 60%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .hardware-visual-label {
+      font-family: var(--cc-font-mono);
+      font-size: var(--cc-text-3xl);
+      font-weight: var(--cc-weight-semibold);
+      color: var(--cc-gray-600);
+      letter-spacing: 0.05em;
+    }
+
+    .hardware-name {
+      font-size: var(--cc-text-3xl);
+      font-weight: var(--cc-weight-bold);
+      color: var(--cc-text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .hardware-tagline {
+      font-size: var(--cc-text-lg);
+      color: var(--cc-text-secondary);
+      margin-bottom: var(--cc-space-md);
+    }
+
+    .hardware-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: var(--cc-space-md);
+    }
+
+    .hardware-spec {
+      font-size: var(--cc-text-sm);
+    }
+
+    .hardware-spec-label {
+      color: var(--cc-text-tertiary);
+      font-size: var(--cc-text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.125rem;
+    }
+
+    .hardware-spec-value {
+      color: var(--cc-text-primary);
+      font-weight: var(--cc-weight-medium);
+    }
+
+    .hardware-price {
+      font-size: var(--cc-text-4xl);
+      font-weight: var(--cc-weight-bold);
+      color: var(--cc-accent-cyan);
+      margin-bottom: 0.25rem;
+    }
+
+    .hardware-delivery {
+      font-size: var(--cc-text-sm);
+      color: var(--cc-text-tertiary);
+      margin-bottom: var(--cc-space-sm);
+    }
+
+    .hardware-support-tiers {
+      font-size: var(--cc-text-xs);
+      color: var(--cc-text-tertiary);
+      margin-bottom: var(--cc-space-md);
+      line-height: 1.8;
+    }
+
+    .hardware-support-tiers strong {
+      color: var(--cc-text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .hardware-grid {
+        grid-template-columns: 1fr;
+      }
+      .hardware-card {
+        padding: var(--cc-space-md);
+      }
+      .hardware-specs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==================== */
+    /* SPEED BANNER         */
+    /* ==================== */
+
+    .speed-banner {
+      text-align: center;
+      padding: var(--cc-space-xl) var(--cc-space-md);
+      background: linear-gradient(180deg, transparent 0%, rgba(0,212,255,0.03) 50%, transparent 100%);
+    }
+
+    .speed-number {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: var(--cc-weight-black);
+      color: var(--cc-accent-cyan);
+      line-height: 1;
+      margin-bottom: var(--cc-space-xs);
+    }
+
+    .speed-label {
+      font-size: var(--cc-text-xl);
+      color: var(--cc-text-secondary);
+    }
+
+    /* ==================== */
+    /* TRUST BAR            */
+    /* ==================== */
+
+    .trust-bar-section {
+      display: flex;
+      justify-content: center;
+      gap: var(--cc-space-lg);
+      flex-wrap: wrap;
+      padding: var(--cc-space-lg) var(--cc-space-md);
+      max-width: var(--cc-container-xl);
+      margin: 0 auto;
+    }
+
+    .trust-item {
+      text-align: center;
+    }
+
+    .trust-item-value {
+      font-family: var(--cc-font-mono);
+      font-size: var(--cc-text-lg);
+      font-weight: var(--cc-weight-semibold);
+      color: var(--cc-text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-item-label {
+      font-size: var(--cc-text-xs);
+      color: var(--cc-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==================== */
+    /* CLOUD OR HARDWARE    */
+    /* ==================== */
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--cc-space-lg);
+      max-width: var(--cc-container-xl);
+      margin: 0 auto;
+    }
+
+    .path-card {
+      background: var(--cc-gray-900);
+      border: 1px solid var(--cc-gray-700);
+      border-radius: var(--cc-radius-lg);
+      padding: var(--cc-space-lg);
+    }
+
+    .path-card-step {
+      font-family: var(--cc-font-mono);
+      font-size: var(--cc-text-xs);
+      color: var(--cc-accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--cc-space-xs);
+    }
+
+    .path-card h3 {
+      font-size: var(--cc-text-2xl);
+      font-weight: var(--cc-weight-bold);
+      color: var(--cc-text-primary);
+      margin-bottom: var(--cc-space-sm);
+    }
+
+    .path-card p {
+      font-size: var(--cc-text-base);
+      color: var(--cc-text-secondary);
+      line-height: var(--cc-leading-relaxed);
+      margin-bottom: var(--cc-space-md);
+    }
+
+    @media (max-width: 768px) {
+      .path-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-bar-section {
+        gap: var(--cc-space-md);
+      }
+    }
+
+    /* ==================== */
+    /* FEATURED IN          */
+    /* ==================== */
+
+    .featured-logos {
+      display: flex;
+      justify-content: center;
+      gap: var(--cc-space-xl);
+      flex-wrap: wrap;
+      opacity: 0.5;
+    }
+
+    .featured-logo {
+      font-size: var(--cc-text-lg);
+      font-weight: var(--cc-weight-medium);
+      color: var(--cc-text-secondary);
+    }
+  </style>
 </head>
 <body>
 
@@ -76,7 +540,6 @@
       from { transform: translateY(-100%); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
-    /* Push navbar down when banner is visible */
     body.pq-bar-active .navbar { top: 37px; }
     body.pq-bar-active .section-hero { padding-top: 37px; }
     @media (max-width: 600px) {
@@ -88,11 +551,10 @@
   <div id="pq-announce" class="pq-announce">
     <span style="color: var(--cc-accent-cyan); font-size: 0.7rem;">&#9679;</span>
     <span><strong style="color: var(--cc-text-primary);">Post-quantum encryption is live.</strong> Sign &amp; encrypt in microseconds.</span>
-    <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener">Try it now&nbsp;→</a>
+    <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener">Try it now&nbsp;&rarr;</a>
     <button class="pq-dismiss" onclick="document.getElementById('pq-announce').style.display='none';document.body.classList.remove('pq-bar-active');" aria-label="Dismiss">&times;</button>
   </div>
   <script>
-    // Activate bar offset after animation completes
     setTimeout(function(){ document.body.classList.add('pq-bar-active'); }, 3600);
   </script>
 
@@ -117,114 +579,288 @@
         <a href="/research.html" class="navbar-link">Research</a>
         <a href="/security.html" class="navbar-link">Security</a>
         <a href="/pq/" class="navbar-link">PQCaaS</a>
+        <a href="/#hardware" class="navbar-link">Hardware</a>
         <a href="/about.html" class="navbar-link">About</a>
         <a href="#contact" class="navbar-link">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="section-hero" id="home">
+  <!-- Hero Section (compact — products must be above the fold) -->
+  <section id="home" style="padding-top: calc(70px + var(--cc-space-lg)); padding-bottom: var(--cc-space-md); text-align: center;">
     <div class="container">
 
-      <!-- Logo -->
-      <div class="hero-logo fade-in">
-        <img src="/assets/logo/cyclecore-logo-l.png" alt="CycleCore Technologies" class="hero-logo-img">
-      </div>
-
-      <!-- Hero Headline -->
-      <h1 class="hero-headline fade-in-up">
-        <span class="hero-headline-line gradient-text">Microsecond AI Inference</span>
-        <span class="hero-headline-line">on Edge Hardware</span>
+      <h1 class="fade-in-up" style="font-size: clamp(1.5rem, 4vw, 3.75rem); font-weight: var(--cc-weight-black); line-height: var(--cc-leading-tight); letter-spacing: var(--cc-tracking-tighter); margin-bottom: var(--cc-space-xs);">
+        <span class="gradient-text">Microsecond AI Infrastructure</span>
       </h1>
 
-      <!-- Hero Subtitle -->
-      <p class="hero-subtitle fade-in-up">
-        5μs latency. Runs on existing hardware. Patents pending.
+      <p class="fade-in-up" style="font-size: var(--cc-text-lg); color: var(--cc-text-secondary); margin-bottom: var(--cc-space-sm);">
+        Hardware. APIs. Tools. Ship quantum-safe today.
       </p>
 
-      <!-- Trust Bar -->
-      <div class="hero-trust-bar fade-in-up">
-        <span class="trust-badge">ISO 13849 Designed</span>
-        <span class="trust-badge">Patents Pending</span>
-        <span class="trust-badge">Enterprise Ready</span>
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="hero-cta fade-in-up">
-        <a href="/inference.html" class="btn btn-primary btn-large">AI Inference</a>
-        <a href="mailto:partnerships@cyclecore.ai" class="btn btn-secondary btn-large">Request Technical Brief</a>
+      <div class="hero-trust-bar fade-in-up" style="margin-bottom: 0;">
+        <span class="trust-badge">Patent-Pending Architecture</span>
+        <span class="trust-badge">Sub-5&micro;s</span>
+        <span class="trust-badge">Ships in 7 Days</span>
       </div>
 
     </div>
   </section>
 
-  <!-- As Featured In -->
-  <div class="container text-center" style="padding: var(--cc-space-lg) 0 0;">
-    <p class="text-sm text-tertiary" style="text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: var(--cc-space-sm);">As Featured In</p>
-    <div class="flex justify-center gap-lg flex-wrap" style="opacity: 0.6;">
-      <span class="text-secondary text-lg font-medium">National Law Review</span>
-      <span class="text-secondary text-lg font-medium">Global Fintech Series</span>
+  <!-- Product Carousel -->
+  <section class="section" id="products" style="padding-top: 0;">
+    <div class="carousel">
+      <div class="carousel-track" id="carousel-track">
+
+        <!-- Card 1: PQ Box -->
+        <div class="carousel-card">
+          <span class="carousel-card-badge badge-hardware">Hardware</span>
+          <h3 class="carousel-card-name">PQ Box</h3>
+          <p class="carousel-card-subtitle">Enterprise PQCaaS Appliance</p>
+          <p class="carousel-card-desc">
+            Sign, encrypt, attest &mdash; sub-5&micro;s, unlimited usage.
+            Dedicated Intel N100 with CycleCore OS. ZES optional. Patent-pending architecture.
+          </p>
+          <div class="carousel-card-price">$8,500</div>
+          <div class="carousel-card-price-note">Ships in 7 days &middot; Overnight available (+$65)</div>
+          <span class="carousel-card-promo">Free email support with launch orders</span>
+          <div class="carousel-card-support">Add <a href="#hardware">Premium Support</a> &mdash; 24hr phone + engineering, $400/mo</div>
+          <a href="https://buy.stripe.com/dRmeVe6ugcomevc1vmcbC04" target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
+        </div>
+
+        <!-- Card 2: PQ/QR Box -->
+        <div class="carousel-card">
+          <span class="carousel-card-badge badge-hardware">Hardware</span>
+          <h3 class="carousel-card-name">PQ/QR Box</h3>
+          <p class="carousel-card-subtitle">Visual Crypto Appliance</p>
+          <p class="carousel-card-desc">
+            Sign. Encode to QR. Scan. Verify. Sub-5&micro;s.
+            Air-gapped ready. Dedicated Intel N100 with CycleCore OS. Patent-pending architecture.
+          </p>
+          <div class="carousel-card-price">$4,000</div>
+          <div class="carousel-card-price-note">Ships in 7 days &middot; Overnight available (+$65)</div>
+          <span class="carousel-card-promo">Free email support with launch orders</span>
+          <div class="carousel-card-support">Add <a href="#hardware">Premium Support</a> &mdash; 24hr phone + engineering, $400/mo</div>
+          <a href="https://buy.stripe.com/6oUbJ2aKw5ZYevc5LCcbC05" target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
+        </div>
+
+        <!-- Card 3: PQ API -->
+        <div class="carousel-card">
+          <span class="carousel-card-badge badge-cloud">Cloud API</span>
+          <h3 class="carousel-card-name">PQ API</h3>
+          <p class="carousel-card-subtitle">Post-Quantum Crypto API</p>
+          <p class="carousel-card-desc">
+            Sign, encrypt, verify &mdash; sub-100&micro;s over the wire.
+            ML-DSA, ML-KEM, AES-256. FIPS 204/203 compliant algorithms.
+          </p>
+          <div class="carousel-card-price">From $29<span style="font-size: var(--cc-text-lg); font-weight: 400;">/mo</span></div>
+          <div class="carousel-card-price-note">Free tier available</div>
+          <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: auto;">Get API Key</a>
+        </div>
+
+        <!-- Card 4: PQ/QR Playground -->
+        <div class="carousel-card">
+          <span class="carousel-card-badge badge-cloud">Cloud API</span>
+          <h3 class="carousel-card-name">PQ/QR</h3>
+          <p class="carousel-card-subtitle">Visual Crypto Playground</p>
+          <p class="carousel-card-desc">
+            Sign data. Encode to QR. Scan and verify. Live demo. Patent pending.
+          </p>
+          <div class="carousel-card-price">Free to try</div>
+          <div class="carousel-card-price-note">No signup required</div>
+          <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto;">Try It Now &rarr;</a>
+        </div>
+
+        <!-- Card 5: gg -->
+        <div class="carousel-card">
+          <span class="carousel-card-badge badge-devtool">Dev Tool</span>
+          <h3 class="carousel-card-name">gg</h3>
+          <p class="carousel-card-subtitle">Agent-Native Git Client</p>
+          <p class="carousel-card-desc">
+            2-letter CLI. 98% token savings. Built for AI agents.
+            GitHub, A2A, and more.
+          </p>
+          <div class="carousel-card-price">Free<span style="font-size: var(--cc-text-lg); font-weight: 400;"> / $15 Pro</span></div>
+          <div class="carousel-card-price-note">npm i -g @ggdotdev/gg</div>
+          <a href="https://www.npmjs.com/package/@ggdotdev/gg" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto;">Install Free</a>
+        </div>
+
+
+      </div>
+
+      <!-- Carousel Navigation -->
+      <div class="carousel-nav">
+        <button class="carousel-arrow" id="carousel-prev" aria-label="Previous">&larr;</button>
+        <div class="carousel-dots" id="carousel-dots">
+          <button class="carousel-dot active" data-index="0" aria-label="Page 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Page 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Page 3"></button>
+        </div>
+        <button class="carousel-arrow" id="carousel-next" aria-label="Next">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Section -->
+  <section class="section" id="hardware">
+    <div class="container">
+      <h2 class="text-5xl font-black text-center mb-sm reveal">Hardware</h2>
+      <p class="text-xl text-secondary text-center mb-xl reveal" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Dedicated post-quantum appliances. Patent-pending architecture. Same Intel N100, different software configurations.
+      </p>
+
+      <div class="hardware-grid">
+
+        <!-- PQ Box -->
+        <div class="hardware-card reveal">
+          <div class="hardware-visual">
+            <span class="hardware-visual-label">PQ</span>
+          </div>
+          <h3 class="hardware-name">PQ Box</h3>
+          <p class="hardware-tagline">Enterprise PQCaaS Appliance</p>
+          <div class="hardware-specs">
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">CPU</div>
+              <div class="hardware-spec-value">Intel N100 (3.4GHz)</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">RAM</div>
+              <div class="hardware-spec-value">8GB DDR4</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Storage</div>
+              <div class="hardware-spec-value">128GB NVMe</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Performance</div>
+              <div class="hardware-spec-value">Sub-5&micro;s PQ ops</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">OS</div>
+              <div class="hardware-spec-value">CycleCore OS</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Usage</div>
+              <div class="hardware-spec-value">Unlimited</div>
+            </div>
+          </div>
+          <div class="hardware-price">$8,500</div>
+          <div class="hardware-delivery">Ships in 7 days &middot; Overnight to continental US (+$65) &middot; Gigabit Ethernet &middot; USB-C, HDMI</div>
+          <div class="hardware-support-tiers">
+            <strong>Standard</strong> &mdash; email support, docs, firmware updates (included)<br>
+            <strong>Premium</strong> &mdash; 24hr response, phone + email, live PQ engineering support ($400/box/mo)<br>
+            <strong>Enterprise</strong> &mdash; custom SLA, dedicated engineer (<a href="mailto:partnerships@cyclecore.ai" style="color: var(--cc-text-secondary);">contact sales</a>)
+          </div>
+          <a href="https://buy.stripe.com/dRmeVe6ugcomevc1vmcbC04" target="_blank" rel="noopener" class="btn btn-primary btn-large">Order Now</a>
+        </div>
+
+        <!-- PQ/QR Box -->
+        <div class="hardware-card reveal">
+          <div class="hardware-visual">
+            <span class="hardware-visual-label">PQ/QR</span>
+          </div>
+          <h3 class="hardware-name">PQ/QR Box</h3>
+          <p class="hardware-tagline">Visual Crypto Appliance</p>
+          <div class="hardware-specs">
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">CPU</div>
+              <div class="hardware-spec-value">Intel N100 (3.4GHz)</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">RAM</div>
+              <div class="hardware-spec-value">8GB DDR4</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Storage</div>
+              <div class="hardware-spec-value">128GB NVMe</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Performance</div>
+              <div class="hardware-spec-value">Sub-5&micro;s PQ ops</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Visual Crypto</div>
+              <div class="hardware-spec-value">QR / DataMatrix</div>
+            </div>
+            <div class="hardware-spec">
+              <div class="hardware-spec-label">Air-Gapped</div>
+              <div class="hardware-spec-value">Ready</div>
+            </div>
+          </div>
+          <div class="hardware-price">$4,000</div>
+          <div class="hardware-delivery">Ships in 7 days &middot; Overnight to continental US (+$65) &middot; Air-gapped mode</div>
+          <div class="hardware-support-tiers">
+            <strong>Standard</strong> &mdash; email support, docs, firmware updates (included)<br>
+            <strong>Premium</strong> &mdash; 24hr response, phone + email, live PQ engineering support ($400/box/mo)<br>
+            <strong>Enterprise</strong> &mdash; custom SLA, dedicated engineer (<a href="mailto:partnerships@cyclecore.ai" style="color: var(--cc-text-secondary);">contact sales</a>)
+          </div>
+          <a href="https://buy.stripe.com/6oUbJ2aKw5ZYevc5LCcbC05" target="_blank" rel="noopener" class="btn btn-primary btn-large">Order Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Speed Comparison Banner -->
+  <div class="speed-banner reveal">
+    <div class="speed-number">200x</div>
+    <div class="speed-label">faster than traditional HSMs</div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar-section reveal">
+    <div class="trust-item">
+      <div class="trust-item-value">Patent-Pending</div>
+      <div class="trust-item-label">Architecture</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-value">Sub-5&micro;s</div>
+      <div class="trust-item-label">Local PQ Operations</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-value">Post-Quantum Ready</div>
+      <div class="trust-item-label">FIPS 204/203 Algorithms</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-value">As Featured In</div>
+      <div class="trust-item-label">
+        <span class="featured-logos" style="display: inline;">
+          <span class="featured-logo">National Law Review</span> &middot;
+          <span class="featured-logo">Global Fintech Series</span>
+        </span>
+      </div>
     </div>
   </div>
 
-  <!-- Three Pillars Section -->
-  <section class="section" id="pillars">
+  <!-- Cloud or Hardware -->
+  <section class="section" id="paths">
     <div class="container">
-      <h2 class="text-6xl font-black text-center mb-lg">The Platform</h2>
-      <p class="text-2xl text-secondary text-center mb-xl" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-        From silicon to agent.
+      <h2 class="text-5xl font-black text-center mb-sm reveal">Cloud or Hardware</h2>
+      <p class="text-xl text-secondary text-center mb-xl reveal" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+        Start with the cloud API for free. Graduate to a dedicated appliance when you need unlimited local performance.
       </p>
 
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cc-space-lg);">
+      <div class="path-grid">
 
-        <!-- AI Inference -->
-        <a href="/inference.html" class="card card-hover reveal" style="text-decoration: none;">
-          <div class="card-header">
-            <div class="pillar-number">01</div>
-            <h3 class="card-title">AI Inference</h3>
-          </div>
-          <div class="card-body">
-            <p>Microsecond latency on edge hardware. Multimodal-ready. ISO 13849 designed. For robotics, medical devices, and autonomous systems.</p>
-          </div>
-          <div class="card-link">Learn more →</div>
-        </a>
+        <div class="path-card reveal">
+          <div class="path-card-step">Step 1</div>
+          <h3>Try the Cloud</h3>
+          <p>
+            PQ API gives you post-quantum signing, encryption, and verification over HTTPS.
+            Sub-100&micro;s. Free tier included. No hardware required.
+          </p>
+          <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn btn-secondary">Try PQ/QR Free &rarr;</a>
+        </div>
 
-        <!-- Agent Infrastructure -->
-        <a href="/agents.html" class="card card-hover reveal" style="text-decoration: none;">
-          <div class="card-header">
-            <div class="pillar-number">02</div>
-            <h3 class="card-title">Agent Infrastructure</h3>
-          </div>
-          <div class="card-body">
-            <p>Tools for the agent future. Content moderation, credential management, and the ecosystem that powers AI agents at scale.</p>
-          </div>
-          <div class="card-link">Learn more →</div>
-        </a>
-
-        <!-- Dev Tools -->
-        <a href="/tools.html" class="card card-hover reveal" style="text-decoration: none;">
-          <div class="card-header">
-            <div class="pillar-number">03</div>
-            <h3 class="card-title">Dev Tools</h3>
-          </div>
-          <div class="card-body">
-            <p>Practical tools for developers. Edge AI benchmarks, MCP servers, credential management, and more.</p>
-          </div>
-          <div class="card-link">Learn more →</div>
-        </a>
-
-        <!-- Security -->
-        <a href="/security.html" class="card card-hover reveal" style="text-decoration: none;">
-          <div class="card-header">
-            <div class="pillar-number">04</div>
-            <h3 class="card-title">Security</h3>
-          </div>
-          <div class="card-body">
-            <p>Post-quantum cryptography at microsecond speeds. Vulnerability research across major AI frameworks. Hardening edge AI against emerging threats.</p>
-          </div>
-          <div class="card-link">Learn more →</div>
-        </a>
+        <div class="path-card reveal">
+          <div class="path-card-step">Step 2</div>
+          <h3>Own the Hardware</h3>
+          <p>
+            When you need sub-5&micro;s local performance, unlimited usage, and air-gapped operation &mdash;
+            get a PQ Box or PQ/QR Box. Same API, dedicated to you.
+          </p>
+          <a href="#hardware" class="btn btn-primary">View Hardware</a>
+        </div>
 
       </div>
     </div>
@@ -259,7 +895,18 @@
         <!-- Company -->
         <div class="footer-section">
           <h4>CycleCore Technologies</h4>
-          <p class="text-secondary text-sm mb-sm">Microsecond AI inference on edge hardware.</p>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI infrastructure. Hardware, APIs, and tools.</p>
+        </div>
+
+        <!-- Products -->
+        <div class="footer-section">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="#hardware" class="footer-link">PQ Box</a>
+            <a href="#hardware" class="footer-link">PQ/QR Box</a>
+            <a href="https://pq-api.cyclecore.ai/try" class="footer-link">PQ API</a>
+            <a href="https://pq-api.cyclecore.ai/try" class="footer-link">PQ/QR Playground</a>
+          </div>
         </div>
 
         <!-- Platform -->
@@ -282,16 +929,9 @@
             <a href="/about.html" class="footer-link">About</a>
             <a href="/transparency.html" class="footer-link">Transparency</a>
             <a href="#contact" class="footer-link">Contact</a>
-            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
-          </div>
-        </div>
-
-        <!-- Resources -->
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <div class="footer-links">
             <a href="/privacy.html" class="footer-link">Privacy Policy</a>
             <a href="/terms.html" class="footer-link">Terms of Service</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
           </div>
         </div>
 
@@ -299,10 +939,76 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
-        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patents Pending</p>
+        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patent-Pending Architecture &middot; FIPS 204/203 Compliant Algorithms</p>
       </div>
     </div>
   </footer>
+
+  <!-- Carousel JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('carousel-track');
+      const prevBtn = document.getElementById('carousel-prev');
+      const nextBtn = document.getElementById('carousel-next');
+      const dotsContainer = document.getElementById('carousel-dots');
+      if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      const cards = track.querySelectorAll('.carousel-card');
+
+      function getCardsPerView() {
+        if (window.innerWidth <= 640) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+      }
+
+      function scrollToIndex(index) {
+        const card = cards[index];
+        if (card) {
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        }
+      }
+
+      prevBtn.addEventListener('click', function() {
+        const perView = getCardsPerView();
+        const scrollLeft = track.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 32; // gap
+        const currentIndex = Math.round(scrollLeft / cardWidth);
+        scrollToIndex(Math.max(0, currentIndex - perView));
+      });
+
+      nextBtn.addEventListener('click', function() {
+        const perView = getCardsPerView();
+        const scrollLeft = track.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 32;
+        const currentIndex = Math.round(scrollLeft / cardWidth);
+        scrollToIndex(Math.min(cards.length - 1, currentIndex + perView));
+      });
+
+      // Dot click handlers
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var index = parseInt(this.dataset.index);
+          var perView = getCardsPerView();
+          scrollToIndex(index * perView);
+        });
+      });
+
+      // Update dots on scroll
+      var scrollTimer;
+      track.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+          var perView = getCardsPerView();
+          var cardWidth = cards[0].offsetWidth + 32;
+          var currentPage = Math.round(track.scrollLeft / (cardWidth * perView));
+          dots.forEach(function(dot, i) {
+            dot.classList.toggle('active', i === currentPage);
+          });
+        }, 50);
+      }, { passive: true });
+    });
+  </script>
 
 </body>
 </html>

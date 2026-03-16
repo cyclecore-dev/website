@@ -24,6 +24,7 @@
       color: #e5e7eb;
       font-family: 'JetBrains Mono', monospace;
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -72,6 +73,8 @@
       min-height: 320px;
       line-height: 2;
       font-size: 0.9rem;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .line {
@@ -133,8 +136,42 @@
     }
 
     @media (max-width: 640px) {
-      body { padding: 1rem; }
-      .terminal-body { padding: 1rem; font-size: 0.8rem; }
+      body { padding: 0.75rem; }
+      .terminal {
+        border-radius: 8px;
+      }
+      .terminal-body {
+        padding: 1rem;
+        font-size: 0.75rem;
+        line-height: 1.8;
+        min-height: auto;
+      }
+      .terminal-header {
+        padding: 0.5rem 0.75rem;
+      }
+      .terminal-title {
+        font-size: 0.65rem;
+      }
+      .terminal-footer {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        text-align: center;
+      }
+      .terminal-footer a {
+        font-size: 0.7rem;
+      }
+      .terminal-footer .logo-text {
+        font-size: 0.6rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      body { padding: 0.5rem; }
+      .terminal-body {
+        font-size: 0.68rem;
+        padding: 0.75rem;
+        line-height: 1.7;
+      }
     }
   </style>
 </head>
@@ -156,8 +193,8 @@
       <div class="line" data-delay="2800"><span class="dim">&nbsp;</span></div>
       <div class="line" data-delay="3200"><span class="prompt">&gt;</span> <span class="white">Welcome to post-quantum security.</span></div>
       <div class="line" data-delay="4000"><span class="dim">&nbsp;</span></div>
-      <div class="line" data-delay="4500"><span class="dim">Questions? <a href="mailto:partnerships@cyclecore.ai" style="color: #00d4ff;">partnerships@cyclecore.ai</a></span></div>
-      <div class="line" data-delay="5000"><span class="dim">Support:&nbsp;&nbsp;<a href="mailto:hi@cyclecore.ai" style="color: #00d4ff;">hi@cyclecore.ai</a></span></div>
+      <div class="line" data-delay="4500"><span class="dim">Questions? </span><a href="mailto:partnerships@cyclecore.ai" style="color: #00d4ff; font-size: inherit; word-break: break-all;">partnerships@cyclecore.ai</a></div>
+      <div class="line" data-delay="5000"><span class="dim">Support? </span><a href="mailto:hi@cyclecore.ai" style="color: #00d4ff; font-size: inherit;">hi@cyclecore.ai</a></div>
       <div class="line" data-delay="5500"><span class="dim">&nbsp;</span></div>
       <div class="line" data-delay="6000"><span class="prompt">&gt;</span> <span class="dim">_</span><span class="cursor"></span></div>
     </div>

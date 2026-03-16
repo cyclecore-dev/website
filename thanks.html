@@ -2,26 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Thanks – Temporarily Unavailable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed - CycleCore Technologies</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: #0b0c10;
-      color: #fff;
-      font-family: system-ui, sans-serif;
+      background: #0a0b0f;
+      color: #e5e7eb;
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
+      padding: 2rem;
     }
-    p {
-      max-width: 600px;
+
+    .terminal {
+      width: 100%;
+      max-width: 680px;
+      background: #111318;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 0 120px rgba(0, 212, 255, 0.04);
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: #0d0e12;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .terminal-dot.red { background: #ef4444; }
+    .terminal-dot.yellow { background: #f59e0b; }
+    .terminal-dot.green { background: #10b981; }
+
+    .terminal-title {
+      margin-left: 0.75rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      letter-spacing: 0.02em;
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+      min-height: 320px;
+      line-height: 2;
+      font-size: 0.9rem;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .prompt { color: #00d4ff; }
+    .success { color: #10b981; }
+    .dim { color: #6b7280; }
+    .cyan { color: #00d4ff; }
+    .white { color: #f9fafb; font-weight: 600; }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      background: #00d4ff;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .terminal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #1f2937;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .terminal-footer a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s;
+    }
+
+    .terminal-footer a:hover { opacity: 0.7; }
+
+    .terminal-footer .logo-text {
+      font-size: 0.7rem;
+      color: #374151;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1rem; }
+      .terminal-body { padding: 1rem; font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
-  <h1>🚧 Thank You</h1>
-  <p>We’re updating your download link. Please check back shortly, or contact <a href="mailto:support@cyclecore.ai">support@cyclecore.ai</a> if needed.</p>
+
+  <div class="terminal">
+    <div class="terminal-header">
+      <span class="terminal-dot red"></span>
+      <span class="terminal-dot yellow"></span>
+      <span class="terminal-dot green"></span>
+      <span class="terminal-title">cyclecore@pq ~ order</span>
+    </div>
+
+    <div class="terminal-body" id="terminal">
+      <div class="line" data-delay="300"><span class="prompt">&gt;</span> <span class="success">Order received.</span></div>
+      <div class="line" data-delay="800"><span class="prompt">&gt;</span> <span class="white">Payment confirmed.</span></div>
+      <div class="line" data-delay="1400"><span class="prompt">&gt;</span> Shipping to your address in <span class="cyan">7 business days</span>.</div>
+      <div class="line" data-delay="2000"><span class="prompt">&gt;</span> Confirmation email on its way.</div>
+      <div class="line" data-delay="2800"><span class="dim">&nbsp;</span></div>
+      <div class="line" data-delay="3200"><span class="prompt">&gt;</span> <span class="white">Welcome to post-quantum security.</span></div>
+      <div class="line" data-delay="4000"><span class="dim">&nbsp;</span></div>
+      <div class="line" data-delay="4500"><span class="dim">Questions? <a href="mailto:partnerships@cyclecore.ai" style="color: #00d4ff;">partnerships@cyclecore.ai</a></span></div>
+      <div class="line" data-delay="5000"><span class="dim">Support:&nbsp;&nbsp;<a href="mailto:hi@cyclecore.ai" style="color: #00d4ff;">hi@cyclecore.ai</a></span></div>
+      <div class="line" data-delay="5500"><span class="dim">&nbsp;</span></div>
+      <div class="line" data-delay="6000"><span class="prompt">&gt;</span> <span class="dim">_</span><span class="cursor"></span></div>
+    </div>
+
+    <div class="terminal-footer">
+      <span class="logo-text">CycleCore Technologies</span>
+      <a href="/">Back to cyclecore.ai</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var lines = document.querySelectorAll('.line');
+      lines.forEach(function(line) {
+        var delay = parseInt(line.dataset.delay) || 0;
+        setTimeout(function() {
+          line.classList.add('visible');
+        }, delay);
+      });
+    });
+  </script>
+
 </body>
 </html>

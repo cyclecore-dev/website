@@ -263,7 +263,9 @@
         min-height: 340px;
       }
       .carousel-arrow {
-        display: none;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
       }
     }
 
@@ -707,11 +709,7 @@
       <!-- Carousel Navigation -->
       <div class="carousel-nav">
         <button class="carousel-arrow" id="carousel-prev" aria-label="Previous">&larr;</button>
-        <div class="carousel-dots" id="carousel-dots">
-          <button class="carousel-dot active" data-index="0" aria-label="Page 1"></button>
-          <button class="carousel-dot" data-index="1" aria-label="Page 2"></button>
-          <button class="carousel-dot" data-index="2" aria-label="Page 3"></button>
-        </div>
+        <div class="carousel-dots" id="carousel-dots"></div>
         <button class="carousel-arrow" id="carousel-next" aria-label="Next">&rarr;</button>
       </div>
     </div>
@@ -969,77 +967,99 @@
   <!-- Carousel JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const track = document.getElementById('carousel-track');
-      const prevBtn = document.getElementById('carousel-prev');
-      const nextBtn = document.getElementById('carousel-next');
-      const dotsContainer = document.getElementById('carousel-dots');
+      var track = document.getElementById('carousel-track');
+      var prevBtn = document.getElementById('carousel-prev');
+      var nextBtn = document.getElementById('carousel-next');
+      var dotsContainer = document.getElementById('carousel-dots');
       if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
 
-      const dots = dotsContainer.querySelectorAll('.carousel-dot');
-      const cards = track.querySelectorAll('.carousel-card');
+      var cards = track.querySelectorAll('.carousel-card');
+      var totalCards = cards.length;
       var autoTimer = null;
       var paused = false;
+      var currentIndex = 0;
 
-      function getCardsPerView() {
+      function getPerView() {
         if (window.innerWidth <= 640) return 1;
         if (window.innerWidth <= 1024) return 2;
         return 3;
       }
 
-      function getCurrentIndex() {
-        var cardWidth = cards[0].offsetWidth + 32;
-        return Math.round(track.scrollLeft / cardWidth);
-      }
-
-      function scrollToIndex(index) {
-        var card = cards[index];
-        if (card) {
-          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      // Dynamic dot generation based on viewport
+      function buildDots() {
+        var perView = getPerView();
+        var pageCount = Math.ceil(totalCards / perView);
+        dotsContainer.innerHTML = '';
+        for (var i = 0; i < pageCount; i++) {
+          var dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Page ' + (i + 1));
+          dot.dataset.page = i;
+          dot.addEventListener('click', function() {
+            var page = parseInt(this.dataset.page);
+            var perView = getPerView();
+            goTo(page * perView);
+            resetAuto();
+          });
+          dotsContainer.appendChild(dot);
         }
       }
 
-      function advance(direction) {
-        var perView = getCardsPerView();
-        var current = getCurrentIndex();
-        var maxStart = cards.length - perView;
-        var next;
-
-        if (direction > 0) {
-          next = current + perView;
-          if (next > maxStart) next = 0; // wrap to start
-        } else {
-          next = current - perView;
-          if (next < 0) next = maxStart; // wrap to end
-        }
-        scrollToIndex(next);
+      function getCardStep() {
+        // Measure actual card width + gap from DOM
+        if (totalCards < 2) return cards[0].offsetWidth;
+        return cards[1].offsetLeft - cards[0].offsetLeft;
       }
 
-      prevBtn.addEventListener('click', function() { advance(-1); resetAuto(); });
-      nextBtn.addEventListener('click', function() { advance(1); resetAuto(); });
+      function goTo(index) {
+        var perView = getPerView();
+        var maxStart = totalCards - perView;
+        if (maxStart < 0) maxStart = 0;
+        if (index > maxStart) index = maxStart;
+        if (index < 0) index = 0;
+        currentIndex = index;
+        var target = cards[index];
+        if (target) {
+          track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        }
+        updateDots();
+      }
 
-      // Dot click handlers
-      dots.forEach(function(dot) {
-        dot.addEventListener('click', function() {
-          var index = parseInt(this.dataset.index);
-          var perView = getCardsPerView();
-          scrollToIndex(index * perView);
-          resetAuto();
+      function advance(dir) {
+        var perView = getPerView();
+        var maxStart = totalCards - perView;
+        if (maxStart < 0) maxStart = 0;
+        var next = currentIndex + dir;
+        // Wrap around
+        if (next > maxStart) next = 0;
+        if (next < 0) next = maxStart;
+        goTo(next);
+      }
+
+      function updateDots() {
+        var perView = getPerView();
+        var currentPage = Math.floor(currentIndex / perView);
+        var dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach(function(dot, i) {
+          dot.classList.toggle('active', i === currentPage);
         });
-      });
+      }
 
-      // Update dots on scroll
+      // Sync currentIndex from scroll position (for swipe/drag)
       var scrollTimer;
       track.addEventListener('scroll', function() {
         clearTimeout(scrollTimer);
         scrollTimer = setTimeout(function() {
-          var perView = getCardsPerView();
-          var cardWidth = cards[0].offsetWidth + 32;
-          var currentPage = Math.round(track.scrollLeft / (cardWidth * perView));
-          dots.forEach(function(dot, i) {
-            dot.classList.toggle('active', i === currentPage);
-          });
-        }, 50);
+          var step = getCardStep();
+          if (step > 0) {
+            currentIndex = Math.round(track.scrollLeft / step);
+          }
+          updateDots();
+        }, 80);
       }, { passive: true });
+
+      prevBtn.addEventListener('click', function() { advance(-1); resetAuto(); });
+      nextBtn.addEventListener('click', function() { advance(1); resetAuto(); });
 
       // Auto-advance every 5s, pause on hover/touch
       function startAuto() {
@@ -1048,23 +1068,27 @@
           if (!paused) advance(1);
         }, 5000);
       }
-
       function stopAuto() {
         if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
       }
-
-      function resetAuto() {
-        startAuto();
-      }
+      function resetAuto() { startAuto(); }
 
       track.addEventListener('mouseenter', function() { paused = true; });
       track.addEventListener('mouseleave', function() { paused = false; });
       track.addEventListener('touchstart', function() { paused = true; }, { passive: true });
-      track.addEventListener('touchend', function() {
-        paused = false;
-        resetAuto();
-      }, { passive: true });
+      track.addEventListener('touchend', function() { paused = false; resetAuto(); }, { passive: true });
 
+      // Rebuild dots on resize
+      var resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          buildDots();
+          goTo(currentIndex);
+        }, 150);
+      });
+
+      buildDots();
       startAuto();
     });
   </script>

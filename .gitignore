@@ -2,6 +2,11 @@
 ops/
 *.bus.jsonl
 
+# Investor materials (served from 990, not public repo)
+dataroom/
+investors/
+nda/
+
 # Status docs (federation)
 CC-*
 *_STATUS_*.md
@@ -27,3 +32,4 @@ Thumbs.db
 # Temp
 *.tmp
 *.temp
+ops/pqsign/.env

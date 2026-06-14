@@ -14,6 +14,12 @@ CC-*
 # Internal implementation docs
 SECURITY.md
 SECURITY_IMPLEMENTATION.md
+PRICING_RATIONALE.md
+cloudflare-security-setup.sh
+
+# Backup HTML files
+*_backup.html
+*_backup_*.html
 
 # Node
 node_modules/

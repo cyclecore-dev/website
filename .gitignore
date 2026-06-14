@@ -2,12 +2,12 @@
 ops/
 *.bus.jsonl
 
-# Investor materials (served from 990, not public repo)
+# Investor materials (not in public repo)
 dataroom/
 investors/
 nda/
 
-# Status docs (federation)
+# Status docs (internal)
 CC-*
 *_STATUS_*.md
 
@@ -20,6 +20,16 @@ cloudflare-security-setup.sh
 # Backup HTML files
 *_backup.html
 *_backup_*.html
+
+# Git identity mapping
+.mailmap
+
+# Internal design / preview
+preview-redesign/
+GROK_*.md
+
+# Backup bundles
+*.bundle
 
 # Node
 node_modules/

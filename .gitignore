@@ -1,38 +1,32 @@
-# Internal operations
+# Internal
 ops/
+CC-*
+*_STATUS_*.md
+SECURITY*.md
+PRICING*.md
+*-setup.sh
 *.bus.jsonl
+.mailmap
+GROK_*.md
+preview-redesign/
 
-# Investor materials (not in public repo)
+# Not in public repo
 dataroom/
 investors/
 nda/
 
-# Status docs (internal)
-CC-*
-*_STATUS_*.md
-
-# Internal implementation docs
-SECURITY.md
-SECURITY_IMPLEMENTATION.md
-PRICING_RATIONALE.md
-cloudflare-security-setup.sh
-
-# Backup HTML files
+# Backups
 *_backup.html
 *_backup_*.html
-
-# Git identity mapping
-.mailmap
-
-# Internal design / preview
-preview-redesign/
-GROK_*.md
-
-# Backup bundles
 *.bundle
+*.bak
 
-# Node
+# Dependencies
 node_modules/
+
+# Environment
+.env
+.env.*
 
 # OS
 .DS_Store
@@ -48,4 +42,3 @@ Thumbs.db
 # Temp
 *.tmp
 *.temp
-ops/pqsign/.env

@@ -63,19 +63,25 @@
       <h1 class="text-6xl font-black mb-md fade-in">
         <span class="gradient-text">Verifiable and Efficient AI Infrastructure</span>
       </h1>
+      <p class="text-2xl text-secondary fade-in-up">
+        Efficiency by design, not by offset.
+      </p>
     </div>
   </section>
 
   <!-- Introduction -->
   <section class="section">
     <div class="container max-w-lg">
-      <div class="text-lg text-secondary leading-relaxed">
-        <p class="mb-md reveal">
-          CycleCore designs AI infrastructure to minimize waste and unnecessary resource consumption by design, rather than attempting to offset or mitigate it after the fact. We treat efficiency as a core architectural requirement, not an afterthought.
+      <div class="card reveal">
+        <p class="text-xl text-secondary leading-relaxed mb-md">
+          CycleCore designs AI infrastructure to <strong class="text-primary">minimize waste and unnecessary resource consumption by design</strong>, rather than attempting to offset or mitigate it after the fact. We treat efficiency as a core architectural requirement, not an afterthought.
         </p>
-        <p class="mb-md reveal">
+        <p class="text-xl text-secondary leading-relaxed">
           Our systems are built to reduce avoidable overhead wherever it is technically practical. This includes limiting excess computation, reducing unnecessary data movement, and favoring solutions that can operate effectively over longer periods without requiring frequent replacement.
         </p>
+      </div>
+
+      <div class="text-lg text-secondary leading-relaxed mt-xl">
         <p class="reveal">
           We also prioritize architectures that support on-premise and edge deployment. Keeping processing closer to where it is needed reduces reliance on large centralized infrastructure and the associated coordination and transmission costs.
         </p>
@@ -88,38 +94,54 @@
     <div class="container max-w-lg">
       <h2 class="text-5xl font-black mb-xl text-center reveal">Guiding Principles</h2>
 
-      <ul style="list-style: none; padding-left: 0;">
-        <li class="mb-md reveal">
-          <p class="text-lg text-secondary leading-relaxed">
-            <strong class="text-primary">Right-size the hardware to the workload.</strong>
+      <div class="grid" style="grid-template-columns: 1fr; gap: var(--cc-space-md);">
+
+        <div class="reveal">
+          <h3 class="text-2xl font-bold mb-sm">
+            <span class="text-accent">→</span> Right-size the hardware to the workload
+          </h3>
+          <p class="text-secondary" style="padding-left: 1.5rem;">
             We select and optimize for the minimum capable resources required for a given task.
           </p>
-        </li>
-        <li class="mb-md reveal">
-          <p class="text-lg text-secondary leading-relaxed">
-            <strong class="text-primary">Minimize unnecessary data movement.</strong>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-2xl font-bold mb-sm">
+            <span class="text-accent">→</span> Minimize unnecessary data movement
+          </h3>
+          <p class="text-secondary" style="padding-left: 1.5rem;">
             Processing data locally where possible reduces transmission overhead and associated resource demands.
           </p>
-        </li>
-        <li class="mb-md reveal">
-          <p class="text-lg text-secondary leading-relaxed">
-            <strong class="text-primary">Prefer deterministic execution where appropriate.</strong>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-2xl font-bold mb-sm">
+            <span class="text-accent">→</span> Prefer deterministic execution where appropriate
+          </h3>
+          <p class="text-secondary" style="padding-left: 1.5rem;">
             Reproducible operations reduce wasted compute from repeated sampling, regeneration, and tuning cycles.
           </p>
-        </li>
-        <li class="mb-md reveal">
-          <p class="text-lg text-secondary leading-relaxed">
-            <strong class="text-primary">Design for auditability and long-term maintainability.</strong>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-2xl font-bold mb-sm">
+            <span class="text-accent">→</span> Design for auditability and long-term maintainability
+          </h3>
+          <p class="text-secondary" style="padding-left: 1.5rem;">
             Systems that remain understandable and supportable over time avoid the resource cost of frequent re-architecture.
           </p>
-        </li>
-        <li class="reveal">
-          <p class="text-lg text-secondary leading-relaxed">
-            <strong class="text-primary">Extend the useful life of infrastructure.</strong>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-2xl font-bold mb-sm">
+            <span class="text-accent">→</span> Extend the useful life of infrastructure
+          </h3>
+          <p class="text-secondary" style="padding-left: 1.5rem;">
             We build solutions that continue to perform on existing hardware, reducing the cumulative impact of hardware turnover.
           </p>
-        </li>
-      </ul>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -132,7 +154,10 @@
         <p class="mb-md reveal">
           Infrastructure that is deliberately designed to reduce waste and loss places a smaller burden on shared resources over time. These characteristics become more relevant as AI adoption grows and as organizations seek greater control over their operational requirements.
         </p>
-        <p class="reveal">
+      </div>
+
+      <div class="card reveal" style="border-left: 3px solid var(--cc-accent-cyan, #00d4ff); margin-top: var(--cc-space-lg);">
+        <p class="text-xl text-primary leading-relaxed" style="font-style: italic; margin: 0;">
           Security and efficiency aren't trade-offs. They're the same architecture.
         </p>
       </div>
@@ -161,7 +186,6 @@
           <div class="footer-links">
             <a href="/about.html" class="footer-link">About</a>
             <a href="/sustainability.html" class="footer-link">Sustainability</a>
-            <a href="/transparency.html" class="footer-link">Transparency</a>
             <a href="/#contact" class="footer-link">Contact</a>
             <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
           </div>

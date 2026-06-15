@@ -1,4 +1,4 @@
-# Internal
+# Project
 ops/
 CC-*
 *_STATUS_*.md
@@ -9,8 +9,6 @@ PRICING*.md
 .mailmap
 GROK_*.md
 preview-redesign/
-
-# Not in public repo
 dataroom/
 investors/
 nda/

@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="CycleCore Technologies — Sub-5µs AI infrastructure. Post-quantum cryptography, safety gates, and agent tools. Hardware and cloud. Edge-first. 100+ patent claims.">
+
+  <meta property="og:title" content="CycleCore Technologies — Sub-5µs Infrastructure">
+  <meta property="og:description" content="One architecture. Sub-5µs inference. Edge-first. Hardware and cloud.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cyclecore.ai">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CycleCore Technologies — Sub-5µs Infrastructure">
+  <meta name="twitter:description" content="One architecture. Sub-5µs inference. Edge-first hardware and cloud.">
+
+  <title>CycleCore Technologies [PREVIEW]</title>
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260517">
+  <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260517">
+  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260517">
+  <script src="/js/main.js" defer></script>
+
+  <style>
+    /* ============================================= */
+    /* HOMEPAGE v2 — Factory + Many Worlds            */
+    /* Stealth wealth · Editorial · Precision          */
+    /* ============================================= */
+
+    :root {
+      --h-bg: #f5f4f1;
+      --h-surface: #ffffff;
+      --h-surface-warm: #faf9f6;
+      --h-border: #e8e6e1;
+      --h-border-subtle: #eeedea;
+      --h-text: #1a1a1a;
+      --h-text-2: #555;
+      --h-text-3: #999;
+      --h-accent: #00d4ff;
+      --h-accent-hover: #00bce0;
+      --h-accent-muted: #0099bb;
+      --h-accent-bg: rgba(0, 212, 255, 0.04);
+      --h-accent-glow: rgba(0, 212, 255, 0.10);
+      --h-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --h-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --h-mono: 'JetBrains Mono', monospace;
+      --h-shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --h-shadow-md: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --h-shadow-lift: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    body {
+      background: var(--h-bg) !important;
+      color: var(--h-text) !important;
+      font-family: var(--h-sans) !important;
+      font-weight: 400 !important;
+      font-size: 0.9375rem !important;
+      line-height: 1.6 !important;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: rgba(0, 212, 255, 0.10);
+      color: var(--h-text);
+    }
+
+    /* ---- Announcement bar ---- */
+    .pq-announce {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: var(--h-surface) !important;
+      border-bottom: 1px solid var(--h-border-subtle) !important;
+      font-family: var(--h-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.01em;
+      color: var(--h-text-2) !important;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1200;
+      transform: translateY(-100%);
+      animation: pq-slide-down 0.4s ease-out 3s forwards;
+    }
+    .pq-announce strong { color: var(--h-text) !important; font-weight: 500; }
+    .pq-announce a {
+      color: var(--h-accent-muted) !important; text-decoration: none;
+      font-weight: 500; white-space: nowrap;
+    }
+    .pq-announce a:hover { text-decoration: underline; }
+    .pq-announce .pq-dismiss {
+      position: absolute; right: 1rem; background: none; border: none;
+      color: var(--h-text-3); cursor: pointer; font-size: 0.875rem;
+      padding: 0 0.25rem; line-height: 1; opacity: 0.6;
+    }
+    .pq-announce .pq-dismiss:hover { opacity: 1; }
+    @keyframes pq-slide-down {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    body.pq-bar-active .navbar { top: 34px; }
+    body.pq-bar-active .hero-factory { padding-top: calc(68px + 34px + 3.5rem); }
+    @media (max-width: 600px) {
+      .pq-announce { font-size: 0.6875rem; padding: 0.4rem 2rem 0.4rem 0.75rem; gap: 0.4rem; }
+      body.pq-bar-active .navbar { top: 30px; }
+      body.pq-bar-active .hero-factory { padding-top: calc(60px + 30px + 3.5rem); }
+    }
+
+    /* ---- Navbar ---- */
+    .navbar {
+      background: rgba(245, 244, 241, 0.92) !important;
+      backdrop-filter: blur(20px) saturate(1.2) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+      border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+    }
+    .navbar-logo { gap: 0 !important; margin-right: 2.5rem !important; }
+    .home-logo-text {
+      font-family: var(--h-serif);
+      font-size: 1.3rem;
+      color: var(--h-text);
+      letter-spacing: -0.015em;
+      line-height: 1;
+    }
+    .navbar-link {
+      color: var(--h-text-3) !important;
+      font-weight: 400 !important;
+      font-size: 0.8125rem !important;
+      letter-spacing: 0.005em !important;
+      transition: color 0.2s ease !important;
+    }
+    .navbar-link:hover {
+      color: var(--h-text) !important;
+      background: transparent !important;
+    }
+    .navbar-link.active { color: var(--h-text) !important; }
+    .hamburger-icon span { background: var(--h-text) !important; }
+    @media (max-width: 640px) {
+      .navbar-links {
+        background: rgba(245, 244, 241, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom-color: var(--h-border) !important;
+      }
+      .navbar-link { color: var(--h-text-2) !important; }
+      .navbar-link:hover { background: transparent !important; }
+    }
+
+    /* ---- Buttons ---- */
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.625rem 1.5rem;
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #fff; background: var(--h-text); border: 1px solid var(--h-text);
+      border-radius: 4px; text-decoration: none;
+      transition: all 0.2s ease; cursor: pointer;
+      box-shadow: var(--h-shadow-sm);
+    }
+    .btn-dark:hover {
+      background: #2a2a2a; border-color: #2a2a2a; color: #fff !important;
+      box-shadow: var(--h-shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.625rem 1.5rem;
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 450;
+      letter-spacing: 0.01em;
+      color: var(--h-text) !important; background: var(--h-surface);
+      border: 1px solid var(--h-border); border-radius: 4px; text-decoration: none;
+      transition: all 0.2s ease; cursor: pointer;
+      box-shadow: var(--h-shadow-sm);
+    }
+    .btn-outline:hover {
+      border-color: #ccc; color: var(--h-text) !important;
+      box-shadow: var(--h-shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .btn-link {
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 450;
+      color: var(--h-text-2) !important; text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease; display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .btn-link:hover { color: var(--h-text) !important; }
+
+    /* ---- Shared ---- */
+    .home-divider {
+      border: none; border-top: 1px solid var(--h-border-subtle);
+      max-width: 1100px; margin: 0 auto;
+    }
+
+    /* ============================================= */
+    /* ACT 1 — THE FACTORY HERO                      */
+    /* ============================================= */
+
+    .hero-factory {
+      padding: calc(68px + 3.5rem) 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-factory-label {
+      font-size: 0.6875rem; font-weight: 450;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--h-text-3); margin-bottom: 1.5rem;
+      opacity: 0; animation: gentle-in 0.6s ease-out 0.1s forwards;
+    }
+
+    .hero-factory-headline {
+      font-family: var(--h-serif);
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+      font-weight: 400; line-height: 1.05;
+      color: var(--h-text); margin-bottom: 1.25rem;
+      letter-spacing: -0.025em;
+      opacity: 0; animation: gentle-in 0.6s ease-out 0.2s forwards;
+    }
+    .hero-factory-headline em {
+      font-style: italic;
+      color: var(--h-text-2);
+    }
+    .hero-factory-headline-sm {
+      display: block;
+      font-family: var(--h-sans);
+      font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--h-text-3);
+      margin-top: 0.5rem;
+    }
+
+    .hero-factory-sub {
+      font-size: 1.0625rem; line-height: 1.7;
+      font-weight: 350;
+      color: var(--h-text-2); margin-bottom: 1.75rem;
+      max-width: 520px; margin-left: auto; margin-right: auto;
+      opacity: 0; animation: gentle-in 0.6s ease-out 0.35s forwards;
+    }
+
+    .hero-factory-cta {
+      display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 1rem;
+      opacity: 0; animation: gentle-in 0.5s ease-out 0.5s forwards;
+    }
+
+    .hero-proof-line {
+      font-family: var(--h-mono); font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      color: var(--h-text-3);
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: gentle-in 0.5s ease-out 0.55s forwards;
+    }
+
+    @keyframes gentle-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Factory visualization container */
+    .hero-factory-viz {
+      position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+      height: 360px;
+      opacity: 0; animation: gentle-in 0.7s ease-out 0.6s forwards;
+    }
+
+    .factory-canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: var(--h-surface);
+      border: none;
+      box-shadow: var(--h-shadow-md), inset 0 0 0 1px rgba(0,0,0,0.04);
+      cursor: pointer;
+    }
+
+    /* Mobile pill selector */
+    .mobile-selector {
+      display: none;
+      margin: 1.5rem auto 0;
+      padding: 0 1rem;
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 0.5rem;
+    }
+    .mobile-selector::-webkit-scrollbar { display: none; }
+
+    .mobile-selector .pill {
+      display: inline-flex; align-items: center;
+      height: 36px; padding: 0 14px;
+      background: var(--h-surface);
+      border: 1px solid var(--h-border);
+      border-radius: 9999px;
+      font-family: var(--h-sans); font-size: 12px; font-weight: 450;
+      letter-spacing: 0.01em;
+      color: var(--h-text-2); white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .mobile-selector .pill:hover,
+    .mobile-selector .pill.active {
+      background: #fff;
+      border-color: var(--h-accent-muted);
+      color: var(--h-accent-muted);
+      box-shadow: 0 2px 8px -2px rgba(0, 153, 187, 0.12);
+    }
+
+    @media (max-width: 767px) {
+      .mobile-selector { display: flex; }
+    }
+
+    /* Deployed metric overlay */
+    .factory-metric-overlay {
+      position: absolute;
+      bottom: 1.5rem; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--h-mono); font-size: 0.8125rem;
+      letter-spacing: 0.025em;
+      color: var(--h-accent-muted);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 8px;
+      padding: 0.5rem 1.125rem;
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      pointer-events: none;
+      box-shadow: 0 4px 20px -4px rgba(0, 212, 255, 0.15);
+      white-space: nowrap;
+    }
+    .factory-metric-overlay.visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+
+    /* Factory stats bar */
+    .hero-factory-stats {
+      display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--h-border-subtle);
+      opacity: 0; animation: gentle-in 0.5s ease-out 0.8s forwards;
+    }
+
+    .factory-stat {
+      text-align: center;
+    }
+    .factory-stat-value {
+      font-family: var(--h-serif); font-size: 1.25rem;
+      color: var(--h-text); margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+    .factory-stat-label {
+      font-size: 0.625rem; font-weight: 450;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--h-text-3);
+    }
+
+    @media (max-width: 768px) {
+      .hero-factory { padding: calc(60px + 2.5rem) 1.5rem 2.5rem; }
+      .hero-factory-viz { height: 260px; }
+      .hero-factory-stats { gap: 2rem; }
+      .hero-factory-headline { letter-spacing: -0.02em; }
+    }
+
+    /* ============================================= */
+    /* ACT 2 — ONE PRIMITIVE, MANY WORLDS             */
+    /* ============================================= */
+
+    .worlds-section {
+      padding: 7rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .worlds-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+
+    .worlds-label {
+      font-size: 0.625rem; font-weight: 450;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--h-text-3); margin-bottom: 1rem;
+    }
+
+    .worlds-title {
+      font-family: var(--h-serif);
+      font-size: clamp(1.75rem, 2.8vw, 2.375rem);
+      font-weight: 400; color: var(--h-text);
+      letter-spacing: -0.015em; line-height: 1.15;
+    }
+
+    /* Core primitive visualization */
+    .worlds-core {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .core-node {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--h-text);
+      position: relative;
+      box-shadow: 0 0 0 8px var(--h-bg), 0 0 0 9px var(--h-border);
+    }
+
+    .core-node::after {
+      content: '';
+      position: absolute; inset: 6px;
+      border-radius: 50%;
+      background: var(--h-bg);
+    }
+
+    .core-node::before {
+      content: '';
+      position: absolute; inset: 10px;
+      border-radius: 50%;
+      background: var(--h-accent-muted);
+      z-index: 1;
+      box-shadow: 0 0 20px var(--h-accent-glow);
+    }
+
+    /* World cards — scroll-revealed */
+    .worlds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .world-card {
+      background: var(--h-surface);
+      border: 1px solid var(--h-border-subtle);
+      border-radius: 8px;
+      padding: 2.25rem;
+      display: flex;
+      gap: 1.375rem;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease,
+                  box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: var(--h-shadow-sm);
+    }
+
+    .world-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .world-card:hover {
+      border-color: var(--h-border);
+      box-shadow: var(--h-shadow-lift);
+      transform: translateY(-2px);
+    }
+
+    .world-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.125rem;
+      background: var(--h-accent-bg);
+      border: 1px solid rgba(0, 212, 255, 0.06);
+      color: var(--h-accent-muted);
+    }
+
+    .world-content { flex: 1; }
+
+    .world-name {
+      font-family: var(--h-serif);
+      font-size: 1.25rem;
+      color: var(--h-text);
+      margin-bottom: 0.375rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .world-desc {
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      color: var(--h-text-2);
+      margin-bottom: 0.625rem;
+    }
+
+    .world-metric {
+      font-family: var(--h-mono);
+      font-size: 0.6875rem;
+      color: var(--h-accent-muted);
+      letter-spacing: 0.015em;
+    }
+
+    @media (max-width: 768px) {
+      .worlds-grid { grid-template-columns: 1fr; }
+      .worlds-section { padding: 4rem 1.5rem; }
+      .world-card { padding: 1.75rem; }
+    }
+
+    /* ============================================= */
+    /* EVIDENCE / BENCHMARKS                           */
+    /* ============================================= */
+
+    .evidence-section {
+      padding: 7rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .evidence-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .evidence-label {
+      font-size: 0.625rem; font-weight: 450;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--h-text-3); margin-bottom: 1rem;
+    }
+
+    .evidence-title {
+      font-family: var(--h-serif);
+      font-size: clamp(1.75rem, 2.8vw, 2.375rem);
+      font-weight: 400; color: var(--h-text);
+      letter-spacing: -0.015em; line-height: 1.15;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .evidence-card {
+      background: var(--h-surface);
+      border: 1px solid var(--h-border-subtle);
+      border-radius: 8px;
+      padding: 2rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--h-shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .evidence-card:hover {
+      border-color: var(--h-border);
+      box-shadow: var(--h-shadow-lift);
+      transform: translateY(-2px);
+    }
+
+    .evidence-card-context {
+      font-size: 0.5625rem; font-weight: 450;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--h-text-3); margin-bottom: 0.875rem;
+    }
+
+    .evidence-card-stat {
+      font-family: var(--h-serif);
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      color: var(--h-text);
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .evidence-card-detail {
+      font-size: 0.75rem;
+      color: var(--h-text-2);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .evidence-grid { grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+    }
+    @media (max-width: 520px) {
+      .evidence-grid { grid-template-columns: 1fr; }
+      .evidence-section { padding: 4rem 1.5rem; }
+    }
+
+    /* ============================================= */
+    /* ACT 3 — PRODUCTS + PROOF                       */
+    /* ============================================= */
+
+    .home-section {
+      padding: 7rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .home-section-label {
+      font-size: 0.625rem; font-weight: 450;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--h-text-3); margin-bottom: 1rem;
+    }
+
+    .home-section-title {
+      font-family: var(--h-serif);
+      font-size: clamp(1.75rem, 2.8vw, 2.375rem);
+      font-weight: 400; color: var(--h-text);
+      margin-bottom: 0.625rem; letter-spacing: -0.015em; line-height: 1.15;
+    }
+
+    .home-section-body {
+      font-size: 0.9375rem; line-height: 1.7; font-weight: 350;
+      color: var(--h-text-2); max-width: 480px; margin-bottom: 3rem;
+    }
+
+    .home-grid-hw {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 1rem;
+    }
+    .home-grid-sw {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 768px) {
+      .home-grid-hw, .home-grid-sw { grid-template-columns: 1fr; }
+      .home-section { padding: 4rem 1.5rem; }
+    }
+
+    .home-card {
+      background: var(--h-surface);
+      border: 1px solid var(--h-border-subtle);
+      border-radius: 8px; padding: 2rem;
+      display: flex; flex-direction: column;
+      transition: all 0.25s ease;
+      box-shadow: var(--h-shadow-sm);
+    }
+    .home-card:hover {
+      border-color: var(--h-border);
+      box-shadow: var(--h-shadow-lift);
+      transform: translateY(-2px);
+    }
+
+    .home-card-badge {
+      font-size: 0.5625rem; font-weight: 550;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.25rem 0.5rem; border-radius: 3px;
+      display: inline-block; margin-bottom: 1.25rem; width: fit-content;
+    }
+    .home-card-badge.hw { background: var(--h-accent-bg); color: var(--h-accent-muted); }
+    .home-card-badge.api { background: rgba(16,185,129,0.04); color: #0d9668; }
+    .home-card-badge.tool { background: rgba(180,140,40,0.04); color: #9a7a20; }
+
+    .home-card-name {
+      font-family: var(--h-serif); font-size: 1.375rem;
+      color: var(--h-text); margin-bottom: 0.25rem; line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .home-card-sub {
+      font-size: 0.8125rem; color: var(--h-text-3); margin-bottom: 0.875rem;
+      font-weight: 400;
+    }
+    .home-card-desc {
+      font-size: 0.8125rem; line-height: 1.65; color: var(--h-text-2);
+      margin-bottom: auto; padding-bottom: 1.5rem;
+    }
+    .home-card-price {
+      font-family: var(--h-serif); font-size: 1.5rem;
+      color: var(--h-text); margin-bottom: 0.25rem; line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .home-card-price span {
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 400; color: var(--h-text-3);
+    }
+    .home-card-note {
+      font-size: 0.6875rem; color: var(--h-text-3);
+      margin-bottom: 1.25rem; letter-spacing: 0.01em;
+    }
+    .home-card .btn-dark, .home-card .btn-outline { width: 100%; justify-content: center; }
+
+    /* ---- Trust strip ---- */
+    .home-trust {
+      padding: 3.5rem 2rem; text-align: center;
+    }
+    .home-trust-inner {
+      display: flex; justify-content: center; align-items: center;
+      gap: 2rem; flex-wrap: wrap; max-width: 1100px; margin: 0 auto;
+      font-family: var(--h-mono);
+      color: var(--h-text-3); font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+    .home-trust-sep { color: var(--h-border); font-style: normal; }
+    @media (max-width: 600px) {
+      .home-trust-inner { gap: 0.75rem 1.25rem; font-size: 0.8125rem; }
+    }
+
+    /* ---- Contact ---- */
+    .home-contact {
+      padding: 7rem 2rem 5rem; max-width: 1100px; margin: 0 auto; text-align: center;
+    }
+    .home-contact-title {
+      font-family: var(--h-serif);
+      font-size: clamp(1.75rem, 2.8vw, 2.375rem);
+      color: var(--h-text); margin-bottom: 0.75rem;
+      letter-spacing: -0.015em;
+    }
+    .home-contact-body {
+      font-size: 0.9375rem; color: var(--h-text-2); margin-bottom: 2.5rem;
+      font-weight: 350;
+    }
+    .home-contact-actions {
+      display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3.5rem;
+    }
+    .home-contact-meta { color: var(--h-text-3); font-size: 0.8125rem; line-height: 2; }
+    .home-contact-meta p { color: var(--h-text-3) !important; margin-bottom: 0; }
+    .home-contact-meta a { color: var(--h-text-3) !important; text-decoration: none; transition: color 0.2s; }
+    .home-contact-meta a:hover { color: var(--h-text-2) !important; }
+    @media (max-width: 768px) {
+      .home-contact { padding: 4rem 1.5rem 3rem; }
+      .home-contact-actions { flex-direction: column; align-items: center; }
+    }
+
+    /* ---- Footer overrides ---- */
+    .footer {
+      background: var(--h-surface-warm) !important;
+      border-top: 1px solid var(--h-border-subtle) !important;
+      margin-top: 0 !important; padding-top: 4.5rem !important;
+    }
+    .footer h4 {
+      color: var(--h-text) !important; font-size: 0.6875rem !important;
+      font-weight: 550 !important; letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+    }
+    .footer p, .footer .text-secondary { color: var(--h-text-2) !important; }
+    .footer-link {
+      color: var(--h-text-3) !important; font-size: 0.8125rem !important;
+      transition: color 0.2s ease !important;
+    }
+    .footer-link:hover { color: var(--h-text) !important; }
+    .footer-bottom {
+      border-top-color: var(--h-border-subtle) !important; color: var(--h-text-3) !important;
+    }
+    .footer-bottom p { color: var(--h-text-3) !important; }
+    .footer-bottom a { color: var(--h-text-3) !important; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--h-text-2) !important; }
+  </style>
+</head>
+<body>
+
+  <!-- PQ Announcement Bar -->
+  <div id="pq-announce" class="pq-announce">
+    <span style="color: var(--h-accent); font-size: 0.5rem;">&#9679;</span>
+    <span><strong>Post-quantum encryption is live.</strong> Sign &amp; encrypt in microseconds.</span>
+    <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener">Try it now&nbsp;&rarr;</a>
+    <button class="pq-dismiss" onclick="document.getElementById('pq-announce').style.display='none';document.body.classList.remove('pq-bar-active');" aria-label="Dismiss">&times;</button>
+  </div>
+  <script>setTimeout(function(){ document.body.classList.add('pq-bar-active'); }, 3600);</script>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">
+        <span class="home-logo-text">CycleCore</span>
+      </a>
+      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
+        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+      </button>
+      <div class="navbar-links">
+        <a href="/inference.html" class="navbar-link">AI Inference</a>
+        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
+        <a href="/tools.html" class="navbar-link">Dev Tools</a>
+        <a href="/research.html" class="navbar-link">Research</a>
+        <a href="/security.html" class="navbar-link">Security</a>
+        <a href="/pq/" class="navbar-link">PQCaaS</a>
+        <a href="#hardware" class="navbar-link">Hardware</a>
+        <a href="/about.html" class="navbar-link">About</a>
+        <a href="#contact" class="navbar-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================= -->
+  <!-- ACT 1: THE FACTORY                             -->
+  <!-- ============================================= -->
+
+  <section class="hero-factory">
+    <div class="hero-factory-label">CycleCore Technologies</div>
+
+    <h1 class="hero-factory-headline">
+      Post-quantum cryptography.<br>
+      <em>Microsecond AI.</em><br>
+      <span class="hero-factory-headline-sm">Hardware and cloud.</span>
+    </h1>
+
+    <p class="hero-factory-sub">
+      One architecture across six production verticals &mdash;
+      any CPU, no GPU required. Sub-5&micro;s.
+    </p>
+
+    <div class="hero-factory-cta">
+      <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn-dark">Try the live API</a>
+      <a href="#worlds" class="btn-link">See what it powers &darr;</a>
+    </div>
+
+    <div class="hero-proof-line">100+ patent claims &middot; 19+ shipped products &middot; Hardware from $4,000</div>
+
+    <!-- Factory visualization -->
+    <div class="hero-factory-viz">
+      <canvas id="factory-canvas" class="factory-canvas"></canvas>
+      <div id="factory-metric" class="factory-metric-overlay"></div>
+    </div>
+
+    <!-- Mobile vertical selector -->
+    <div id="mobile-selector" class="mobile-selector">
+      <button data-vertical="robotics-safety" class="pill">Robotics Safety</button>
+      <button data-vertical="post-quantum" class="pill">Post-Quantum</button>
+      <button data-vertical="agent-infra" class="pill">Agent Infra</button>
+      <button data-vertical="content-moderation" class="pill">Content Moderation</button>
+      <button data-vertical="security-research" class="pill">Security Research</button>
+      <button data-vertical="edge-inference" class="pill">Edge Inference</button>
+    </div>
+
+    <div class="hero-factory-stats">
+      <div class="factory-stat">
+        <div class="factory-stat-value" id="stat-latency">&lt; 5 &micro;s</div>
+        <div class="factory-stat-label">Batch Inference</div>
+      </div>
+      <div class="factory-stat">
+        <div class="factory-stat-value">Millions/sec</div>
+        <div class="factory-stat-label">Decisions per Core</div>
+      </div>
+      <div class="factory-stat">
+        <div class="factory-stat-value">100+</div>
+        <div class="factory-stat-label">Patent Claims</div>
+      </div>
+      <div class="factory-stat">
+        <div class="factory-stat-value">Any CPU</div>
+        <div class="factory-stat-label">Edge-First</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <!-- ============================================= -->
+  <!-- ACT 2: ONE PRIMITIVE, MANY WORLDS              -->
+  <!-- ============================================= -->
+
+  <section class="worlds-section" id="worlds">
+    <div class="worlds-header">
+      <div class="worlds-label">One primitive, many worlds</div>
+      <h2 class="worlds-title">One inference primitive. Six production verticals.</h2>
+    </div>
+
+    <div class="worlds-core">
+      <div class="core-node"></div>
+    </div>
+
+    <div class="worlds-grid">
+
+      <div class="world-card" data-delay="0" data-vertical="robotics-safety">
+        <div class="world-icon">&#9881;</div>
+        <div class="world-content">
+          <div class="world-name">Robotics Safety</div>
+          <p class="world-desc">Safety gates for cobots, humanoids, and autonomous systems. Deterministic veto decisions at sub-5&micro;s latency. ISO 13849 certifiable.</p>
+          <div class="world-metric">Sub-5 &micro;s per decision &middot; ISO 13849 certifiable</div>
+        </div>
+      </div>
+
+      <div class="world-card" data-delay="100" data-vertical="post-quantum">
+        <div class="world-icon">&#9919;</div>
+        <div class="world-content">
+          <div class="world-name">Post-Quantum Cryptography</div>
+          <p class="world-desc">PQCaaS hardware appliances and cloud API. ML-DSA signing, ML-KEM encryption, ZES attestation. NIST FIPS 203/204.</p>
+          <div class="world-metric">Sub-5&micro;s &middot; Patent-pending &middot; Available now</div>
+        </div>
+      </div>
+
+      <div class="world-card" data-delay="200" data-vertical="content-moderation">
+        <div class="world-icon">&#9737;</div>
+        <div class="world-content">
+          <div class="world-name">Content Moderation</div>
+          <p class="world-desc">SafetyGates API. 37 classifiers for toxic, spam, hate, NSFW, harassment. Orders of magnitude cheaper at scale.</p>
+          <div class="world-metric">Sub-5 &micro;s batch &middot; From $49/mo</div>
+        </div>
+      </div>
+
+      <div class="world-card" data-delay="300" data-vertical="agent-infra">
+        <div class="world-icon">&#8644;</div>
+        <div class="world-content">
+          <div class="world-name">Agent Infrastructure</div>
+          <p class="world-desc">gg &mdash; the 2-letter agent-native git client. MCPBodega &mdash; MCP server registry. CLI2CLI agent-to-agent communication. Up to 98% token savings.</p>
+          <div class="world-metric">A2A protocol &middot; npm i -g @ggdotdev/gg</div>
+        </div>
+      </div>
+
+      <div class="world-card" data-delay="400" data-vertical="security-research">
+        <div class="world-icon">&#128270;</div>
+        <div class="world-content">
+          <div class="world-name">Security Research</div>
+          <p class="world-desc">Active vulnerability research across major AI/ML infrastructure. Critical disclosures to NVIDIA, Microsoft, Meta, Hugging Face, ONNX.</p>
+          <div class="world-metric">15+ platforms &middot; 100+ findings &middot; Critical/High</div>
+        </div>
+      </div>
+
+      <div class="world-card" data-delay="500" data-vertical="edge-inference">
+        <div class="world-icon">&#9638;</div>
+        <div class="world-content">
+          <div class="world-name">Edge Inference</div>
+          <p class="world-desc">Deterministic ML classification at the edge. Runs on 15-year-old hardware. Custom models produced in under an hour via the NLM Factory.</p>
+          <div class="world-metric">Sub-5 &micro;s peak &middot; Millions of decisions/sec &middot; Any CPU</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <!-- ============================================= -->
+  <!-- EVIDENCE                                        -->
+  <!-- ============================================= -->
+
+  <section class="evidence-section" id="evidence">
+    <div class="evidence-header">
+      <div class="evidence-label">Evidence</div>
+      <h2 class="evidence-title">Measured performance</h2>
+    </div>
+
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <div class="evidence-card-context">PQ Signing Latency</div>
+        <div class="evidence-card-stat">&lt; 5 &micro;s</div>
+        <div class="evidence-card-detail">Local post-quantum signing &amp; encryption on commodity Intel N100</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-card-context">vs Traditional HSM</div>
+        <div class="evidence-card-stat">200&times;</div>
+        <div class="evidence-card-detail">Faster post-quantum operations than legacy hardware security modules</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-card-context">NLM Factory Trial</div>
+        <div class="evidence-card-stat">8,297</div>
+        <div class="evidence-card-detail">Models produced &middot; 88 min &middot; 2010 Xeon &middot; 99.7% first-pass yield</div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-card-context">Security Research</div>
+        <div class="evidence-card-stat">100+</div>
+        <div class="evidence-card-detail">Vulnerability findings across NVIDIA, Microsoft, Meta, Hugging Face</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <!-- ============================================= -->
+  <!-- ACT 3: PRODUCTS + PROOF                        -->
+  <!-- ============================================= -->
+
+  <section class="home-section" id="products">
+    <div class="home-section-label">Products</div>
+    <h2 class="home-section-title">Hardware and APIs</h2>
+    <p class="home-section-body">Dedicated appliances for on-premise deployment. Cloud APIs for everything else.</p>
+
+    <div class="home-grid-hw" id="hardware">
+      <div class="home-card">
+        <span class="home-card-badge hw">Hardware</span>
+        <h3 class="home-card-name">PQ Box</h3>
+        <p class="home-card-sub">Enterprise PQCaaS Appliance</p>
+        <p class="home-card-desc">Sign, encrypt, attest &mdash; sub-5&micro;s, unlimited usage. Dedicated Intel N100 with CycleCore OS. ZES optional.</p>
+        <div class="home-card-price">$8,500</div>
+        <div class="home-card-note">Available now &middot; Free US shipping &middot; Free email support</div>
+        <a href="https://buy.stripe.com/dRmeVe6ugcomevc1vmcbC04" target="_blank" rel="noopener" class="btn-dark">Order now</a>
+      </div>
+      <div class="home-card">
+        <span class="home-card-badge hw">Hardware</span>
+        <h3 class="home-card-name">PQ/QR Box</h3>
+        <p class="home-card-sub">Visual Crypto Appliance</p>
+        <p class="home-card-desc">Sign. Encode to QR. Scan. Verify. Sub-5&micro;s. Air-gapped ready. Dedicated Intel N100 with CycleCore OS.</p>
+        <div class="home-card-price">$4,000</div>
+        <div class="home-card-note">Available now &middot; Free US shipping &middot; Free email support</div>
+        <a href="https://buy.stripe.com/6oUbJ2aKw5ZYevc5LCcbC05" target="_blank" rel="noopener" class="btn-dark">Order now</a>
+      </div>
+    </div>
+
+    <div class="home-grid-sw">
+      <div class="home-card">
+        <span class="home-card-badge api">Cloud API</span>
+        <h3 class="home-card-name">PQ API</h3>
+        <p class="home-card-sub">Post-Quantum Crypto API</p>
+        <p class="home-card-desc">Sign, encrypt, verify &mdash; sub-100&micro;s. ML-DSA, ML-KEM, AES-256. NIST FIPS 203/204.</p>
+        <div class="home-card-price">From $49<span>/mo</span></div>
+        <div class="home-card-note">Free tier available</div>
+        <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn-outline">Get API key</a>
+      </div>
+      <div class="home-card">
+        <span class="home-card-badge api">Cloud API</span>
+        <h3 class="home-card-name">PQ/QR</h3>
+        <p class="home-card-sub">Visual Crypto Playground</p>
+        <p class="home-card-desc">Sign data. Encode to QR. Scan and verify. Live demo. Patent pending.</p>
+        <div class="home-card-price">Free</div>
+        <div class="home-card-note">No signup required</div>
+        <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn-outline">Try it now</a>
+      </div>
+      <div class="home-card">
+        <span class="home-card-badge tool">Dev Tool</span>
+        <h3 class="home-card-name">gg</h3>
+        <p class="home-card-sub">Agent-Native Git Client</p>
+        <p class="home-card-desc">2-letter CLI. Up to 98% token savings. Built for AI agents. GitHub, A2A, and more.</p>
+        <div class="home-card-price">Free<span> / $15 Pro</span></div>
+        <div class="home-card-note" style="font-family:var(--h-mono);font-size:0.625rem;letter-spacing:0">npm i -g @ggdotdev/gg</div>
+        <a href="https://www.npmjs.com/package/@ggdotdev/gg" target="_blank" rel="noopener" class="btn-outline">Install free</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <!-- Trust -->
+  <div class="home-trust">
+    <div class="home-trust-inner">
+      <span>100+ Patent Claims</span>
+      <span class="home-trust-sep">&middot;</span>
+      <span>Sub-5 &micro;s Inference</span>
+      <span class="home-trust-sep">&middot;</span>
+      <span>Edge-First Architecture</span>
+      <span class="home-trust-sep">&middot;</span>
+      <span>NIST FIPS 203/204</span>
+    </div>
+  </div>
+
+  <hr class="home-divider">
+
+  <!-- Contact -->
+  <section class="home-contact" id="contact">
+    <h2 class="home-contact-title">Get in touch</h2>
+    <p class="home-contact-body">Enterprise partnerships, technical inquiries, or general questions.</p>
+    <div class="home-contact-actions">
+      <a href="mailto:partnerships@cyclecore.ai" class="btn-dark">Enterprise partnerships</a>
+      <a href="mailto:hi@cyclecore.ai" class="btn-outline">General inquiries</a>
+      <a href="https://x.com/CyclecoreTech" target="_blank" rel="noopener" class="btn-outline">@CyclecoreTech</a>
+    </div>
+    <div class="home-contact-meta">
+      <p>CycleCore Technologies LLC</p>
+      <p>5830 E 2nd St, Suite 7000-24830</p>
+      <p>Casper, WY 82609</p>
+      <p><a href="tel:+13072153193">(307) 215-3193</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>CycleCore Technologies</h4>
+          <p class="text-secondary text-sm mb-sm">Sub-5µs AI infrastructure. Edge-first.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Products</h4>
+          <div class="footer-links">
+            <a href="#hardware" class="footer-link">PQ Box</a>
+            <a href="#hardware" class="footer-link">PQ/QR Box</a>
+            <a href="https://pq-api.cyclecore.ai/try" class="footer-link">PQ API</a>
+            <a href="https://pq-api.cyclecore.ai/try" class="footer-link">PQ/QR Playground</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <div class="footer-links">
+            <a href="/inference.html" class="footer-link">AI Inference</a>
+            <a href="/agents.html" class="footer-link">Agent Infrastructure</a>
+            <a href="/tools.html" class="footer-link">Dev Tools</a>
+            <a href="/research.html" class="footer-link">Research</a>
+            <a href="/security.html" class="footer-link">Security</a>
+            <a href="/pq/" class="footer-link">PQCaaS</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/transparency.html" class="footer-link">Transparency</a>
+            <a href="#contact" class="footer-link">Contact</a>
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/terms.html" class="footer-link">Terms of Service</a>
+            <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
+        <p class="text-sm" style="opacity:0.7;margin-top:0.5rem;">Patent-Pending Architecture &middot; NIST FIPS 203/204 Standardized Algorithms</p>
+        <p class="text-sm" style="opacity:0.5;margin-top:0.75rem;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6;">
+          Hardware products are available to U.S. customers only and are subject to U.S. Export Administration Regulations (EAR).
+          Cryptographic implementations use algorithms standardized in NIST FIPS 203 and 204; products have not undergone FIPS 140-3 module validation.
+          See <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================= -->
+  <!-- PRECISION ROUTING VISUALIZATION                 -->
+  <!-- ============================================= -->
+  <script>
+  (function() {
+    'use strict';
+
+    var ACCENT = '#00d4ff';
+    var ACCENT_DEEP = '#0088aa';
+    var ACCENT_RGB = '0, 212, 255';
+    var ACCENT_DEEP_RGB = '0, 136, 170';
+    var isMobile = window.innerWidth <= 767;
+
+    var COMPILE_DURATION = 3200;
+    var CYCLE_INTERVAL = 8000;
+
+    var verticals = {
+      'robotics-safety':    { label: 'Robotics Safety',     abbr: 'RS', metric: 'Sub-5 µs · PLe Cat 4 · ISO 13849',       nodeIndex: 0 },
+      'post-quantum':       { label: 'Post-Quantum',        abbr: 'PQ', metric: 'Sub-5 µs · ML-DSA-65 · FIPS 204',       nodeIndex: 1 },
+      'agent-infra':        { label: 'Agent Infra',         abbr: 'AI', metric: 'gg + MCPBodega · Up to 98% token savings',    nodeIndex: 2 },
+      'content-moderation': { label: 'Content Mod',         abbr: 'CM', metric: 'Sub-5 µs batch · 37 classifiers',        nodeIndex: 3 },
+      'security-research':  { label: 'Security',            abbr: 'SR', metric: '100+ findings · Critical/High',          nodeIndex: 4 },
+      'edge-inference':     { label: 'Edge Inference',      abbr: 'EI', metric: 'Sub-5 µs peak · Millions/sec',           nodeIndex: 5 }
+    };
+
+    var STATE = { IDLE: 'idle', COMPILING: 'compiling', DEPLOYED: 'deployed' };
+    var currentState = STATE.IDLE;
+    var selectedVertical = null;
+    var compileStartTime = 0;
+    var deployTime = 0;
+    var verticalKeys = Object.keys(verticals);
+
+    var canvas = document.getElementById('factory-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var dpr = window.devicePixelRatio || 1;
+    var width, height;
+    var frameId = null;
+
+    var nodePositions = [
+      { rx: 0.18, ry: 0.28 },
+      { rx: 0.5,  ry: 0.13 },
+      { rx: 0.82, ry: 0.28 },
+      { rx: 0.18, ry: 0.76 },
+      { rx: 0.5,  ry: 0.90 },
+      { rx: 0.82, ry: 0.76 }
+    ];
+
+    var corePos = { rx: 0.5, ry: 0.5 };
+    var resolvedNodes = [];
+    var resolvedCore = { x: 0, y: 0 };
+    var routePaths = [];
+
+    // --- Bezier path system ---
+    function calculatePaths() {
+      routePaths = [];
+      var curvatures = [0.16, -0.08, -0.16, -0.16, 0.08, 0.16];
+      for (var i = 0; i < resolvedNodes.length; i++) {
+        var node = resolvedNodes[i];
+        var c = curvatures[i];
+        var cx = (resolvedCore.x + node.x) / 2 + (node.y - resolvedCore.y) * c;
+        var cy = (resolvedCore.y + node.y) / 2 - (node.x - resolvedCore.x) * c;
+
+        var pts = [];
+        var steps = 60;
+        for (var s = 0; s <= steps; s++) {
+          var t = s / steps;
+          pts.push({
+            x: (1-t)*(1-t)*resolvedCore.x + 2*(1-t)*t*cx + t*t*node.x,
+            y: (1-t)*(1-t)*resolvedCore.y + 2*(1-t)*t*cy + t*t*node.y
+          });
+        }
+        routePaths.push({ points: pts, ctrl: { x: cx, y: cy } });
+      }
+    }
+
+    function pathPoint(idx, t) {
+      var p = routePaths[idx];
+      if (!p) return resolvedCore;
+      var i = Math.min(Math.floor(t * (p.points.length - 1)), p.points.length - 1);
+      return p.points[Math.max(0, i)];
+    }
+
+    function pathTangent(idx, t) {
+      var p = routePaths[idx];
+      if (!p) return { x: 1, y: 0 };
+      var n = p.points.length - 1;
+      var i = Math.floor(t * n);
+      var a = p.points[Math.max(0, Math.min(i, n))];
+      var b = p.points[Math.max(0, Math.min(i + 1, n))];
+      var dx = b.x - a.x, dy = b.y - a.y;
+      var len = Math.hypot(dx, dy) || 1;
+      return { x: dx / len, y: dy / len };
+    }
+
+    // --- Route particles (follow bezier paths) ---
+    var routeParticles = [];
+
+    function RouteParticle(pathIdx, t0, speed) {
+      this.pathIdx = pathIdx;
+      this.t = t0;
+      this.speed = speed;
+      this.wobbleAmp = 1.5 + Math.random() * 3;
+      this.wobblePhase = Math.random() * Math.PI * 2;
+      this.wobbleFreq = 0.08 + Math.random() * 0.1;
+      this.size = 2.2 + Math.random() * 1.6;
+      this.alpha = 0.55 + Math.random() * 0.45;
+      this.alive = true;
+      this.x = 0; this.y = 0;
+      this.trail = [];
+      this.age = 0;
+    }
+
+    RouteParticle.prototype.update = function() {
+      this.age++;
+      this.t += this.speed;
+
+      if (this.t >= 1) {
+        if (currentState === STATE.IDLE) { this.t -= 1; }
+        else { this.alive = false; return; }
+      }
+      if (this.t < 0) this.t = 0;
+
+      var pt = pathPoint(this.pathIdx, Math.max(0, Math.min(1, this.t)));
+      var tan = pathTangent(this.pathIdx, Math.max(0, Math.min(1, this.t)));
+      var wobble = Math.sin(this.age * this.wobbleFreq + this.wobblePhase) * this.wobbleAmp;
+
+      this.x = pt.x + (-tan.y) * wobble;
+      this.y = pt.y + tan.x * wobble;
+
+      this.trail.push({ x: this.x, y: this.y });
+      if (this.trail.length > 8) this.trail.shift();
+    };
+
+    RouteParticle.prototype.draw = function() {
+      ctx.save();
+      for (var i = 0; i < this.trail.length; i++) {
+        var a = (i / this.trail.length) * 0.25 * this.alpha;
+        ctx.globalAlpha = a;
+        ctx.fillStyle = ACCENT_DEEP;
+        var s = this.size * 0.55;
+        ctx.fillRect(this.trail[i].x - s/2, this.trail[i].y - s/2, s, s);
+      }
+      ctx.restore();
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.shadowColor = ACCENT;
+      ctx.shadowBlur = 5;
+      ctx.fillStyle = ACCENT_DEEP;
+      ctx.fillRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+      ctx.restore();
+    };
+
+    // --- Burst particles (arrival effect) ---
+    var burstParticles = [];
+
+    function BurstParticle(x, y, angle, speed) {
+      this.x = x; this.y = y;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.life = 1;
+      this.size = 2 + Math.random() * 1.5;
+      this.alive = true;
+    }
+    BurstParticle.prototype.update = function() {
+      this.x += this.vx; this.y += this.vy;
+      this.vx *= 0.94; this.vy *= 0.94;
+      this.life -= 0.035;
+      if (this.life <= 0) this.alive = false;
+    };
+    BurstParticle.prototype.draw = function() {
+      ctx.save();
+      ctx.globalAlpha = this.life * 0.65;
+      ctx.fillStyle = ACCENT;
+      ctx.fillRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+      ctx.restore();
+    };
+
+    // --- Spawn helpers ---
+    function spawnIdle() {
+      routeParticles = [];
+      var perPath = isMobile ? 2 : 3;
+      for (var i = 0; i < resolvedNodes.length; i++) {
+        for (var j = 0; j < perPath; j++) {
+          var p = new RouteParticle(i, Math.random(), 0.0008 + Math.random() * 0.0008);
+          p.alpha = 0.18 + Math.random() * 0.12;
+          p.size = 1.4 + Math.random() * 0.8;
+          routeParticles.push(p);
+        }
+      }
+    }
+
+    function startCompile(verticalKey) {
+      selectedVertical = verticalKey;
+      currentState = STATE.COMPILING;
+      compileStartTime = performance.now();
+      var v = verticals[verticalKey];
+      if (!v) return;
+
+      var metricEl = document.getElementById('factory-metric');
+      if (metricEl) { metricEl.classList.remove('visible'); metricEl.textContent = ''; }
+
+      routeParticles = routeParticles.filter(function(p) { return p.pathIdx !== v.nodeIndex; });
+
+      var count = isMobile ? 25 : 45;
+      for (var i = 0; i < count; i++) {
+        var delay = i * 0.018;
+        var p = new RouteParticle(v.nodeIndex, -delay, 0.006 + Math.random() * 0.005);
+        p.alpha = 0.45 + Math.random() * 0.55;
+        p.size = 2 + Math.random() * 2;
+        routeParticles.push(p);
+      }
+    }
+
+    // --- Drawing ---
+    function drawGrid() {
+      ctx.save();
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.02)';
+      var sp = isMobile ? 40 : 32;
+      for (var x = sp; x < width; x += sp) {
+        for (var y = sp; y < height; y += sp) {
+          ctx.fillRect(x - 0.4, y - 0.4, 0.8, 0.8);
+        }
+      }
+      ctx.restore();
+    }
+
+    function drawPaths() {
+      var now = performance.now();
+      for (var i = 0; i < routePaths.length; i++) {
+        var rp = routePaths[i];
+        var key = verticalKeys[i];
+        var isActive = selectedVertical === key && currentState !== STATE.IDLE;
+
+        ctx.save();
+        ctx.strokeStyle = isActive ? 'rgba(' + ACCENT_DEEP_RGB + ', 0.22)' : 'rgba(0, 0, 0, 0.035)';
+        ctx.lineWidth = isActive ? 1.4 : 0.7;
+        ctx.setLineDash(isActive ? [8, 5] : [3, 8]);
+        if (isActive) ctx.lineDashOffset = -(now * 0.035) % 13;
+
+        ctx.beginPath();
+        ctx.moveTo(resolvedCore.x, resolvedCore.y);
+        ctx.quadraticCurveTo(rp.ctrl.x, rp.ctrl.y, resolvedNodes[i].x, resolvedNodes[i].y);
+        ctx.stroke();
+
+        if (isActive && currentState === STATE.COMPILING) {
+          var dotT = ((now - compileStartTime) * 0.00035) % 1;
+          var dp = pathPoint(i, dotT);
+          ctx.setLineDash([]);
+          ctx.fillStyle = ACCENT;
+          ctx.shadowColor = ACCENT;
+          ctx.shadowBlur = 10;
+          ctx.beginPath();
+          ctx.arc(dp.x, dp.y, 3.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    }
+
+    function drawCore() {
+      var cx = resolvedCore.x, cy = resolvedCore.y;
+      var r = 22;
+
+      ctx.save();
+      ctx.fillStyle = '#f5f4f1';
+      ctx.beginPath();
+      ctx.arc(cx, cy, r + 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#1a1a1a';
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = ACCENT_DEEP;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      var pulse;
+      if (currentState === STATE.COMPILING) {
+        pulse = Math.sin((performance.now() - compileStartTime) / 110) * 7 + 10;
+      } else {
+        pulse = Math.sin(performance.now() / 2500) * 2.5 + 4;
+      }
+      ctx.shadowColor = ACCENT;
+      ctx.shadowBlur = pulse;
+      ctx.strokeStyle = ACCENT;
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.arc(cx, cy, r + 8, 0, Math.PI * 2);
+      ctx.stroke();
+
+      if (currentState === STATE.COMPILING) {
+        var el = performance.now() - compileStartTime;
+        for (var ring = 0; ring < 3; ring++) {
+          var prog = ((el + ring * 400) % 1500) / 1500;
+          var rr = r + 10 + prog * 50;
+          var ra = Math.max(0, 0.18 - prog * 0.2);
+          ctx.strokeStyle = 'rgba(' + ACCENT_RGB + ',' + ra + ')';
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.arc(cx, cy, rr, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+    }
+
+    var hoveredNode = -1;
+
+    function drawNodes() {
+      for (var i = 0; i < resolvedNodes.length; i++) {
+        var node = resolvedNodes[i];
+        var key = verticalKeys[i];
+        var v = verticals[key];
+        var isActive = selectedVertical === key && currentState !== STATE.IDLE;
+        var isHovered = hoveredNode === i;
+        var nr = 28;
+
+        ctx.save();
+
+        ctx.shadowBlur = isActive ? 10 : (isHovered ? 6 : 0);
+        ctx.shadowColor = (isActive || isHovered) ? ACCENT : 'transparent';
+        ctx.fillStyle = isActive ? '#fff' : (isHovered ? '#fefefe' : '#faf9f6');
+        ctx.strokeStyle = isActive ? ACCENT : (isHovered ? 'rgba(' + ACCENT_RGB + ',0.3)' : '#e5e3dc');
+        ctx.lineWidth = isActive ? 2 : (isHovered ? 1.5 : 1);
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, nr, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.shadowBlur = 0;
+        ctx.font = '600 13px "JetBrains Mono", monospace';
+        ctx.fillStyle = isActive ? ACCENT_DEEP : '#777';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(v.abbr, node.x, node.y + 0.5);
+
+        if (isActive && currentState === STATE.DEPLOYED) {
+          var since = performance.now() - deployTime;
+          if (since < 1000) {
+            var rt = since / 1000;
+            var rr = nr + rt * 28;
+            var ra = 0.35 * (1 - rt);
+            ctx.strokeStyle = 'rgba(' + ACCENT_RGB + ',' + ra + ')';
+            ctx.lineWidth = 1.8 * (1 - rt * 0.6);
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, rr, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          if (since < 1600) {
+            var rt2 = Math.max(0, (since - 200) / 1400);
+            var rr2 = nr + rt2 * 40;
+            var ra2 = 0.15 * (1 - rt2);
+            ctx.strokeStyle = 'rgba(' + ACCENT_RGB + ',' + ra2 + ')';
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, rr2, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          var glow = Math.sin(performance.now() / 900) * 0.07 + 0.12;
+          ctx.strokeStyle = 'rgba(' + ACCENT_RGB + ',' + glow + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, nr + 7, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        var la = isActive ? 0.85 : (isHovered ? 0.65 : 0.38);
+        ctx.font = (isActive ? '500 ' : '400 ') + '10.5px "Inter", sans-serif';
+        ctx.fillStyle = 'rgba(26,26,26,' + la + ')';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillText(v.label, node.x, node.y + nr + 7);
+
+        ctx.restore();
+      }
+    }
+
+    // --- Main loop ---
+    function animate(ts) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+
+      drawGrid();
+      drawPaths();
+
+      for (var i = routeParticles.length - 1; i >= 0; i--) {
+        routeParticles[i].update();
+        if (!routeParticles[i].alive) { routeParticles.splice(i, 1); continue; }
+        routeParticles[i].draw();
+      }
+
+      for (var j = burstParticles.length - 1; j >= 0; j--) {
+        burstParticles[j].update();
+        if (!burstParticles[j].alive) { burstParticles.splice(j, 1); continue; }
+        burstParticles[j].draw();
+      }
+
+      if (currentState === STATE.IDLE) {
+        for (var k = 0; k < resolvedNodes.length; k++) {
+          var cnt = 0;
+          for (var m = 0; m < routeParticles.length; m++) {
+            if (routeParticles[m].pathIdx === k) cnt++;
+          }
+          if (cnt < (isMobile ? 2 : 3)) {
+            var np = new RouteParticle(k, Math.random(), 0.0008 + Math.random() * 0.0008);
+            np.alpha = 0.18 + Math.random() * 0.1;
+            np.size = 1.3 + Math.random() * 0.7;
+            routeParticles.push(np);
+          }
+        }
+      }
+
+      if (currentState === STATE.DEPLOYED) {
+        var sv = verticals[selectedVertical];
+        if (sv) {
+          var tc = 0;
+          for (var n = 0; n < routeParticles.length; n++) {
+            if (routeParticles[n].pathIdx === sv.nodeIndex) tc++;
+          }
+          if (tc < 4) {
+            var tp = new RouteParticle(sv.nodeIndex, Math.random() * 0.4, 0.002 + Math.random() * 0.002);
+            tp.alpha = 0.2;
+            tp.size = 1.5;
+            routeParticles.push(tp);
+          }
+        }
+      }
+
+      drawCore();
+      drawNodes();
+
+      if (currentState === STATE.COMPILING && ts - compileStartTime > COMPILE_DURATION) {
+        currentState = STATE.DEPLOYED;
+        showMetric();
+      }
+
+      frameId = requestAnimationFrame(animate);
+    }
+
+    function showMetric() {
+      deployTime = performance.now();
+      var metricEl = document.getElementById('factory-metric');
+      var v = verticals[selectedVertical];
+      if (metricEl && v) {
+        metricEl.textContent = v.metric;
+        metricEl.classList.add('visible');
+      }
+      if (v) {
+        var nd = resolvedNodes[v.nodeIndex];
+        for (var i = 0; i < 20; i++) {
+          var a = (Math.PI * 2 * i) / 20;
+          burstParticles.push(new BurstParticle(nd.x, nd.y, a, 2 + Math.random() * 2.5));
+        }
+        for (var j = 0; j < 4; j++) {
+          var tp = new RouteParticle(v.nodeIndex, Math.random() * 0.5, 0.0015 + Math.random() * 0.0015);
+          tp.alpha = 0.22; tp.size = 1.4;
+          routeParticles.push(tp);
+        }
+      }
+    }
+
+    // --- Resize ---
+    function resolvePositions() {
+      resolvedCore.x = corePos.rx * width;
+      resolvedCore.y = corePos.ry * height;
+      resolvedNodes = nodePositions.map(function(np) {
+        return { x: np.rx * width, y: np.ry * height };
+      });
+      calculatePaths();
+    }
+
+    function resize() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      resolvePositions();
+      spawnIdle();
+    }
+
+    // --- Interaction ---
+    function scrollToCard(verticalKey) {
+      var card = document.querySelector('.world-card[data-vertical="' + verticalKey + '"]');
+      if (card) {
+        setTimeout(function() {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, COMPILE_DURATION + 400);
+      }
+    }
+
+    canvas.addEventListener('click', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      var mx = e.clientX - rect.left;
+      var my = e.clientY - rect.top;
+      for (var i = 0; i < resolvedNodes.length; i++) {
+        if (Math.hypot(mx - resolvedNodes[i].x, my - resolvedNodes[i].y) < 36) {
+          stopAutoCycle();
+          startCompile(verticalKeys[i]);
+          scrollToCard(verticalKeys[i]);
+          pills.forEach(function(p) { p.classList.remove('active'); });
+          var ap = document.querySelector('.pill[data-vertical="' + verticalKeys[i] + '"]');
+          if (ap) ap.classList.add('active');
+          return;
+        }
+      }
+    });
+
+    canvas.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      var mx = e.clientX - rect.left;
+      var my = e.clientY - rect.top;
+      hoveredNode = -1;
+      for (var i = 0; i < resolvedNodes.length; i++) {
+        if (Math.hypot(mx - resolvedNodes[i].x, my - resolvedNodes[i].y) < 36) {
+          hoveredNode = i;
+          canvas.style.cursor = 'pointer';
+          return;
+        }
+      }
+      canvas.style.cursor = 'default';
+    });
+
+    canvas.addEventListener('mouseleave', function() {
+      hoveredNode = -1;
+      canvas.style.cursor = 'default';
+    });
+
+    // --- Mobile pills ---
+    var pills = document.querySelectorAll('.mobile-selector .pill');
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        stopAutoCycle();
+        var key = this.getAttribute('data-vertical');
+        pills.forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        startCompile(key);
+      });
+    });
+
+    // --- Auto-cycle ---
+    var autoCycleTimer = null;
+    var autoCycleIndex = 1;
+    var userHasInteracted = false;
+
+    function autoCycle() {
+      if (userHasInteracted) return;
+      startCompile(verticalKeys[autoCycleIndex]);
+      autoCycleIndex = (autoCycleIndex + 1) % verticalKeys.length;
+      autoCycleTimer = setTimeout(autoCycle, CYCLE_INTERVAL);
+    }
+
+    setTimeout(function() {
+      if (!userHasInteracted) autoCycle();
+    }, 500);
+
+    function stopAutoCycle() {
+      userHasInteracted = true;
+      if (autoCycleTimer) { clearTimeout(autoCycleTimer); autoCycleTimer = null; }
+    }
+
+    canvas.addEventListener('dblclick', function() {
+      stopAutoCycle();
+      currentState = STATE.IDLE;
+      selectedVertical = null;
+      hoveredNode = -1;
+      burstParticles = [];
+      var metricEl = document.getElementById('factory-metric');
+      if (metricEl) metricEl.classList.remove('visible');
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      spawnIdle();
+    });
+
+    // --- Visibility ---
+    var visObserver = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        if (!frameId) frameId = requestAnimationFrame(animate);
+      } else {
+        if (frameId) { cancelAnimationFrame(frameId); frameId = null; }
+      }
+    }, { threshold: 0.1 });
+    visObserver.observe(canvas);
+
+    // --- Init ---
+    resize();
+    window.addEventListener('resize', function() {
+      isMobile = window.innerWidth <= 767;
+      if (frameId) cancelAnimationFrame(frameId);
+      frameId = null;
+      resize();
+      frameId = requestAnimationFrame(animate);
+    });
+
+    // --- Scroll Reveal for World Cards ---
+    var cards = document.querySelectorAll('.world-card');
+    if (cards.length) {
+      var cardObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+            setTimeout(function() { entry.target.classList.add('visible'); }, delay);
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(function(card) { cardObserver.observe(card); });
+    }
+  })();
+  </script>
+
+</body>
+</html>

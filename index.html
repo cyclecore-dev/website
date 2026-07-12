@@ -4,915 +4,1103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="CycleCore Technologies - Microsecond AI infrastructure. Hardware, APIs, and tools. Sub-5μs post-quantum cryptography. Patent-pending architecture.">
-  <meta name="keywords" content="post-quantum cryptography, PQCaaS, edge AI, microsecond inference, ML-DSA, hardware security module, CycleCore">
+  <meta name="description" content="CycleCore Technologies — Post-quantum cryptography and AI inference on hardware you already own. 128 patent claims. 20+ products. Sub-5µs. Production today.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="CycleCore Technologies - Microsecond AI Infrastructure">
-  <meta property="og:description" content="Hardware. APIs. Tools. Sub-5μs post-quantum crypto. Patent-pending architecture. Ship quantum-safe today.">
+  <meta property="og:title" content="CycleCore Technologies — Microsecond AI Infrastructure">
+  <meta property="og:description" content="Post-quantum cryptography and AI inference on commodity hardware. 128 patent claims. 20+ products. Production today.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cyclecore.ai">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CycleCore Technologies - Microsecond AI Infrastructure">
-  <meta name="twitter:description" content="Hardware. APIs. Tools. Sub-5μs post-quantum crypto. Ship quantum-safe today.">
+  <meta name="twitter:title" content="CycleCore Technologies — Microsecond AI Infrastructure">
+  <meta name="twitter:description" content="Post-quantum cryptography on commodity hardware. 128 patent claims. Production today.">
 
-  <title>CycleCore Technologies - Microsecond AI Infrastructure</title>
+  <title>CycleCore Technologies</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Preload Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260304">
-  <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260304">
-  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260304">
-
-  <!-- Main JavaScript -->
+  <link rel="stylesheet" href="/css/cyclecore-tokens.css?v=20260712">
+  <link rel="stylesheet" href="/css/cyclecore-base.css?v=20260712">
+  <link rel="stylesheet" href="/css/cyclecore-components.css?v=20260712">
   <script src="/js/main.js" defer></script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CycleCore Technologies",
+    "url": "https://cyclecore.ai",
+    "logo": "https://cyclecore.ai/assets/logo/cyclecore-mark-dark-trimmed.png",
+    "description": "Post-quantum cryptography and AI inference infrastructure",
+    "foundingDate": "2024",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5830 E 2nd St, Suite 7000-24830",
+      "addressLocality": "Casper",
+      "addressRegion": "WY",
+      "postalCode": "82609",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-307-215-3193",
+    "email": "hi@cyclecore.ai",
+    "sameAs": [
+      "https://x.com/CyclecoreTech"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "enterprise",
+      "email": "partnerships@cyclecore.ai"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "PQ Box",
+    "description": "Enterprise post-quantum cryptography appliance. Sub-5µs signing, unlimited usage. Dedicated Intel N100 with CycleCore OS.",
+    "brand": {
+      "@type": "Organization",
+      "name": "CycleCore Technologies"
+    },
+    "category": "Cryptographic Hardware",
+    "url": "https://cyclecore.ai/#hardware",
+    "offers": {
+      "@type": "Offer",
+      "price": "8500",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  }
+  </script>
+
   <style>
-    /* ==================== */
-    /* PRODUCT CAROUSEL     */
-    /* ==================== */
+    :root {
+      --h-bg: #f5f4f1;
+      --h-surface: #ffffff;
+      --h-surface-warm: #faf9f6;
+      --h-border: #e8e6e1;
+      --h-border-subtle: #eeedea;
+      --h-text: #1a1a1a;
+      --h-text-2: #555;
+      --h-text-3: #737373;
+      --h-accent: #00d4ff;
+      --h-accent-hover: #00bce0;
+      --h-accent-muted: #0099bb;
+      --h-accent-bg: rgba(0, 212, 255, 0.04);
+      --h-accent-glow: rgba(0, 212, 255, 0.10);
+      --h-green: #10b981;
+      --h-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --h-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --h-mono: 'JetBrains Mono', monospace;
+      --h-shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --h-shadow-md: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --h-shadow-lift: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
 
-    .carousel {
-      position: relative;
-      max-width: var(--cc-container-xl);
-      margin: 0 auto;
-      padding: 0 var(--cc-space-md);
+      --odo-bg: #08080a;
+      --odo-surface: #111114;
+      --odo-border: rgba(255,255,255,0.06);
+      --odo-text: #d4d4d8;
+      --odo-text-dim: #52525b;
+      --odo-label: #00d4ff;
+      --odo-green: #34d399;
     }
 
-    .carousel-track {
-      display: flex;
-      gap: var(--cc-space-md);
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding: var(--cc-space-sm) 0;
+    body {
+      background: var(--h-bg) !important;
+      color: var(--h-text) !important;
+      font-family: var(--h-sans) !important;
+      font-weight: 400 !important;
+      font-size: 0.9375rem !important;
+      line-height: 1.6 !important;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .carousel-track::-webkit-scrollbar {
-      display: none;
+    ::selection {
+      background: rgba(0, 212, 255, 0.10);
+      color: var(--h-text);
     }
 
-    .carousel-card {
-      flex: 0 0 calc(33.333% - 1.4rem);
-      scroll-snap-align: start;
-      background: var(--cc-gray-900);
-      border: 1px solid var(--cc-gray-700);
-      border-radius: var(--cc-radius-lg);
-      padding: var(--cc-space-md);
-      display: flex;
-      flex-direction: column;
-      transition: var(--cc-transition-slow);
-      min-height: 380px;
+    /* ---- Announcement Bar ---- */
+    .pq-announce {
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: var(--h-surface) !important;
+      border-bottom: 1px solid var(--h-border-subtle) !important;
+      font-family: var(--h-sans); font-size: 0.75rem;
+      letter-spacing: 0.01em; color: var(--h-text-2) !important;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1200;
+      transform: translateY(-100%);
+      animation: pq-slide-down 0.4s ease-out 3s forwards;
+    }
+    .pq-announce strong { color: var(--h-text) !important; font-weight: 500; }
+    .pq-announce .pq-dismiss {
+      position: absolute; right: 0.5rem; background: none; border: none;
+      color: var(--h-text-3); cursor: pointer; font-size: 0.875rem;
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0.6;
+    }
+    .pq-announce .pq-dismiss:hover { opacity: 1; }
+    @keyframes pq-slide-down {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    body.pq-bar-active .navbar { top: 34px; }
+    body.pq-bar-active .hero-split { padding-top: calc(68px + 34px + 4rem); }
+    @media (max-width: 600px) {
+      .pq-announce { font-size: 0.6875rem; padding: 0.4rem 2rem 0.4rem 0.75rem; gap: 0.4rem; }
+      body.pq-bar-active .navbar { top: 30px; }
+      body.pq-bar-active .hero-split { padding-top: calc(60px + 30px + 2.5rem); }
     }
 
-    .carousel-card:hover {
-      border-color: var(--cc-accent-cyan);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0, 212, 255, 0.12);
+    /* ---- Navbar ---- */
+    .navbar {
+      background: rgba(245, 244, 241, 0.92) !important;
+      backdrop-filter: blur(20px) saturate(1.2) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+      border-bottom: 1px solid rgba(0,0,0,0.06) !important;
     }
-
-    /* Premium glow for hardware cards */
-    .carousel-card.card-hardware {
-      border-top: 2px solid rgba(0, 212, 255, 0.3);
-      background: linear-gradient(180deg, rgba(0, 212, 255, 0.04) 0%, var(--cc-gray-900) 15%);
+    .navbar-logo { gap: 0.4rem !important; align-items: center !important; margin-right: 2.5rem !important; overflow: visible !important; }
+    .logo-mark { height: 28px; width: auto; flex-shrink: 0; }
+    .logo-wordmark { height: 18px; width: auto; flex-shrink: 0; }
+    .navbar-link {
+      color: var(--h-text-3) !important; font-weight: 400 !important;
+      font-size: 0.8125rem !important; letter-spacing: 0.005em !important;
+      transition: color 0.2s ease !important;
     }
-
-    .carousel-card.card-hardware:hover {
-      border-top-color: var(--cc-accent-cyan);
-      box-shadow: 0 12px 40px rgba(0, 212, 255, 0.18), 0 0 60px rgba(0, 212, 255, 0.06);
-    }
-
-    .carousel-card-badge {
-      font-family: var(--cc-font-mono);
-      font-size: 0.65rem;
-      font-weight: var(--cc-weight-semibold);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.25rem 0.625rem;
-      border-radius: var(--cc-radius-sm);
-      display: inline-block;
-      margin-bottom: var(--cc-space-sm);
-      width: fit-content;
-    }
-
-    .badge-hardware {
-      background: rgba(0, 212, 255, 0.15);
-      color: var(--cc-accent-cyan);
-      border: 1px solid rgba(0, 212, 255, 0.3);
-    }
-
-    .badge-cloud {
-      background: rgba(16, 185, 129, 0.12);
-      color: var(--cc-success);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-    }
-
-    .badge-devtool {
-      background: rgba(245, 158, 11, 0.12);
-      color: var(--cc-warning);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-    }
-
-    .carousel-card-name {
-      font-size: var(--cc-text-2xl);
-      font-weight: var(--cc-weight-bold);
-      color: var(--cc-text-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .carousel-card-subtitle {
-      font-size: var(--cc-text-sm);
-      color: var(--cc-text-secondary);
-      margin-bottom: var(--cc-space-sm);
-    }
-
-    .carousel-card-desc {
-      font-size: var(--cc-text-sm);
-      color: var(--cc-text-tertiary);
-      line-height: var(--cc-leading-relaxed);
-      margin-bottom: auto;
-      padding-bottom: var(--cc-space-sm);
-    }
-
-    .carousel-card-price {
-      font-size: var(--cc-text-3xl);
-      font-weight: var(--cc-weight-bold);
-      color: var(--cc-accent-cyan);
-      margin-bottom: 0.25rem;
-    }
-
-    .carousel-card-price-note {
-      font-size: var(--cc-text-xs);
-      color: var(--cc-text-tertiary);
-      margin-bottom: var(--cc-space-sm);
-    }
-
-    .carousel-card-promo {
-      font-family: var(--cc-font-mono);
-      font-size: 0.65rem;
-      color: var(--cc-success);
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      border-radius: var(--cc-radius-sm);
-      padding: 0.3rem 0.5rem;
-      margin-bottom: var(--cc-space-sm);
-      display: inline-block;
-    }
-
-    .carousel-card-support {
-      font-size: var(--cc-text-xs);
-      color: var(--cc-text-tertiary);
-      margin-bottom: var(--cc-space-sm);
-    }
-
-    .carousel-card-support a {
-      color: var(--cc-text-secondary);
-      text-decoration: underline;
-      text-decoration-color: var(--cc-gray-600);
-    }
-
-    .carousel-card-support a:hover {
-      color: var(--cc-accent-cyan);
-    }
-
-    .carousel-card .btn {
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Carousel Navigation */
-    .carousel-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--cc-space-sm);
-      margin-top: var(--cc-space-md);
-    }
-
-    .carousel-arrow {
-      background: var(--cc-gray-800);
-      border: 1px solid var(--cc-gray-700);
-      color: var(--cc-text-secondary);
-      width: 40px;
-      height: 40px;
-      border-radius: var(--cc-radius-full);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--cc-transition-base);
-      font-size: 1.1rem;
-    }
-
-    .carousel-arrow:hover {
-      border-color: var(--cc-accent-cyan);
-      color: var(--cc-text-primary);
-      background: var(--cc-gray-900);
-      transform: scale(1.1);
-    }
-
-    .carousel-arrow:active {
-      transform: scale(0.95);
-    }
-
-    .carousel-dots {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .carousel-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: var(--cc-radius-full);
-      background: var(--cc-gray-600);
-      border: none;
-      cursor: pointer;
-      transition: var(--cc-transition-base);
-      padding: 0;
-    }
-
-    .carousel-dot.active {
-      background: var(--cc-accent-cyan);
-      width: 24px;
-    }
-
-    /* Responsive Carousel */
-    @media (max-width: 1024px) {
-      .carousel-card {
-        flex: 0 0 calc(50% - 1rem);
-      }
-    }
+    .navbar-link:hover { color: var(--h-text) !important; background: transparent !important; }
+    .navbar-link.active { color: var(--h-text) !important; }
+    .navbar-cta { color: var(--h-accent-muted) !important; font-weight: 500 !important; }
+    .navbar-hamburger .hamburger-icon span { background: var(--h-text) !important; }
 
     @media (max-width: 640px) {
-      .carousel-card {
-        flex: 0 0 calc(100% - 0.5rem);
-        min-height: 340px;
+      .navbar-links {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) saturate(1.2) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+        border-bottom: 1px solid var(--h-border) !important;
+        top: 56px !important;
       }
-      .carousel-arrow {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
-      }
+      body.pq-bar-active .navbar-links { top: 86px !important; }
+      .navbar-link { color: var(--h-text-2) !important; }
+      .navbar-link:hover { background: var(--h-bg) !important; color: var(--h-text) !important; }
     }
 
-    /* ==================== */
-    /* HARDWARE SECTION     */
-    /* ==================== */
-
-    .hardware-grid {
+    /* =============================== */
+    /* HERO — Split: Editorial + Odo   */
+    /* =============================== */
+    .hero-split {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: calc(68px + 4rem) 2rem 2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--cc-space-lg);
-      max-width: var(--cc-container-xl);
-      margin: 0 auto;
+      gap: 3rem;
+      align-items: center;
+      min-height: calc(100vh - 200px);
     }
 
-    .hardware-card {
-      background: var(--cc-gray-900);
-      border: 1px solid var(--cc-gray-700);
-      border-radius: var(--cc-radius-lg);
-      padding: var(--cc-space-lg);
-      display: flex;
-      flex-direction: column;
+    .hero-editorial {
+      padding-right: 1rem;
     }
 
-    .hardware-visual {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background: var(--cc-black);
-      border: 1px solid var(--cc-gray-700);
-      border-radius: var(--cc-radius-md);
+    .hero-name {
+      font-family: var(--h-serif);
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--h-text);
+      margin-bottom: 0.625rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--h-mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--h-accent-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+      font-family: var(--h-sans);
+      font-size: 1.0625rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--h-text-2);
+      max-width: 420px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: var(--cc-space-md);
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* =============================== */
+    /* ODOMETER PANEL                  */
+    /* =============================== */
+    .odo-panel {
+      background: var(--odo-bg);
+      border: 1px solid var(--odo-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.5),
+        0 20px 60px -12px rgba(0,0,0,0.35),
+        0 0 40px rgba(0, 212, 255, 0.03);
       position: relative;
+    }
+
+    .odo-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.15), transparent);
+    }
+
+    .odo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.875rem 1.25rem 0.625rem;
+      border-bottom: 1px solid var(--odo-border);
+    }
+
+    .odo-header-title {
+      font-family: var(--h-mono);
+      font-size: 0.5625rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--odo-text-dim);
+    }
+
+    .odo-header-status {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: var(--h-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.04em;
+      color: var(--odo-green);
+    }
+
+    .odo-header-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--odo-green);
+      animation: odo-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes odo-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .odo-viewport {
+      position: relative;
+      height: 220px;
       overflow: hidden;
     }
 
-    .hardware-visual::before {
+    .odo-viewport::before,
+    .odo-viewport::after {
       content: '';
       position: absolute;
-      inset: -1px;
-      border-radius: var(--cc-radius-md);
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(0,212,255,0.2), transparent 60%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
+      left: 0; right: 0;
+      height: 44px;
+      z-index: 3;
+      pointer-events: none;
     }
 
-    .hardware-visual-label {
-      font-family: var(--cc-font-mono);
-      font-size: var(--cc-text-3xl);
-      font-weight: var(--cc-weight-semibold);
-      color: var(--cc-gray-600);
-      letter-spacing: 0.05em;
+    .odo-viewport::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--odo-bg) 0%, transparent 100%);
     }
 
-    .hardware-name {
-      font-size: var(--cc-text-3xl);
-      font-weight: var(--cc-weight-bold);
-      color: var(--cc-text-primary);
-      margin-bottom: 0.25rem;
+    .odo-viewport::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--odo-bg) 0%, transparent 100%);
     }
 
-    .hardware-tagline {
-      font-size: var(--cc-text-lg);
-      color: var(--cc-text-secondary);
-      margin-bottom: var(--cc-space-md);
+    .odo-strip {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
     }
 
-    .hardware-specs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: var(--cc-space-md);
-    }
-
-    .hardware-spec {
-      font-size: var(--cc-text-sm);
-    }
-
-    .hardware-spec-label {
-      color: var(--cc-text-tertiary);
-      font-size: var(--cc-text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.125rem;
-    }
-
-    .hardware-spec-value {
-      color: var(--cc-text-primary);
-      font-weight: var(--cc-weight-medium);
-    }
-
-    .hardware-price {
-      font-size: var(--cc-text-4xl);
-      font-weight: var(--cc-weight-bold);
-      color: var(--cc-accent-cyan);
-      margin-bottom: 0.25rem;
-    }
-
-    .hardware-delivery {
-      font-size: var(--cc-text-sm);
-      color: var(--cc-text-tertiary);
-      margin-bottom: var(--cc-space-sm);
-    }
-
-    .hardware-support-tiers {
-      font-size: var(--cc-text-xs);
-      color: var(--cc-text-tertiary);
-      margin-bottom: var(--cc-space-md);
-      line-height: 1.8;
-    }
-
-    .hardware-support-tiers strong {
-      color: var(--cc-text-secondary);
-    }
-
-    @media (max-width: 768px) {
-      .hardware-grid {
-        grid-template-columns: 1fr;
-      }
-      .hardware-card {
-        padding: var(--cc-space-md);
-      }
-      .hardware-specs {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ==================== */
-    /* SPEED BANNER         */
-    /* ==================== */
-
-    .speed-banner {
-      text-align: center;
-      padding: var(--cc-space-xl) var(--cc-space-md);
-      background: linear-gradient(180deg, transparent 0%, rgba(0,212,255,0.03) 50%, transparent 100%);
-    }
-
-    .speed-number {
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: var(--cc-weight-black);
-      color: var(--cc-accent-cyan);
-      line-height: 1;
-      margin-bottom: var(--cc-space-xs);
-    }
-
-    .speed-label {
-      font-size: var(--cc-text-xl);
-      color: var(--cc-text-secondary);
-    }
-
-    /* ==================== */
-    /* TRUST BAR            */
-    /* ==================== */
-
-    .trust-bar-section {
+    .odo-row {
+      height: 55px;
       display: flex;
-      justify-content: center;
-      gap: var(--cc-space-lg);
-      flex-wrap: wrap;
-      padding: var(--cc-space-lg) var(--cc-space-md);
-      max-width: var(--cc-container-xl);
-      margin: 0 auto;
+      align-items: center;
+      padding: 0 1.25rem;
+      gap: 1rem;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform-origin: center center;
     }
 
-    .trust-item {
-      text-align: center;
+    .odo-row[data-state="idle"] {
+      opacity: 0.15;
+      transform: scale(0.94);
     }
 
-    .trust-item-value {
-      font-family: var(--cc-font-mono);
-      font-size: var(--cc-text-lg);
-      font-weight: var(--cc-weight-semibold);
-      color: var(--cc-text-primary);
-      margin-bottom: 0.25rem;
+    .odo-row[data-state="active"] {
+      opacity: 1;
+      transform: scale(1);
     }
 
-    .trust-item-label {
-      font-size: var(--cc-text-xs);
-      color: var(--cc-text-tertiary);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .odo-row[data-state="done"] {
+      opacity: 0.4;
+      transform: scale(0.96);
     }
 
-    /* ==================== */
-    /* CLOUD OR HARDWARE    */
-    /* ==================== */
-
-    .path-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--cc-space-lg);
-      max-width: var(--cc-container-xl);
-      margin: 0 auto;
-    }
-
-    .path-card {
-      background: var(--cc-gray-900);
-      border: 1px solid var(--cc-gray-700);
-      border-radius: var(--cc-radius-lg);
-      padding: var(--cc-space-lg);
-    }
-
-    .path-card-step {
-      font-family: var(--cc-font-mono);
-      font-size: var(--cc-text-xs);
-      color: var(--cc-accent-cyan);
-      text-transform: uppercase;
+    .odo-row-label {
+      font-family: var(--h-mono);
+      font-size: 0.5625rem;
+      font-weight: 500;
       letter-spacing: 0.1em;
-      margin-bottom: var(--cc-space-xs);
+      text-transform: uppercase;
+      color: var(--odo-label);
+      width: 72px;
+      flex-shrink: 0;
+      transition: color 0.3s;
     }
 
-    .path-card h3 {
-      font-size: var(--cc-text-2xl);
-      font-weight: var(--cc-weight-bold);
-      color: var(--cc-text-primary);
-      margin-bottom: var(--cc-space-sm);
+    .odo-row[data-state="done"] .odo-row-label {
+      color: var(--odo-text-dim);
     }
 
-    .path-card p {
-      font-size: var(--cc-text-base);
-      color: var(--cc-text-secondary);
-      line-height: var(--cc-leading-relaxed);
-      margin-bottom: var(--cc-space-md);
+    .odo-row-value {
+      font-family: var(--h-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.04em;
+      color: var(--odo-text);
+      white-space: nowrap;
+      overflow: hidden;
+      flex: 1;
+      min-width: 0;
     }
 
-    @media (max-width: 768px) {
-      .path-grid {
-        grid-template-columns: 1fr;
-      }
-      .trust-bar-section {
-        gap: var(--cc-space-md);
-      }
+    .odo-row-value .odo-char {
+      display: inline-block;
+      transition: opacity 0.15s, color 0.15s;
     }
 
-    /* ==================== */
-    /* FEATURED IN          */
-    /* ==================== */
+    .odo-row-value .odo-char.locked {
+      color: var(--odo-text);
+    }
 
-    .featured-logos {
+    .odo-row-value .odo-char.rolling {
+      color: var(--odo-text-dim);
+    }
+
+    .odo-row-verified {
       display: flex;
-      justify-content: center;
-      gap: var(--cc-space-xl);
-      flex-wrap: wrap;
-      opacity: 0.5;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .featured-logo {
-      font-size: var(--cc-text-lg);
-      font-weight: var(--cc-weight-medium);
-      color: var(--cc-text-secondary);
+    .odo-row-verified .odo-check {
+      color: var(--odo-green);
+      font-size: 0.875rem;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.25s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .odo-row-verified .odo-check.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .odo-row-verified .odo-timing {
+      font-family: var(--h-mono);
+      font-size: 0.8125rem;
+      color: var(--odo-green);
+      opacity: 0;
+      transition: opacity 0.3s ease 0.1s;
+    }
+
+    .odo-row-verified .odo-timing.show {
+      opacity: 1;
+    }
+
+    .odo-input-area {
+      border-top: 1px solid var(--odo-border);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--odo-surface);
+    }
+
+    .odo-input-prompt {
+      font-family: var(--h-mono);
+      font-size: 0.6875rem;
+      color: var(--odo-label);
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .odo-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: var(--h-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.02em;
+      color: var(--odo-text);
+      caret-color: var(--odo-label);
+    }
+
+    .odo-input::placeholder {
+      color: var(--odo-text-dim);
+      font-style: italic;
+    }
+
+    .odo-input-hint {
+      font-family: var(--h-mono);
+      font-size: 0.5625rem;
+      color: var(--odo-text-dim);
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .odo-input:focus ~ .odo-input-hint,
+    .odo-input:not(:placeholder-shown) ~ .odo-input-hint {
+      opacity: 1;
+    }
+
+    .odo-panel.glow-land {
+      animation: odo-border-glow 0.7s ease-out;
+    }
+
+    @keyframes odo-border-glow {
+      0% { box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 20px 60px -12px rgba(0,0,0,0.35), 0 0 40px rgba(0, 212, 255, 0.03); }
+      25% { box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.25), 0 20px 60px -12px rgba(0,0,0,0.35), 0 0 30px rgba(0, 212, 255, 0.12), 0 0 60px rgba(0, 212, 255, 0.06); }
+      100% { box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 20px 60px -12px rgba(0,0,0,0.35), 0 0 40px rgba(0, 212, 255, 0.03); }
+    }
+
+    /* ---- Proof Bar ---- */
+    .proof-bar {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 0.5rem 1.5rem;
+      padding: 1.75rem 2rem;
+      font-family: var(--h-mono); font-size: 0.6875rem;
+      letter-spacing: 0.02em; color: var(--h-text-3);
+    }
+    .proof-bar span { white-space: nowrap; }
+    .proof-sep { opacity: 0.3; }
+
+    .home-divider {
+      border: none; border-top: 1px solid var(--h-border-subtle);
+      max-width: 1060px; margin: 0 auto;
+    }
+
+    /* ---- Section typography ---- */
+    .section-label {
+      font-family: var(--h-mono); font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--h-accent-muted); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--h-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400; color: var(--h-text);
+      letter-spacing: -0.015em; line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .section-sub {
+      font-size: 0.9375rem; color: var(--h-text-2);
+      max-width: 560px; line-height: 1.7;
+    }
+
+    /* ---- Pillars ---- */
+    .pillars-section {
+      max-width: 1060px; margin: 0 auto; padding: 4rem 2rem;
+    }
+    .pillars-header { text-align: center; margin-bottom: 3rem; }
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .pillar-card {
+      background: var(--h-surface);
+      border: 1px solid var(--h-border);
+      border-top: 2px solid var(--h-accent);
+      border-radius: 8px;
+      padding: 2rem 1.75rem 1.75rem;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+    }
+    .pillar-card.visible { opacity: 1; transform: translateY(0); }
+    .pillar-card:hover { box-shadow: var(--h-shadow-lift); }
+    .pillar-name {
+      font-family: var(--h-serif); font-size: 1.375rem;
+      color: var(--h-text); margin-bottom: 1rem; line-height: 1.2;
+    }
+    .pillar-metric-row {
+      display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1rem;
+    }
+    .pillar-metric {
+      font-family: var(--h-mono); font-size: 1.625rem; font-weight: 500;
+      color: var(--h-accent-muted); line-height: 1;
+    }
+    .pillar-metric-label {
+      font-family: var(--h-sans); font-size: 0.75rem; color: var(--h-text-3);
+    }
+    .pillar-desc {
+      font-size: 0.875rem; color: var(--h-text-2);
+      line-height: 1.7; margin-bottom: 1rem;
+    }
+    .pillar-proof {
+      font-size: 0.75rem; font-weight: 500; color: var(--h-text);
+      background: var(--h-surface-warm);
+      border: 1px solid var(--h-border-subtle);
+      border-radius: 4px; padding: 0.5rem 0.75rem;
+      margin-bottom: 1.25rem; line-height: 1.5;
+    }
+    .pillar-products { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+    .pillar-tag {
+      font-family: var(--h-mono); font-size: 0.625rem;
+      letter-spacing: 0.02em; color: var(--h-text-3);
+      background: var(--h-bg); padding: 0.2rem 0.5rem;
+      border-radius: 3px; border: 1px solid var(--h-border-subtle);
+    }
+
+    /* ---- Evidence ---- */
+    .evidence-section {
+      max-width: 1060px; margin: 0 auto; padding: 4rem 2rem;
+    }
+    .evidence-header { text-align: center; margin-bottom: 2.5rem; }
+    .evidence-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+    }
+    .evidence-card {
+      background: var(--h-surface);
+      border: 1px solid var(--h-border);
+      border-radius: 8px; padding: 1.75rem 1.5rem;
+      text-align: center;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
+    }
+    .evidence-card.visible { opacity: 1; transform: translateY(0); }
+    .evidence-card:hover { box-shadow: var(--h-shadow-lift); }
+    .evidence-card-context {
+      font-family: var(--h-mono); font-size: 0.625rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--h-text-3); margin-bottom: 0.75rem;
+    }
+    .evidence-card-stat {
+      font-family: var(--h-serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--h-text); line-height: 1;
+      margin-bottom: 0.75rem; letter-spacing: -0.02em;
+    }
+    .evidence-card-detail {
+      font-size: 0.8125rem; color: var(--h-text-2); line-height: 1.5;
+    }
+
+    /* ---- Products ---- */
+    .products-section {
+      max-width: 1060px; margin: 0 auto; padding: 4rem 2rem;
+    }
+    .products-header { text-align: center; margin-bottom: 2.5rem; }
+    .home-grid-hw {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .home-grid-sw {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .home-card {
+      background: var(--h-surface);
+      border: 1px solid var(--h-border);
+      border-radius: 8px; padding: 2rem 1.75rem;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.3s ease;
+    }
+    .home-card:hover { box-shadow: var(--h-shadow-lift); }
+    .home-card-badge {
+      display: inline-block; font-family: var(--h-mono);
+      font-size: 0.5625rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.2rem 0.625rem; border-radius: 3px;
+      margin-bottom: 1rem; width: fit-content;
+    }
+    .home-card-badge.hw {
+      background: var(--h-accent-bg); color: var(--h-accent-muted);
+      border: 1px solid rgba(0, 153, 187, 0.15);
+    }
+    .home-card-badge.api, .home-card-badge.tool {
+      background: rgba(0, 0, 0, 0.03); color: var(--h-text-2);
+      border: 1px solid var(--h-border-subtle);
+    }
+    .home-card-name {
+      font-family: var(--h-serif); font-size: 1.375rem;
+      color: var(--h-text); margin-bottom: 0.25rem; line-height: 1.2;
+    }
+    .home-card-sub {
+      font-size: 0.8125rem; color: var(--h-text-3); margin-bottom: 0.75rem;
+    }
+    .home-card-desc {
+      font-size: 0.875rem; color: var(--h-text-2);
+      line-height: 1.6; margin-bottom: 1rem; flex: 1;
+    }
+    .home-card-price {
+      font-family: var(--h-serif); font-size: 1.75rem;
+      color: var(--h-text); margin-bottom: 0.25rem;
+    }
+    .home-card-price span {
+      font-family: var(--h-sans); font-size: 0.875rem;
+      color: var(--h-text-3); font-weight: 300;
+    }
+    .home-card-note {
+      font-size: 0.75rem; color: var(--h-text-3); margin-bottom: 1rem;
+    }
+
+    .delivery-toggle { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .delivery-opt {
+      flex: 1; padding: 0.625rem 0.75rem;
+      background: var(--h-bg); border: 1px solid var(--h-border);
+      border-radius: 6px; cursor: pointer;
+      font-family: var(--h-sans); font-size: 0.75rem; font-weight: 500;
+      color: var(--h-text-2); text-align: left;
+      transition: all 0.2s ease; line-height: 1.3;
+    }
+    .delivery-opt:hover { border-color: var(--h-accent); }
+    .delivery-opt.selected {
+      border-color: var(--h-accent); background: var(--h-accent-bg);
+      color: var(--h-text);
+    }
+    .delivery-detail {
+      display: block; font-size: 0.625rem; font-weight: 400;
+      color: var(--h-text-3); margin-top: 0.125rem;
+    }
+    .delivery-opt.selected .delivery-detail { color: var(--h-accent-muted); }
+
+    /* ---- Buttons ---- */
+    .btn-cyan {
+      display: inline-block; padding: 0.75rem 1.75rem;
+      background: var(--h-accent-muted); color: #fff !important;
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 500;
+      text-decoration: none; border-radius: 6px; border: none; cursor: pointer;
+      transition: background 0.2s ease; letter-spacing: 0.01em;
+      min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+    }
+    .btn-cyan:hover { background: #007a99; }
+    .btn-dark {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.75rem 1.75rem; min-height: 44px;
+      background: var(--h-text) !important; color: #fff !important;
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 500;
+      text-decoration: none; border-radius: 6px; border: none; cursor: pointer;
+      transition: opacity 0.2s ease; letter-spacing: 0.01em;
+    }
+    .btn-dark:hover { opacity: 0.85; }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.75rem 1.75rem; min-height: 44px;
+      background: transparent; color: var(--h-text) !important;
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 500;
+      text-decoration: none; border-radius: 6px;
+      border: 1px solid var(--h-border); cursor: pointer;
+      transition: all 0.2s ease; letter-spacing: 0.01em;
+    }
+    .btn-outline:hover { border-color: var(--h-text); }
+    .btn-link {
+      font-family: var(--h-sans); font-size: 0.8125rem; font-weight: 400;
+      color: var(--h-text-2) !important; text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .btn-link:hover { color: var(--h-text) !important; }
+
+    /* ---- Trust ---- */
+    .home-trust { padding: 2rem 1rem; text-align: center; }
+    .home-trust-inner {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 0.5rem 1.25rem;
+      font-family: var(--h-mono); font-size: 0.6875rem;
+      color: var(--h-text-3); letter-spacing: 0.02em;
+    }
+    .home-trust-sep { opacity: 0.3; }
+
+    /* ---- Contact ---- */
+    .home-contact {
+      max-width: 560px; margin: 0 auto; padding: 4rem 2rem; text-align: center;
+    }
+    .home-contact-title {
+      font-family: var(--h-serif); font-size: 1.75rem;
+      color: var(--h-text); margin-bottom: 0.75rem;
+    }
+    .home-contact-body {
+      font-size: 0.9375rem; color: var(--h-text-2); margin-bottom: 2rem;
+    }
+    .home-contact-actions {
+      display: flex; gap: 0.75rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+    .home-contact-meta { color: var(--h-text-3); font-size: 0.8125rem; line-height: 2; }
+    .home-contact-meta p { color: var(--h-text-3) !important; margin-bottom: 0; }
+    .home-contact-meta a { color: var(--h-text-3) !important; text-decoration: none; transition: color 0.2s; }
+    .home-contact-meta a:hover { color: var(--h-text-2) !important; }
+
+    /* ---- Footer ---- */
+    .footer {
+      border-top: 1px solid var(--h-border-subtle) !important;
+      background: var(--h-surface-warm) !important;
+      color: var(--h-text-2) !important;
+    }
+    .footer h4 { color: var(--h-text) !important; }
+    .footer-link { color: var(--h-text-3) !important; }
+    .footer-link:hover { color: var(--h-text) !important; }
+    .footer-bottom { color: var(--h-text-3) !important; border-top-color: var(--h-border-subtle) !important; }
+    .footer-bottom a { color: var(--h-text-3) !important; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 960px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        min-height: auto;
+        padding-top: calc(68px + 3rem);
+      }
+      .hero-editorial { padding-right: 0; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-cta { justify-content: center; }
+      .odo-panel { max-width: 480px; margin: 0 auto; }
+    }
+    @media (max-width: 900px) {
+      .pillars-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .evidence-grid { grid-template-columns: repeat(2, 1fr); }
+      .home-grid-sw { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      .hero-split { padding: calc(60px + 2.5rem) 1.5rem 1.5rem; gap: 1.5rem; }
+      .hero-name { letter-spacing: -0.02em; }
+      .proof-bar { gap: 0.4rem 1rem; padding: 1.25rem 1rem; }
+      .evidence-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+      .home-grid-hw { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .home-contact-actions { flex-direction: column; align-items: center; }
+      .delivery-toggle { flex-direction: column; }
+      .odo-row-label { width: 56px; font-size: 0.5rem; }
+      .odo-row-value { font-size: 0.6875rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- PQ Announcement Bar -->
-  <style>
-    .pq-announce {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 0.6rem 1rem;
-      background: linear-gradient(90deg, rgba(0,212,255,0.08) 0%, rgba(0,153,255,0.08) 100%);
-      border-bottom: 1px solid rgba(0,212,255,0.15);
-      font-family: var(--cc-font-display);
-      font-size: 0.875rem;
-      color: var(--cc-text-secondary);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1200;
-      transform: translateY(-100%);
-      animation: pq-slide-down 0.6s ease-out 3s forwards;
-    }
-    .pq-announce a { color: var(--cc-accent-cyan); text-decoration: none; font-weight: 600; white-space: nowrap; }
-    .pq-announce a:hover { text-decoration: underline; }
-    .pq-announce .pq-dismiss {
-      position: absolute; right: 1rem; background: none; border: none;
-      color: var(--cc-text-tertiary); cursor: pointer; font-size: 1rem; padding: 0 0.25rem; line-height: 1;
-    }
-    .pq-announce .pq-dismiss:hover { color: var(--cc-text-primary); }
-    @keyframes pq-slide-down {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    body.pq-bar-active .navbar { top: 37px; }
-    body.pq-bar-active .section-hero { padding-top: 37px; }
-    @media (max-width: 600px) {
-      .pq-announce { font-size: 0.75rem; padding: 0.5rem 2rem 0.5rem 0.75rem; gap: 0.4rem; }
-      body.pq-bar-active .navbar { top: 33px; }
-      body.pq-bar-active .section-hero { padding-top: 33px; }
-    }
-  </style>
-  <div id="pq-announce" class="pq-announce">
-    <span style="color: var(--cc-accent-cyan); font-size: 0.7rem;">&#9679;</span>
-    <span><strong style="color: var(--cc-text-primary);">Post-quantum encryption is live.</strong> Sign &amp; encrypt in microseconds.</span>
-    <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener">Try it now&nbsp;&rarr;</a>
-    <button class="pq-dismiss" onclick="document.getElementById('pq-announce').style.display='none';document.body.classList.remove('pq-bar-active');" aria-label="Dismiss">&times;</button>
+  <div class="pq-announce" id="pqAnnounce">
+    <strong>Executive Order 14412 signed June 2026.</strong>
+    <span>Federal PQ migration now mandatory &mdash; agencies and contractors.</span>
+    <button class="pq-dismiss" onclick="this.parentElement.remove();document.body.classList.remove('pq-bar-active')" aria-label="Dismiss">&times;</button>
   </div>
-  <script>
-    setTimeout(function(){ document.body.classList.add('pq-bar-active'); }, 3600);
-  </script>
 
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
       <a href="/" class="navbar-logo">
-        <img src="/assets/logo/cyclecore-mark.png" alt="CycleCore" class="navbar-logo-mark">
-        <img src="/assets/logo/cyclecore-wordmark.png" alt="CycleCore Technologies" class="navbar-logo-wordmark">
+        <img src="/assets/logo/cyclecore-mark-dark-trimmed.png" alt="" class="logo-mark">
+        <img src="/assets/logo/cyclecore-wordmark-dark.png?v=20260607" alt="CycleCore Technologies" class="logo-wordmark">
       </a>
-      <button class="navbar-hamburger" aria-label="Toggle navigation menu">
-        <div class="hamburger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
       <div class="navbar-links">
-        <a href="/inference.html" class="navbar-link">AI Inference</a>
-        <a href="/agents.html" class="navbar-link">Agent Infrastructure</a>
-        <a href="/tools.html" class="navbar-link">Dev Tools</a>
-        <a href="/research.html" class="navbar-link">Research</a>
-        <a href="/security.html" class="navbar-link">Security</a>
-        <a href="/pq/" class="navbar-link">PQCaaS</a>
-        <a href="/#hardware" class="navbar-link">Hardware</a>
-        <a href="/about.html" class="navbar-link">About</a>
+        <a href="#pillars" class="navbar-link">Platform</a>
+        <a href="#evidence" class="navbar-link">Performance</a>
+        <a href="#products" class="navbar-link">Products</a>
         <a href="#contact" class="navbar-link">Contact</a>
+        <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="navbar-link navbar-cta">Try API</a>
       </div>
+      <button class="navbar-hamburger" aria-label="Menu">
+        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section (compact — products must be above the fold) -->
-  <section id="home" style="padding-top: calc(70px + var(--cc-space-lg)); padding-bottom: var(--cc-space-md); text-align: center;">
-    <div class="container">
-
-      <h1 class="fade-in-up" style="font-size: clamp(1.5rem, 4vw, 3.75rem); font-weight: var(--cc-weight-black); line-height: var(--cc-leading-tight); letter-spacing: var(--cc-tracking-tighter); margin-bottom: var(--cc-space-xs);">
-        <span class="gradient-text">Microsecond AI Infrastructure</span>
-      </h1>
-
-      <p class="fade-in-up" style="font-size: var(--cc-text-lg); color: var(--cc-text-secondary); margin-bottom: var(--cc-space-sm);">
-        Hardware. APIs. Tools. Ship quantum-safe today.
+  <!-- =============================== -->
+  <!-- HERO: Editorial + Odometer      -->
+  <!-- =============================== -->
+  <section class="hero-split">
+    <div class="hero-editorial">
+      <h1 class="hero-name">CycleCore<br>Technologies</h1>
+      <div class="hero-tagline">Post-Quantum &middot; AI &middot; Edge</div>
+      <p class="hero-sub">
+        Microsecond Post-Quantum Crypto &amp; AI Inference - On Your Hardware, Today.
       </p>
-
-      <div class="hero-trust-bar fade-in-up" style="margin-bottom: 0;">
-        <span class="trust-badge">Patent-Pending Architecture</span>
-        <span class="trust-badge">Sub-5&micro;s</span>
-        <span class="trust-badge">Ships in 7 Days</span>
+      <div class="hero-cta">
+        <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn-cyan">Try the live API</a>
+        <a href="#evidence" class="btn-link">See the performance &darr;</a>
       </div>
-
     </div>
-  </section>
 
-  <!-- Product Carousel -->
-  <section class="section" id="products" style="padding-top: 0;">
-    <div class="carousel">
-      <div class="carousel-track" id="carousel-track">
-
-        <!-- Card 1: PQ Box -->
-        <div class="carousel-card card-hardware">
-          <span class="carousel-card-badge badge-hardware">Hardware</span>
-          <h3 class="carousel-card-name">PQ Box</h3>
-          <p class="carousel-card-subtitle">Enterprise PQCaaS Appliance</p>
-          <p class="carousel-card-desc">
-            Sign, encrypt, attest &mdash; sub-5&micro;s, unlimited usage.
-            Dedicated Intel N100 with CycleCore OS. ZES optional. Patent-pending architecture.
-          </p>
-          <div class="carousel-card-price">$8,500</div>
-          <div class="carousel-card-price-note">Ships in 7 days</div>
-          <span class="carousel-card-promo">Free email support with launch orders</span>
-          <div class="carousel-card-support">Add <a href="#hardware">Premium Support</a> &mdash; 24hr phone + engineering, $400/mo</div>
-          <button type="button" onclick="orderPqBox()" class="btn btn-primary pq-box-order">Order Now</button>
-        </div>
-
-        <!-- Card 2: PQ/QR Box -->
-        <div class="carousel-card card-hardware">
-          <span class="carousel-card-badge badge-hardware">Hardware</span>
-          <h3 class="carousel-card-name">PQ/QR Box</h3>
-          <p class="carousel-card-subtitle">Visual Crypto Appliance</p>
-          <p class="carousel-card-desc">
-            Sign. Encode to QR. Scan. Verify. Sub-5&micro;s.
-            Air-gapped ready. Dedicated Intel N100 with CycleCore OS. Patent-pending architecture.
-          </p>
-          <div class="carousel-card-price">$4,000</div>
-          <div class="carousel-card-price-note">Ships in 7 days</div>
-          <span class="carousel-card-promo">Free email support with launch orders</span>
-          <div class="carousel-card-support">Add <a href="#hardware">Premium Support</a> &mdash; 24hr phone + engineering, $400/mo</div>
-          <a href="https://buy.stripe.com/6oUbJ2aKw5ZYevc5LCcbC05" target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
-        </div>
-
-        <!-- Card 3: PQ API -->
-        <div class="carousel-card">
-          <span class="carousel-card-badge badge-cloud">Cloud API</span>
-          <h3 class="carousel-card-name">PQ API</h3>
-          <p class="carousel-card-subtitle">Post-Quantum Crypto API</p>
-          <p class="carousel-card-desc">
-            Sign, encrypt, verify &mdash; sub-100&micro;s over the wire.
-            ML-DSA, ML-KEM, AES-256. NIST FIPS 203/204 standardized algorithms.
-          </p>
-          <div class="carousel-card-price">From $49<span style="font-size: var(--cc-text-lg); font-weight: 400;">/mo</span></div>
-          <div class="carousel-card-price-note">Free tier available</div>
-          <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: auto;">Get API Key</a>
-        </div>
-
-        <!-- Card 4: PQ/QR Playground -->
-        <div class="carousel-card">
-          <span class="carousel-card-badge badge-cloud">Cloud API</span>
-          <h3 class="carousel-card-name">PQ/QR</h3>
-          <p class="carousel-card-subtitle">Visual Crypto Playground</p>
-          <p class="carousel-card-desc">
-            Sign data. Encode to QR. Scan and verify. Live demo. Patent pending.
-          </p>
-          <div class="carousel-card-price">Free to try</div>
-          <div class="carousel-card-price-note">No signup required</div>
-          <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto;">Try It Now &rarr;</a>
-        </div>
-
-        <!-- Card 5: gg -->
-        <div class="carousel-card">
-          <span class="carousel-card-badge badge-devtool">Dev Tool</span>
-          <h3 class="carousel-card-name">gg</h3>
-          <p class="carousel-card-subtitle">Agent-Native Git Client</p>
-          <p class="carousel-card-desc">
-            2-letter CLI. 98% token savings. Built for AI agents.
-            GitHub, A2A, and more.
-          </p>
-          <div class="carousel-card-price">Free<span style="font-size: var(--cc-text-lg); font-weight: 400;"> / $15 Pro</span></div>
-          <div class="carousel-card-price-note">npm i -g @ggdotdev/gg</div>
-          <a href="https://www.npmjs.com/package/@ggdotdev/gg" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: auto;">Install Free</a>
-        </div>
-
-
+    <div class="odo-panel" id="odoPanel" role="region" aria-label="Live post-quantum cryptography demonstration">
+      <div class="odo-header">
+        <span class="odo-header-title">PQ Signature Pipeline</span>
+        <span class="odo-header-status"><span class="odo-header-dot"></span> live</span>
       </div>
 
-      <!-- Carousel Navigation -->
-      <div class="carousel-nav">
-        <button class="carousel-arrow" id="carousel-prev" aria-label="Previous">&larr;</button>
-        <div class="carousel-dots" id="carousel-dots"></div>
-        <button class="carousel-arrow" id="carousel-next" aria-label="Next">&rarr;</button>
+      <div class="odo-viewport" id="odoViewport">
+        <div class="odo-strip" id="odoStrip">
+          <div class="odo-row" data-step="0" data-state="idle">
+            <span class="odo-row-label">Input</span>
+            <span class="odo-row-value" id="odoVal0"></span>
+          </div>
+          <div class="odo-row" data-step="1" data-state="idle">
+            <span class="odo-row-label">SHA-256</span>
+            <span class="odo-row-value" id="odoVal1"></span>
+          </div>
+          <div class="odo-row" data-step="2" data-state="idle">
+            <span class="odo-row-label">ML-DSA-65</span>
+            <span class="odo-row-value" id="odoVal2"></span>
+          </div>
+          <div class="odo-row" data-step="3" data-state="idle">
+            <span class="odo-row-label">Verified</span>
+            <span class="odo-row-value" id="odoVal3">
+              <span class="odo-row-verified">
+                <span class="odo-check" id="odoCheck">&#10003;</span>
+                <span class="odo-timing" id="odoTiming"></span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="odo-input-area">
+        <span class="odo-input-prompt">&gt;</span>
+        <input type="text" class="odo-input" id="odoInput" placeholder="Type anything to sign..." autocomplete="off" aria-label="Message to sign">
+        <span class="odo-input-hint">enter &crarr;</span>
       </div>
     </div>
   </section>
 
-  <!-- Hardware Section -->
-  <section class="section" id="hardware">
-    <div class="container">
-      <h2 class="text-5xl font-black text-center mb-sm reveal">Hardware</h2>
-      <p class="text-xl text-secondary text-center mb-xl reveal" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-        Dedicated post-quantum appliances. Patent-pending architecture. Same Intel N100, different software configurations.
-      </p>
-
-      <div class="hardware-grid">
-
-        <!-- PQ Box -->
-        <div class="hardware-card reveal">
-          <div class="hardware-visual">
-            <span class="hardware-visual-label">PQ</span>
-          </div>
-          <h3 class="hardware-name">PQ Box</h3>
-          <p class="hardware-tagline">Enterprise PQCaaS Appliance</p>
-          <div class="hardware-specs">
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">CPU</div>
-              <div class="hardware-spec-value">Intel N100 (3.4GHz)</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">RAM</div>
-              <div class="hardware-spec-value">8GB DDR4</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Storage</div>
-              <div class="hardware-spec-value">128GB NVMe</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Performance</div>
-              <div class="hardware-spec-value">Sub-5&micro;s PQ ops</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">OS</div>
-              <div class="hardware-spec-value">CycleCore OS</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Usage</div>
-              <div class="hardware-spec-value">Unlimited</div>
-            </div>
-          </div>
-          <div class="hardware-price">$8,500</div>
-          <div class="hardware-delivery">Ships in 7 days &middot; Gigabit Ethernet &middot; USB-C, HDMI</div>
-          <div class="hardware-support-tiers">
-            <strong>Standard</strong> &mdash; email support, docs, firmware updates (included)<br>
-            <strong>Premium</strong> &mdash; 24hr response, phone + email, live PQ engineering support ($400/box/mo)<br>
-            <strong>Enterprise</strong> &mdash; custom SLA, dedicated engineer (<a href="mailto:partnerships@cyclecore.ai" style="color: var(--cc-text-secondary);">contact sales</a>)
-          </div>
-          <button type="button" onclick="orderPqBox()" class="btn btn-primary btn-large pq-box-order">Order Now</button>
-        </div>
-
-        <!-- PQ/QR Box -->
-        <div class="hardware-card reveal">
-          <div class="hardware-visual">
-            <span class="hardware-visual-label">PQ/QR</span>
-          </div>
-          <h3 class="hardware-name">PQ/QR Box</h3>
-          <p class="hardware-tagline">Visual Crypto Appliance</p>
-          <div class="hardware-specs">
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">CPU</div>
-              <div class="hardware-spec-value">Intel N100 (3.4GHz)</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">RAM</div>
-              <div class="hardware-spec-value">8GB DDR4</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Storage</div>
-              <div class="hardware-spec-value">128GB NVMe</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Performance</div>
-              <div class="hardware-spec-value">Sub-5&micro;s PQ ops</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Visual Crypto</div>
-              <div class="hardware-spec-value">QR / DataMatrix</div>
-            </div>
-            <div class="hardware-spec">
-              <div class="hardware-spec-label">Air-Gapped</div>
-              <div class="hardware-spec-value">Ready</div>
-            </div>
-          </div>
-          <div class="hardware-price">$4,000</div>
-          <div class="hardware-delivery">Ships in 7 days &middot; Air-gapped mode</div>
-          <div class="hardware-support-tiers">
-            <strong>Standard</strong> &mdash; email support, docs, firmware updates (included)<br>
-            <strong>Premium</strong> &mdash; 24hr response, phone + email, live PQ engineering support ($400/box/mo)<br>
-            <strong>Enterprise</strong> &mdash; custom SLA, dedicated engineer (<a href="mailto:partnerships@cyclecore.ai" style="color: var(--cc-text-secondary);">contact sales</a>)
-          </div>
-          <a href="https://buy.stripe.com/6oUbJ2aKw5ZYevc5LCcbC05" target="_blank" rel="noopener" class="btn btn-primary btn-large">Order Now</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Speed Comparison Banner -->
-  <div class="speed-banner reveal">
-    <div class="speed-number">200x</div>
-    <div class="speed-label">faster than traditional HSMs</div>
+  <div class="proof-bar">
+    <span>128 Patent Claims</span>
+    <span class="proof-sep">&middot;</span>
+    <span>20+ Products</span>
+    <span class="proof-sep">&middot;</span>
+    <span>Sub-5&micro;s Edge Inference</span>
+    <span class="proof-sep">&middot;</span>
+    <span>NIST FIPS 203/204</span>
+    <span class="proof-sep">&middot;</span>
+    <span>Production Today</span>
   </div>
 
-  <!-- Trust Bar -->
-  <div class="trust-bar-section reveal">
-    <div class="trust-item">
-      <div class="trust-item-value">Patent-Pending</div>
-      <div class="trust-item-label">Architecture</div>
+  <hr class="home-divider">
+
+  <!-- ---- Pillars ---- -->
+  <section class="pillars-section" id="pillars">
+    <div class="pillars-header">
+      <div class="section-label">One architecture. Twenty products. Production today.</div>
+      <h2 class="section-title">Three pillars, one platform</h2>
     </div>
-    <div class="trust-item">
-      <div class="trust-item-value">Sub-5&micro;s</div>
-      <div class="trust-item-label">Local PQ Operations</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-item-value">Post-Quantum Ready</div>
-      <div class="trust-item-label">NIST FIPS 203/204 Algorithms</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-item-value">As Featured In</div>
-      <div class="trust-item-label">
-        <span class="featured-logos" style="display: inline;">
-          <span class="featured-logo">National Law Review</span> &middot;
-          <span class="featured-logo">Global Fintech Series</span>
-        </span>
+    <div class="pillars-grid">
+      <div class="pillar-card" data-delay="0">
+        <h3 class="pillar-name">Post-Quantum Security</h3>
+        <div class="pillar-metric-row">
+          <span class="pillar-metric">Sub-100&micro;s</span>
+          <span class="pillar-metric-label">post-quantum signing</span>
+        </div>
+        <p class="pillar-desc">NIST FIPS 203/204 standardized cryptography on commodity hardware. Sign, encrypt, attest, and distribute. Hardware appliances ship under federal micro-purchase thresholds.</p>
+        <div class="pillar-proof">Executive Order 14412 (June 2026): federal agencies and contractors must migrate to PQ cryptography.</div>
+        <div class="pillar-products">
+          <span class="pillar-tag">PQ Box</span>
+          <span class="pillar-tag">PQ API</span>
+          <span class="pillar-tag">PQ/QR Box</span>
+          <span class="pillar-tag">ZES</span>
+          <span class="pillar-tag">PQ Drop</span>
+        </div>
       </div>
+      <div class="pillar-card" data-delay="100">
+        <h3 class="pillar-name">AI Safety</h3>
+        <div class="pillar-metric-row">
+          <span class="pillar-metric">Microseconds</span>
+          <span class="pillar-metric-label">per safety gate</span>
+        </div>
+        <p class="pillar-desc">Command-level safety for autonomous platforms. 40+ independent gates screen every instruction before execution. Deterministic, CPU-only, offline-capable.</p>
+        <div class="pillar-proof">Microseconds per gate &middot; 94%+ accuracy &middot; No GPU &middot; No cloud dependency</div>
+        <div class="pillar-products">
+          <span class="pillar-tag">SafetyGates</span>
+          <span class="pillar-tag">SecurityGates</span>
+          <span class="pillar-tag">NLM Factory</span>
+          <span class="pillar-tag">Maaza</span>
+        </div>
+      </div>
+      <div class="pillar-card" data-delay="200">
+        <h3 class="pillar-name">Developer Tools &amp; Security Research</h3>
+        <div class="pillar-metric-row">
+          <span class="pillar-metric">14</span>
+          <span class="pillar-metric-label">platforms researched</span>
+        </div>
+        <p class="pillar-desc">Agent-native developer tools and independent security research across NVIDIA, Microsoft, Meta, Hugging Face, ONNX, and 9 more major AI/ML platforms.</p>
+        <div class="pillar-proof">Up to 98% token savings with gg.</div>
+        <div class="pillar-products">
+          <span class="pillar-tag">gg</span>
+          <span class="pillar-tag">MCPBodega</span>
+          <span class="pillar-tag">gpuGUARD</span>
+          <span class="pillar-tag">SecretSage</span>
+          <span class="pillar-tag">SLMBench</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <!-- ---- Evidence ---- -->
+  <section class="evidence-section" id="evidence">
+    <div class="evidence-header">
+      <div class="section-label">Performance</div>
+      <h2 class="section-title">Measured performance</h2>
+    </div>
+    <div class="evidence-grid">
+      <div class="evidence-card" data-delay="0" data-count-target="100" data-count-prefix="< " data-count-suffix=" &micro;s">
+        <div class="evidence-card-context">PQ Signing (ML-DSA-65)</div>
+        <div class="evidence-card-stat">&lt; 100 &micro;s</div>
+        <div class="evidence-card-detail">Post-quantum signing &amp; encryption on commodity hardware</div>
+      </div>
+      <div class="evidence-card" data-delay="75" data-count-target="50" data-count-prefix="< " data-count-suffix=" &micro;s">
+        <div class="evidence-card-context">PQ Encryption (ML-KEM + AES-256-GCM)</div>
+        <div class="evidence-card-stat">&lt; 50 &micro;s</div>
+        <div class="evidence-card-detail">Sub-50 microsecond encryption on commodity hardware</div>
+      </div>
+      <div class="evidence-card" data-delay="150" data-count-target="40" data-count-prefix="" data-count-suffix="+">
+        <div class="evidence-card-context">SafetyGates</div>
+        <div class="evidence-card-stat">40+</div>
+        <div class="evidence-card-detail">Independent safety gates &middot; Sub-millisecond &middot; CPU-only &middot; Deterministic</div>
+      </div>
+      <div class="evidence-card" data-delay="225" data-count-target="14" data-count-prefix="" data-count-suffix="">
+        <div class="evidence-card-context">Security Research</div>
+        <div class="evidence-card-stat">14</div>
+        <div class="evidence-card-detail">AI/ML platforms &middot; Independent security research &middot; NVIDIA, Microsoft, Meta, more</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <!-- ---- Products ---- -->
+  <section class="products-section" id="products">
+    <div class="products-header">
+      <div class="section-label">Products</div>
+      <h2 class="section-title">Hardware and APIs</h2>
+      <p class="section-sub" style="margin:0.5rem auto 0">Dedicated appliances for on-premise deployment. Cloud APIs for everything else.</p>
+    </div>
+    <div class="home-grid-hw" id="hardware">
+      <div class="home-card">
+        <span class="home-card-badge hw">Hardware</span>
+        <h3 class="home-card-name">PQ Box</h3>
+        <p class="home-card-sub">Enterprise PQCaaS Appliance</p>
+        <p class="home-card-desc">Sign, encrypt, attest &mdash; sub-5&micro;s, unlimited usage. Dedicated Intel N100 with CycleCore OS. ZES optional.</p>
+        <div class="home-card-price">$8,500</div>
+        <div class="home-card-note">Available now &middot; Free US shipping &middot; Free email support</div>
+        <div class="delivery-toggle" data-selected="signature">
+          <button class="delivery-opt selected" data-delivery="signature">Signature Edition<span class="delivery-detail">30&ndash;45 days &middot; Exact form factor</span></button>
+          <button class="delivery-opt" data-delivery="priority">Priority Shipping<span class="delivery-detail">7 days &middot; Same device, case may vary</span></button>
+        </div>
+        <button class="btn-dark pq-box-buy" onclick="checkoutPQBox(this)">Order now</button>
+      </div>
+      <div class="home-card">
+        <span class="home-card-badge hw">Hardware</span>
+        <h3 class="home-card-name">PQ/QR Box</h3>
+        <p class="home-card-sub">Visual Crypto Appliance</p>
+        <p class="home-card-desc">Sign. Encode to QR. Scan. Verify. Sub-5&micro;s. Air-gapped ready. Dedicated Intel N100 with CycleCore OS.</p>
+        <div class="home-card-price">$4,000</div>
+        <div class="home-card-note">Available now &middot; Free US shipping &middot; Free email support</div>
+        <a href="https://buy.stripe.com/6oUbJ2aKw5ZYevc5LCcbC05" target="_blank" rel="noopener" class="btn-dark">Order now</a>
+      </div>
+    </div>
+    <div class="home-grid-sw">
+      <div class="home-card">
+        <span class="home-card-badge api">Cloud API</span>
+        <h3 class="home-card-name">PQ API</h3>
+        <p class="home-card-sub">Post-Quantum Crypto API</p>
+        <p class="home-card-desc">Sign, encrypt, verify &mdash; sub-100&micro;s. ML-DSA, ML-KEM, AES-256. NIST FIPS 203/204.</p>
+        <div class="home-card-price">From $49<span>/mo</span></div>
+        <div class="home-card-note">Free tier available</div>
+        <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn-outline">Get API key</a>
+      </div>
+      <div class="home-card">
+        <span class="home-card-badge api">Cloud API</span>
+        <h3 class="home-card-name">PQ/QR</h3>
+        <p class="home-card-sub">Visual Crypto Playground</p>
+        <p class="home-card-desc">Sign data. Encode to QR. Scan and verify. Live demo. Patent pending.</p>
+        <div class="home-card-price">Free</div>
+        <div class="home-card-note">No signup required</div>
+        <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn-outline">Try it now</a>
+      </div>
+      <div class="home-card">
+        <span class="home-card-badge tool">Dev Tool</span>
+        <h3 class="home-card-name">gg</h3>
+        <p class="home-card-sub">Agent-Native Git Client</p>
+        <p class="home-card-desc">2-letter CLI. Up to 98% token savings. Built for AI agents. GitHub, A2A, and more.</p>
+        <div class="home-card-price">Free<span> / $15 Pro</span></div>
+        <div class="home-card-note" style="font-family:var(--h-mono);font-size:0.625rem;letter-spacing:0">npm i -g @ggdotdev/gg</div>
+        <a href="https://www.npmjs.com/package/@ggdotdev/gg" target="_blank" rel="noopener" class="btn-outline">Install free</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="home-divider">
+
+  <div class="home-trust">
+    <div class="home-trust-inner">
+      <span>128 Patent Claims</span>
+      <span class="home-trust-sep">&middot;</span>
+      <span>Sub-5 &micro;s Inference</span>
+      <span class="home-trust-sep">&middot;</span>
+      <span>Edge-First Architecture</span>
+      <span class="home-trust-sep">&middot;</span>
+      <span>NIST FIPS 203/204</span>
     </div>
   </div>
 
-  <!-- Cloud or Hardware -->
-  <section class="section" id="paths">
-    <div class="container">
-      <h2 class="text-5xl font-black text-center mb-sm reveal">Cloud or Hardware</h2>
-      <p class="text-xl text-secondary text-center mb-xl reveal" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-        Start with the cloud API for free. Graduate to a dedicated appliance when you need unlimited local performance.
-      </p>
+  <hr class="home-divider">
 
-      <div class="path-grid">
-
-        <div class="path-card reveal">
-          <div class="path-card-step">Step 1</div>
-          <h3>Try the Cloud</h3>
-          <p>
-            PQ API gives you post-quantum signing, encryption, and verification over HTTPS.
-            Sub-100&micro;s. Free tier included. No hardware required.
-          </p>
-          <a href="https://pq-api.cyclecore.ai/try" target="_blank" rel="noopener" class="btn btn-secondary">Try PQ/QR Free &rarr;</a>
-        </div>
-
-        <div class="path-card reveal">
-          <div class="path-card-step">Step 2</div>
-          <h3>Own the Hardware</h3>
-          <p>
-            When you need sub-5&micro;s local performance, unlimited usage, and air-gapped operation &mdash;
-            get a PQ Box or PQ/QR Box. Same API, dedicated to you.
-          </p>
-          <a href="#hardware" class="btn btn-primary">View Hardware</a>
-        </div>
-
-      </div>
+  <section class="home-contact" id="contact">
+    <h2 class="home-contact-title">Get in touch</h2>
+    <p class="home-contact-body">Enterprise partnerships, technical inquiries, or general questions.</p>
+    <div class="home-contact-actions">
+      <a href="mailto:partnerships@cyclecore.ai" class="btn-dark">Enterprise partnerships</a>
+      <a href="mailto:hi@cyclecore.ai" class="btn-outline">General inquiries</a>
+      <a href="https://x.com/CyclecoreTech" target="_blank" rel="noopener" class="btn-outline">@CyclecoreTech</a>
+    </div>
+    <div class="home-contact-meta">
+      <p>CycleCore Technologies LLC</p>
+      <p>5830 E 2nd St, Suite 7000-24830</p>
+      <p>Casper, WY 82609</p>
+      <p><a href="tel:+13072153193">(307) 215-3193</a></p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="section" id="contact">
-    <div class="container text-center">
-      <h2 class="text-6xl font-black mb-md reveal">Get in Touch</h2>
-      <p class="text-2xl text-secondary mb-xl max-w-lg" style="margin-left: auto; margin-right: auto;">
-        Enterprise partnerships, technical inquiries, or general questions.
-      </p>
-      <div class="flex justify-center gap-md flex-wrap">
-        <a href="mailto:partnerships@cyclecore.ai" class="btn btn-primary btn-large">Enterprise Partnerships</a>
-        <a href="mailto:hi@cyclecore.ai" class="btn btn-secondary btn-large">General Inquiries</a>
-        <a href="https://x.com/CyclecoreTech" class="btn btn-ghost btn-large">@CyclecoreTech</a>
-      </div>
-      <div class="mt-xl text-secondary text-sm" style="opacity: 0.8;">
-        <p style="margin-bottom: 0.25rem;">CycleCore Technologies LLC</p>
-        <p style="margin-bottom: 0.25rem;">5830 E 2nd St, Suite 7000-24830</p>
-        <p style="margin-bottom: 0.25rem;">Casper, WY 82609</p>
-        <p><a href="tel:+13072153193" style="color: inherit;">(307) 215-3193</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-
-        <!-- Company -->
         <div class="footer-section">
           <h4>CycleCore Technologies</h4>
-          <p class="text-secondary text-sm mb-sm">Microsecond AI infrastructure. Hardware, APIs, and tools.</p>
+          <p class="text-secondary text-sm mb-sm">Microsecond AI infrastructure. Edge-first.</p>
         </div>
-
-        <!-- Products -->
         <div class="footer-section">
           <h4>Products</h4>
           <div class="footer-links">
@@ -922,8 +1110,6 @@
             <a href="https://pq-api.cyclecore.ai/try" class="footer-link">PQ/QR Playground</a>
           </div>
         </div>
-
-        <!-- Platform -->
         <div class="footer-section">
           <h4>Platform</h4>
           <div class="footer-links">
@@ -935,8 +1121,6 @@
             <a href="/pq/" class="footer-link">PQCaaS</a>
           </div>
         </div>
-
-        <!-- Company -->
         <div class="footer-section">
           <h4>Company</h4>
           <div class="footer-links">
@@ -948,170 +1132,406 @@
             <a href="https://x.com/CyclecoreTech" class="footer-link">@CyclecoreTech</a>
           </div>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2026 CycleCore Technologies LLC. All rights reserved.</p>
-        <p class="text-sm" style="opacity: 0.6; margin-top: 0.5rem;">Patent-Pending Architecture &middot; NIST FIPS 203/204 Standardized Algorithms</p>
-        <p class="text-sm" style="opacity: 0.45; margin-top: 0.75rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        <p class="text-sm" style="opacity:0.7;margin-top:0.5rem;">Patent-Pending Architecture &middot; NIST FIPS 203/204 Standardized Algorithms</p>
+        <p class="text-sm" style="opacity:0.5;margin-top:0.75rem;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6;">
           Hardware products are available to U.S. customers only and are subject to U.S. Export Administration Regulations (EAR).
-          Export, reexport, or transfer without authorization is prohibited.
           Cryptographic implementations use algorithms standardized in NIST FIPS 203 and 204; products have not undergone FIPS 140-3 module validation.
-          See <a href="/terms.html" style="color: inherit; text-decoration: underline;">Terms of Service</a> and <a href="/privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a>.
+          See <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a>.
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- Carousel JavaScript -->
+  <!-- =============================== -->
+  <!-- ODOMETER ENGINE — Live PQ API   -->
+  <!-- =============================== -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var track = document.getElementById('carousel-track');
-      var prevBtn = document.getElementById('carousel-prev');
-      var nextBtn = document.getElementById('carousel-next');
-      var dotsContainer = document.getElementById('carousel-dots');
-      if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+  (function() {
+    'use strict';
 
-      var cards = track.querySelectorAll('.carousel-card');
-      var totalCards = cards.length;
-      var autoTimer = null;
-      var paused = false;
-      var currentIndex = 0;
+    var PQ_API = 'https://pq-api.cyclecore.ai/v1/demo';
+    var HEX = '0123456789abcdef';
+    var B64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+    var ROW_HEIGHT = 55;
+    var VIEWPORT_HEIGHT = 220;
+    var STRIP_OFFSET = (VIEWPORT_HEIGHT - ROW_HEIGHT) / 2;
 
-      function getPerView() {
-        if (window.innerWidth <= 640) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
-      }
+    var panel = document.getElementById('odoPanel');
+    var strip = document.getElementById('odoStrip');
+    var input = document.getElementById('odoInput');
+    var check = document.getElementById('odoCheck');
+    var timing = document.getElementById('odoTiming');
+    var statusDot = document.querySelector('.odo-header-dot');
+    var statusText = document.querySelector('.odo-header-status');
+    var rows = strip.querySelectorAll('.odo-row');
+    var vals = [
+      document.getElementById('odoVal0'),
+      document.getElementById('odoVal1'),
+      document.getElementById('odoVal2'),
+      null
+    ];
 
-      // Dynamic dot generation based on viewport
-      function buildDots() {
-        var perView = getPerView();
-        var pageCount = Math.ceil(totalCards / perView);
-        dotsContainer.innerHTML = '';
-        for (var i = 0; i < pageCount; i++) {
-          var dot = document.createElement('button');
-          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', 'Page ' + (i + 1));
-          dot.dataset.page = i;
-          dot.addEventListener('click', function() {
-            var page = parseInt(this.dataset.page);
-            var perView = getPerView();
-            goTo(page * perView);
-            resetAuto();
-          });
-          dotsContainer.appendChild(dot);
-        }
-      }
+    var running = false;
+    var timeouts = [];
+    var apiLive = false;
+    var cachedResponse = null;
 
-      function getCardStep() {
-        // Measure actual card width + gap from DOM
-        if (totalCards < 2) return cards[0].offsetWidth;
-        return cards[1].offsetLeft - cards[0].offsetLeft;
-      }
+    function clearTimers() {
+      timeouts.forEach(function(t) { clearTimeout(t); clearInterval(t); });
+      timeouts = [];
+    }
 
-      function goTo(index) {
-        var perView = getPerView();
-        var maxStart = totalCards - perView;
-        if (maxStart < 0) maxStart = 0;
-        if (index > maxStart) index = maxStart;
-        if (index < 0) index = 0;
-        currentIndex = index;
-        var target = cards[index];
-        if (target) {
-          track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-        }
-        updateDots();
-      }
+    function setStripPosition(rowIndex) {
+      var y = STRIP_OFFSET - (rowIndex * ROW_HEIGHT);
+      strip.style.transform = 'translateY(' + y + 'px)';
+    }
 
-      function advance(dir) {
-        var perView = getPerView();
-        var maxStart = totalCards - perView;
-        if (maxStart < 0) maxStart = 0;
-        var next = currentIndex + dir;
-        // Wrap around
-        if (next > maxStart) next = 0;
-        if (next < 0) next = maxStart;
-        goTo(next);
-      }
-
-      function updateDots() {
-        var perView = getPerView();
-        var currentPage = Math.floor(currentIndex / perView);
-        var dots = dotsContainer.querySelectorAll('.carousel-dot');
-        dots.forEach(function(dot, i) {
-          dot.classList.toggle('active', i === currentPage);
-        });
-      }
-
-      // Sync currentIndex from scroll position (for swipe/drag)
-      var scrollTimer;
-      track.addEventListener('scroll', function() {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function() {
-          var step = getCardStep();
-          if (step > 0) {
-            currentIndex = Math.round(track.scrollLeft / step);
-          }
-          updateDots();
-        }, 80);
-      }, { passive: true });
-
-      prevBtn.addEventListener('click', function() { advance(-1); resetAuto(); });
-      nextBtn.addEventListener('click', function() { advance(1); resetAuto(); });
-
-      // Auto-advance every 5s, pause on hover/touch
-      function startAuto() {
-        stopAuto();
-        autoTimer = setInterval(function() {
-          if (!paused) advance(1);
-        }, 5000);
-      }
-      function stopAuto() {
-        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
-      }
-      function resetAuto() { startAuto(); }
-
-      track.addEventListener('mouseenter', function() { paused = true; });
-      track.addEventListener('mouseleave', function() { paused = false; });
-      track.addEventListener('touchstart', function() { paused = true; }, { passive: true });
-      track.addEventListener('touchend', function() { paused = false; resetAuto(); }, { passive: true });
-
-      // Rebuild dots on resize
-      var resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          buildDots();
-          goTo(currentIndex);
-        }, 150);
-      });
-
-      buildDots();
-      startAuto();
-    });
-  </script>
-
-  <!-- PQ Box Checkout -->
-  <script>
-    function orderPqBox() {
-      var btns = document.querySelectorAll('.pq-box-order');
-      btns.forEach(function(b) { b.disabled = true; b.textContent = 'Loading…'; });
-      fetch('https://pq-api.cyclecore.ai/v1/checkout/pq-box', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(d) {
-        if (d.url) { window.location.href = d.url; }
-        else { throw new Error(d.detail || 'Checkout unavailable'); }
-      })
-      .catch(function(e) {
-        alert('Unable to start checkout. Please try again or contact partnerships@cyclecore.ai');
-        btns.forEach(function(b) { b.disabled = false; b.textContent = 'Order Now'; });
+    function setRowStates(activeIndex) {
+      rows.forEach(function(row, i) {
+        if (i < activeIndex) row.setAttribute('data-state', 'done');
+        else if (i === activeIndex) row.setAttribute('data-state', 'active');
+        else row.setAttribute('data-state', 'idle');
       });
     }
+
+    function randomChar(charset) {
+      return charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+
+    function fakeSig() {
+      var s = '';
+      for (var i = 0; i < 44; i++) s += randomChar(B64);
+      return s;
+    }
+
+    function sha256(message) {
+      var enc = new TextEncoder();
+      return crypto.subtle.digest('SHA-256', enc.encode(message)).then(function(buf) {
+        var arr = new Uint8Array(buf);
+        var hex = '';
+        for (var i = 0; i < arr.length; i++) {
+          hex += ('0' + arr[i].toString(16)).slice(-2);
+        }
+        return hex;
+      });
+    }
+
+    function callSignAPI(message) {
+      var controller = new AbortController();
+      var timeoutId = setTimeout(function() { controller.abort(); }, 3000);
+      return fetch(PQ_API + '/try', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: message }),
+        signal: controller.signal
+      })
+      .then(function(r) {
+        clearTimeout(timeoutId);
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        apiLive = true;
+        setLiveStatus(true);
+        return { signature: data.signature, latency_us: data.latency_us };
+      })
+      .catch(function() {
+        clearTimeout(timeoutId);
+        setLiveStatus(false);
+        return null;
+      });
+    }
+
+    function setLiveStatus(live) {
+      apiLive = live;
+      if (live) {
+        statusDot.style.background = 'var(--odo-green)';
+        statusDot.style.animation = 'odo-pulse 2s ease-in-out infinite';
+        statusText.childNodes[statusText.childNodes.length - 1].textContent = ' live';
+      } else {
+        statusDot.style.background = 'var(--odo-text-dim)';
+        statusDot.style.animation = 'none';
+        statusText.childNodes[statusText.childNodes.length - 1].textContent = ' pq';
+      }
+    }
+
+    function healthCheck() {
+      fetch(PQ_API + '/warmup', { method: 'POST' })
+        .then(function(r) {
+          setLiveStatus(r.ok);
+        })
+        .catch(function() {
+          setLiveStatus(false);
+        });
+    }
+
+    function shuffleAndLock(el, finalValue, charset, shuffleDuration, lockStagger, onDone) {
+      var len = Math.min(finalValue.length, 40);
+      var truncated = finalValue.substring(0, len);
+      var suffix = finalValue.length > len ? '…' : '';
+      var display = new Array(len).fill(' ');
+      var locked = 0;
+
+      var shuffleId = setInterval(function() {
+        var html = '';
+        for (var i = 0; i < len; i++) {
+          if (i < locked) {
+            html += '<span class="odo-char locked">' + escHtml(display[i]) + '</span>';
+          } else {
+            html += '<span class="odo-char rolling">' + escHtml(randomChar(charset)) + '</span>';
+          }
+        }
+        if (suffix) html += '<span class="odo-char rolling">' + suffix + '</span>';
+        el.innerHTML = html;
+      }, 35);
+      timeouts.push(shuffleId);
+
+      var lockStart = setTimeout(function() {
+        var lockId = setInterval(function() {
+          if (locked < len) {
+            display[locked] = truncated.charAt(locked);
+            locked++;
+          }
+          if (locked >= len) {
+            clearInterval(lockId);
+            clearInterval(shuffleId);
+            var html = '';
+            for (var i = 0; i < len; i++) {
+              html += '<span class="odo-char locked">' + escHtml(display[i]) + '</span>';
+            }
+            if (suffix) html += '<span class="odo-char locked" style="opacity:0.4">' + suffix + '</span>';
+            el.innerHTML = html;
+            if (onDone) onDone();
+          }
+        }, lockStagger);
+        timeouts.push(lockId);
+      }, shuffleDuration);
+      timeouts.push(lockStart);
+    }
+
+    function escHtml(c) {
+      if (c === '<') return '&lt;';
+      if (c === '>') return '&gt;';
+      if (c === '&') return '&amp;';
+      if (c === '"') return '&quot;';
+      return c;
+    }
+
+    function landVerified(us) {
+      setStripPosition(3);
+      setRowStates(3);
+      check.classList.add('show');
+      var t4 = setTimeout(function() {
+        timing.classList.add('show');
+        var target = Math.round(us);
+        var counter = 0;
+        var step = Math.max(1, Math.floor(target / 12));
+        var countId = setInterval(function() {
+          counter += step;
+          if (counter >= target) {
+            counter = target;
+            clearInterval(countId);
+            panel.classList.add('glow-land');
+            var t5 = setTimeout(function() { panel.classList.remove('glow-land'); }, 750);
+            timeouts.push(t5);
+          }
+          timing.textContent = counter + ' µs';
+        }, 25);
+        timeouts.push(countId);
+        var t6 = setTimeout(function() { running = false; autoRun(); }, 5000);
+        timeouts.push(t6);
+      }, 200);
+      timeouts.push(t4);
+    }
+
+    function runSequence(message, useAPI) {
+      if (running) return;
+      running = true;
+      clearTimers();
+
+      check.classList.remove('show');
+      timing.classList.remove('show');
+      timing.textContent = '';
+      rows.forEach(function(r) { r.setAttribute('data-state', 'idle'); });
+      vals.forEach(function(v) { if (v) v.innerHTML = ''; });
+
+      var apiPromise = null;
+      if (useAPI) {
+        apiPromise = callSignAPI(message);
+      }
+
+      var hashPromise = sha256(message).catch(function() { return null; });
+
+      setStripPosition(0);
+      setRowStates(0);
+      vals[0].textContent = message;
+
+      var t1 = setTimeout(function() {
+        setStripPosition(1);
+        setRowStates(1);
+
+        hashPromise.then(function(realHash) {
+          var hash = realHash || (function() {
+            var h = ''; for (var i = 0; i < 64; i++) h += randomChar(HEX); return h;
+          })();
+
+          shuffleAndLock(vals[1], hash, HEX, 350, 18, function() {
+            var t2 = setTimeout(function() {
+              setStripPosition(2);
+              setRowStates(2);
+
+              if (apiPromise) {
+                apiPromise.then(function(apiData) {
+                  if (apiData) {
+                    cachedResponse = apiData;
+                    var sig = apiData.signature || fakeSig();
+                    var us = apiData.latency_us || (Math.random() * 38 + 58);
+                    shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
+                      var t3 = setTimeout(function() { landVerified(us); }, 150);
+                      timeouts.push(t3);
+                    });
+                  } else {
+                    var sig = fakeSig();
+                    var us = Math.random() * 38 + 58;
+                    shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
+                      var t3 = setTimeout(function() { landVerified(us); }, 150);
+                      timeouts.push(t3);
+                    });
+                  }
+                });
+              } else if (cachedResponse) {
+                var sig = cachedResponse.signature || fakeSig();
+                var us = cachedResponse.latency_us || (Math.random() * 38 + 58);
+                shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
+                  var t3 = setTimeout(function() { landVerified(us); }, 150);
+                  timeouts.push(t3);
+                });
+              } else {
+                var sig = fakeSig();
+                var us = Math.random() * 38 + 58;
+                shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
+                  var t3 = setTimeout(function() { landVerified(us); }, 150);
+                  timeouts.push(t3);
+                });
+              }
+            }, 120);
+            timeouts.push(t2);
+          });
+        });
+      }, 600);
+      timeouts.push(t1);
+    }
+
+    var defaultMessages = [
+      'Hello, CycleCore',
+      'NIST FIPS 204 compliant',
+      'Quantum-safe transport',
+      'Sign anything in microseconds',
+      'Edge-first cryptography'
+    ];
+    var msgIndex = 0;
+    var firstRun = true;
+
+    function autoRun() {
+      if (running) return;
+      var useAPI = firstRun;
+      firstRun = false;
+      runSequence(defaultMessages[msgIndex % defaultMessages.length], useAPI);
+      msgIndex++;
+    }
+
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        var msg = input.value.trim();
+        if (!msg) return;
+        running = false;
+        clearTimers();
+        input.value = '';
+        runSequence(msg, true);
+      }
+    });
+
+    healthCheck();
+    setInterval(healthCheck, 30000);
+    setStripPosition(0);
+    setTimeout(autoRun, 800);
+  })();
+  </script>
+
+  <!-- =============================== -->
+  <!-- PAGE BEHAVIORS                  -->
+  <!-- =============================== -->
+  <script>
+  (function() {
+    'use strict';
+
+    setTimeout(function() { document.body.classList.add('pq-bar-active'); }, 3400);
+
+    var cards = document.querySelectorAll('.pillar-card, .evidence-card');
+    if (cards.length) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var d = parseInt(entry.target.getAttribute('data-delay')) || 0;
+            setTimeout(function() { entry.target.classList.add('visible'); }, d);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(function(c) { obs.observe(c); });
+    }
+  })();
+  </script>
+
+  <script>
+  (function() {
+    'use strict';
+    document.querySelectorAll('.delivery-toggle').forEach(function(toggle) {
+      toggle.querySelectorAll('.delivery-opt').forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          toggle.querySelectorAll('.delivery-opt').forEach(function(o) { o.classList.remove('selected'); });
+          opt.classList.add('selected');
+          toggle.setAttribute('data-selected', opt.getAttribute('data-delivery'));
+        });
+      });
+    });
+  })();
+
+  var PQ_BOX_LINKS = {
+    signature: 'https://buy.stripe.com/dRmeVe6ugcomevc1vmcbC04',
+    priority: 'https://buy.stripe.com/6oU28s3i49cadr8gqgcbC06'
+  };
+
+  function checkoutPQBox(btn) {
+    var toggle = btn.parentElement.querySelector('.delivery-toggle');
+    var delivery = toggle ? toggle.getAttribute('data-selected') : 'signature';
+    btn.disabled = true;
+    btn.textContent = 'Connecting…';
+    fetch('https://pq-api.cyclecore.ai/v1/checkout/pq-box', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ delivery: delivery })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        window.open(PQ_BOX_LINKS[delivery], '_blank');
+        btn.textContent = 'Order now';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      window.open(PQ_BOX_LINKS[delivery], '_blank');
+      btn.textContent = 'Order now';
+      btn.disabled = false;
+    });
+  }
   </script>
 
 </body>

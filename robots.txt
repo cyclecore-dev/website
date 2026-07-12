@@ -1,0 +1,13 @@
+# CycleCore Technologies — robots.txt
+# Security contact: https://cyclecore.ai/.well-known/security.txt
+
+User-agent: *
+Allow: /
+Disallow: /dataroom/
+Disallow: /ops/
+Disallow: /preview-redesign/
+Disallow: /preview-storefront/
+Disallow: /preview-v4/
+Disallow: /downloads/
+
+Sitemap: https://cyclecore.ai/sitemap.xml

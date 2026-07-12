@@ -1174,6 +1174,7 @@
     var timeouts = [];
     var apiLive = false;
     var cachedResponse = null;
+    var turboUs = null;
 
     function clearTimers() {
       timeouts.forEach(function(t) { clearTimeout(t); clearInterval(t); });
@@ -1237,6 +1238,33 @@
       .catch(function() {
         clearTimeout(timeoutId);
         setLiveStatus(false);
+        return null;
+      });
+    }
+
+    function callTurboAPI() {
+      var controller = new AbortController();
+      var tid = setTimeout(function() { controller.abort(); }, 6000);
+      return fetch(PQ_API + '/turbo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sign: true, verify: true, encrypt: true, decrypt: true }),
+        signal: controller.signal
+      })
+      .then(function(r) {
+        clearTimeout(tid);
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        if (data.total_ms && data.total_ops) {
+          turboUs = Math.round(data.total_ms / data.total_ops * 1000);
+        }
+        setLiveStatus(true);
+        return turboUs;
+      })
+      .catch(function() {
+        clearTimeout(tid);
         return null;
       });
     }
@@ -1379,35 +1407,24 @@
               setStripPosition(2);
               setRowStates(2);
 
+              var sig, us;
+              us = turboUs || (Math.random() * 38 + 58);
+
               if (apiPromise) {
                 apiPromise.then(function(apiData) {
                   if (apiData) {
                     cachedResponse = apiData;
-                    var sig = apiData.signature || fakeSig();
-                    var us = apiData.latency_us || (Math.random() * 38 + 58);
-                    shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
-                      var t3 = setTimeout(function() { landVerified(us); }, 150);
-                      timeouts.push(t3);
-                    });
+                    sig = apiData.signature || fakeSig();
                   } else {
-                    var sig = fakeSig();
-                    var us = Math.random() * 38 + 58;
-                    shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
-                      var t3 = setTimeout(function() { landVerified(us); }, 150);
-                      timeouts.push(t3);
-                    });
+                    sig = fakeSig();
                   }
-                });
-              } else if (cachedResponse) {
-                var sig = cachedResponse.signature || fakeSig();
-                var us = cachedResponse.latency_us || (Math.random() * 38 + 58);
-                shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
-                  var t3 = setTimeout(function() { landVerified(us); }, 150);
-                  timeouts.push(t3);
+                  shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
+                    var t3 = setTimeout(function() { landVerified(us); }, 150);
+                    timeouts.push(t3);
+                  });
                 });
               } else {
-                var sig = fakeSig();
-                var us = Math.random() * 38 + 58;
+                sig = (cachedResponse && cachedResponse.signature) ? cachedResponse.signature : fakeSig();
                 shuffleAndLock(vals[2], sig, B64, 550, 16, function() {
                   var t3 = setTimeout(function() { landVerified(us); }, 150);
                   timeouts.push(t3);
@@ -1453,6 +1470,7 @@
 
     healthCheck();
     setInterval(healthCheck, 30000);
+    callTurboAPI();
     setStripPosition(0);
     setTimeout(autoRun, 800);
   })();

@@ -1,11 +1,18 @@
-# CycleCore Technologies Security Contact
-# https://securitytxt.org/
+# CycleCore Technologies — Security Contact
+# RFC 9116 — https://securitytxt.org/
 
 Contact: mailto:security@cyclecore.ai
-Expires: 2027-01-11T00:00:00.000Z
+Expires: 2027-05-20T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://cyclecore.ai/.well-known/security.txt
-Policy: https://cyclecore.ai/safetygates/trust.html
+Policy: https://cyclecore.ai/security.html
+Acknowledgments: https://cyclecore.ai/security.html#acknowledgments
+Hiring: https://cyclecore.ai/about.html
 
-# We appreciate responsible disclosure of security vulnerabilities.
+# CycleCore maintains an active security research program with
+# published findings across NVIDIA, Microsoft, Meta, and Hugging Face.
+# We welcome responsible disclosure from external researchers.
+#
 # Good-faith security research will not result in legal action.
+# Reports qualifying under our coordinated disclosure guidelines
+# may be eligible for recognition in our security acknowledgments.

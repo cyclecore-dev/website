@@ -643,7 +643,7 @@
           <div class="carousel-card-price-note">Ships in 7 days</div>
           <span class="carousel-card-promo">Free email support with launch orders</span>
           <div class="carousel-card-support">Add <a href="#hardware">Premium Support</a> &mdash; 24hr phone + engineering, $400/mo</div>
-          <a href="https://buy.stripe.com/dRmeVe6ugcomevc1vmcbC04" target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
+          <button type="button" onclick="orderPqBox()" class="btn btn-primary pq-box-order">Order Now</button>
         </div>
 
         <!-- Card 2: PQ/QR Box -->
@@ -765,7 +765,7 @@
             <strong>Premium</strong> &mdash; 24hr response, phone + email, live PQ engineering support ($400/box/mo)<br>
             <strong>Enterprise</strong> &mdash; custom SLA, dedicated engineer (<a href="mailto:partnerships@cyclecore.ai" style="color: var(--cc-text-secondary);">contact sales</a>)
           </div>
-          <a href="https://buy.stripe.com/dRmeVe6ugcomevc1vmcbC04" target="_blank" rel="noopener" class="btn btn-primary btn-large">Order Now</a>
+          <button type="button" onclick="orderPqBox()" class="btn btn-primary btn-large pq-box-order">Order Now</button>
         </div>
 
         <!-- PQ/QR Box -->
@@ -1091,6 +1091,27 @@
       buildDots();
       startAuto();
     });
+  </script>
+
+  <!-- PQ Box Checkout -->
+  <script>
+    function orderPqBox() {
+      var btns = document.querySelectorAll('.pq-box-order');
+      btns.forEach(function(b) { b.disabled = true; b.textContent = 'Loading…'; });
+      fetch('https://pq-api.cyclecore.ai/v1/checkout/pq-box', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        if (d.url) { window.location.href = d.url; }
+        else { throw new Error(d.detail || 'Checkout unavailable'); }
+      })
+      .catch(function(e) {
+        alert('Unable to start checkout. Please try again or contact partnerships@cyclecore.ai');
+        btns.forEach(function(b) { b.disabled = false; b.textContent = 'Order Now'; });
+      });
+    }
   </script>
 
 </body>

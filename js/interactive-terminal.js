@@ -256,7 +256,7 @@ Extract structured JSON from real-world documents
 
 <span class="text-terminal-green">Get Access:</span>
   Email: hi@cyclecore.ai (subject: "Maaza API Beta Access")
-  Try:   curl -X POST http://64.225.0.119/v1/extract
+  Try:   curl -X POST https://pq-api.cyclecore.ai/v1/extract
 
 <span class="text-terminal-green">Self-Hosting:</span>
   Models are open source on HuggingFace (Apache 2.0)

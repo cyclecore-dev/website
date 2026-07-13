@@ -269,7 +269,7 @@
       <div class="reveal" style="max-width: 800px; margin: var(--cc-space-xl) auto 0;">
         <div style="background: var(--cc-gray-900); border-radius: 0.5rem; padding: 1.5rem; border: 1px solid var(--cc-gray-700);">
           <div style="font-size: 0.875rem; font-weight: 600; color: var(--cc-gray-200); margin-bottom: 1rem;">Try it now:</div>
-          <pre style="margin: 0; padding: 1rem; background: var(--cc-black); border-radius: 0.25rem; overflow-x: auto; font-family: var(--cc-font-mono); font-size: 0.75rem; line-height: 1.6; color: var(--cc-gray-300);">curl -X POST https://justin-advisors-thirty-recommend.trycloudflare.com/v1/extract \
+          <pre style="margin: 0; padding: 1rem; background: var(--cc-black); border-radius: 0.25rem; overflow-x: auto; font-family: var(--cc-font-mono); font-size: 0.75rem; line-height: 1.6; color: var(--cc-gray-300);">curl -X POST https://pq-api.cyclecore.ai/v1/extract \
   -H 'Content-Type: application/json' \
   -d '{
     "text": "From: sarah.johnson@company.com\nSubject: Q4 Meeting\nHi team, lets meet on Dec 15th at 2pm in conference room B.\nThanks,\nSarah Johnson\nSenior Manager\n(555) 123-4567",
@@ -471,7 +471,7 @@
           </div>
 
           <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--cc-gray-500);">
-            Based on 500 input + 200 output tokens per extraction. See <a href="https://github.com/CycleCore-Technologies/maaza-api/blob/main/docs/PRICING_RESEARCH_COMPLETE_NOV2025.md" target="_blank" style="color: var(--cc-accent-cyan);">pricing methodology</a>.
+            Based on 500 input + 200 output tokens per extraction. See <a href="https://github.com/cyclecore-dev/maaza-api/blob/main/docs/PRICING_RESEARCH_COMPLETE_NOV2025.md" target="_blank" style="color: var(--cc-accent-cyan);">pricing methodology</a>.
           </div>
         </div>
       </div>
@@ -581,7 +581,7 @@
       message.style.display = 'none';
 
       try {
-        const response = await fetch('https://justin-advisors-thirty-recommend.trycloudflare.com/v1/instant', {
+        const response = await fetch('https://pq-api.cyclecore.ai/v1/instant', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({email})
@@ -640,7 +640,7 @@
       successMessage.style.display = 'none';
 
       try {
-        const response = await fetch('https://justin-advisors-thirty-recommend.trycloudflare.com/v1/signup', {
+        const response = await fetch('https://pq-api.cyclecore.ai/v1/signup', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({email, name, plan: 'free'})

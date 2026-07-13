@@ -144,7 +144,7 @@ Terminal-based credential wizard for AI agents
 
 Install: npm install -g @cyclecore/secretsage
 License: Apache 2.0
-GitHub: github.com/CycleCore-Technologies/secretsage`,
+GitHub: github.com/cyclecore-dev/secretsage`,
 
       slmbench: `SLMBench - Edge AI Benchmarking
 

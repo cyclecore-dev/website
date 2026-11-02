@@ -1214,12 +1214,14 @@
       });
     }
 
-    function callSignAPI(message) {
+    function callSignAPI(message, source) {
       var controller = new AbortController();
       var timeoutId = setTimeout(function() { controller.abort(); }, 3000);
+      var hdrs = { 'Content-Type': 'application/json' };
+      if (source) hdrs['X-Demo-Source'] = source;
       return fetch(PQ_API + '/try', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: hdrs,
         body: JSON.stringify({ message: message }),
         signal: controller.signal
       })
@@ -1245,7 +1247,7 @@
       var tid = setTimeout(function() { controller.abort(); }, 6000);
       return fetch(PQ_API + '/turbo', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-Demo-Source': 'auto' },
         body: JSON.stringify({ sign: true, verify: true, encrypt: true, decrypt: true }),
         signal: controller.signal
       })
@@ -1369,7 +1371,7 @@
       timeouts.push(t4);
     }
 
-    function runSequence(message, useAPI) {
+    function runSequence(message, useAPI, source) {
       if (running) return;
       running = true;
       clearTimers();
@@ -1382,7 +1384,7 @@
 
       var apiPromise = null;
       if (useAPI) {
-        apiPromise = callSignAPI(message);
+        apiPromise = callSignAPI(message, source);
       }
 
       var hashPromise = sha256(message).catch(function() { return null; });
@@ -1450,7 +1452,7 @@
       if (running) return;
       var useAPI = firstRun;
       firstRun = false;
-      runSequence(defaultMessages[msgIndex % defaultMessages.length], useAPI);
+      runSequence(defaultMessages[msgIndex % defaultMessages.length], useAPI, 'auto');
       msgIndex++;
     }
 
